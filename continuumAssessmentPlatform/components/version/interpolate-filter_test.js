@@ -1,7 +1,7 @@
 'use strict';
 
 describe('continuumAssessmentPlatform.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(module('continuumAssessmentPlatform.version'));
 
   describe('interpolate filter', function() {
     beforeEach(module(function($provide) {
