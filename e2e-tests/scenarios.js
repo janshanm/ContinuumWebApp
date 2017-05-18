@@ -1,41 +1,39 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('continuum assessment platform', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to /strategy when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/strategy");
   });
 
 
-  describe('view1', function() {
+  describe('strategy', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view1');
+      browser.get('index.html#!/strategy');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render strategy when user navigates to /strategy', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        toMatch(/partial for Strategy and Alignment/);
     });
 
   });
 
 
-  describe('view2', function() {
+  describe('planning', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view2');
+      browser.get('index.html#!/planning');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
+    it('should render planning when user navigates to /planning', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+        toMatch(/partial for Planning and Requirements/);
     });
 
   });
