@@ -1,1 +1,567 @@
-<p>This is the partial for Continuous Integration.</p>
+<p class="lead">Continuous Integration: Please select all the check boxes applicable to your team.</p>
+<hr>
+<h4 align="center">Traveller</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            No version management of artefacts and reports
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Artefacts, code and reports are kept in developer machines. There is no use
+        of a version management technology.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Deployments & Rollbacks are manual
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">All deployments and application rollbacks are done manually by experienced
+        developers or operations.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build is performed manually and infrequently.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There is a build but this is done through manual steps. Builds happen
+        infrequently in big batches as opposed to incrementally in very small batches. The team needs to make sure
+        the builds are done more frequently and automated.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build is owned by a specific person
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The process of creating a build artefact is known by a specific person in the team.
+        Absence of this person in the team leads to the application not being able to be deployed.
+        Collective ownership of the process needs to be promoted with more team members knowing how to build the application.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Testing is manual
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">All the testing performed are manual, predominantly exploratory type tests.
+        Team needs to start implementing automated tests.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Development environments manually provisioned and shared between teams
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The environments required by the development teams (developers, QAs, UAT etc)
+        are provisioned manually and shared by multiple teams. The team is unable to modify configuration which they want
+        to test ad hoc and needs to raise change requests.</p></div>
+</div>
+<hr>
+<h4 align="center">Artisan</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Source code is under version management
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The source code is checked in to a version control management tool even
+        though the team commits are very infrequent.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build is automated and tests are run as part of the build
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There's a script to build the application and this process is automated.
+        There are also tests run as part of the build process. The build of the application is performed via a simple command</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Testing partially automated, and code coverage greater than 0
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There are some test cases but not all of them have been automated. The test
+        coverage is greater than zero but less than 50%. Team needs to improve on the test coverage and move it towards 50%.
+        Team also needs to automate the test cases they have (this will need to be prioritised in the backlog as well and
+        some slack put in the system to cater for this)</p></div>
+</div>
+<hr>
+<h4 align="center">Expert</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Team checks code into version management system on daily basis.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The team checks in code every day to the version management tool.
+        Team still works on several long-lived branches but the code is checked in at least once a day.
+        Team needs to start moving towards very short lived branches</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            All artefacts are under version management.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">All the artefacts such as packages, build scripts, etc are checked in to
+        the version management system. Every new team member can check out the source code and build the application
+        from the version management system. Artefacts like database schemas, deployment scripts etc</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build and Deployment to development environment are automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Deployment of the application to the development environment is automated
+        and happens without any manual steps. Requires a human to trigger the build.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Anyone in the team can start build at any point in time
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Builds are triggered by simple click of a button on the continuous
+        integration management tool.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build status and broken builds are visible to all.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Build statuses are shown on dashboards which the team can see.
+        Team has a view of the broken builds history. Team continues with coding tasks even when the build is broken.
+        The team needs to start moving towards a state where a broken build leads to a stop in new functionality until
+        the build is fixed (Think Broken Window Syndrome).</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Testing partially automated – greater than 50% code coverage.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The test coverage is greater than 50% but not entirely covered. Team needs
+        to improve on the test coverage and move it towards 90 - 100% coverage.
+        Team fails the build if the coverage metric is not met.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Release and Change Management partially automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There are manual steps for the release of the application
+        (these can be automated but are not yet automated).</p></div>
+</div>
+<hr>
+<h4 align="center">Professional</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Automated build and test cycle every time a change is committed
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Every commit from a team member triggers a build and test stage in the
+        continuous integration management tool.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build metrics gathered, visible, and acted on.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The build metrics are visible on dashboards in the team space.
+        Static code analysis metrics are also visible on the dashboards and the team actively works to improve the code metrics.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Builds are not left broken and code is not committed on a broken build.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Broken builds are attended to. Team has adopted the practice of
+        "Don't push on a broken build" and "You break it, you fix it or revert to the last build that passed"</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Deployment to test environment is automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Deployment of the application to the test environment is automated and
+        happens without any manual steps. Requires no human to trigger the build.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Non-functional testing is automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There is a continuous integration pipeline and non-functional requirements are tested.
+        For customer facing or critical applications, there is inclusion of security testing as part of the pipeline.
+        For applications that require high resilience, this is tested as part of the pipeline and the statistics are
+        shown on the team dashboards.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Testing is automated as much as is practical.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Tests that can be automated are automated. The only unautomated tests are
+        the manual exploratory edge cases which have no value in being automated and should preferably be left manual.
+        Unit tests, integration tests, scenario-based tests, consumer contract tests and other significant
+        flow tests are all automated.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environments can be provisioned at on demand.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Environments are provisioned on demand using automated tools like Chef.
+        The teams can provision these environments and do not need to go through a rigorous process to obtain such environments.
+        The team also has full access to such environments</p></div>
+</div>
+<hr>
+<h4 align="center">Master</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Build and deployment are automated as much as is practical
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The build and deployment processes are automated as much as the constraints allow.
+        This should be automated preferably all the way to production, however, in some organisations this may not be possible.
+        The steps to production exists and can be triggered manually on receiving the requisite approvals.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            The build pipeline extends directly into production
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The team has a build pipeline that extends directly to production.
+        Artefacts and code can be promoted through various environments all the way to production.
+        A defect in production can be fixed within minutes rather than hours/days/weeks. If no deployment to production
+        the team is deploying to an environment that is very similar to the production environment.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Tests are run in parallel across multiple machines
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">To speed up the regression tests feedback, the teams have parallelized the
+        tests suites across multiple machines.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Trunk-based development is the standard practice and integration happens continuously.
+            Branches are rarely created and are short lived.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The team performs Continuous Integration in its truest form with short-lived
+        branches and trunk-based development as the modus operandi. Branches are only used for exploration and short
+        feature delivery but merged to the master branch and deleted as soon as the work is complete.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Check-ins occur multiple times each day.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Team members check-in code multiple times each day. The check-ins have very
+        small batches of changes and are very frequent usually having less than a few hours worth of work.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environment & infrastructure specifications are managed and versioned along with all other artefacts.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">All the environment and infrastructure specifications are treated similarly
+        to code. They are managed and versioned and can be rebuilt from the version control management system entirely. </p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            The CI build creates and provisions environments to allow scalability for testing.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Team uses the build pipelines and continuous integration tools to provision
+        infrastructure on demand. The team is able to provision and destroy environments without dependence on several external teams.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Release and Change Management fully integrated into deployment processes.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The release and change management process is catered for in the deployment process.
+        Parts of the build pipeline address the governance around release and change management and the deployment
+        process auto-generates the documentation required for the process.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            The product is always in releasable state.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">As is required by continuous integration practices, the software product is
+        always in a releasable state. The build pipeline is in a green (no failing tests/broken builds) state and every
+        broken build state is fixed immediately or reverted to ensure that the application is in a releasable state always.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Automated release process, release to customers is a business decision.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Release to the customers is a business decision rather than a technology decision.
+        Business can trigger the release if they are happy with the functionality and technology is not a bottleneck for
+        timeous customer releases. The process is automated with business being able to release themselves should they want to.</p></div>
+</div>
+<hr>
+<p align="right">
+    <a class="btn btn-primary btn-lg" href="#!/coding">Last Dimension</a>
+    <a class="btn btn-primary btn-lg" href="#!/incident">Next Dimension</a>
+</p>
