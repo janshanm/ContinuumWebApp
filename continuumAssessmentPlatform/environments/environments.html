@@ -1,1 +1,564 @@
-<p>This is the partial for Environments.</p>
+<p class="lead">Environments: Please select all the check boxes applicable to your team.</p>
+<hr>
+<h4 align="center">Traveller</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Data migrations un-versioned and performed manually.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Data migrations are manually controlled. To move from this level data
+        migration needs to be automated using frameworks such as SouthDB Migration.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Test data is not controllable.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Test data is not controllable. It is not generated and maintained by the
+        team on demand but follows a very manual process to be generated.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environments are heavily governed.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Environments are heavily governed and regulated. Teams have no control over
+        environments and several teams share environments.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environments are not refreshed regularly.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Environments are stale and not refreshed regularly. Some of the critical
+        tests environment are out of sync often. The environment refresh needs to be implemented and available on demand.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Test environments and test data are frequently unavailable.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Test environments and test data are frequently unavailable to the teams that
+        need them. The team depends on other teams to have both the data and environment available.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environments are provisioned manually.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The different environments are provisioned manually by highly skilled
+        individuals who are generally not part of the team. Requests for environments need to be raised and the process is not fast.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Key man dependencies.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There are key person dependencies in the team. Absence of certain individuals
+        leads to no access to certain environments required for the team to deploy the applications to such environments.</p></div>
+</div>
+<hr>
+<h4 align="center">Artisan</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Changes to database are done with automated scripts versioned with application.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Data migrations are done with automated scripts that are versioned similar
+        to the application code. These changes are tracked, monitored and reviewed regularly.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            A separate test environment is available.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Separate test environments are available for the team. The team does not
+        use the development environment as the test bed.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Test environment is shared with other teams.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The test environment is shared by multiple teams. Changes to the environment
+        requires a coordinated effort with the different teams.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            An external group maintains the environment.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Teams external to the development teams maintain the environments and are
+        the only ones allowed to access and modify these environments.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Test environments are available during specific dates/time slots.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Test environments are only available to the teams during particular dates
+        or time slots. The team is forced to wait for the next slot if they miss a target slot and is unable to do ad hoc
+        or continuous deployments into the test environment.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Ability to deploy basic virtual environments.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Teams can deploy basic virtual environments in controlled environments.
+        They however do not have control over the actual environments.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Team has a dedicated development environment.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">There is a dedicated development environment for the teams.</p></div>
+</div>
+<hr>
+<h4 align="center">Expert</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Database changes are performed automatically as part of deployment process.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Database migrations happen as part of deployment. The deployment pipelines
+        have steps to ensure that the database base is in a state expected by the application.
+        These scripts are idempotent in nature.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Test environments are readily available. Can be reproduced with manual work + coordination between operational teams.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Test environments are readily available and can be reproduced to a predictable state.
+        The steps are however not completely automated.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Access to a production-like environment is restricted to a small group of closely-related application teams,
+            and delays at this level are unusual.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Access to production-like environments are restricted.
+        Requests are required to have these environments and can lead to bottlenecks</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environment provisioning partially automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Provisioning is partially automated but there are still some manual
+        configuration steps to get the environment to a functional state for the application.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Some virtual environments have interfaces available ‘stubs’ to run end-to-end testing.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Some environments provide testable interfaces which can be used for the
+        integration, functional, and non-functional type testing of the application.</p></div>
+</div>
+<hr>
+<h4 align="center">Professional</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Database upgrades and rollbacks are tested with every deployment.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Database migrations forward and backward are tested with every deployment.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Database performance is monitored and optimized.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The performance of the databases are monitored and optimized.
+        The metrics are displayed on the team dashboards.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Minimal manual work is required to replicate and configure environments but this can be completed within hours.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The environments can be replicated and reconfigured within a matter of hours
+        after being destroyed. This, however, requires some manual work for configuration.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Multiple test environments are readily available for the exclusive use of the team, including a production-like
+            environment that’s allows a reasonable level of non-functional and cross-system integration testing and
+            reliable acceptance testing.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Multiple test environments are readily available for the exclusive use of the team,
+        including a production-like environment that allows a reasonable level of non-functional and systems level testing.
+        These environments are controlled by the teams.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Dev workstations are easily configured and can be built in an automated manner.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Developer workstation set-up is automated. A new developer or technologist
+        joining the team is able to set up their workstation by pulling the latest code base and running a few scripts.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Virtual environments have all interfaces available ‘stubs’ to run end-to-end testing.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Virtual environments are stubbed so integration and end-to-end type test can be run successfully.</p></div>
+</div>
+<hr>
+<h4 align="center">Master</h4>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Data and environments are treated as code, versioned and frequently re-loaded
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Data and environments are versioned and managed in the version control
+        management system in the same way as source code and artefacts.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Release to release feedback loop of database performance and deployment process is in place.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Database performance is monitored and displayed on the team dashboards. This
+        is tracked post-release and post-deployment and backlog items created if there are noticeable performance degradations.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Proactive monitoring is in place with shortest possible time to resolve failure.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Monitoring is proactive rather than reactive. The dashboards are displayed
+        in a control room and performance thresholds are set for alerting purposes. Degradation of performance leads to
+        task items which are prioritised and worked on.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            IP is built into the process, including automated deployment, provisioning, configurations and data.
+            Integral part of the build pipeline.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Infrastructure Provisioning is part of the build pipeline as well as
+        configuration enforcement. Tools such as Chef are used to enforce configuration of machine states and to
+        automate the provisioning of infrastructure.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Environments are managed by the team, the team able to create complete simulated environment on demand.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Teams manage their own infrastructure on demand and can provision and destroy
+        infrastructure at will in line with their application requirements.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            All environments are managed effectively.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">All environments are monitored and managed on a dashboard that shows
+        the health and other status.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Provisioning is fully automated.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">The provisioning of infrastructure is fully automated.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Main dependencies are simulated across the board.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Stubs are used to simulate dependencies where necessary.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input type="checkbox" value="">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Virtualization is used if applicable.
+        </label>
+    </div>
+    <div class="col-xs-7"><p class="bg-info">Virtualization is used where applicable as opposed to physical hardware.
+        Containerisation is also used where applicable.</p></div>
+</div>
+<hr>
+<p align="right">
+    <a class="btn btn-primary btn-lg" href="#!/quality">Last Dimension</a>
+    <a class="btn btn-primary btn-lg" href="#!/featureteams">Next Dimension</a>
+</p>

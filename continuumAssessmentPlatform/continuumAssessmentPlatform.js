@@ -15,6 +15,8 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.quality',
   'continuumAssessmentPlatform.environments',
   'continuumAssessmentPlatform.featureteams',
+  'continuumAssessmentPlatform.review',
+  'continuumAssessmentPlatform.results',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

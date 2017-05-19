@@ -176,4 +176,32 @@ describe('continuum assessment platform', function() {
         });
 
     });
+
+    describe('review', function() {
+
+        beforeEach(function() {
+            browser.get('index.html#!/review');
+        });
+
+
+        it('should render review when user navigates to /review', function() {
+            expect(element.all(by.css('[ng-view] p')).first().getText()).
+            toMatch(/Please Review The Information Selected Below. For any section with incorrect information select the section on the menu to review./);
+        });
+
+    });
+
+    describe('results', function() {
+
+        beforeEach(function() {
+            browser.get('index.html#!/results');
+        });
+
+
+        it('should render results when user navigates to /results', function() {
+            expect(element.all(by.css('[ng-view] p')).first().getText()).
+            toMatch(/Please find assessment results. The Tasks to move to the next Continuum Levels have been specified./);
+        });
+
+    });
 });
