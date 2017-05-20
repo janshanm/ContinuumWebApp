@@ -9,6 +9,70 @@ angular.module('continuumAssessmentPlatform.incident', ['ngRoute'])
   });
 }])
 
-.controller('IncidentCtrl', [function() {
+.controller('IncidentCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+
+    $scope.traveller1 = false;
+    $scope.artisan1 = false;
+    $scope.artisan2 = false;
+    $scope.artisan3 = false;
+    $scope.expert1 = false;
+    $scope.expert2 = false;
+    $scope.expert3 = false;
+    $scope.expert4 = false;
+    $scope.expert5 = false;
+    $scope.expert6 = false;
+    $scope.professional1 = false;
+    $scope.professional2 = false;
+    $scope.professional3 = false;
+    $scope.professional4 = false;
+    $scope.master1 = false;
+    $scope.master2 = false;
+    $scope.master3 = false;
+
+    $scope.init = function () {
+        if(typeof $rootScope.assessments !== "undefined"){
+            var assessments = $rootScope.assessments;
+            var incident = assessments['incident'];
+            $scope.traveller1 = incident['traveller1'];
+            $scope.artisan1 = incident['artisan1'];
+            $scope.artisan2 = incident['artisan2'];
+            $scope.artisan3 = incident['artisan3'];
+            $scope.expert1 = incident['expert1'];
+            $scope.expert2 = incident['expert2'];
+            $scope.expert3 = incident['expert3'];
+            $scope.expert4 = incident['expert4'];
+            $scope.expert5 = incident['expert5'];
+            $scope.expert6 = incident['expert6'];
+            $scope.professional1 = incident['professional1'];
+            $scope.professional2 = incident['professional2'];
+            $scope.professional3 = incident['professional3'];
+            $scope.professional4 = incident['professional4'];
+            $scope.master1 = incident['master1'];
+            $scope.master2 = incident['master2'];
+            $scope.master3 = incident['master3'];
+        }
+    };
+
+    $scope.saveAssessments = function(){
+        $rootScope.assessments = {'incident': {
+            'traveller1': $scope.traveller1,
+            'artisan1': $scope.artisan1,
+            'artisan2': $scope.artisan2,
+            'artisan3': $scope.artisan3,
+            'expert1': $scope.expert1,
+            'expert2': $scope.expert2,
+            'expert3': $scope.expert3,
+            'expert4': $scope.expert4,
+            'expert5': $scope.expert5,
+            'expert6': $scope.expert6,
+            'professional1': $scope.professional1,
+            'professional2': $scope.professional2,
+            'professional3': $scope.professional3,
+            'professional4': $scope.professional4,
+            'master1': $scope.master1,
+            'master2': $scope.master2,
+            'master3': $scope.master3
+        }};
+    }
 
 }]);

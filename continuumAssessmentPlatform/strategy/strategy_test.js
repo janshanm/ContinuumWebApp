@@ -109,41 +109,42 @@ describe('continuumAssessmentPlatform.strategy module', function() {
 
 
       it('should save the values for the assessment results for strategy', function(){
-        scope.traveller1 = true;
-        scope.artisan1 = true;
-        scope.artisan2 = false;
-        scope.artisan3 = false;
-        scope.expert1 = true;
-        scope.expert2 = true;
-        scope.professional1 = false;
-        scope.professional2 = false;
-        scope.professional3 = false;
-        scope.master1 = false;
-        scope.master2 = false;
-        scope.master3 = false;
-        scope.master4 = false;
+          scope.traveller1 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
 
-        var expectedStrategy = {'strategy': {'traveller1': true, 'artisan1': true, 'artisan2': false, 'artisan3': true, 'expert1': true,
-            'expert2': false, 'professional1': false, 'professional2': false, 'professional3': false, 'master1': false,
-            'master2': false, 'master3': false}};
+          var expectedStrategy = {'traveller1': true, 'artisan1': true, 'artisan2': false, 'artisan3': false, 'expert1': true,
+              'expert2': true, 'professional1': false, 'professional2': false, 'professional3': false, 'master1': false,
+              'master2': false, 'master3': false, 'master4': false};
 
-        scope.saveAssessments();
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
 
-        expect(rootScope.assessments['traveller1']).toEqual(expectedStrategy[['traveller1']]);
-        expect(rootScope.assessments['artisan1']).toEqual(expectedStrategy[['artisan1']]);
-        expect(rootScope.assessments['artisan2']).toEqual(expectedStrategy[['artisan2']]);
-        expect(rootScope.assessments['artisan3']).toEqual(expectedStrategy[['artisan3']]);
-        expect(rootScope.assessments['expert1']).toEqual(expectedStrategy[['expert1']]);
-        expect(rootScope.assessments['expert2']).toEqual(expectedStrategy[['expert2']]);
-        expect(rootScope.assessments['professional1']).toEqual(expectedStrategy[['professional1']]);
-        expect(rootScope.assessments['professional2']).toEqual(expectedStrategy[['professional2']]);
-        expect(rootScope.assessments['professional3']).toEqual(expectedStrategy[['professional3']]);
-        expect(rootScope.assessments['master1']).toEqual(expectedStrategy[['master1']]);
-        expect(rootScope.assessments['master2']).toEqual(expectedStrategy[['master2']]);
-        expect(rootScope.assessments['master3']).toEqual(expectedStrategy[['master3']]);
-        expect(rootScope.assessments['master4']).toEqual(expectedStrategy[['master4']]);
+          expect(strategy['traveller1']).toEqual(expectedStrategy[['traveller1']]);
+          expect(strategy['artisan1']).toEqual(expectedStrategy[['artisan1']]);
+          expect(strategy['artisan2']).toEqual(expectedStrategy[['artisan2']]);
+          expect(strategy['artisan3']).toEqual(expectedStrategy[['artisan3']]);
+          expect(strategy['expert1']).toEqual(expectedStrategy[['expert1']]);
+          expect(strategy['expert2']).toEqual(expectedStrategy[['expert2']]);
+          expect(strategy['professional1']).toEqual(expectedStrategy[['professional1']]);
+          expect(strategy['professional2']).toEqual(expectedStrategy[['professional2']]);
+          expect(strategy['professional3']).toEqual(expectedStrategy[['professional3']]);
+          expect(strategy['master1']).toEqual(expectedStrategy[['master1']]);
+          expect(strategy['master2']).toEqual(expectedStrategy[['master2']]);
+          expect(strategy['master3']).toEqual(expectedStrategy[['master3']]);
+          expect(strategy['master4']).toEqual(expectedStrategy[['master4']]);
 
-    });
+      });
 
   });
 });
