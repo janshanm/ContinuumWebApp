@@ -47,7 +47,7 @@ angular.module('continuumAssessmentPlatform.risk', ['ngRoute'])
             $scope.master2 = risk['master2'];
             $scope.master3 = risk['master3'];
             $scope.master4 = risk['master4'];
-            $scope.master4 = risk['master5'];
+            $scope.master5 = risk['master5'];
         }
     };
 

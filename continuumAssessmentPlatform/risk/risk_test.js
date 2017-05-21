@@ -77,7 +77,7 @@ describe('continuumAssessmentPlatform.risk module', function() {
               'artisan1': true, 'artisan2': false, 'artisan3': false,
               'expert1': true, 'expert2': false, 'expert3': false,
               'professional1': false, 'professional2': true, 'professional3': false,
-              'master1': true, 'master2': false, 'master3': false, 'master4': false, 'master5': false}}};
+              'master1': true, 'master2': false, 'master3': false, 'master4': false, 'master5': true}}};
 
           controller = $controller('RiskCtrl', {'$scope': scope, '$rootScope': rootScope});
           scope.init();
@@ -96,7 +96,7 @@ describe('continuumAssessmentPlatform.risk module', function() {
           expect(scope.master2).toBeFalsy();
           expect(scope.master3).toBeFalsy();
           expect(scope.master4).toBeFalsy();
-          expect(scope.master5).toBeFalsy();
+          expect(scope.master5).toBeTruthy();
       }));
 
       it('should set the default values based on the initial values if rootScope not set', inject(function($controller){
