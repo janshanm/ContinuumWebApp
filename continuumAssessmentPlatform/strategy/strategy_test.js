@@ -146,5 +146,150 @@ describe('continuumAssessmentPlatform.strategy module', function() {
 
       });
 
+      it('should save the score for strategy as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+
+          var expectedStrategyScore = 0;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+
+      });
+
+      it('should save the score for strategy as 1 if the traveller question is answered as yes', function(){
+          scope.traveller1 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+
+          var expectedStrategyScore = 1;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+
+      });
+
+      it('should save the score for strategy as 2 if the traveller question is answered as no and the artisan questions are answered yes', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+
+          var expectedStrategyScore = 2;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+      });
+
+      it('should save the score for strategy as 3 if the traveller question is answered as no and the artisan question ' +
+          'one is answered as no and other artisan questions as yes with all the expert questions as yes', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+
+          var expectedStrategyScore = 3;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+      });
+
+      it('should save the score for strategy as 4 if the traveller question is answered as no and the artisan question ' +
+          'one is answered as no and other artisan questions as yes and the first expert question answered as no and all' +
+          ' the other expert questions as yes with all the professional questions as yes ', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = false;
+          scope.expert2 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+
+          var expectedStrategyScore = 4;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+      });
+
+      it('should save the score for strategy as 4 if the traveller question is answered as no and the artisan question ' +
+          'one is answered as no and other artisan questions as yes and the first expert question answered as no and all' +
+          ' the other expert questions as yes with all the professional questions as yes as well as the master questions ', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = false;
+          scope.expert2 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+
+          var expectedStrategyScore = 5;
+
+          scope.saveAssessments();
+          var strategy = rootScope.assessments['strategy'];
+
+          expect(strategy['score']).toEqual(expectedStrategyScore);
+      });
+
   });
 });
