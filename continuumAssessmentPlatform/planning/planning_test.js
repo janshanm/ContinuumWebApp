@@ -225,5 +225,221 @@ describe('continuumAssessmentPlatform.planning module', function() {
 
       });
 
+      it('should save the score for planning as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.artisan4 = false;
+          scope.artisan5 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedPlanningScore = 0;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
+      it('should save the score for planning as 1 if all traveller questions are answered as yes', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.traveller3 = true;
+          scope.traveller4 = true;
+          scope.traveller5 = true;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.artisan4 = false;
+          scope.artisan5 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedPlanningScore = 1;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
+      it('should save the score for planning as 2 if all artisan questions are answered as yes with traveller questions as no', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = true;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedPlanningScore = 2;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
+      it('should save the score for planning as 3 if all expert questions are answered as yes with traveller questions as no', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedPlanningScore = 3;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
+      it('should save the score for planning as 4 if all professional questions are answered as yes with traveller questions as no', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedPlanningScore = 4;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
+      it('should save the score for planning as 5 if all master questions are answered as yes with traveller questions as no', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+
+          var expectedPlanningScore = 5;
+
+          scope.saveAssessments();
+          var planning = rootScope.assessments['planning'];
+
+          expect(planning['score']).toEqual(expectedPlanningScore);
+
+      });
+
   });
 });
