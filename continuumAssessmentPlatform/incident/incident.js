@@ -33,28 +33,34 @@ angular.module('continuumAssessmentPlatform.incident', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var incident = assessments['incident'];
-            $scope.traveller1 = incident['traveller1'];
-            $scope.artisan1 = incident['artisan1'];
-            $scope.artisan2 = incident['artisan2'];
-            $scope.artisan3 = incident['artisan3'];
-            $scope.expert1 = incident['expert1'];
-            $scope.expert2 = incident['expert2'];
-            $scope.expert3 = incident['expert3'];
-            $scope.expert4 = incident['expert4'];
-            $scope.expert5 = incident['expert5'];
-            $scope.expert6 = incident['expert6'];
-            $scope.professional1 = incident['professional1'];
-            $scope.professional2 = incident['professional2'];
-            $scope.professional3 = incident['professional3'];
-            $scope.professional4 = incident['professional4'];
-            $scope.master1 = incident['master1'];
-            $scope.master2 = incident['master2'];
-            $scope.master3 = incident['master3'];
+            if(incident !== undefined) {
+                $scope.traveller1 = incident['traveller1'];
+                $scope.artisan1 = incident['artisan1'];
+                $scope.artisan2 = incident['artisan2'];
+                $scope.artisan3 = incident['artisan3'];
+                $scope.expert1 = incident['expert1'];
+                $scope.expert2 = incident['expert2'];
+                $scope.expert3 = incident['expert3'];
+                $scope.expert4 = incident['expert4'];
+                $scope.expert5 = incident['expert5'];
+                $scope.expert6 = incident['expert6'];
+                $scope.professional1 = incident['professional1'];
+                $scope.professional2 = incident['professional2'];
+                $scope.professional3 = incident['professional3'];
+                $scope.professional4 = incident['professional4'];
+                $scope.master1 = incident['master1'];
+                $scope.master2 = incident['master2'];
+                $scope.master3 = incident['master3'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'incident': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['incident'] = {
             'traveller1': $scope.traveller1,
             'artisan1': $scope.artisan1,
             'artisan2': $scope.artisan2,
@@ -73,7 +79,7 @@ angular.module('continuumAssessmentPlatform.incident', ['ngRoute'])
             'master2': $scope.master2,
             'master3': $scope.master3,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

@@ -49,44 +49,50 @@ angular.module('continuumAssessmentPlatform.ci', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var ci = assessments['ci'];
-            $scope.traveller1 = ci['traveller1'];
-            $scope.traveller2 = ci['traveller2'];
-            $scope.traveller3 = ci['traveller3'];
-            $scope.traveller4 = ci['traveller4'];
-            $scope.traveller5 = ci['traveller5'];
-            $scope.traveller6 = ci['traveller6'];
-            $scope.artisan1 = ci['artisan1'];
-            $scope.artisan2 = ci['artisan2'];
-            $scope.artisan3 = ci['artisan3'];
-            $scope.expert1 = ci['expert1'];
-            $scope.expert2 = ci['expert2'];
-            $scope.expert3 = ci['expert3'];
-            $scope.expert4 = ci['expert4'];
-            $scope.expert5 = ci['expert5'];
-            $scope.expert6 = ci['expert6'];
-            $scope.expert7 = ci['expert7'];
-            $scope.professional1 = ci['professional1'];
-            $scope.professional2 = ci['professional2'];
-            $scope.professional3 = ci['professional3'];
-            $scope.professional4 = ci['professional4'];
-            $scope.professional5 = ci['professional5'];
-            $scope.professional6 = ci['professional6'];
-            $scope.professional7 = ci['professional7'];
-            $scope.master1 = ci['master1'];
-            $scope.master2 = ci['master2'];
-            $scope.master3 = ci['master3'];
-            $scope.master4 = ci['master4'];
-            $scope.master5 = ci['master5'];
-            $scope.master6 = ci['master6'];
-            $scope.master7 = ci['master7'];
-            $scope.master8 = ci['master8'];
-            $scope.master9 = ci['master9'];
-            $scope.master10 = ci['master10'];
+            if(ci !== undefined) {
+                $scope.traveller1 = ci['traveller1'];
+                $scope.traveller2 = ci['traveller2'];
+                $scope.traveller3 = ci['traveller3'];
+                $scope.traveller4 = ci['traveller4'];
+                $scope.traveller5 = ci['traveller5'];
+                $scope.traveller6 = ci['traveller6'];
+                $scope.artisan1 = ci['artisan1'];
+                $scope.artisan2 = ci['artisan2'];
+                $scope.artisan3 = ci['artisan3'];
+                $scope.expert1 = ci['expert1'];
+                $scope.expert2 = ci['expert2'];
+                $scope.expert3 = ci['expert3'];
+                $scope.expert4 = ci['expert4'];
+                $scope.expert5 = ci['expert5'];
+                $scope.expert6 = ci['expert6'];
+                $scope.expert7 = ci['expert7'];
+                $scope.professional1 = ci['professional1'];
+                $scope.professional2 = ci['professional2'];
+                $scope.professional3 = ci['professional3'];
+                $scope.professional4 = ci['professional4'];
+                $scope.professional5 = ci['professional5'];
+                $scope.professional6 = ci['professional6'];
+                $scope.professional7 = ci['professional7'];
+                $scope.master1 = ci['master1'];
+                $scope.master2 = ci['master2'];
+                $scope.master3 = ci['master3'];
+                $scope.master4 = ci['master4'];
+                $scope.master5 = ci['master5'];
+                $scope.master6 = ci['master6'];
+                $scope.master7 = ci['master7'];
+                $scope.master8 = ci['master8'];
+                $scope.master9 = ci['master9'];
+                $scope.master10 = ci['master10'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'ci': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['ci'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -121,7 +127,7 @@ angular.module('continuumAssessmentPlatform.ci', ['ngRoute'])
             'master9': $scope.master9,
             'master10': $scope.master10,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

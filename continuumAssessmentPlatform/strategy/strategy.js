@@ -28,24 +28,30 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
       if(typeof $rootScope.assessments !== "undefined"){
         var assessments = $rootScope.assessments;
         var strategy = assessments['strategy'];
-        $scope.traveller1 = strategy['traveller1'];
-        $scope.artisan1 = strategy['artisan1'];
-        $scope.artisan2 = strategy['artisan2'];
-        $scope.artisan3 = strategy['artisan3'];
-        $scope.expert1 = strategy['expert1'];
-        $scope.expert2 = strategy['expert2'];
-        $scope.professional1 = strategy['professional1'];
-        $scope.professional2 = strategy['professional2'];
-        $scope.professional3 = strategy['professional3'];
-        $scope.master1 = strategy['master1'];
-        $scope.master2 = strategy['master2'];
-        $scope.master3 = strategy['master3'];
-        $scope.master4 = strategy['master4'];
+        if(strategy !== undefined) {
+            $scope.traveller1 = strategy['traveller1'];
+            $scope.artisan1 = strategy['artisan1'];
+            $scope.artisan2 = strategy['artisan2'];
+            $scope.artisan3 = strategy['artisan3'];
+            $scope.expert1 = strategy['expert1'];
+            $scope.expert2 = strategy['expert2'];
+            $scope.professional1 = strategy['professional1'];
+            $scope.professional2 = strategy['professional2'];
+            $scope.professional3 = strategy['professional3'];
+            $scope.master1 = strategy['master1'];
+            $scope.master2 = strategy['master2'];
+            $scope.master3 = strategy['master3'];
+            $scope.master4 = strategy['master4'];
+        }
       }
   };
 
   $scope.saveAssessments = function(){
-      $rootScope.assessments = {'strategy': {
+      if($rootScope.assessments === undefined){
+          $rootScope.assessments = {};
+      }
+
+      $rootScope.assessments['strategy'] = {
         'traveller1': $scope.traveller1,
           'artisan1': $scope.artisan1,
           'artisan2': $scope.artisan2,
@@ -60,7 +66,7 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
           'master3': $scope.master3,
           'master4': $scope.master4,
           'score': $scope.computeStrategyAssessmentScore()
-      }};
+      };
   };
 
   $scope.computeStrategyAssessmentScore = function(){

@@ -6,11 +6,18 @@ describe('continuumAssessmentPlatform.results module', function() {
 
     describe('results controller', function(){
 
-        it('should ....', inject(function($controller) {
-            //spec body
-            var resultsCtrl = $controller('ResultsCtrl');
-            expect(resultsCtrl).toBeDefined();
+        var controller;
+        var scope, rootScope;
+
+        beforeEach(inject(function($controller, $rootScope){
+            rootScope = $rootScope;
+            scope = rootScope.$new();
+            controller = $controller('ResultsCtrl', {'$scope': scope, '$rootScope': rootScope});
         }));
+
+        it('should be defined', function() {
+            expect(controller).toBeDefined();
+        });
 
     });
 });

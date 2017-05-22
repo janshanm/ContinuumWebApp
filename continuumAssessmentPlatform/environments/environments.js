@@ -50,45 +50,51 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var environments = assessments['environments'];
-            $scope.traveller1 = environments['traveller1'];
-            $scope.traveller2 = environments['traveller2'];
-            $scope.traveller3 = environments['traveller3'];
-            $scope.traveller4 = environments['traveller4'];
-            $scope.traveller5 = environments['traveller5'];
-            $scope.traveller6 = environments['traveller6'];
-            $scope.traveller7 = environments['traveller7'];
-            $scope.artisan1 = environments['artisan1'];
-            $scope.artisan2 = environments['artisan2'];
-            $scope.artisan3 = environments['artisan3'];
-            $scope.artisan4 = environments['artisan4'];
-            $scope.artisan5 = environments['artisan5'];
-            $scope.artisan6 = environments['artisan6'];
-            $scope.artisan7 = environments['artisan7'];
-            $scope.expert1 = environments['expert1'];
-            $scope.expert2 = environments['expert2'];
-            $scope.expert3 = environments['expert3'];
-            $scope.expert4 = environments['expert4'];
-            $scope.expert5 = environments['expert5'];
-            $scope.professional1 = environments['professional1'];
-            $scope.professional2 = environments['professional2'];
-            $scope.professional3 = environments['professional3'];
-            $scope.professional4 = environments['professional4'];
-            $scope.professional5 = environments['professional5'];
-            $scope.professional6 = environments['professional6'];
-            $scope.master1 = environments['master1'];
-            $scope.master2 = environments['master2'];
-            $scope.master3 = environments['master3'];
-            $scope.master4 = environments['master4'];
-            $scope.master5 = environments['master5'];
-            $scope.master6 = environments['master6'];
-            $scope.master7 = environments['master7'];
-            $scope.master8 = environments['master8'];
-            $scope.master9 = environments['master9'];
+            if(environments !== undefined) {
+                $scope.traveller1 = environments['traveller1'];
+                $scope.traveller2 = environments['traveller2'];
+                $scope.traveller3 = environments['traveller3'];
+                $scope.traveller4 = environments['traveller4'];
+                $scope.traveller5 = environments['traveller5'];
+                $scope.traveller6 = environments['traveller6'];
+                $scope.traveller7 = environments['traveller7'];
+                $scope.artisan1 = environments['artisan1'];
+                $scope.artisan2 = environments['artisan2'];
+                $scope.artisan3 = environments['artisan3'];
+                $scope.artisan4 = environments['artisan4'];
+                $scope.artisan5 = environments['artisan5'];
+                $scope.artisan6 = environments['artisan6'];
+                $scope.artisan7 = environments['artisan7'];
+                $scope.expert1 = environments['expert1'];
+                $scope.expert2 = environments['expert2'];
+                $scope.expert3 = environments['expert3'];
+                $scope.expert4 = environments['expert4'];
+                $scope.expert5 = environments['expert5'];
+                $scope.professional1 = environments['professional1'];
+                $scope.professional2 = environments['professional2'];
+                $scope.professional3 = environments['professional3'];
+                $scope.professional4 = environments['professional4'];
+                $scope.professional5 = environments['professional5'];
+                $scope.professional6 = environments['professional6'];
+                $scope.master1 = environments['master1'];
+                $scope.master2 = environments['master2'];
+                $scope.master3 = environments['master3'];
+                $scope.master4 = environments['master4'];
+                $scope.master5 = environments['master5'];
+                $scope.master6 = environments['master6'];
+                $scope.master7 = environments['master7'];
+                $scope.master8 = environments['master8'];
+                $scope.master9 = environments['master9'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'environments': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['environments'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -124,7 +130,7 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             'master8': $scope.master8,
             'master9': $scope.master9,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

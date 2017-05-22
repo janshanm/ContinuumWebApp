@@ -32,27 +32,33 @@ angular.module('continuumAssessmentPlatform.risk', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var risk = assessments['risk'];
-            $scope.traveller1 = risk['traveller1'];
-            $scope.traveller2 = risk['traveller2'];
-            $scope.artisan1 = risk['artisan1'];
-            $scope.artisan2 = risk['artisan2'];
-            $scope.artisan3 = risk['artisan3'];
-            $scope.expert1 = risk['expert1'];
-            $scope.expert2 = risk['expert2'];
-            $scope.expert3 = risk['expert3'];
-            $scope.professional1 = risk['professional1'];
-            $scope.professional2 = risk['professional2'];
-            $scope.professional3 = risk['professional3'];
-            $scope.master1 = risk['master1'];
-            $scope.master2 = risk['master2'];
-            $scope.master3 = risk['master3'];
-            $scope.master4 = risk['master4'];
-            $scope.master5 = risk['master5'];
+            if(risk !== undefined) {
+                $scope.traveller1 = risk['traveller1'];
+                $scope.traveller2 = risk['traveller2'];
+                $scope.artisan1 = risk['artisan1'];
+                $scope.artisan2 = risk['artisan2'];
+                $scope.artisan3 = risk['artisan3'];
+                $scope.expert1 = risk['expert1'];
+                $scope.expert2 = risk['expert2'];
+                $scope.expert3 = risk['expert3'];
+                $scope.professional1 = risk['professional1'];
+                $scope.professional2 = risk['professional2'];
+                $scope.professional3 = risk['professional3'];
+                $scope.master1 = risk['master1'];
+                $scope.master2 = risk['master2'];
+                $scope.master3 = risk['master3'];
+                $scope.master4 = risk['master4'];
+                $scope.master5 = risk['master5'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'risk': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['risk'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'artisan1': $scope.artisan1,
@@ -70,7 +76,7 @@ angular.module('continuumAssessmentPlatform.risk', ['ngRoute'])
             'master4': $scope.master4,
             'master5': $scope.master5,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

@@ -35,30 +35,36 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var featureTeams = assessments['featureTeams'];
-            $scope.traveller1 = featureTeams['traveller1'];
-            $scope.traveller2 = featureTeams['traveller2'];
-            $scope.traveller3 = featureTeams['traveller3'];
-            $scope.traveller4 = featureTeams['traveller4'];
-            $scope.artisan1 = featureTeams['artisan1'];
-            $scope.artisan2 = featureTeams['artisan2'];
-            $scope.artisan3 = featureTeams['artisan3'];
-            $scope.expert1 = featureTeams['expert1'];
-            $scope.expert2 = featureTeams['expert2'];
-            $scope.expert3 = featureTeams['expert3'];
-            $scope.expert4 = featureTeams['expert4'];
-            $scope.expert5 = featureTeams['expert5'];
-            $scope.professional1 = featureTeams['professional1'];
-            $scope.professional2 = featureTeams['professional2'];
-            $scope.professional3 = featureTeams['professional3'];
-            $scope.master1 = featureTeams['master1'];
-            $scope.master2 = featureTeams['master2'];
-            $scope.master3 = featureTeams['master3'];
-            $scope.master4 = featureTeams['master4'];
+            if(featureTeams !== undefined) {
+                $scope.traveller1 = featureTeams['traveller1'];
+                $scope.traveller2 = featureTeams['traveller2'];
+                $scope.traveller3 = featureTeams['traveller3'];
+                $scope.traveller4 = featureTeams['traveller4'];
+                $scope.artisan1 = featureTeams['artisan1'];
+                $scope.artisan2 = featureTeams['artisan2'];
+                $scope.artisan3 = featureTeams['artisan3'];
+                $scope.expert1 = featureTeams['expert1'];
+                $scope.expert2 = featureTeams['expert2'];
+                $scope.expert3 = featureTeams['expert3'];
+                $scope.expert4 = featureTeams['expert4'];
+                $scope.expert5 = featureTeams['expert5'];
+                $scope.professional1 = featureTeams['professional1'];
+                $scope.professional2 = featureTeams['professional2'];
+                $scope.professional3 = featureTeams['professional3'];
+                $scope.master1 = featureTeams['master1'];
+                $scope.master2 = featureTeams['master2'];
+                $scope.master3 = featureTeams['master3'];
+                $scope.master4 = featureTeams['master4'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'featureTeams': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['featureTeams'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -79,7 +85,7 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
             'master3': $scope.master3,
             'master4': $scope.master4,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

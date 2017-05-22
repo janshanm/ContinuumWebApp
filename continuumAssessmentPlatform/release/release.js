@@ -36,31 +36,37 @@ angular.module('continuumAssessmentPlatform.release', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var release = assessments['release'];
-            $scope.traveller1 = release['traveller1'];
-            $scope.traveller2 = release['traveller2'];
-            $scope.traveller3 = release['traveller3'];
-            $scope.traveller4 = release['traveller4'];
-            $scope.artisan1 = release['artisan1'];
-            $scope.artisan2 = release['artisan2'];
-            $scope.artisan3 = release['artisan3'];
-            $scope.artisan4 = release['artisan4'];
-            $scope.expert1 = release['expert1'];
-            $scope.expert2 = release['expert2'];
-            $scope.professional1 = release['professional1'];
-            $scope.professional2 = release['professional2'];
-            $scope.professional3 = release['professional3'];
-            $scope.professional4 = release['professional4'];
-            $scope.master1 = release['master1'];
-            $scope.master2 = release['master2'];
-            $scope.master3 = release['master3'];
-            $scope.master4 = release['master4'];
-            $scope.master5 = release['master5'];
-            $scope.master6 = release['master6'];
+            if(release !== undefined) {
+                $scope.traveller1 = release['traveller1'];
+                $scope.traveller2 = release['traveller2'];
+                $scope.traveller3 = release['traveller3'];
+                $scope.traveller4 = release['traveller4'];
+                $scope.artisan1 = release['artisan1'];
+                $scope.artisan2 = release['artisan2'];
+                $scope.artisan3 = release['artisan3'];
+                $scope.artisan4 = release['artisan4'];
+                $scope.expert1 = release['expert1'];
+                $scope.expert2 = release['expert2'];
+                $scope.professional1 = release['professional1'];
+                $scope.professional2 = release['professional2'];
+                $scope.professional3 = release['professional3'];
+                $scope.professional4 = release['professional4'];
+                $scope.master1 = release['master1'];
+                $scope.master2 = release['master2'];
+                $scope.master3 = release['master3'];
+                $scope.master4 = release['master4'];
+                $scope.master5 = release['master5'];
+                $scope.master6 = release['master6'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'release': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['release'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -82,7 +88,7 @@ angular.module('continuumAssessmentPlatform.release', ['ngRoute'])
             'master5': $scope.master5,
             'master6': $scope.master6,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

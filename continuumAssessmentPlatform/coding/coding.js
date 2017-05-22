@@ -31,26 +31,31 @@ angular.module('continuumAssessmentPlatform.coding', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var coding = assessments['coding'];
-            $scope.traveller1 = coding['traveller1'];
-            $scope.artisan1 = coding['artisan1'];
-            $scope.artisan2 = coding['artisan2'];
-            $scope.expert1 = coding['expert1'];
-            $scope.expert2 = coding['expert2'];
-            $scope.expert3 = coding['expert3'];
-            $scope.expert4 = coding['expert4'];
-            $scope.professional1 = coding['professional1'];
-            $scope.professional2 = coding['professional2'];
-            $scope.professional3 = coding['professional3'];
-            $scope.professional4 = coding['professional4'];
-            $scope.master1 = coding['master1'];
-            $scope.master2 = coding['master2'];
-            $scope.master3 = coding['master3'];
-            $scope.master4 = coding['master4'];
+            if(coding !== undefined) {
+                $scope.traveller1 = coding['traveller1'];
+                $scope.artisan1 = coding['artisan1'];
+                $scope.artisan2 = coding['artisan2'];
+                $scope.expert1 = coding['expert1'];
+                $scope.expert2 = coding['expert2'];
+                $scope.expert3 = coding['expert3'];
+                $scope.expert4 = coding['expert4'];
+                $scope.professional1 = coding['professional1'];
+                $scope.professional2 = coding['professional2'];
+                $scope.professional3 = coding['professional3'];
+                $scope.professional4 = coding['professional4'];
+                $scope.master1 = coding['master1'];
+                $scope.master2 = coding['master2'];
+                $scope.master3 = coding['master3'];
+                $scope.master4 = coding['master4'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'coding': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+        $rootScope.assessments['coding'] = {
             'traveller1': $scope.traveller1,
             'artisan1': $scope.artisan1,
             'artisan2': $scope.artisan2,
@@ -67,7 +72,7 @@ angular.module('continuumAssessmentPlatform.coding', ['ngRoute'])
             'master3': $scope.master3,
             'master4': $scope.master4,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

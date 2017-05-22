@@ -30,25 +30,31 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var teaming = assessments['teaming'];
-            $scope.traveller1 = teaming['traveller1'];
-            $scope.traveller2 = teaming['traveller2'];
-            $scope.traveller3 = teaming['traveller3'];
-            $scope.artisan1 = teaming['artisan1'];
-            $scope.artisan2 = teaming['artisan2'];
-            $scope.artisan3 = teaming['artisan3'];
-            $scope.expert1 = teaming['expert1'];
-            $scope.expert2 = teaming['expert2'];
-            $scope.expert3 = teaming['expert3'];
-            $scope.professional1 = teaming['professional1'];
-            $scope.professional2 = teaming['professional2'];
-            $scope.master1 = teaming['master1'];
-            $scope.master2 = teaming['master2'];
-            $scope.master3 = teaming['master3'];
+            if(teaming !== undefined) {
+                $scope.traveller1 = teaming['traveller1'];
+                $scope.traveller2 = teaming['traveller2'];
+                $scope.traveller3 = teaming['traveller3'];
+                $scope.artisan1 = teaming['artisan1'];
+                $scope.artisan2 = teaming['artisan2'];
+                $scope.artisan3 = teaming['artisan3'];
+                $scope.expert1 = teaming['expert1'];
+                $scope.expert2 = teaming['expert2'];
+                $scope.expert3 = teaming['expert3'];
+                $scope.professional1 = teaming['professional1'];
+                $scope.professional2 = teaming['professional2'];
+                $scope.master1 = teaming['master1'];
+                $scope.master2 = teaming['master2'];
+                $scope.master3 = teaming['master3'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'teaming': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['teaming'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -64,7 +70,7 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
             'master2': $scope.master2,
             'master3': $scope.master3,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){

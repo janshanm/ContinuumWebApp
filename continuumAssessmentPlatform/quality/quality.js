@@ -42,37 +42,43 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
         if(typeof $rootScope.assessments !== "undefined"){
             var assessments = $rootScope.assessments;
             var QA = assessments['QA'];
-            $scope.traveller1 = QA['traveller1'];
-            $scope.traveller2 = QA['traveller2'];
-            $scope.traveller3 = QA['traveller3'];
-            $scope.traveller4 = QA['traveller4'];
-            $scope.traveller5 = QA['traveller5'];
-            $scope.traveller6 = QA['traveller6'];
-            $scope.artisan1 = QA['artisan1'];
-            $scope.artisan2 = QA['artisan2'];
-            $scope.artisan3 = QA['artisan3'];
-            $scope.expert1 = QA['expert1'];
-            $scope.expert2 = QA['expert2'];
-            $scope.expert3 = QA['expert3'];
-            $scope.expert4 = QA['expert4'];
-            $scope.expert5 = QA['expert5'];
-            $scope.expert6 = QA['expert6'];
-            $scope.expert7 = QA['expert7'];
-            $scope.expert8 = QA['expert8'];
-            $scope.professional1 = QA['professional1'];
-            $scope.professional2 = QA['professional2'];
-            $scope.professional3 = QA['professional3'];
-            $scope.professional4 = QA['professional4'];
-            $scope.professional5 = QA['professional5'];
-            $scope.master1 = QA['master1'];
-            $scope.master2 = QA['master2'];
-            $scope.master3 = QA['master3'];
-            $scope.master4 = QA['master4'];
+            if(QA !== undefined) {
+                $scope.traveller1 = QA['traveller1'];
+                $scope.traveller2 = QA['traveller2'];
+                $scope.traveller3 = QA['traveller3'];
+                $scope.traveller4 = QA['traveller4'];
+                $scope.traveller5 = QA['traveller5'];
+                $scope.traveller6 = QA['traveller6'];
+                $scope.artisan1 = QA['artisan1'];
+                $scope.artisan2 = QA['artisan2'];
+                $scope.artisan3 = QA['artisan3'];
+                $scope.expert1 = QA['expert1'];
+                $scope.expert2 = QA['expert2'];
+                $scope.expert3 = QA['expert3'];
+                $scope.expert4 = QA['expert4'];
+                $scope.expert5 = QA['expert5'];
+                $scope.expert6 = QA['expert6'];
+                $scope.expert7 = QA['expert7'];
+                $scope.expert8 = QA['expert8'];
+                $scope.professional1 = QA['professional1'];
+                $scope.professional2 = QA['professional2'];
+                $scope.professional3 = QA['professional3'];
+                $scope.professional4 = QA['professional4'];
+                $scope.professional5 = QA['professional5'];
+                $scope.master1 = QA['master1'];
+                $scope.master2 = QA['master2'];
+                $scope.master3 = QA['master3'];
+                $scope.master4 = QA['master4'];
+            }
         }
     };
 
     $scope.saveAssessments = function(){
-        $rootScope.assessments = {'QA': {
+        if($rootScope.assessments === undefined){
+            $rootScope.assessments = {};
+        }
+
+        $rootScope.assessments['QA'] = {
             'traveller1': $scope.traveller1,
             'traveller2': $scope.traveller2,
             'traveller3': $scope.traveller3,
@@ -100,7 +106,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
             'master3': $scope.master3,
             'master4': $scope.master4,
             'score': $scope.computeStrategyAssessmentScore()
-        }};
+        };
     };
 
     $scope.computeStrategyAssessmentScore = function(){
