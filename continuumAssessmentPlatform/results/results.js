@@ -27,18 +27,18 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         $scope.init = function () {
             var assessments = $rootScope.assessments;
             if(typeof assessments !== "undefined") {
-                $scope.strategyScore = assessments['strategy'].score;
-                $scope.planningScore = assessments['planning'].score;
-                $scope.codingScore = assessments['coding'].score;
-                $scope.ciScore = assessments['ci'].score;
-                $scope.incidentScore = assessments['incident'].score;
-                $scope.riskScore = assessments['risk'].score;
-                $scope.designScore = assessments['design'].score;
-                $scope.teamingScore = assessments['teaming'].score;
-                $scope.releaseScore = assessments['release'].score;
-                $scope.QAScore = assessments['QA'].score;
-                $scope.environmentsScore = assessments['environments'].score;
-                $scope.featureTeamsScore = assessments['featureTeams'].score;
+                $scope.strategyScore = assessments['strategy'] !== undefined ? assessments['strategy'].score : 0;
+                $scope.planningScore = assessments['planning'] !== undefined ? assessments['planning'].score : 0;
+                $scope.codingScore = assessments['coding'] !== undefined ? assessments['coding'].score : 0;
+                $scope.ciScore = assessments['ci'] !== undefined ? assessments['ci'].score : 0;
+                $scope.incidentScore = assessments['incident'] !== undefined ? assessments['incident'].score : 0;
+                $scope.riskScore = assessments['risk'] !== undefined ? assessments['risk'].score : 0;
+                $scope.designScore = assessments['design'] !== undefined ? assessments['design'].score : 0;
+                $scope.teamingScore = assessments['teaming'] !== undefined ? assessments['teaming'].score : 0;
+                $scope.releaseScore = assessments['release'] !== undefined ? assessments['release'].score : 0;
+                $scope.QAScore = assessments['QA'] !== undefined ? assessments['QA'].score : 0;
+                $scope.environmentsScore = assessments['environments'] !== undefined ? assessments['environments'].score : 0;
+                $scope.featureTeamsScore = assessments['featureTeams'] !== undefined ? assessments['featureTeams'].score : 0;
             }
 
             new Chart(document.getElementById("radar-chart"), {
@@ -75,9 +75,15 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                             max: 5,
                             stepSize: 1
                         }
+                    },
+                    animation: {
+                        onComplete: function () {
+                            window.JSREPORT_READY_TO_START = true
+                        }
                     }
                 }
             });
+
         }
 
     }]);
