@@ -177,7 +177,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 0 if no question is answered', function(){
+      it('should save the score for incident as 0 if no question is answered', function(){
           scope.traveller1 = false;
           scope.artisan1 = false;
           scope.artisan2 = false;
@@ -205,7 +205,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 1 if traveller question answered', function(){
+      it('should save the score for incident as 1 if traveller question answered', function(){
           scope.traveller1 = true;
           scope.artisan1 = false;
           scope.artisan2 = true;
@@ -233,7 +233,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 2 if traveller question not answered and artisan questions answered', function(){
+      it('should save the score for incident as 2 if traveller question not answered and artisan questions answered', function(){
           scope.traveller1 = false;
           scope.artisan1 = true;
           scope.artisan2 = true;
@@ -261,7 +261,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 3 if expert questions answered and other questions answered accordingly', function(){
+      it('should save the score for incident as 3 if expert questions answered and other questions answered accordingly', function(){
           scope.traveller1 = false;
           scope.artisan1 = true;
           scope.artisan2 = true;
@@ -289,7 +289,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 4 if professional questions answered and other questions answered accordingly', function(){
+      it('should save the score for incident as 4 if professional questions answered and other questions answered accordingly', function(){
           scope.traveller1 = false;
           scope.artisan1 = true;
           scope.artisan2 = true;
@@ -317,7 +317,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for ci as 5 if master questions answered and other questions answered accordingly', function(){
+      it('should save the score for incident as 5 if master questions answered and other questions answered accordingly', function(){
           scope.traveller1 = false;
           scope.artisan1 = true;
           scope.artisan2 = true;

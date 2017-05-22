@@ -122,8 +122,6 @@ describe('continuumAssessmentPlatform.risk module', function() {
           expect(scope.master5).toBeFalsy();
       }));
 
-
-
       it('should save the values for the assessment results for risk and issue management', function(){
           scope.traveller1 = true;
           scope.traveller2 = true;
@@ -169,6 +167,162 @@ describe('continuumAssessmentPlatform.risk module', function() {
           expect(risk['master4']).toEqual(expectedRisk[['master4']]);
           expect(risk['master5']).toEqual(expectedRisk[['master5']]);
 
+      });
+
+      it('should save the score for risk as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+
+          var expectedRiskScore = 0;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
+      });
+
+      it('should save the score for risk as 1 if traveller question answered', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+
+          var expectedRiskScore = 1;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
+      });
+
+      it('should save the score for risk as 2 if traveller question not answered and artisan questions answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+
+          var expectedRiskScore = 2;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
+      });
+
+      it('should save the score for risk as 3 if expert questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+
+          var expectedRiskScore = 3;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
+      });
+
+      it('should save the score for risk as 4 if professional questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.master1 = true;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+
+          var expectedRiskScore = 4;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
+      });
+
+      it('should save the score for risk as 5 if master questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          scope.master5 = true;
+
+          var expectedRiskScore = 5;
+
+          scope.saveAssessments();
+          var risk = rootScope.assessments['risk'];
+
+          expect(risk['score']).toEqual(expectedRiskScore);
       });
 
   });
