@@ -170,5 +170,161 @@ describe('continuumAssessmentPlatform.design module', function() {
           expect(design['master2']).toEqual(expectedDesign[['master2']]);
       });
 
+      it('should save the score for software design as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+
+          var expectedDesignScore = 0;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 1 if traveller questions answered', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.traveller3 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+
+          var expectedDesignScore = 1;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 2 if appropriate traveller questions not answered and artisan questions answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+
+          var expectedDesignScore = 2;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 3 if expert questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.professional1 = true;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+
+          var expectedDesignScore = 3;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 4 if professional questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.master1 = true;
+          scope.master2 = false;
+
+          var expectedDesignScore = 4;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 5 if master questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.professional1 = false;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+
+          var expectedDesignScore = 5;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
   });
 });
