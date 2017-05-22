@@ -273,7 +273,273 @@ describe('continuumAssessmentPlatform.ci module', function() {
 
       });
 
+      it('should save the score for ci as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.expert7 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = false;
+          scope.professional7 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+          scope.master10 = false;
 
+          var expectedCIScore = 0;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 1 if traveller question is answered as yes', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.traveller3 = true;
+          scope.traveller4 = true;
+          scope.traveller5 = true;
+          scope.traveller6 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.expert7 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+          scope.master10 = false;
+
+          var expectedCIScore = 1;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 2 if artisan questions are answered as yes with the appropriate traveller ' +
+          'questions as no', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = true;
+          scope.traveller3 = false;
+          scope.traveller4 = true;
+          scope.traveller5 = false;
+          scope.traveller6 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.expert6 = false;
+          scope.expert7 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+          scope.master10 = false;
+
+          var expectedCIScore = 2;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 3 if expert questions are answered as yes with the appropriate traveller ' +
+          ' and artisan questions are answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = true;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.expert7 = true;
+          scope.professional1 = true;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+          scope.master10 = false;
+
+          var expectedCIScore = 3;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 4 if professional questions are answered as yes with the appropriate traveller ' +
+          ' artisan and expert questions are answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = true;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.expert7 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = true;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+          scope.master10 = false;
+
+          var expectedCIScore = 4;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 5 if master questions are answered as yes with the appropriate traveller ' +
+          ' artisan, expert and professional questions are answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = true;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.expert7 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          scope.master5 = true;
+          scope.master6 = true;
+          scope.master7 = true;
+          scope.master8 = true;
+          scope.master9 = true;
+          scope.master10 = true;
+
+          var expectedCIScore = 5;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
 
   });
 });
