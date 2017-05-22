@@ -497,7 +497,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['score']).toEqual(expectedEnvironmentsScore);
       });
 
-      it('should save the score for quality assurance as 5 if master questions answered and other questions answered accordingly', function(){
+      it('should save the score for environments as 5 if master questions answered and other questions answered accordingly', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
