@@ -155,5 +155,149 @@ describe('continuumAssessmentPlatform.teaming module', function() {
           expect(teaming['master2']).toEqual(expectedTeaming[['master2']]);
           expect(teaming['master3']).toEqual(expectedTeaming[['master3']]);
       });
+
+      it('should save the score for teaming as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedTeamingScore = 0;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
+
+      it('should save the score for teaming as 1 if traveller questions answered', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.traveller3 = true;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedTeamingScore = 1;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
+
+      it('should save the score for teaming as 2 if appropriate traveller questions not answered and artisan questions answered', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedTeamingScore = 2;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
+
+      it('should save the score for teaming as 3 if expert questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedTeamingScore = 3;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
+
+      it('should save the score for teaming as 4 if professional questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.master1 = true;
+          scope.master2 = false;
+          scope.master3 = false;
+
+          var expectedTeamingScore = 4;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
+
+      it('should save the score for teaming as 5 if master questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+
+          var expectedTeamingScore = 5;
+
+          scope.saveAssessments();
+          var teaming = rootScope.assessments['teaming'];
+
+          expect(teaming['score']).toEqual(expectedTeamingScore);
+      });
   });
 });
