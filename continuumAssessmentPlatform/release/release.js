@@ -80,8 +80,55 @@ angular.module('continuumAssessmentPlatform.release', ['ngRoute'])
             'master3': $scope.master3,
             'master4': $scope.master4,
             'master5': $scope.master5,
-            'master6': $scope.master6
+            'master6': $scope.master6,
+            'score': $scope.computeStrategyAssessmentScore()
         }};
-    }
+    };
+
+    $scope.computeStrategyAssessmentScore = function(){
+        if(isTraveller()){
+            return 1;
+        }
+        else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
+            return 2;
+        }
+        else if(isExpert() && !isProfessional() && !isMaster()){
+            return 3;
+        }
+        else if(isProfessional() && !isMaster()){
+            return 4;
+        }
+        else if(isMaster()){
+            return 5;
+        }
+        else{
+            return 0;
+        }
+
+    };
+
+    var isTraveller = function(){
+        return $scope.traveller1 && $scope.traveller2 && $scope.traveller3 && $scope.traveller4;
+    };
+
+    var isArtisan = function () {
+        return !$scope.traveller1 && $scope.traveller2 && !$scope.traveller3  && !$scope.traveller4
+            && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4;
+    };
+
+    var isExpert = function() {
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
+            && $scope.expert1 && $scope.expert2;
+    };
+
+    var isProfessional = function () {
+        return isExpert() && $scope.professional1 && $scope.professional2 && $scope.professional3 && $scope.professional4;
+    };
+
+    var isMaster = function () {
+        return isExpert() && $scope.professional1 && $scope.professional2 && !$scope.professional3
+            && $scope.professional4 && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4
+            && $scope.master5 && $scope.master6;
+    };
 
 }]);
