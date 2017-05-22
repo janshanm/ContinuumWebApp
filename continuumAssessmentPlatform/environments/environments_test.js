@@ -61,7 +61,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeDefined();
           expect(scope.expert4).toBeDefined();
           expect(scope.expert5).toBeDefined();
-          expect(scope.expert6).toBeDefined();
 
           expect(scope.expert1).toBeFalsy();
           expect(scope.expert2).toBeFalsy();
@@ -69,7 +68,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
-          expect(scope.expert6).toBeFalsy();
       });
 
       it('should have defaults as false for the professional questions', function(){
@@ -114,7 +112,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           rootScope = {'assessments': {'environments': {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true, 'traveller7': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false,
-              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
+              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false,
               'professional1': false, 'professional2': true, 'professional3': true, 'professional4': true, 'professional5': true, 'professional6': true,
               'master1': true, 'master2': false, 'master3': false, 'master4': false, 'master5': false, 'master6': false, 'master7': false, 'master8': false, 'master9': false}}};
 
@@ -139,7 +137,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
-          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeTruthy();
           expect(scope.professional3).toBeTruthy();
@@ -181,7 +178,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
-          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
           expect(scope.professional3).toBeFalsy();
@@ -219,7 +215,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
-          scope.expert6 = true;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -239,7 +234,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           var expectedEnvironments = {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true, 'traveller7': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false,
-              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true, 'expert6': true,
+              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true,
               'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false,
               'master1': false, 'master2': false, 'master3': false, 'master4': false, 'master5': false, 'master6': false, 'master7': false, 'master8': false, 'master9': false};
 
@@ -265,7 +260,6 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['expert3']).toEqual(expectedEnvironments[['expert3']]);
           expect(environments['expert4']).toEqual(expectedEnvironments[['expert4']]);
           expect(environments['expert5']).toEqual(expectedEnvironments[['expert5']]);
-          expect(environments['expert6']).toEqual(expectedEnvironments[['expert6']]);
           expect(environments['professional1']).toEqual(expectedEnvironments[['professional1']]);
           expect(environments['professional2']).toEqual(expectedEnvironments[['professional2']]);
           expect(environments['professional3']).toEqual(expectedEnvironments[['professional3']]);
@@ -282,6 +276,271 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['master8']).toEqual(expectedEnvironments[['master8']]);
           expect(environments['master9']).toEqual(expectedEnvironments[['master9']]);
       });
+
+      it('should save the score for environments as 0 if no question is answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.traveller7 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.artisan4 = false;
+          scope.artisan5 = false;
+          scope.artisan6 = false;
+          scope.artisan7 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+
+          var expectedEnvironmentsScore = 0;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
+      it('should save the score for environments as 1 if traveller questions answered', function(){
+          scope.traveller1 = true;
+          scope.traveller2 = true;
+          scope.traveller3 = true;
+          scope.traveller4 = true;
+          scope.traveller5 = true;
+          scope.traveller6 = true;
+          scope.traveller7 = true;
+          scope.artisan1 = true;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.artisan4 = false;
+          scope.artisan5 = false;
+          scope.artisan6 = false;
+          scope.artisan7 = false;
+          scope.expert1 = false;
+          scope.expert2 = false;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+
+          var expectedEnvironmentsScore = 1;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
+      it('should save the score for environments as 2 if appropriate traveller questions not answered and artisan questions answered', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.traveller7 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = true;
+          scope.artisan6 = true;
+          scope.artisan7 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = false;
+          scope.expert4 = false;
+          scope.expert5 = false;
+          scope.professional1 = false;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+
+          var expectedEnvironmentsScore = 2;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
+      it('should save the score for environments as 3 if expert questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.traveller7 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = false;
+          scope.artisan6 = true;
+          scope.artisan7 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.professional1 = true;
+          scope.professional2 = false;
+          scope.professional3 = false;
+          scope.professional4 = false;
+          scope.professional5 = false;
+          scope.professional6 = false;
+          scope.master1 = false;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+
+          var expectedEnvironmentsScore = 3;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
+      it('should save the score for environments as 4 if professional questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.traveller7 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = false;
+          scope.artisan6 = true;
+          scope.artisan7 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.master1 = true;
+          scope.master2 = false;
+          scope.master3 = false;
+          scope.master4 = false;
+          scope.master5 = false;
+          scope.master6 = false;
+          scope.master7 = false;
+          scope.master8 = false;
+          scope.master9 = false;
+
+          var expectedEnvironmentsScore = 4;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
+      it('should save the score for quality assurance as 5 if master questions answered and other questions answered accordingly', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.traveller7 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.artisan5 = false;
+          scope.artisan6 = true;
+          scope.artisan7 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          scope.master5 = true;
+          scope.master6 = true;
+          scope.master7 = true;
+          scope.master8 = true;
+          scope.master9 = true;
+
+          var expectedEnvironmentsScore = 5;
+
+          scope.saveAssessments();
+          var environments = rootScope.assessments['environments'];
+
+          expect(environments['score']).toEqual(expectedEnvironmentsScore);
+      });
+
 
   });
 });

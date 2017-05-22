@@ -409,7 +409,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(QA['score']).toEqual(expectedQAScore);
       });
 
-      it('should save the values for the assessment results for quality assurance', function(){
+      it('should save the score for quality assurance as 5 if master questions answered and other questions answered accordingly', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;

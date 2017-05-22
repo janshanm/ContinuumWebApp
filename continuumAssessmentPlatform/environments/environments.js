@@ -30,7 +30,6 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
     $scope.expert3 = false;
     $scope.expert4 = false;
     $scope.expert5 = false;
-    $scope.expert6 = false;
     $scope.professional1 = false;
     $scope.professional2 = false;
     $scope.professional3 = false;
@@ -70,7 +69,6 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             $scope.expert3 = environments['expert3'];
             $scope.expert4 = environments['expert4'];
             $scope.expert5 = environments['expert5'];
-            $scope.expert6 = environments['expert6'];
             $scope.professional1 = environments['professional1'];
             $scope.professional2 = environments['professional2'];
             $scope.professional3 = environments['professional3'];
@@ -110,7 +108,6 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             'expert3': $scope.expert3,
             'expert4': $scope.expert4,
             'expert5': $scope.expert5,
-            'expert6': $scope.expert6,
             'professional1': $scope.professional1,
             'professional2': $scope.professional2,
             'professional3': $scope.professional3,
@@ -125,8 +122,57 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             'master6': $scope.master6,
             'master7': $scope.master7,
             'master8': $scope.master8,
-            'master9': $scope.master9
+            'master9': $scope.master9,
+            'score': $scope.computeStrategyAssessmentScore()
         }};
-    }
+    };
+
+    $scope.computeStrategyAssessmentScore = function(){
+        if(isTraveller()){
+            return 1;
+        }
+        else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
+            return 2;
+        }
+        else if(isExpert() && !isProfessional() && !isMaster()){
+            return 3;
+        }
+        else if(isProfessional() && !isMaster()){
+            return 4;
+        }
+        else if(isMaster()){
+            return 5;
+        }
+        else{
+            return 0;
+        }
+
+    };
+
+    var isTraveller = function(){
+        return $scope.traveller1 && $scope.traveller2 && $scope.traveller3 && $scope.traveller4
+            && $scope.traveller5 && $scope.traveller6 && $scope.traveller7;
+    };
+
+    var isArtisan = function () {
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
+            && $scope.artisan5 && $scope.artisan6 && $scope.artisan7;
+    };
+
+    var isExpert = function() {
+        return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
+            && !$scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.expert1 && $scope.expert2
+            && $scope.expert3 && $scope.expert4 && $scope.expert5;
+    };
+
+    var isProfessional = function () {
+        return isExpert() && $scope.professional1 && $scope.professional2 && $scope.professional3
+            && $scope.professional4 && $scope.professional5 && $scope.professional6;
+    };
+
+    var isMaster = function () {
+        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4
+            && $scope.master5 && $scope.master6 && $scope.master7 && $scope.master8 && $scope.master9;
+    };
 
 }]);
