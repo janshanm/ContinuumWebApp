@@ -9,7 +9,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         });
     }])
 
-    .controller('ResultsCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+    .controller('ResultsCtrl', ['$scope', '$rootScope', 'SaveResults', function($scope, $rootScope, SaveResults) {
 
         $scope.strategyScore = 0;
         $scope.planningScore = 0;
@@ -23,6 +23,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         $scope.QAScore = 0;
         $scope.environmentsScore = 0;
         $scope.featureTeamsScore = 0;
+        $scope.resultsData = {};
 
         $scope.init = function () {
             var assessments = $rootScope.assessments;
@@ -40,6 +41,20 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 $scope.environmentsScore = assessments['environments'] !== undefined ? assessments['environments'].score : 0;
                 $scope.featureTeamsScore = assessments['featureTeams'] !== undefined ? assessments['featureTeams'].score : 0;
             }
+
+            $scope.resultsData['teamName'] = $rootScope.teamName;
+            $scope.resultsData['strategy'] = $scope.strategyScore;
+            $scope.resultsData['planning'] = $scope.planningScore;
+            $scope.resultsData['coding'] = $scope.codingScore;
+            $scope.resultsData['ci'] = $scope.ciScore;
+            $scope.resultsData['incident'] = $scope.incidentScore;
+            $scope.resultsData['risk'] = $scope.riskScore;
+            $scope.resultsData['design'] = $scope.designScore;
+            $scope.resultsData['teaming'] = $scope.teamingScore;
+            $scope.resultsData['release'] = $scope.releaseScore;
+            $scope.resultsData['qa'] = $scope.QAScore;
+            $scope.resultsData['environments'] = $scope.environmentsScore;
+            $scope.resultsData['featureTeams'] = $scope.featureTeamsScore;
 
             new Chart(document.getElementById("radar-chart"), {
                 type: 'radar',
@@ -84,6 +99,31 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             });
 
-        }
+        };
+        
+        $scope.saveAssessmentResult = function () {
+            SaveResults.saveAssessments($scope.resultsData).then(function (response) {
+                console.log(response.data);
+                $scope.isSaved = true;
+                $scope.isNotSaved = false;
+            }, function (errorResponse) {
+                console.log(errorResponse.data);
+                $scope.isNotSaved = true;
+                $scope.isSaved = false;
+            });
+        };
 
+    }])
+
+    .factory('SaveResults', ['$http', function ($http) {
+        return {
+            saveAssessments: function (data) {
+                console.log("Data: ", data);
+                return $http({
+                    url: "http://localhost:4567/saveTeamData",
+                    method: "POST",
+                    params: data
+                });
+            }
+    }
     }]);

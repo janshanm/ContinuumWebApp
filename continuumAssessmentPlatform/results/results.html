@@ -1,5 +1,14 @@
 <p class="lead" ng-init="init()" style="margin-left: 50px">Please find assessment results. The Tasks to move to the next Continuum Levels have been specified.</p>
+<div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
+    <p>Assessment results successfully saved</p>
+</div>
+<div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
+    <p>Something went wrong. Assessment results not saved.</p>
+</div>
 <canvas id="radar-chart" width="800" height="600"></canvas>
+<p align="right">
+    <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
+</p>
 
 
 
