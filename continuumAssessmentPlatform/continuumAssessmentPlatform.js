@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('continuumAssessmentPlatform', [
   'ngRoute',
+  'continuumAssessmentPlatform.teamselection',
   'continuumAssessmentPlatform.strategy',
   'continuumAssessmentPlatform.planning',
   'continuumAssessmentPlatform.coding',
@@ -22,5 +23,5 @@ angular.module('continuumAssessmentPlatform', [
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/strategy'});
+  $routeProvider.otherwise({redirectTo: '/select-team'});
 }]);

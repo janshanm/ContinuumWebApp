@@ -1,0 +1,12 @@
+<p class="lead" ng-init="init()" style="margin-left: 50px">Please select team to assess from drop down menu</p>
+<div class="alert alert-danger" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="hasError">
+    <p>Please select a team before proceeding.</p>
+</div>
+<label for="teamSelect" style="padding-left: 50px"> Select Team Name: </label>
+<select name="teamSelect" id="teamSelect" ng-model="selectedTeam">
+    <option value="">---Please select---</option>
+    <option ng-repeat="team in teams" value="{{team.name}}">{{team.name}}</option>
+</select>
+<p align="center">
+    <a class="btn btn-primary btn-lg" href="" ng-click="saveTeamName()">Assess</a>
+</p>

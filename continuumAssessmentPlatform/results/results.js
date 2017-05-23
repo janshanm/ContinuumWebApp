@@ -50,7 +50,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                     ],
                     datasets: [
                         {
-                            label: "TEAM",
+                            label: "TEAM: " + $rootScope.teamName,
                             fill: true,
                             backgroundColor: "rgba(255,99,132,0.2)",
                             borderColor: "rgba(255,99,132,1)",
@@ -66,7 +66,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 options: {
                     title: {
                         display: true,
-                        text: 'Assessment Results for Team'
+                        text: 'Assessment Results for ' + $rootScope.teamName
                     },
                     scale: {
                         ticks: {
