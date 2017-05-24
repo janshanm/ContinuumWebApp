@@ -55,6 +55,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.resultsData['qa'] = $scope.QAScore;
             $scope.resultsData['environments'] = $scope.environmentsScore;
             $scope.resultsData['featureTeams'] = $scope.featureTeamsScore;
+            $scope.resultsData['portfolioName'] = $rootScope.selectedPortfolioName;
 
             new Chart(document.getElementById("radar-chart"), {
                 type: 'radar',
@@ -65,7 +66,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                     ],
                     datasets: [
                         {
-                            label: "TEAM: " + $rootScope.teamName,
+                            label: "TEAM: " + $rootScope.teamName + " for Portfolio: " + $rootScope.selectedPortfolioName,
                             fill: true,
                             backgroundColor: "rgba(255,99,132,0.2)",
                             borderColor: "rgba(255,99,132,1)",
@@ -81,7 +82,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 options: {
                     title: {
                         display: true,
-                        text: 'Assessment Results for ' + $rootScope.teamName
+                        text: 'Assessment Results for ' + $rootScope.teamName + " for Portfolio: " + $rootScope.selectedPortfolioName
                     },
                     scale: {
                         ticks: {

@@ -1,0 +1,16 @@
+<p class="lead" style="margin-left: 50px" ng-init="init()">Please Review The Information Selected Below. For any section with incorrect information select the
+    section on the menu to review.</p>
+
+<p style="margin-left: 50px">Assessment Date: {{dateOfAssessment}}</p>
+
+<label for="selectedPortfolio" style="padding-left: 50px"> Select Different Portfolio: </label>
+<select name="selectedPortfolio" id="selectedPortfolio" ng-model="selectedPortfolio" ng-change="updatePortfolio()">
+    <option ng-repeat="assessmentPortfolio in assessmentPortfolios" value="{{assessmentPortfolio}}">{{assessmentPortfolio}}</option>
+</select>
+
+<label for="dateOfAssessment" style="padding-left: 50px"> Select Different Assessment Date: </label>
+<select name="dateOfAssessment" id="dateOfAssessment" ng-model="dateOfAssessment" ng-change="updateChart()">
+    <option ng-repeat="assessmentDate in assessmentDates" value="{{assessmentDate}}">{{assessmentDate}}</option>
+</select>
+<canvas id="radar-chart-previous" width="800" height="600"></canvas>
+
