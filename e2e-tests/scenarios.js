@@ -3,15 +3,67 @@
 describe('continuum assessment platform', function() {
 
     it('should automatically redirect to /strategy when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+    browser.get('continuumAssessmentPlatform');
+    expect(browser.getLocationAbsUrl()).toMatch("/select-team");
+    });
+
+    describe('Complete Flow', function(){
+        beforeEach(function() {
+            browser.get('continuumAssessmentPlatform');
+        });
+
+        it('should go through a positive flow successfully', function(){
+            element(by.css('option[value="PBB"]')).click();
+            element(by.css('option[value="USSD"]')).click();
+            browser.sleep(3000);
+            element(by.id('assessTeamLink')).click();
+
+            expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+
+            element(by.id('strategyArtisan1')).click();
+            element(by.id('strategyArtisan2')).click();
+            element(by.id('strategyArtisan3')).click();
+            browser.sleep(3000);
+
+            element(by.id('nextButtonStrategy')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/planning");
+
+            element(by.id('planningTraveller1')).click();
+            element(by.id('planningTraveller2')).click();
+            element(by.id('planningTraveller3')).click();
+            element(by.id('planningTraveller4')).click();
+            element(by.id('planningTraveller5')).click();
+            browser.sleep(3000);
+
+            element(by.id('nextButtonPlanning')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/coding");
+
+        });
+    });
+
+    describe('Select Team Page', function(){
+        beforeEach(function() {
+            browser.get('continuumAssessmentPlatform');
+        });
+
+        it('should have error on the page if Assess is clicked without selecting a team', function(){
+            element(by.id('assessTeamLink')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/select-team");
+            expect(element(by.id('teamError')).isDisplayed()).toBeTruthy();
+        });
+
+        it('should go to strategy page when a team is selected', function(){
+            element(by.cssContainingText('option', 'ATM')).click();
+            element(by.id('assessTeamLink')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+        });
     });
 
 
     describe('strategy', function() {
 
         beforeEach(function() {
-          browser.get('index.html#!/strategy');
+          browser.get('continuumAssessmentPlatform/#!/strategy');
         });
 
 
@@ -26,7 +78,7 @@ describe('continuum assessment platform', function() {
     describe('planning', function() {
 
         beforeEach(function() {
-          browser.get('index.html#!/planning');
+          browser.get('continuumAssessmentPlatform/#!/planning');
         });
 
 
@@ -40,7 +92,7 @@ describe('continuum assessment platform', function() {
     describe('coding', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/coding');
+            browser.get('continuumAssessmentPlatform/#!/coding');
         });
 
 
@@ -54,7 +106,7 @@ describe('continuum assessment platform', function() {
     describe('ci', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/ci');
+            browser.get('continuumAssessmentPlatform/#!/ci');
         });
 
 
@@ -68,7 +120,7 @@ describe('continuum assessment platform', function() {
     describe('incident', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/incident');
+            browser.get('continuumAssessmentPlatform/#!/incident');
         });
 
 
@@ -82,7 +134,7 @@ describe('continuum assessment platform', function() {
     describe('risk', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/risk');
+            browser.get('continuumAssessmentPlatform/#!/risk');
         });
 
 
@@ -96,7 +148,7 @@ describe('continuum assessment platform', function() {
     describe('design', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/design');
+            browser.get('continuumAssessmentPlatform/#!/design');
         });
 
 
@@ -110,7 +162,7 @@ describe('continuum assessment platform', function() {
     describe('teaming', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/teaming');
+            browser.get('continuumAssessmentPlatform/#!/teaming');
         });
 
 
@@ -124,7 +176,7 @@ describe('continuum assessment platform', function() {
     describe('release', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/release');
+            browser.get('continuumAssessmentPlatform/#!/release');
         });
 
 
@@ -138,7 +190,7 @@ describe('continuum assessment platform', function() {
     describe('quality', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/quality');
+            browser.get('continuumAssessmentPlatform/#!/quality');
         });
 
 
@@ -152,7 +204,7 @@ describe('continuum assessment platform', function() {
     describe('environments', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/environments');
+            browser.get('continuumAssessmentPlatform/#!/environments');
         });
 
 
@@ -166,7 +218,7 @@ describe('continuum assessment platform', function() {
     describe('featureteams', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/featureteams');
+            browser.get('continuumAssessmentPlatform/#!/featureteams');
         });
 
 
@@ -180,7 +232,7 @@ describe('continuum assessment platform', function() {
     describe('review', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/review');
+            browser.get('continuumAssessmentPlatform/#!/review');
         });
 
 
@@ -194,7 +246,7 @@ describe('continuum assessment platform', function() {
     describe('results', function() {
 
         beforeEach(function() {
-            browser.get('index.html#!/results');
+            browser.get('continuumAssessmentPlatform/#!/results');
         });
 
 
