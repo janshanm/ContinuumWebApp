@@ -57,48 +57,9 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.resultsData['featureTeams'] = $scope.featureTeamsScore;
             $scope.resultsData['portfolioName'] = $rootScope.selectedPortfolioName;
 
-            new Chart(document.getElementById("radar-chart"), {
-                type: 'radar',
-                data: {
-                    labels: ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
-                        "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
-                        "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
-                    ],
-                    datasets: [
-                        {
-                            label: "TEAM: " + $rootScope.teamName + " for Portfolio: " + $rootScope.selectedPortfolioName,
-                            fill: true,
-                            backgroundColor: "rgba(255,99,132,0.2)",
-                            borderColor: "rgba(255,99,132,1)",
-                            pointBorderColor: "#fff",
-                            pointBackgroundColor: "rgba(255,99,132,1)",
-                            data: [$scope.strategyScore,$scope.planningScore,$scope.codingScore,$scope.ciScore,
-                                $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore,
-                                $scope.releaseScore, $scope.QAScore, $scope.environmentsScore, $scope.featureTeamsScore
-                            ]
-                        }
-                    ]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Assessment Results for ' + $rootScope.teamName + " for Portfolio: " + $rootScope.selectedPortfolioName
-                    },
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 5,
-                            stepSize: 1
-                        }
-                    },
-                    animation: {
-                        onComplete: function () {
-                            window.JSREPORT_READY_TO_START = true
-                        }
-                    }
-                }
-            });
+            SaveResults.drawChart($rootScope.teamName, $scope.strategyScore, $scope.planningScore, $scope.codingScore, $scope.ciScore,
+                $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore, $scope.releaseScore,
+                $scope.QAScore, $scope.environmentsScore, $scope.featureTeamsScore, $rootScope.selectedPortfolioName);
 
         };
         
@@ -124,6 +85,52 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                     url: "http://localhost:4567/saveTeamData",
                     method: "POST",
                     params: data
+                });
+            },
+            drawChart: function (teamName, strategyScore, planningScore, codingScore, ciScore, incidentScore, riskScore,
+                                 designScore, teamingScore, releaseScore, QAScore, environmentsScore, featureTeamsScore,
+                                 selectedPortfolioName) {
+                new Chart(document.getElementById("radar-chart"), {
+                    type: 'radar',
+                    data: {
+                        labels: ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
+                            "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
+                            "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
+                        ],
+                        datasets: [
+                            {
+                                label: "TEAM: " + teamName + " for Portfolio: " + selectedPortfolioName,
+                                fill: true,
+                                backgroundColor: "rgba(255,99,132,0.2)",
+                                borderColor: "rgba(255,99,132,1)",
+                                pointBorderColor: "#fff",
+                                pointBackgroundColor: "rgba(255,99,132,1)",
+                                data: [strategyScore, planningScore, codingScore, ciScore,
+                                    incidentScore, riskScore, designScore, teamingScore,
+                                    releaseScore, QAScore, environmentsScore, featureTeamsScore
+                                ]
+                            }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Assessment Results for ' + teamName + " for Portfolio: " + selectedPortfolioName
+                        },
+                        scale: {
+                            ticks: {
+                                beginAtZero: true,
+                                min: 0,
+                                max: 5,
+                                stepSize: 1
+                            }
+                        },
+                        animation: {
+                            onComplete: function () {
+                                window.JSREPORT_READY_TO_START = true
+                            }
+                        }
+                    }
                 });
             }
     }
