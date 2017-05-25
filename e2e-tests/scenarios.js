@@ -15,7 +15,6 @@ describe('continuum assessment platform', function() {
         it('should go through a positive flow successfully', function(){
             element(by.css('option[value="PBB"]')).click();
             element(by.css('option[value="USSD"]')).click();
-            browser.sleep(3000);
             element(by.id('assessTeamLink')).click();
 
             expect(browser.getLocationAbsUrl()).toMatch("/strategy");
@@ -23,7 +22,6 @@ describe('continuum assessment platform', function() {
             element(by.id('strategyArtisan1')).click();
             element(by.id('strategyArtisan2')).click();
             element(by.id('strategyArtisan3')).click();
-            browser.sleep(3000);
 
             element(by.id('nextButtonStrategy')).click();
             expect(browser.getLocationAbsUrl()).toMatch("/planning");
@@ -33,7 +31,6 @@ describe('continuum assessment platform', function() {
             element(by.id('planningTraveller3')).click();
             element(by.id('planningTraveller4')).click();
             element(by.id('planningTraveller5')).click();
-            browser.sleep(3000);
 
             element(by.id('nextButtonPlanning')).click();
             expect(browser.getLocationAbsUrl()).toMatch("/coding");
