@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "continuum-assessment-platform",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A user interface for the continuum assessment platform",
+  "repository": "https://github.com/brianleke/continuum-assessment-platform",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
