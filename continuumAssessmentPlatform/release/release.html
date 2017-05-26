@@ -5,7 +5,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller1">
+                <input id="releaseTraveller1" type="checkbox" ng-model="traveller1">
             </label>
         </p>
     </div>
@@ -21,7 +21,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller2">
+                <input id="releaseTraveller2" type="checkbox" ng-model="traveller2">
             </label>
         </p>
     </div>
@@ -39,7 +39,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller3">
+                <input id="releaseTraveller3" type="checkbox" ng-model="traveller3">
             </label>
         </p>
     </div>
@@ -56,7 +56,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller4">
+                <input id="releaseTraveller4" type="checkbox" ng-model="traveller4">
             </label>
         </p>
     </div>
@@ -75,7 +75,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan1">
+                <input id="releaseArtisan1" type="checkbox" ng-model="artisan1">
             </label>
         </p>
     </div>
@@ -91,7 +91,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan2">
+                <input id="releaseArtisan2" type="checkbox" ng-model="artisan2">
             </label>
         </p>
     </div>
@@ -107,7 +107,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan3">
+                <input id="releaseArtisan3" type="checkbox" ng-model="artisan3">
             </label>
         </p>
     </div>
@@ -124,7 +124,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan4">
+                <input id="releaseArtisan4" type="checkbox" ng-model="artisan4">
             </label>
         </p>
     </div>
@@ -143,7 +143,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="expert1">
+                <input id="releaseExpert1" type="checkbox" ng-model="expert1">
             </label>
         </p>
     </div>
@@ -160,7 +160,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="expert2">
+                <input id="releaseExpert2" type="checkbox" ng-model="expert2">
             </label>
         </p>
     </div>
@@ -178,7 +178,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional1">
+                <input id="releaseProfessional1" type="checkbox" ng-model="professional1">
             </label>
         </p>
     </div>
@@ -193,7 +193,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional2">
+                <input id="releaseProfessional2" type="checkbox" ng-model="professional2">
             </label>
         </p>
     </div>
@@ -209,7 +209,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional3">
+                <input id="releaseProfessional3" type="checkbox" ng-model="professional3">
             </label>
         </p>
     </div>
@@ -226,7 +226,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional4">
+                <input id="releaseProfessional4" type="checkbox" ng-model="professional4">
             </label>
         </p>
     </div>
@@ -244,7 +244,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master1">
+                <input id="releaseMaster1" type="checkbox" ng-model="master1">
             </label>
         </p>
     </div>
@@ -260,7 +260,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master2">
+                <input id="releaseMaster2" type="checkbox" ng-model="master2">
             </label>
         </p>
     </div>
@@ -276,7 +276,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master3">
+                <input id="releaseMaster3" type="checkbox" ng-model="master3">
             </label>
         </p>
     </div>
@@ -292,7 +292,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master4">
+                <input id="releaseMaster4" type="checkbox" ng-model="master4">
             </label>
         </p>
     </div>
@@ -309,7 +309,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master5">
+                <input id="releaseMaster5" type="checkbox" ng-model="master5">
             </label>
         </p>
     </div>
@@ -325,7 +325,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master6">
+                <input id="releaseMaster6" type="checkbox" ng-model="master6">
             </label>
         </p>
     </div>
@@ -340,6 +340,6 @@
 </div>
 <hr>
 <p align="right">
-    <a class="btn btn-primary btn-lg" href="#!/teaming">Last Dimension</a>
-    <a class="btn btn-primary btn-lg" href="#!/quality" ng-click="saveAssessments()">Next Dimension</a>
+    <a id="previousButtonRelease" class="btn btn-primary btn-lg" href="#!/teaming">Last Dimension</a>
+    <a id="nextButtonRelease" class="btn btn-primary btn-lg" href="#!/quality" ng-click="saveAssessments()">Next Dimension</a>
 </p>

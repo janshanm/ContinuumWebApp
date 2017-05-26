@@ -5,7 +5,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller1">
+                <input id="riskTraveller1" type="checkbox" ng-model="traveller1">
             </label>
         </p>
     </div>
@@ -23,7 +23,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="traveller2">
+                <input id="riskTraveller2" type="checkbox" ng-model="traveller2">
             </label>
         </p>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan1">
+                <input id="riskArtisan1" type="checkbox" ng-model="artisan1">
             </label>
         </p>
     </div>
@@ -57,7 +57,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan2">
+                <input id="riskArtisan2" type="checkbox" ng-model="artisan2">
             </label>
         </p>
     </div>
@@ -73,7 +73,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="artisan3">
+                <input id="riskArtisan3" type="checkbox" ng-model="artisan3">
             </label>
         </p>
     </div>
@@ -92,7 +92,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="expert1">
+                <input id="riskExpert1" type="checkbox" ng-model="expert1">
             </label>
         </p>
     </div>
@@ -110,7 +110,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="expert2">
+                <input id="riskExpert2" type="checkbox" ng-model="expert2">
             </label>
         </p>
     </div>
@@ -126,7 +126,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="expert3">
+                <input id="riskExpert3" type="checkbox" ng-model="expert3">
             </label>
         </p>
     </div>
@@ -145,7 +145,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional1">
+                <input id="riskProfessional1" type="checkbox" ng-model="professional1">
             </label>
         </p>
     </div>
@@ -161,7 +161,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional2">
+                <input id="riskProfessional2" type="checkbox" ng-model="professional2">
             </label>
         </p>
     </div>
@@ -177,7 +177,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="professional3">
+                <input id="riskProfessional3" type="checkbox" ng-model="professional3">
             </label>
         </p>
     </div>
@@ -195,7 +195,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master1">
+                <input id="riskMaster1" type="checkbox" ng-model="master1">
             </label>
         </p>
     </div>
@@ -211,7 +211,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master2">
+                <input id="riskMaster2" type="checkbox" ng-model="master2">
             </label>
         </p>
     </div>
@@ -227,7 +227,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master3">
+                <input id="riskMaster3" type="checkbox" ng-model="master3">
             </label>
         </p>
     </div>
@@ -245,7 +245,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master4">
+                <input id="riskMaster4" type="checkbox" ng-model="master4">
             </label>
         </p>
     </div>
@@ -260,7 +260,7 @@
     <div class="col-xs-1">
         <p align="center">
             <label>
-                <input type="checkbox" ng-model="master5">
+                <input id="riskMaster5" type="checkbox" ng-model="master5">
             </label>
         </p>
     </div>
@@ -274,6 +274,6 @@
 </div>
 <hr>
 <p align="right">
-    <a class="btn btn-primary btn-lg" href="#!/incident">Last Dimension</a>
-    <a class="btn btn-primary btn-lg" href="#!/design" ng-click="saveAssessments()">Next Dimension</a>
+    <a id="previousButtonRisk" class="btn btn-primary btn-lg" href="#!/incident">Last Dimension</a>
+    <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/design" ng-click="saveAssessments()">Next Dimension</a>
 </p>

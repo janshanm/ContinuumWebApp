@@ -35,6 +35,111 @@ describe('continuum assessment platform', function() {
             element(by.id('nextButtonPlanning')).click();
             expect(browser.getLocationAbsUrl()).toMatch("/coding");
 
+            element(by.id('codingArtisan1')).click();
+            element(by.id('codingArtisan2')).click();
+            element(by.id('codingExpert1')).click();
+            element(by.id('codingExpert2')).click();
+            element(by.id('codingExpert3')).click();
+            element(by.id('codingExpert4')).click();
+            element(by.id('codingProfessional1')).click();
+            element(by.id('codingProfessional2')).click();
+            element(by.id('codingProfessional3')).click();
+            element(by.id('codingProfessional4')).click();
+
+            element(by.id('nextButtonCoding')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/ci");
+
+            element(by.id('ciTraveller1')).click();
+            element(by.id('ciTraveller2')).click();
+            element(by.id('ciTraveller3')).click();
+            element(by.id('ciTraveller4')).click();
+            element(by.id('ciTraveller5')).click();
+            element(by.id('ciTraveller6')).click();
+
+            element(by.id('nextButtonCi')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/incident");
+
+            element(by.id('incidentArtisan1')).click();
+            element(by.id('incidentArtisan2')).click();
+            element(by.id('incidentArtisan3')).click();
+            element(by.id('incidentExpert1')).click();
+            element(by.id('incidentExpert2')).click();
+            element(by.id('incidentExpert3')).click();
+            element(by.id('incidentExpert4')).click();
+            element(by.id('incidentExpert5')).click();
+            element(by.id('incidentExpert6')).click();
+
+            element(by.id('nextButtonIncident')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/risk");
+
+            element(by.id('riskArtisan1')).click();
+            element(by.id('riskArtisan2')).click();
+            element(by.id('riskArtisan3')).click();
+
+            element(by.id('nextButtonRisk')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/design");
+
+            element(by.id('designTraveller1')).click();
+            element(by.id('designTraveller2')).click();
+            element(by.id('designTraveller3')).click();
+
+            element(by.id('nextButtonDesign')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/teaming");
+
+            element(by.id('teamingTraveller1')).click();
+            element(by.id('teamingArtisan1')).click();
+            element(by.id('teamingArtisan2')).click();
+            element(by.id('teamingArtisan3')).click();
+
+            element(by.id('nextButtonTeaming')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/release");
+
+            element(by.id('releaseTraveller1')).click();
+            element(by.id('releaseTraveller2')).click();
+            element(by.id('releaseTraveller3')).click();
+            element(by.id('releaseTraveller4')).click();
+
+            element(by.id('nextButtonRelease')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/quality");
+
+            element(by.id('qualityTraveller1')).click();
+            element(by.id('qualityTraveller2')).click();
+            element(by.id('qualityTraveller3')).click();
+            element(by.id('qualityTraveller4')).click();
+            element(by.id('qualityTraveller5')).click();
+            element(by.id('qualityTraveller6')).click();
+
+            element(by.id('nextButtonQuality')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/environments");
+
+            element(by.id('environmentsTraveller1')).click();
+            element(by.id('environmentsTraveller2')).click();
+            element(by.id('environmentsTraveller3')).click();
+            element(by.id('environmentsTraveller4')).click();
+            element(by.id('environmentsTraveller5')).click();
+            element(by.id('environmentsTraveller6')).click();
+            element(by.id('environmentsTraveller7')).click();
+
+            element(by.id('nextButtonEnvironments')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/featureteams");
+
+            element(by.id('featureTeamsTraveller1')).click();
+            element(by.id('featureTeamsTraveller2')).click();
+            element(by.id('featureTeamsTraveller3')).click();
+            element(by.id('featureTeamsTraveller4')).click();
+
+            element(by.id('nextButtonFeatureTeams')).click();
+
+            expect(browser.getLocationAbsUrl()).toMatch("/results");
+            expect(element.all(by.css('[ng-view] p')).first().getText()).
+                toMatch(/Please find assessment results. The Tasks to move to the next Continuum Levels have been specified./);
+
+            var titleForChart = 'Assessment Results for USSD for Portfolio: Personal and Business Banking';
+            var labelForChart = 'TEAM: USSD for Portfolio: Personal and Business Banking';
+            element(by.xpath("//*[contains(., '" + titleForChart + "')]"));
+            element(by.xpath("//*[contains(., '" + labelForChart + "')]"));
+
+
         });
     });
 
