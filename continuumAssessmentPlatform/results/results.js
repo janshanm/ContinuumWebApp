@@ -56,6 +56,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.resultsData['environments'] = $scope.environmentsScore;
             $scope.resultsData['featureTeams'] = $scope.featureTeamsScore;
             $scope.resultsData['portfolioName'] = $rootScope.selectedPortfolioName;
+            $scope.resultsData['rawData'] = $rootScope.assessments;
 
             SaveResults.drawChart($rootScope.teamName, $scope.strategyScore, $scope.planningScore, $scope.codingScore, $scope.ciScore,
                 $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore, $scope.releaseScore,

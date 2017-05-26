@@ -50,7 +50,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                 it('should set the results data with initialisation values of zero and undefined team name', function(){
                     var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,
                     'incident': 0, 'risk': 0, 'design': 0, 'teaming': 0, 'release': 0, 'qa': 0, 'environments': 0,
-                    'featureTeams': 0, 'portfolioName': undefined};
+                    'featureTeams': 0, 'portfolioName': undefined, 'rawData': undefined};
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
@@ -66,7 +66,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     rootScope.assessments = {};
                     var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,
                         'incident': 0, 'risk': 0, 'design': 0, 'teaming': 0, 'release': 0, 'qa': 0, 'environments': 0,
-                        'featureTeams': 0, 'portfolioName': undefined};
+                        'featureTeams': 0, 'portfolioName': undefined, 'rawData': {}};
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
@@ -89,7 +89,7 @@ describe('continuumAssessmentPlatform.results module', function() {
 
                     var expectedResultData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
                         'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
-                        'featureTeams': 2, 'portfolioName': 'Example Portfolio'};
+                        'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': rootScope.assessments};
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
@@ -152,7 +152,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             it('should set the flags for the save appropriately', function () {
                 scope.resultsData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
                     'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
-                    'featureTeams': 2, 'portfolioName': 'Example Portfolio'};
+                    'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': {}};
                 deferred.resolve({'status': 200, 'data': 'Saved Successfully'});
                 spyOn(console, 'log');
                 saveResultsSpy.saveAssessments.and.returnValue(deferred.promise);
@@ -167,7 +167,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             it('should set the flags for the not saved appropriately if error is returned from the save call', function () {
                 scope.resultsData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
                     'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
-                    'featureTeams': 2, 'portfolioName': 'Example Portfolio'};
+                    'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': {}};
                 deferred.reject({'status': 400, 'data': 'Not Saved Successfully'});
 
                 spyOn(console, 'log');
