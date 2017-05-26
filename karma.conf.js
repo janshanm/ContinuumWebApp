@@ -8,9 +8,19 @@ module.exports = function(config) {
       '../bower_components/angular/angular.js',
       '../bower_components/angular-route/angular-route.js',
       '../bower_components/angular-mocks/angular-mocks.js',
-      '../components/**/*.js',
+      '**/**/**/*.js',
       '**/**/*.js'
     ],
+
+    preprocessors: {
+        '**/!(vendor)/*.js': ['coverage']
+    },
+
+    coverageReporter: {
+        dir: '../coverage/'
+    },
+
+    reporters: ['progress', 'coverage'],
 
     autoWatch: true,
 
@@ -23,7 +33,8 @@ module.exports = function(config) {
         'karma-firefox-launcher',
         'karma-jasmine',
         'karma-junit-reporter',
-        'karma-phantomjs-launcher'
+        'karma-phantomjs-launcher',
+        'karma-coverage'
     ],
 
     junitReporter: {
