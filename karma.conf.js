@@ -13,10 +13,11 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-        '**/!(vendor)/*.js': ['coverage']
+        '**/!(vendor)/*.js': ['coverage', 'coveralls']
     },
 
     coverageReporter: {
+        type: 'lcov',
         dir: '../coverage/'
     },
 
