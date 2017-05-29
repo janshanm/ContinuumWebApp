@@ -190,7 +190,45 @@ describe('continuumAssessmentPlatform.ci module', function() {
           expect(scope.master10).toBeFalsy();
       }));
 
+      it('should set the default values based on the initial values if rootScope not set even though assessments exists', inject(function($controller){
+          rootScope = {'assessments': {'coding': {}}};
 
+          controller = $controller('CICtrl', {'$scope': scope, '$rootScope': rootScope});
+          scope.init();
+          expect(scope.traveller1).toBeFalsy();
+          expect(scope.traveller2).toBeFalsy();
+          expect(scope.traveller3).toBeFalsy();
+          expect(scope.traveller4).toBeFalsy();
+          expect(scope.traveller5).toBeFalsy();
+          expect(scope.traveller6).toBeFalsy();
+          expect(scope.artisan1).toBeFalsy();
+          expect(scope.artisan2).toBeFalsy();
+          expect(scope.artisan3).toBeFalsy();
+          expect(scope.expert1).toBeFalsy();
+          expect(scope.expert2).toBeFalsy();
+          expect(scope.expert3).toBeFalsy();
+          expect(scope.expert4).toBeFalsy();
+          expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
+          expect(scope.expert7).toBeFalsy();
+          expect(scope.professional1).toBeFalsy();
+          expect(scope.professional2).toBeFalsy();
+          expect(scope.professional3).toBeFalsy();
+          expect(scope.professional4).toBeFalsy();
+          expect(scope.professional5).toBeFalsy();
+          expect(scope.professional6).toBeFalsy();
+          expect(scope.professional7).toBeFalsy();
+          expect(scope.master1).toBeFalsy();
+          expect(scope.master2).toBeFalsy();
+          expect(scope.master3).toBeFalsy();
+          expect(scope.master4).toBeFalsy();
+          expect(scope.master5).toBeFalsy();
+          expect(scope.master6).toBeFalsy();
+          expect(scope.master7).toBeFalsy();
+          expect(scope.master8).toBeFalsy();
+          expect(scope.master9).toBeFalsy();
+          expect(scope.master10).toBeFalsy();
+      }));
 
       it('should save the values for the assessment results for continuous integration', function(){
           scope.traveller1 = true;
@@ -533,6 +571,53 @@ describe('continuumAssessmentPlatform.ci module', function() {
           scope.master10 = true;
 
           var expectedCIScore = 5;
+
+          scope.saveAssessments();
+          var ci = rootScope.assessments['ci'];
+
+          expect(ci['score']).toEqual(expectedCIScore);
+
+      });
+
+      it('should save the score for ci as 5 if master questions are answered as yes with the appropriate traveller ' +
+          ' artisan, expert and professional questions are answered with other assessments', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = true;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.expert7 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.professional6 = true;
+          scope.professional7 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          scope.master5 = true;
+          scope.master6 = true;
+          scope.master7 = true;
+          scope.master8 = true;
+          scope.master9 = true;
+          scope.master10 = true;
+
+          var expectedCIScore = 5;
+
+          rootScope.assessments = {'coding': {}};
 
           scope.saveAssessments();
           var ci = rootScope.assessments['ci'];

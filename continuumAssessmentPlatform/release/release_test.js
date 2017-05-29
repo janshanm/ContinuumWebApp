@@ -138,6 +138,33 @@ describe('continuumAssessmentPlatform.release module', function() {
           expect(scope.master6).toBeFalsy();
       }));
 
+      it('should set the default values based on the initial values if rootScope not set with assessments', inject(function($controller){
+          rootScope = {'assessments': {'ci': {}}};
+
+          controller = $controller('ReleaseCtrl', {'$scope': scope, '$rootScope': rootScope});
+          scope.init();
+          expect(scope.traveller1).toBeFalsy();
+          expect(scope.traveller2).toBeFalsy();
+          expect(scope.traveller3).toBeFalsy();
+          expect(scope.traveller4).toBeFalsy();
+          expect(scope.artisan1).toBeFalsy();
+          expect(scope.artisan2).toBeFalsy();
+          expect(scope.artisan3).toBeFalsy();
+          expect(scope.artisan4).toBeFalsy();
+          expect(scope.expert1).toBeFalsy();
+          expect(scope.expert2).toBeFalsy();
+          expect(scope.professional1).toBeFalsy();
+          expect(scope.professional2).toBeFalsy();
+          expect(scope.professional3).toBeFalsy();
+          expect(scope.professional4).toBeFalsy();
+          expect(scope.master1).toBeFalsy();
+          expect(scope.master2).toBeFalsy();
+          expect(scope.master3).toBeFalsy();
+          expect(scope.master4).toBeFalsy();
+          expect(scope.master5).toBeFalsy();
+          expect(scope.master6).toBeFalsy();
+      }));
+
       it('should save the values for the assessment results for release management', function(){
           scope.traveller1 = true;
           scope.traveller2 = true;
@@ -365,6 +392,37 @@ describe('continuumAssessmentPlatform.release module', function() {
           scope.master6 = true;
 
           var expectedReleaseScore = 5;
+
+          scope.saveAssessments();
+          var release = rootScope.assessments['release'];
+
+          expect(release['score']).toEqual(expectedReleaseScore);
+      });
+
+      it('should save the score for release management as 5 if master questions answered and other questions answered accordingly with assessments', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.artisan3 = true;
+          scope.artisan4 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = false;
+          scope.professional4 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          scope.master5 = true;
+          scope.master6 = true;
+
+          var expectedReleaseScore = 5;
+          rootScope.assessments = {'coding': {}};
 
           scope.saveAssessments();
           var release = rootScope.assessments['release'];

@@ -163,6 +163,39 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.master4).toBeFalsy();
       }));
 
+      it('should set the default values based on the initial values if rootScope not set with assessments', inject(function($controller){
+          rootScope = {'assessments': {'ci': {}}};
+
+          controller = $controller('QualityCtrl', {'$scope': scope, '$rootScope': rootScope});
+          scope.init();
+          expect(scope.traveller1).toBeFalsy();
+          expect(scope.traveller2).toBeFalsy();
+          expect(scope.traveller3).toBeFalsy();
+          expect(scope.traveller4).toBeFalsy();
+          expect(scope.traveller5).toBeFalsy();
+          expect(scope.traveller6).toBeFalsy();
+          expect(scope.artisan1).toBeFalsy();
+          expect(scope.artisan2).toBeFalsy();
+          expect(scope.artisan3).toBeFalsy();
+          expect(scope.expert1).toBeFalsy();
+          expect(scope.expert2).toBeFalsy();
+          expect(scope.expert3).toBeFalsy();
+          expect(scope.expert4).toBeFalsy();
+          expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
+          expect(scope.expert7).toBeFalsy();
+          expect(scope.expert8).toBeFalsy();
+          expect(scope.professional1).toBeFalsy();
+          expect(scope.professional2).toBeFalsy();
+          expect(scope.professional3).toBeFalsy();
+          expect(scope.professional4).toBeFalsy();
+          expect(scope.professional5).toBeFalsy();
+          expect(scope.master1).toBeFalsy();
+          expect(scope.master2).toBeFalsy();
+          expect(scope.master3).toBeFalsy();
+          expect(scope.master4).toBeFalsy();
+      }));
+
       it('should save the values for the assessment results for quality assurance', function(){
           scope.traveller1 = true;
           scope.traveller2 = true;
@@ -438,6 +471,43 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.master4 = true;
 
           var expectedQAScore = 5;
+
+          scope.saveAssessments();
+          var QA = rootScope.assessments['QA'];
+
+          expect(QA['score']).toEqual(expectedQAScore);
+      });
+
+      it('should save the score for quality assurance as 5 if master questions answered and other questions answered accordingly with assessments', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
+          scope.traveller5 = false;
+          scope.traveller6 = false;
+          scope.artisan1 = false;
+          scope.artisan2 = false;
+          scope.artisan3 = false;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.expert5 = true;
+          scope.expert6 = true;
+          scope.expert7 = true;
+          scope.expert8 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+
+          var expectedQAScore = 5;
+          rootScope.assessments = {'coding': {}};
 
           scope.saveAssessments();
           var QA = rootScope.assessments['QA'];

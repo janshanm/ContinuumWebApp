@@ -117,6 +117,28 @@ describe('continuumAssessmentPlatform.coding module', function() {
           expect(scope.master4).toBeFalsy();
       }));
 
+      it('should set the default values based on the initial values if rootScope not set even though there are assessments', inject(function($controller){
+          rootScope = {'assessments': {'ci': {}}};
+
+          controller = $controller('CodingCtrl', {'$scope': scope, '$rootScope': rootScope});
+          scope.init();
+          expect(scope.traveller1).toBeFalsy();
+          expect(scope.artisan1).toBeFalsy();
+          expect(scope.artisan2).toBeFalsy();
+          expect(scope.expert1).toBeFalsy();
+          expect(scope.expert2).toBeFalsy();
+          expect(scope.expert3).toBeFalsy();
+          expect(scope.expert4).toBeFalsy();
+          expect(scope.professional1).toBeFalsy();
+          expect(scope.professional2).toBeFalsy();
+          expect(scope.professional3).toBeFalsy();
+          expect(scope.professional4).toBeFalsy();
+          expect(scope.master1).toBeFalsy();
+          expect(scope.master2).toBeFalsy();
+          expect(scope.master3).toBeFalsy();
+          expect(scope.master4).toBeFalsy();
+      }));
+
 
 
       it('should save the values for the assessment results for coding', function(){
@@ -314,6 +336,35 @@ describe('continuumAssessmentPlatform.coding module', function() {
           scope.master2 = true;
           scope.master3 = true;
           scope.master4 = true;
+
+          var expectedCodingScore = 5;
+
+          scope.saveAssessments();
+          var coding = rootScope.assessments['coding'];
+
+          expect(coding['score']).toEqual(expectedCodingScore);
+
+      });
+
+      it('should save the score for coding as 5 if traveller question is answered as no and all the artisan questions answered as yes' +
+          'and the expert questions are answered as yes and the professional questions are answered as yes and master questions' +
+          'are answered as yes and assessments already defined', function(){
+          scope.traveller1 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.professional1 = true;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+          scope.master3 = true;
+          scope.master4 = true;
+          rootScope.assessments = {'ci': {}};
 
           var expectedCodingScore = 5;
 

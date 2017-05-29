@@ -122,7 +122,28 @@ describe('continuumAssessmentPlatform.design module', function() {
           expect(scope.master2).toBeFalsy();
       }));
 
+      it('should set the default values based on the initial values if rootScope not set with other assessments', inject(function($controller){
+          rootScope.assessments = {'coding': {}};
 
+          controller = $controller('DesignCtrl', {'$scope': scope, '$rootScope': rootScope});
+          scope.init();
+          expect(scope.traveller1).toBeFalsy();
+          expect(scope.traveller2).toBeFalsy();
+          expect(scope.traveller3).toBeFalsy();
+          expect(scope.artisan1).toBeFalsy();
+          expect(scope.artisan2).toBeFalsy();
+          expect(scope.expert1).toBeFalsy();
+          expect(scope.expert2).toBeFalsy();
+          expect(scope.expert3).toBeFalsy();
+          expect(scope.expert4).toBeFalsy();
+          expect(scope.professional1).toBeFalsy();
+          expect(scope.professional2).toBeFalsy();
+          expect(scope.professional3).toBeFalsy();
+          expect(scope.professional4).toBeFalsy();
+          expect(scope.professional5).toBeFalsy();
+          expect(scope.master1).toBeFalsy();
+          expect(scope.master2).toBeFalsy();
+      }));
 
       it('should save the values for the assessment results for software design', function(){
           scope.traveller1 = true;
@@ -319,6 +340,33 @@ describe('continuumAssessmentPlatform.design module', function() {
           scope.master2 = true;
 
           var expectedDesignScore = 5;
+
+          scope.saveAssessments();
+          var design = rootScope.assessments['design'];
+
+          expect(design['score']).toEqual(expectedDesignScore);
+      });
+
+      it('should save the score for software design as 5 if master questions answered and other questions answered accordingly with other assessments', function(){
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.artisan1 = true;
+          scope.artisan2 = true;
+          scope.expert1 = true;
+          scope.expert2 = true;
+          scope.expert3 = true;
+          scope.expert4 = true;
+          scope.professional1 = false;
+          scope.professional2 = true;
+          scope.professional3 = true;
+          scope.professional4 = true;
+          scope.professional5 = true;
+          scope.master1 = true;
+          scope.master2 = true;
+
+          var expectedDesignScore = 5;
+          rootScope.assessments = {'coding': {}};
 
           scope.saveAssessments();
           var design = rootScope.assessments['design'];
