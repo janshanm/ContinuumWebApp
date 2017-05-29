@@ -132,7 +132,7 @@ describe('continuum assessment platform', function() {
 
             expect(browser.getLocationAbsUrl()).toMatch("/results");
             expect(element.all(by.css('[ng-view] p')).first().getText()).
-                toMatch(/Please find assessment results. The Tasks to move to the next Continuum Levels have been specified./);
+                toMatch(/Please find assessment results. For any dimension not aligned please select on the menu and review./);
 
             var titleForChart = 'Assessment Results for USSD for Portfolio: Personal and Business Banking';
             var labelForChart = 'TEAM: USSD for Portfolio: Personal and Business Banking';
@@ -354,7 +354,7 @@ describe('continuum assessment platform', function() {
 
         it('should render results when user navigates to /results', function() {
             expect(element.all(by.css('[ng-view] p')).first().getText()).
-            toMatch(/Please find assessment results. The Tasks to move to the next Continuum Levels have been specified./);
+            toMatch(/Please find assessment results. For any dimension not aligned please select on the menu and review./);
         });
 
     });
