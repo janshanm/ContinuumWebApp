@@ -70,17 +70,23 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
         var getAllPortfolios = function(assessments){
             var assessmentPortfolios = [];
             for(var id in assessments){
-                assessmentPortfolios.push(assessments[id].portfolio);
+                var portfolioName = assessments[id].portfolio;
+                if(!assessmentPortfolios.includes(portfolioName))
+                {
+                    assessmentPortfolios.push(portfolioName);
+                }
             }
-
+            console.log(assessmentPortfolios);
             return assessmentPortfolios;
         };
 
         var getAssessmentDates = function(assessments, portfolio){
             var assessmentDates = [];
             for(var id in assessments){
-                if(assessments[id].portfolio === portfolio) {
-                    assessmentDates.push(assessments[id].dateAssessed);
+                var dateAssessed = assessments[id].dateAssessed;
+
+                if(assessments[id].portfolio === portfolio && !assessmentDates.includes(dateAssessed)) {
+                    assessmentDates.push(dateAssessed);
                 }
             }
 
