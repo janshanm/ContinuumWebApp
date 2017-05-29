@@ -14,7 +14,7 @@
             No standards or mechanism's for ensuring code quality
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team writes code without any agreed standards for quality.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The team writes code without any agreed standards for quality.</p></div>
 </div>
 <hr>
 <h4 align="center">Artisan</h4>
@@ -31,7 +31,7 @@
             Guidelines and/or standards are defined.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There are coding guidelines and standards defined. These are documented and
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">There are coding guidelines and standards defined. These are documented and
         easily accessible by any team member or newly joined team member.</p></div>
 </div>
 <div class="row well well-sm">
@@ -47,7 +47,7 @@
             Consistent training process for new team members is in place
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is an onboarding plan and document for new members who join the team.
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">There is an onboarding plan and document for new members who join the team.
         The document is easily accessible by all and can be used as further reference material.</p></div>
 </div>
 <hr>
@@ -65,7 +65,7 @@
             There are mechanism’s in place to ensure that standards are followed
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Code review is used to enforce the standards. Automated tools like JSLint
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">Code review is used to enforce the standards. Automated tools like JSLint
         or JSHint for Javascript, Checkstyle for Java, and lint are used to ensure the standards are followed.
         Static analysis dashboards exists for the code through applications like SonarQube</p></div>
 </div>
@@ -82,7 +82,7 @@
             Process's and practices are understood and followed by all
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The coding practices and processes are documented and the team is aware of
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">The coding practices and processes are documented and the team is aware of
         where to access them.</p></div>
 </div>
 <div class="row well well-sm">
@@ -98,7 +98,7 @@
             Metrics are defined but not necessarily reviewed and acted on
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The code metrics such as test coverage and cyclomatic complexity are defined
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">The code metrics such as test coverage and cyclomatic complexity are defined
         and readily available to the team. These metrics are however not reviewed to improve the coding practices.</p></div>
 </div>
 <div class="row well well-sm">
@@ -114,7 +114,7 @@
             The team proactively improves the code
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team plans for refactoring slack for each iteration. The team maintains
+    <div class="col-xs-7"><p ng-class="getClass(expert4)">The team plans for refactoring slack for each iteration. The team maintains
         a graph of historic code metrics.</p></div>
 </div>
 <hr>
@@ -132,7 +132,7 @@
             Code metrics are part of build automation and continuous integration
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The build automation tool generates the code quality metrics which can be
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">The build automation tool generates the code quality metrics which can be
         automatically fed to SonarQube or used for representative dashboards.</p></div>
 </div>
 <div class="row well well-sm">
@@ -148,7 +148,7 @@
             Code metrics are tracked for trends and adjustments made on a continuous basis
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info"> The team maintains a graph of historic code metrics. The code quality
+    <div class="col-xs-7"><p ng-class="getClass(professional2)"> The team maintains a graph of historic code metrics. The code quality
         metrics are addressed by the team every iteration.</p></div>
 </div>
 <div class="row well well-sm">
@@ -164,7 +164,7 @@
             The team regularly performs katas with the objective of improving their skills
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is time set aside every month for some code katas to help improve the
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">There is time set aside every month for some code katas to help improve the
         team coding practices skills. Katas are planned in the release plans and delivery plans.</p></div>
 </div>
 <div class="row well well-sm">
@@ -180,7 +180,7 @@
             Code is regularly refactored as part of the iteration
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Refactoring is a regular discipline of the team.
+    <div class="col-xs-7"><p ng-class="getClass(professional4)">Refactoring is a regular discipline of the team.
         The team follows a "Leave The Code Better Than You Found It" principle.</p></div>
 </div>
 <hr>
@@ -198,7 +198,7 @@
             Standards and Practices are regularly reviewed and updated
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team reviews the standards and practices every iteration.
+    <div class="col-xs-7"><p ng-class="getClass(master1)">The team reviews the standards and practices every iteration.
         Quality threshold metrics are increased and the standards are optimized.</p></div>
 </div>
 <div class="row well well-sm">
@@ -214,7 +214,7 @@
             Processes and Practices are regularly reviewed and updated
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team reviews the processes and practices every iteration.
+    <div class="col-xs-7"><p ng-class="getClass(master2)">The team reviews the processes and practices every iteration.
         Quality threshold metrics are increased and the processes are optimized.</p></div>
 </div>
 <div class="row well well-sm">
@@ -230,7 +230,7 @@
             The code metrics are assessed and backlog items created to drive improvement
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There are continuous assessments of the code metrics to ensure the team is
+    <div class="col-xs-7"><p ng-class="getClass(master3)">There are continuous assessments of the code metrics to ensure the team is
         aligned to the quality standards. Backlog items are created to address gaps identified from the code metrics'
         perspective and these are tracked and prioritized.</p></div>
 </div>
@@ -247,7 +247,7 @@
             Technical debt is minimized
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Technical debt items are tracked and the code static analysis metrics
+    <div class="col-xs-7"><p ng-class="getClass(master4)">Technical debt items are tracked and the code static analysis metrics
         are tracked to show progress with respect to technical debt reduction.</p></div>
 </div>
 <hr>

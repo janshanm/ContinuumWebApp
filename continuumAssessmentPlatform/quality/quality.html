@@ -14,7 +14,7 @@
             Testing is manual.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The testing is purely manual at this level of maturity. Teams rely on manual
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The testing is purely manual at this level of maturity. Teams rely on manual
         testers to find defects and bugs. Teams need to start writing some automated tests.</p></div>
 </div>
 <div class="row well well-sm">
@@ -30,7 +30,7 @@
             There is a high amount of rework due to testing late in the lifecycle.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The cycle time of features and functionality is impacted due to testing late
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The cycle time of features and functionality is impacted due to testing late
         in the lifecycle. Functionality is stopped from being deployed due to defects/bugs being found at later stages of the lifecycle.</p></div>
 </div>
 <div class="row well well-sm">
@@ -46,7 +46,7 @@
             Non-functional testing is not considered upfront.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Non-functional testing is considered as an afterthought when the Software
+    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Non-functional testing is considered as an afterthought when the Software
         is about to be released. Teams do not factor non-functional testing in their designs and implementation. Teams
         need to start considering non-functional testing such as how the application will behave under load into consideration.</p></div>
 </div>
@@ -63,7 +63,7 @@
             Test cases are designed based only on the requirements document, mainly by testing team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is a separate testing team that designs test cases based on the
+    <div class="col-xs-7"><p ng-class="getClass(traveller4)">There is a separate testing team that designs test cases based on the
         requirements document without interacting with the teams. There should be closer collaboration with the development team.</p></div>
 </div>
 <div class="row well well-sm">
@@ -79,7 +79,7 @@
             Absence of unit/integration testing.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The code base has very little or no unit/integration tests.
+    <div class="col-xs-7"><p ng-class="getClass(traveller5)">The code base has very little or no unit/integration tests.
         Developers rely on testers to find bugs/defects in their implementation.</p></div>
 </div>
 <div class="row well well-sm">
@@ -95,7 +95,7 @@
             There is very little reuse of Quality Assurance assets.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The Quality Assurance assets are non-reusable due to it being very manual
+    <div class="col-xs-7"><p ng-class="getClass(traveller6)">The Quality Assurance assets are non-reusable due to it being very manual
         and specific to each application. The test cases are driven by the requirements so no frameworks in place.
         The team should start investigating frameworks, which can be extended for other test cases so that any team
         member is able to contribute to testing.</p></div>
@@ -115,7 +115,7 @@
             Regression test packs are partially automated.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">At this maturity level, some of the regression tests are automated
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this maturity level, some of the regression tests are automated
         even though all the business critical cases do not have automated regression tests.</p></div>
 </div>
 <div class="row well well-sm">
@@ -131,7 +131,7 @@
             Regression packs run frequently but on an ad hoc basis.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The regression tests are run on an ad hoc basis as opposed to on every critical
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The regression tests are run on an ad hoc basis as opposed to on every critical
         change to the application. The regression tests should be run as part of the build and release towards production
         automatically to move from this level</p></div>
 </div>
@@ -148,7 +148,7 @@
             Test cases designed by the team, with testing, development and business analysts.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The test cases are designed by the team working on the application in
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The test cases are designed by the team working on the application in
         collaboration with the stake holders. The team is aware of the business critical functionality and designs test
         cases to cater for these.</p></div>
 </div>
@@ -167,7 +167,7 @@
             Regression test packs are fully automated.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Regression test packs are fully automated for the application.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">Regression test packs are fully automated for the application.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -182,7 +182,7 @@
             Regression test packs are run as part of the build.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Regression tests are triggered by the build pipeline and run as part of the
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">Regression tests are triggered by the build pipeline and run as part of the
         normal pipeline process. They are scheduled as daily run tasks due to the typical slowness in regression tests execution.</p></div>
 </div>
 <div class="row well well-sm">
@@ -198,7 +198,7 @@
             50% coverage automated testing.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">At least 50% of the code base is test covered. The test coverage metrics are
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">At least 50% of the code base is test covered. The test coverage metrics are
         captured on the team pipeline dashboards and the build is failed if the coverage threshold is less than 50%.
         A failing tests is always fixed before extra functionality is built.</p></div>
 </div>
@@ -215,7 +215,7 @@
             Automated smoke testing is in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team has implemented smoke tests and these are run as part of every code
+    <div class="col-xs-7"><p ng-class="getClass(expert4)">The team has implemented smoke tests and these are run as part of every code
         check-in. The smoke tests report are also displayed on the team tests metrics on the dashboard.</p></div>
 </div>
 <div class="row well well-sm">
@@ -231,7 +231,7 @@
             Automated performance testing is in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Performance tests are automated and the performance metrics are displayed
+    <div class="col-xs-7"><p ng-class="getClass(expert5)">Performance tests are automated and the performance metrics are displayed
         on the dashboards. The build pipeline is failed if the performance metrics expected is not met.
         Due to the slow nature of performance tests, these are run as scheduled tasks on a nightly basis.</p></div>
 </div>
@@ -248,7 +248,7 @@
             Non-functional requirements are defined and measured.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Non-functional requirements such as response times are defined and measured
+    <div class="col-xs-7"><p ng-class="getClass(expert6)">Non-functional requirements such as response times are defined and measured
         with test cases that are also displayed on the dashboards.</p></div>
 </div>
 <div class="row well well-sm">
@@ -264,7 +264,7 @@
             Test cases designed by the team as part of the iteration.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team designs the test cases as part of the iteration and when building
+    <div class="col-xs-7"><p ng-class="getClass(expert7)">The team designs the test cases as part of the iteration and when building
         the functionality as opposed to as a pre-project process. Test cases are adapted to suit changes in the product vision and goal.</p></div>
 </div>
 <div class="row well well-sm">
@@ -280,7 +280,7 @@
             Unit tests are created using TDD.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team writes unit tests using established frameworks and methodologies.
+    <div class="col-xs-7"><p ng-class="getClass(expert8)">The team writes unit tests using established frameworks and methodologies.
         The unit tests coverage is not less than 50% and the build is failed if the unit tests coverage is lower than this.
         Developers write tests as they build functionality. Testing is not out-sourced to quality assurance engineers.</p></div>
 </div>
@@ -299,7 +299,7 @@
             Automated infrastructure testing is in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Infrastructure is automated and can be generated from scripts in the version
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">Infrastructure is automated and can be generated from scripts in the version
         control management system. The infrastructure automation is also tested using tools like ChefSpec.</p></div>
 </div>
 <div class="row well well-sm">
@@ -315,7 +315,7 @@
             Automated security testing is in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Automation security testing is implemented and is part of the build pipeline
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">Automation security testing is implemented and is part of the build pipeline
         using tools such as ZAP (Zed-Attack Proxy). The build is failed if security testing fails.</p></div>
 </div>
 <div class="row well well-sm">
@@ -331,7 +331,7 @@
             Tests are automated as much as is practical.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Test are automated and only the exploratory type tests are left unautomated.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">Test are automated and only the exploratory type tests are left unautomated.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -346,7 +346,7 @@
             Quality metrics and trends are tracked.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Quality metrics are measured and tracked. Historical trends of the quality
+    <div class="col-xs-7"><p ng-class="getClass(professional4)">Quality metrics are measured and tracked. Historical trends of the quality
         metrics are displayed on dashboards to the teams to drive the right culture of always improving quality.</p></div>
 </div>
 <div class="row well well-sm">
@@ -362,7 +362,7 @@
             Anyone can execute the tests.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Any team member can execute the tests via script runs or on the build pipelines.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(professional5)">Any team member can execute the tests via script runs or on the build pipelines.</p></div>
 </div>
 <hr>
 <h4 align="center">Master</h4>
@@ -379,7 +379,7 @@
             Active process is in place to understand root cause and respond to it.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There are documented processes in place to understand the root cause of test
+    <div class="col-xs-7"><p ng-class="getClass(master1)">There are documented processes in place to understand the root cause of test
         failures and how to respond to them especially for the non-functional requirements testing.</p></div>
 </div>
 <div class="row well well-sm">
@@ -395,7 +395,7 @@
             Test artefacts are treated with the same importance as code and continually refactored and maintained.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Tests artefacts have same significance and importance as the application
+    <div class="col-xs-7"><p ng-class="getClass(master2)">Tests artefacts have same significance and importance as the application
         code and are continually refactored and maintained.</p></div>
 </div>
 <div class="row well well-sm">
@@ -411,7 +411,7 @@
             Performance testing metrics are defined early in the process.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Performance metrics are clearly defined and available to the team members
+    <div class="col-xs-7"><p ng-class="getClass(master3)">Performance metrics are clearly defined and available to the team members
         early in the lifecycle. These are displayed on the team walls for all team members to be aware of and reviewed every iteration.</p></div>
 </div>
 <div class="row well well-sm">
@@ -427,7 +427,7 @@
             Tests drive release readiness.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Tests drive the release readiness while business drives the release decisions.
+    <div class="col-xs-7"><p ng-class="getClass(master4)">Tests drive the release readiness while business drives the release decisions.
         A release candidate is only generated and available in the pipeline if all the tests have passed.</p></div>
 </div>
 <hr>

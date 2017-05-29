@@ -14,7 +14,7 @@
             The team doesn’t have all cross-functional and cross-component knowledge and skills to complete end-to-end customer feature.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">At this level the team is not cross-functional in nature. Some of the skills
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">At this level the team is not cross-functional in nature. Some of the skills
         required to complete end-to-end customer features are missing and there is dependence on teams/people outside the team.</p></div>
 </div>
 <div class="row well well-sm">
@@ -30,7 +30,7 @@
             The team members are not dedicated.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team members are not 100% allocated to the teams and have other priorities
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">Team members are not 100% allocated to the teams and have other priorities
         as well that they have to allocate their time to.</p></div>
 </div>
 <div class="row well well-sm">
@@ -46,7 +46,7 @@
             There is a low level of collaboration between team members.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Collaboration between team members is low at this mastery level and mainly ad hoc.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Collaboration between team members is low at this mastery level and mainly ad hoc.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -61,7 +61,7 @@
             There are multiple handoffs and dependencies on the external teams and stakeholders.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Software release requires multiple handoffs and dependency on external teams
+    <div class="col-xs-7"><p ng-class="getClass(traveller4)">Software release requires multiple handoffs and dependency on external teams
         and stakeholders. The team does not know the different external teams and stake holders and the handoffs are
         not transparent to the team.</p></div>
 </div>
@@ -80,7 +80,7 @@
             The key skills are part of the team. This includes cross-functional and cross-component skills.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team has access to cross-functional skills and cross-component skills
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">The team has access to cross-functional skills and cross-component skills
         even though these skills are not embedded in the teams. These skills are readily available to assist the team in
         delivering the functionality. For example the team can access quality assurance engineers as needed without them
         being embedded in the team.</p></div>
@@ -98,7 +98,7 @@
             Handoffs are identified.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">All the handoffs are identified and mapped on the team deployment/release process document.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">All the handoffs are identified and mapped on the team deployment/release process document.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -114,7 +114,7 @@
             Triad is committed to execute a strategy together that gets specific, intended results.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The concept of triads is established in the team and is respected for features
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The concept of triads is established in the team and is respected for features
         to be considered as done. Business, Technical and Quality are committed to execute the strategy together.</p></div>
 </div>
 <hr>
@@ -132,7 +132,7 @@
             The team members are dedicated to the team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team member allocations are 100% to the team.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">Team member allocations are 100% to the team.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -148,7 +148,7 @@
             across all components and disciplines (analysis, programming, testing, …)
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Cross-functional and cross-component skills are embedded in the teams and
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">Cross-functional and cross-component skills are embedded in the teams and
         all the requisite skills required to deliver end-to-end customer value are embedded in the teams. There is no
         external team dependency required to deliver the goals and vision of the product.</p></div>
 </div>
@@ -165,7 +165,7 @@
             New members are efficiently integrated into feature team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">An onboarding plan for new members exists and this is maintained and reviewed
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">An onboarding plan for new members exists and this is maintained and reviewed
         often. The onboarding plan is documented and accessible on the document management application.</p></div>
 </div>
 <div class="row well well-sm">
@@ -181,7 +181,7 @@
             Triad is fully-functioning and not dependent on external validation and external authority.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The triad (business, technology and quality) is fully functional in the
+    <div class="col-xs-7"><p ng-class="getClass(expert4)">The triad (business, technology and quality) is fully functional in the
         teams and the product owners within the teams are empowered to make the decisions pertaining to the product
         roadmap without the need of external consultation or validation.</p></div>
 </div>
@@ -198,7 +198,7 @@
             Goals are clearly prioritized and timeously achieved.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The product goals are clearly prioritized and recorded on the team document
+    <div class="col-xs-7"><p ng-class="getClass(expert5)">The product goals are clearly prioritized and recorded on the team document
         management system and the top priority goals are visual on the team walls.</p></div>
 </div>
 <hr>
@@ -216,7 +216,7 @@
             T-shaped skills emerge (team members can perform more than one function).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team members can perform more than one function. For example, the developers can serve as quality engineers.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">Team members can perform more than one function. For example, the developers can serve as quality engineers.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -232,7 +232,7 @@
             their team and/or aspects of the organisational context in which the operate.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team has autonomy and is self-organized. The team composition is well
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">Team has autonomy and is self-organized. The team composition is well
         understood by all team members and stakeholders, and the roles and responsibilities are clearly defined and understood.</p></div>
 </div>
 <div class="row well well-sm">
@@ -248,7 +248,7 @@
             Metrics are in place to ensure constant improvement.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Kaizen (constant improvement) is performed by the team every iteration.
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">Kaizen (constant improvement) is performed by the team every iteration.
         The team collects metrics, which are radiated on the wall and regularly holds retrospectives with action items
         visible on the team wall towards continuous improvement.</p></div>
 </div>
@@ -268,7 +268,7 @@
             to quality measures applied to artefacts.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is completely autonomous and drives all decision making.
+    <div class="col-xs-7"><p ng-class="getClass(master1)">The team is completely autonomous and drives all decision making.
         Consultations are used to get information that can feed into their decision making but the decision making is
         entirely up to the teams.</p></div>
 </div>
@@ -285,7 +285,7 @@
             T-shaped skill profile is a majority.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">A majority of the team is comprised of individuals who can play dual roles
+    <div class="col-xs-7"><p ng-class="getClass(master2)">A majority of the team is comprised of individuals who can play dual roles
         and there is collective shared responsibility by the team members. Failure or success is team failure or success.</p></div>
 </div>
 <div class="row well well-sm">
@@ -301,7 +301,7 @@
             Team is responsible for all aspects of feature delivery, from equipment requisition to production.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is in charge of the end-to-end delivery of the product from
+    <div class="col-xs-7"><p ng-class="getClass(master3)">The team is in charge of the end-to-end delivery of the product from
         infrastructure, to configuration, to application deployment to instrumentation and alerting.</p></div>
 </div>
 <div class="row well well-sm">
@@ -317,7 +317,7 @@
             Continuous improvement is in place, driven by retrospectives within the team and across the teams.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team performs restrospectives every iteration to drive continuous improvements.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(master4)">Team performs restrospectives every iteration to drive continuous improvements.</p></div>
 </div>
 <hr>
 <p align="right">

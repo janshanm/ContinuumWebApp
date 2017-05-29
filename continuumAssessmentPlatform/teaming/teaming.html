@@ -14,7 +14,7 @@
             The team cannot make decisions without consultation.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The teams at this level of proficiency do not have autonomy with respect to
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The teams at this level of proficiency do not have autonomy with respect to
         decision making. They need to consult for any decisions they make and cannot be qualified as autonomous teams.
         To move from this level teams need to start making their own decisions and have some autonomy.</p></div>
 </div>
@@ -31,7 +31,7 @@
             The teams goals and visions are unclear.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The teams work on functionality without necessarily knowing what the goal
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The teams work on functionality without necessarily knowing what the goal
         and vision is. Some people in the team or some stakeholders may know the vision but this is not shared across
         and this has not been documented. The goals/vision need to be documented and easily accessible.</p></div>
 </div>
@@ -48,7 +48,7 @@
             The team doesn't clearly understand the entire stakeholder landscape.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Few individuals in the team understand the stakeholder landscape but the
+    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Few individuals in the team understand the stakeholder landscape but the
         whole team is unaware of the entire stakeholder landscape. </p></div>
 </div>
 <hr>
@@ -66,7 +66,7 @@
             Team vision and goals are agreed, captured and understood.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team works towards shared goals and vision which is agreed, captured and
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team works towards shared goals and vision which is agreed, captured and
         understood. The vision is clear on the team wall and also recorded on the story management system.</p></div>
 </div>
 <div class="row well well-sm">
@@ -82,7 +82,7 @@
             There is a clear understanding of who are the teams stakeholders. (Consumers, partners and clients).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The teams stakeholders are clearly understood and also captured on the
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The teams stakeholders are clearly understood and also captured on the
         team story management system. This is accessible to all team members.</p></div>
 </div>
 <div class="row well well-sm">
@@ -98,7 +98,7 @@
             There is a clear definition of what the teams success is (definition of ‘done’).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The definition of "done" is well understood by the team and this is also
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The definition of "done" is well understood by the team and this is also
         captured on the team wall.</p></div>
 </div>
 <hr>
@@ -116,7 +116,7 @@
             The team actively seeks feedback in an effort to achieve the goals.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is always actively seeking feedback from stakeholders and action
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">The team is always actively seeking feedback from stakeholders and action
         items are captured and prioritised towards achieving the team goals.</p></div>
 </div>
 <div class="row well well-sm">
@@ -132,7 +132,7 @@
             Transparency and high level of collaboration  within the team are in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is a high level of collective ownership and collaboration within the team.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">There is a high level of collective ownership and collaboration within the team.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -147,7 +147,7 @@
             Impact of blockers and dependencies are minimised and managed and the team knows what these are.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The blockers and dependencies are minimised and managed. These are recorded
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">The blockers and dependencies are minimised and managed. These are recorded
         on the story management system and captured on the team walls making them very visible to all the team members.</p></div>
 </div>
 <hr>
@@ -165,7 +165,7 @@
             Balanced participation is in place. Team members contribute as appropriate and each members opinion is valued.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is open communication lines in the team and all members are able to
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">There is open communication lines in the team and all members are able to
         contribute as appropriate. Retrospectives are used to elicit participation from every member in the team.</p></div>
 </div>
 <div class="row well well-sm">
@@ -181,7 +181,7 @@
             Team uses adequate measures to monitor success.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team has measures in place to monitor success and this is visually
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">The team has measures in place to monitor success and this is visually
         communicated to the team members and the stakeholders.</p></div>
 </div>
 <hr>
@@ -199,7 +199,7 @@
             All decision-making is internal to the team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is completely autonomous and drives all decision making.
+    <div class="col-xs-7"><p ng-class="getClass(master1)">The team is completely autonomous and drives all decision making.
         Consultations are used to get information that can feed into their decision making but the decision making
         is entirely up to the teams.</p></div>
 </div>
@@ -216,7 +216,7 @@
             Complete collective ownership is in place, both when team is successful and when it fails.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team collectively acknowledges failure or success and the culture is
+    <div class="col-xs-7"><p ng-class="getClass(master2)">Team collectively acknowledges failure or success and the culture is
         driven by collective ownership.</p></div>
 </div>
 <div class="row well well-sm">
@@ -232,7 +232,7 @@
             Team is actively improving. Retrospectives are driving improvement.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Retrospectives happen every iteration. Action items from retrospectives are
+    <div class="col-xs-7"><p ng-class="getClass(master3)">Retrospectives happen every iteration. Action items from retrospectives are
         tracked and used to drive continuous improvement.</p></div>
 </div>
 <hr>

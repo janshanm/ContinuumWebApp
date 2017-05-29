@@ -46,6 +46,10 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
       }
   };
 
+  $scope.getClass = function(value){
+      return value ? 'bg-info': 'bg-warning';
+  };
+
   $scope.saveAssessments = function(){
       if($rootScope.assessments === undefined){
           $rootScope.assessments = {};

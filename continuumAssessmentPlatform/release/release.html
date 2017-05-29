@@ -14,7 +14,7 @@
             Cycle time is extremely long.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The release cycle is extremely long. It takes 6months or more to release
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The release cycle is extremely long. It takes 6months or more to release
         software into production. The team needs to work on reducing the cycle time</p></div>
 </div>
 <div class="row well well-sm">
@@ -31,7 +31,7 @@
             the day of the release.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Deployment is manual and very complex. It is generally a ceremony which
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">Deployment is manual and very complex. It is generally a ceremony which
         requires high coordination between several stakeholders such as DBAs, Ops, Devs etc. This needs to be optimized
         and simplified so that the team is responsible for the deployment. Manual interventions should be minimized.</p></div>
 </div>
@@ -48,7 +48,7 @@
             Pace and delivery of work is inconsistent throughout the release cycle.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The pace and delivery of work is inconsistent. The team is unable to give a
+    <div class="col-xs-7"><p ng-class="getClass(traveller3)">The pace and delivery of work is inconsistent. The team is unable to give a
         definitive answer on when features will be delivered in production or how long it will take for the team to avail
         a certain feature to the customers upon completion of the development tasks.</p></div>
 </div>
@@ -65,7 +65,7 @@
             Separate build artefacts are created for each environment.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Each environment has it's own artefacts with high levels of configuration
+    <div class="col-xs-7"><p ng-class="getClass(traveller4)">Each environment has it's own artefacts with high levels of configuration
         required to make them work in those environments. The team needs to start moving towards a configuration-as-code
         approach where the artefacts can simply be promoted from one environment to the other painlessly.</p></div>
 </div>
@@ -84,7 +84,7 @@
             Releases are planned to a regular cycle and features are tracked and managed to the regular time frame.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is able to plan releases to a regular cycle and can track and manage
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">The team is able to plan releases to a regular cycle and can track and manage
         features within regular time frames. Delivery is more predictable and captured on the team walls.</p></div>
 </div>
 <div class="row well well-sm">
@@ -100,7 +100,7 @@
             Planned release dates are seldom moved out.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The release dates are seldom moved out. The team is able to reduce the
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The release dates are seldom moved out. The team is able to reduce the
         release features rather than the move out the release dates.</p></div>
 </div>
 <div class="row well well-sm">
@@ -116,7 +116,7 @@
             The process for handing the release to operations and support teams is in place.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is a well defined process for handling the release of the artefacts
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is a well defined process for handling the release of the artefacts
         to operations and support teams in place. This is documented and well understood by all the team members.
         The team at this level is investigating means of embedding operations/support in the team structure.</p></div>
 </div>
@@ -133,7 +133,7 @@
             Standard build artefacts are defined and produced (release notes, binaries, configurations, test coverage reports...)
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Build artefacts are well defined and produced preferably by the build/continuous
+    <div class="col-xs-7"><p ng-class="getClass(artisan4)">Build artefacts are well defined and produced preferably by the build/continuous
         integration tool. These artefacts are readily available to the team as well as the operations and support teams.
         The team is able to tell which artefact was deployed when.</p></div>
 </div>
@@ -152,7 +152,7 @@
             Releases and deployments are mostly automated (might require manual configuration and coordination between teams).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The releases and deployments are automated using pipelines.
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">The releases and deployments are automated using pipelines.
         These pipelines are visible on dashboards in the team spaces. There may however still be some manual dependencies
         such as environment configurations but the artefacts are packaged in a ready to deploy state.</p></div>
 </div>
@@ -169,7 +169,7 @@
             The confidence level for the release is high.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Teams have a high level of confidence for releases. Releases are no longer
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">Teams have a high level of confidence for releases. Releases are no longer
         considered as a ceremonial activity but as a regular cadence.</p></div>
 </div>
 <hr>
@@ -187,7 +187,7 @@
             Release notes are automatically generated.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Release notes are automatically generated as part of the release/build scripts.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">Release notes are automatically generated as part of the release/build scripts.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -202,7 +202,7 @@
             Releases are not reliant on the knowledge of the key individuals.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team does not have a key man dependency for releases. The release process
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">The team does not have a key man dependency for releases. The release process
         is automated such that any individual in the team can perform a release. Releases can be audited and tracked.</p></div>
 </div>
 <div class="row well well-sm">
@@ -218,7 +218,7 @@
             Operations teams collaborate closely with the delivery team and contribute to minimize the risk of failure in production.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The operations teams collaborate very closely with the delivery teams and
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">The operations teams collaborate very closely with the delivery teams and
         have backlog item tasks during development of the features to ensure that on completing development the applications
         are also ready to be deployed and released.</p></div>
 </div>
@@ -235,7 +235,7 @@
             Release metrics and trends are tracked.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team constantly tracks and monitors the release metrics and trends on
+    <div class="col-xs-7"><p ng-class="getClass(professional4)">The team constantly tracks and monitors the release metrics and trends on
         the story wall and all stakeholders are able to interact with these metrics on the dashboards.</p></div>
 </div>
 <hr>
@@ -253,7 +253,7 @@
             Releases can be deployed at any time and are fully automated.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Releases can be deployed at anytime due to complete automation of the release
+    <div class="col-xs-7"><p ng-class="getClass(master1)">Releases can be deployed at anytime due to complete automation of the release
         tasks. Teams have release scripts and these are integrated in the build pipelines and dashboards.</p></div>
 </div>
 <div class="row well well-sm">
@@ -269,7 +269,7 @@
             The team controls the release.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team controls the release and does not depend on a third party team to
+    <div class="col-xs-7"><p ng-class="getClass(master2)">The team controls the release and does not depend on a third party team to
         compile and release their software. They can release software anytime to any of the environments.</p></div>
 </div>
 <div class="row well well-sm">
@@ -285,7 +285,7 @@
             The product owner is able to determine when release goes into production.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The product owner can decide when the release goes into production.
+    <div class="col-xs-7"><p ng-class="getClass(master3)">The product owner can decide when the release goes into production.
         In certain instances, the product owner can click on the deploy to production button and trigger a release to production.</p></div>
 </div>
 <div class="row well well-sm">
@@ -301,7 +301,7 @@
             Operations team is part of the product/program team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The operations team is part of the product/program team as opposed to being
+    <div class="col-xs-7"><p ng-class="getClass(master4)">The operations team is part of the product/program team as opposed to being
         a hand-off team. They work hand-in-hand with the development teams to ensure the readiness of the application for
         production releases.</p></div>
 </div>
@@ -318,7 +318,7 @@
             Releases are Routine. No roll backs, always roll forward.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Releases happen frequently and are routine. There are no application roll
+    <div class="col-xs-7"><p ng-class="getClass(master5)">Releases happen frequently and are routine. There are no application roll
         backs but rather roll forwards. Redeployment is favoured over system roll backs.</p></div>
 </div>
 <div class="row well well-sm">
@@ -334,7 +334,7 @@
             Dark launching is enabled (Features can be released in switched of state).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Team is able to release toggled off features using methodologies like
+    <div class="col-xs-7"><p ng-class="getClass(master6)">Team is able to release toggled off features using methodologies like
         Feature Toggling or Branching by Abstraction. Team is able to perform Blue-Green deployments with minimal
         downtimes to the application from a customer perspective.</p></div>
 </div>

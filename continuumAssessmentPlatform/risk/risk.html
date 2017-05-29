@@ -15,7 +15,7 @@
             (i.e. something done to keep risk and audit people happy).
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">To be at this level, the team does not have a risk management process in
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">To be at this level, the team does not have a risk management process in
         place and simply does compliance with audits by ticking check boxes without necessarily implementing any processes
         to avert risk. To move from this level the team needs to start identifying, managing and tracking risk.</p></div>
 </div>
@@ -32,7 +32,7 @@
             There is no awareness or transparency of current risks and issues in the team.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team at this level is unable to clearly articulate what the risks are.
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The team at this level is unable to clearly articulate what the risks are.
         The various risks are not transparent to the team and may be known by very few individuals within the team.</p></div>
 </div>
 <hr>
@@ -50,7 +50,7 @@
             Risks have been identified and are captured using an appropriate artefact such as a risk story wall or risk register.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">At this level, risks are captured by the team and tracked on the team wall
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this level, risks are captured by the team and tracked on the team wall
         and/or story management system. The team members can access the various risks and are all aware of what they are.</p></div>
 </div>
 <div class="row well well-sm">
@@ -66,7 +66,7 @@
             Each identified risk has been assigned a risk mitigation or action plan.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The risks are allocated owners as well as mitigation/action plans.
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The risks are allocated owners as well as mitigation/action plans.
         These are clearly captured in the story management system.</p></div>
 </div>
 <div class="row well well-sm">
@@ -82,7 +82,7 @@
             Risks are discussed as part of the iteration planning process.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The risks are discussed and reviewed as part of the iteration planning
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The risks are discussed and reviewed as part of the iteration planning
         process and action items are allocated and assigned to prospective risk item owners. These are then tracked and
         reviewed throughout the iteration to ensure mitigation is in place.</p></div>
 </div>
@@ -102,7 +102,7 @@
             (stand-ups; iteration planning; showcases; steering committee meetings)
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Risks items are discussed during the agile ceremonies such as standups and
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">Risks items are discussed during the agile ceremonies such as standups and
         they are updated accordingly to ensure they are not just recorded but are also mitigated.
         Any blockers are highlighted and addressed.</p></div>
 </div>
@@ -119,7 +119,7 @@
             Unmitigated or uncontrollable risks are easily identifiable.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team is able to identify/raise risks that do not have a mitigation plan
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">The team is able to identify/raise risks that do not have a mitigation plan
         and assign an owner, while recording on the wall.</p></div>
 </div>
 <div class="row well well-sm">
@@ -136,7 +136,7 @@
             responsibility and accountability for managing the risk, and has the authority to implement controls and actions.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">All the risks have appropriate owners. Owners update during daily stand-ups
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">All the risks have appropriate owners. Owners update during daily stand-ups
         on the progress towards mitigating the risks.</p></div>
 </div>
 <hr>
@@ -154,7 +154,7 @@
             The cost and benefits of risk mitigations are evaluated and recorded before they are implemented.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Cost benefit analysis of risk mitigations are discussed in the iteration
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">Cost benefit analysis of risk mitigations are discussed in the iteration
         planning sessions before risks are prioritised.</p></div>
 </div>
 <div class="row well well-sm">
@@ -170,7 +170,7 @@
             Risk management roles, responsibilities and accountabilities have been  defined and agreed upon.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Roles, responsibilities and accountabilities for the risks owners are defined,
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">Roles, responsibilities and accountabilities for the risks owners are defined,
         agreed upon and documented where it is accessible to all team members.</p></div>
 </div>
 <div class="row well well-sm">
@@ -186,7 +186,7 @@
             Regular check points with Business Stakeholders to ensure they are aware of all risks and issues.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">There is clear communication with the business stakeholders and different
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">There is clear communication with the business stakeholders and different
         stakeholders on the risks and mitigation plans in progress.</p></div>
 </div>
 <hr>
@@ -204,7 +204,7 @@
             Risk mitigations and actions are explicitly designed to increase positive outcomes and reduce negative outcomes.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The team explicitly designs the risk mitigation and actions and are proactive
+    <div class="col-xs-7"><p ng-class="getClass(master1)">The team explicitly designs the risk mitigation and actions and are proactive
         rather than reactive towards the potential of risks.</p></div>
 </div>
 <div class="row well well-sm">
@@ -220,7 +220,7 @@
             The business participates in developing mitigation strategies.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Business stakeholders are also involved in the risks mitigation strategies
+    <div class="col-xs-7"><p ng-class="getClass(master2)">Business stakeholders are also involved in the risks mitigation strategies
         and are aware of the effect of the various risks.</p></div>
 </div>
 <div class="row well well-sm">
@@ -237,7 +237,7 @@
             terms of uncertainty (which could be positive or negative)
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Risk management is used to identify potential opportunities and these are
+    <div class="col-xs-7"><p ng-class="getClass(master3)">Risk management is used to identify potential opportunities and these are
         recorded in the story management system linking them to the risks. There is openess with respect to raising and
         highlighting risks and using them to inform the strategy.</p></div>
 </div>
@@ -254,7 +254,7 @@
             Measures and metrics exist to demonstrate the effectiveness of risk management and where improvement is required.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">The risks resolutions are measured and used to optimise the risk management process.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(master4)">The risks resolutions are measured and used to optimise the risk management process.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -269,7 +269,7 @@
             The financial impact of risk and issues is clearly understood.
         </label>
     </div>
-    <div class="col-xs-7"><p class="bg-info">Financial impact of the risks are captured and availed to stakeholders and
+    <div class="col-xs-7"><p ng-class="getClass(master5)">Financial impact of the risks are captured and availed to stakeholders and
         the team to drive more effective and optimised risk management.</p></div>
 </div>
 <hr>

@@ -81,7 +81,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
     .factory('SaveResults', ['$http', function ($http) {
         return {
             saveAssessments: function (data) {
-                console.log("Data: ", data);
                 return $http({
                     url: "http://localhost:4567/saveTeamData",
                     method: "POST",

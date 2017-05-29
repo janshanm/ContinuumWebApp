@@ -541,6 +541,17 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['score']).toEqual(expectedEnvironmentsScore);
       });
 
+      describe('#getClass', function () {
+          it('should get the warning class for parameters that are false', function(){
+              var warningClass = 'bg-warning';
+              expect(scope.getClass(false)).toEqual(warningClass);
+          });
+
+          it('should get the info class for parameters that are false', function(){
+              var infoClass = 'bg-info';
+              expect(scope.getClass(true)).toEqual(infoClass);
+          });
+      });
 
   });
 });
