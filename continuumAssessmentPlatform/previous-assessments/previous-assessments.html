@@ -1,15 +1,37 @@
-<p class="lead" style="margin-left: 50px" ng-init="init()">View Previous Assessment Results for the Portfolios that have been assessed.</p>
 
-<p style="margin-left: 50px">Assessment Date: {{dateOfAssessment}}</p>
+<div class="container">
+    <p class="lead" style="margin-left: 50px" ng-init="init()">View Previous Assessment Results for the Portfolios that have been assessed.</p>
+</div>
 
-<label for="selectedPortfolio" style="padding-left: 50px"> Select Different Portfolio: </label>
-<select name="selectedPortfolio" id="selectedPortfolio" ng-model="selectedPortfolio" ng-change="updatePortfolio()">
-    <option ng-repeat="assessmentPortfolio in assessmentPortfolios" value="{{assessmentPortfolio}}">{{assessmentPortfolio}}</option>
-</select>
+<div id="exTab3" class="container">
+    <ul  class="nav nav-pills">
+        <li ng-class="{active: selectedTab == 1}">
+            <a href="" ng-click="selectedTab = 1;" data-toggle="tab">Previous Assessment Charts</a>
+        </li>
+        <li ng-class="{active: selectedTab == 2}"><a href="" ng-click="selectedTab = 2;" data-toggle="tab">Team Trends</a>
+        </li>
+    </ul>
 
-<label for="dateOfAssessment" style="padding-left: 50px"> Select Different Assessment Date: </label>
-<select name="dateOfAssessment" id="dateOfAssessment" ng-model="dateOfAssessment" ng-change="updateChart()">
-    <option ng-repeat="assessmentDate in assessmentDates" value="{{assessmentDate}}">{{assessmentDate}}</option>
-</select>
-<canvas id="radar-chart-previous" width="800" height="600"></canvas>
+    <div class="tab-content clearfix">
+        <div class="tab-pane active" id="previousAssessments" ng-show="selectedTab == 1">
+            <p style="margin-left: 50px">Assessment Date: {{dateOfAssessment}}</p>
+            <label for="selectedPortfolio" style="padding-left: 50px"> Select Different Portfolio: </label>
+            <select name="selectedPortfolio" id="selectedPortfolio" ng-model="selectedPortfolio" ng-change="updatePortfolio()">
+                <option ng-repeat="assessmentPortfolio in assessmentPortfolios" value="{{assessmentPortfolio}}">{{assessmentPortfolio}}</option>
+            </select>
 
+            <label for="dateOfAssessment" style="padding-left: 50px"> Select Different Assessment Date: </label>
+            <select name="dateOfAssessment" id="dateOfAssessment" ng-model="dateOfAssessment" ng-change="updateChart()">
+                <option ng-repeat="assessmentDate in assessmentDates" value="{{assessmentDate}}">{{assessmentDate}}</option>
+            </select>
+            <canvas id="radar-chart-previous" width="800" height="600"></canvas>
+        </div>
+        <div class="tab-pane active" id="teamTrends" ng-show="selectedTab == 2">
+            <label for="selectedTeamName" style="padding-left: 50px"> Select Different Team: </label>
+            <select name="selectedTeamName" id="selectedTeamName" ng-model="selectedTeamName" ng-change="updateTeamInformation()">
+                <option ng-repeat="teamName in teamNames" value="{{teamName}}">{{teamName}}</option>
+            </select>
+            <canvas id="history-chart-previous" width="800" height="600"></canvas>
+        </div>
+    </div>
+</div>

@@ -23,3 +23,17 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+#exTab3 .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+  background-color: lightgrey;
+  padding : 5px 15px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 4px 4px 4px 4px;
+  padding: 10px;
+}

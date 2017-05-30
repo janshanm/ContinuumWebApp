@@ -12,13 +12,17 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
     .controller('PreviousAssessmentsCtrl', ['$scope', 'RetrieveAssessments', function($scope, RetrieveAssessments) {
 
         $scope.init = function () {
+            $scope.selectedTab = 1;
             RetrieveAssessments.getAssessments().then(function (response) {
                 $scope.allAssessments = response.data;
                 $scope.assessmentPortfolios = getAllPortfolios($scope.allAssessments);
                 $scope.selectedPortfolio = $scope.assessmentPortfolios[0];
                 $scope.assessmentDates = getAssessmentDates($scope.allAssessments, $scope.selectedPortfolio);
                 $scope.dateOfAssessment = $scope.assessmentDates[0];
+                $scope.teamNames = getTeamNames($scope.allAssessments);
+                $scope.selectedTeamName = $scope.teamNames[0];
                 $scope.showChart();
+                $scope.showHistory();
 
             });
         };
@@ -67,6 +71,48 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             $scope.showChart();
         };
 
+        $scope.showHistory = function(){
+            $scope.assessmentsForTeam = getAssessmentsForTeam($scope.allAssessments, $scope.selectedTeamName);
+            $scope.data = createDataSetForHistory($scope.assessmentsForTeam);
+            var options = {
+                responsive: true,
+                title: {
+                    display: true,
+                    position: "top",
+                    text: "Trends for Feature Team " + $scope.selectedTeamName,
+                    fontSize: 18,
+                    fontColor: "#111"
+                },
+                legend: {
+                    display: true,
+                    position: "bottom",
+                    labels: {
+                        fontColor: "#333",
+                        fontSize: 16
+                    }
+                },
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 5,
+                        stepSize: 1
+                    }
+                }
+            };
+
+            new Chart(document.getElementById("history-chart-previous"), {
+                type: "line",
+                data: $scope.data,
+                options: options
+            });
+
+        };
+        
+        $scope.updateTeamInformation = function(){
+            $scope.showHistory();
+        };
+
         var getAllPortfolios = function(assessments){
             var assessmentPortfolios = [];
             for(var id in assessments){
@@ -76,7 +122,6 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
                     assessmentPortfolios.push(portfolioName);
                 }
             }
-            console.log(assessmentPortfolios);
             return assessmentPortfolios;
         };
 
@@ -101,6 +146,48 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
                 }
             }
             return assessmentsForDate;
+        };
+
+        var getTeamNames = function (assessments) {
+            var assessmentNames = [];
+            for(var id in assessments){
+                var assessmentArray = assessments[id].assessments;
+                for(var id in assessmentArray) {
+                    var assessment = assessmentArray[id];
+                    if (!assessmentNames.includes(assessment.teamName) && assessment.teamName !== 'Average For All The Teams') {
+                        assessmentNames.push(assessment.teamName);
+                    }
+                }
+            }
+            return assessmentNames;
+        };
+
+        var getAssessmentsForTeam = function(assessments, teamName){
+            var teamAssessments = [];
+            for(var id in assessments){
+                var assessment = assessments[id].assessments;
+                var dateAssessed = assessments[id].dateAssessed;
+                for(var a_id in assessment) {
+                    var assessment2 = assessment[a_id];
+                    if (assessment2.teamName === teamName) {
+                        assessment2['dateAssessed'] = dateAssessed;
+                        teamAssessments.push(assessment2);
+                    }
+                }
+            }
+            return teamAssessments;
+        };
+
+        var getAssessmentDatesForTeam = function(assessments){
+            var assessmentDates = [];
+            for(var id in assessments){
+                var dateAssessed = assessments[id].dateAssessed;
+
+                if(!assessmentDates.includes(dateAssessed)) {
+                    assessmentDates.push(dateAssessed);
+                }
+            }
+            return assessmentDates;
         };
 
         var foreColors = ["rgba(255,99,132,1)", "rgba(141, 92, 7, 1)","rgba(216, 239, 42, 1)", "rgba(130, 239, 42, 1)",
@@ -139,6 +226,166 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
 
             return dataSets;
         };
+
+        var createDataSetForHistory = function(assessments){
+            var teamAssessmentDates = getAssessmentDatesForTeam(assessments);
+            var labels = teamAssessmentDates;
+            var strategyData = [];
+            var planningData = [];
+            var codingData = [];
+            var ciData = [];
+            var incidentData = [];
+            var riskData = [];
+            var designData = [];
+            var teamingData = [];
+            var releaseData = [];
+            var qaData = [];
+            var environmentsData = [];
+            var featureTeamsData = [];
+
+            for(var id in teamAssessmentDates){
+                strategyData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'strategy'));
+                planningData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'planning'));
+                codingData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'coding'));
+                ciData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'ci'));
+                incidentData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'incident'));
+                riskData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'risk'));
+                designData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'design'));
+                teamingData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'teaming'));
+                releaseData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'release'));
+                qaData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'qa'));
+                environmentsData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'environments'));
+                featureTeamsData.push(getAssessmentScoreForDimensionAndDate(assessments, teamAssessmentDates[id], 'featureTeams'));
+            }
+
+            var data = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Strategy Alignment",
+                        data: strategyData,
+                        backgroundColor: "blue",
+                        borderColor: "blue",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Planning and Requirements",
+                        data: planningData,
+                        backgroundColor: "green",
+                        borderColor: "green",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Coding Practices",
+                        data: codingData,
+                        backgroundColor: "red",
+                        borderColor: "red",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Continuous Integration",
+                        data: ciData,
+                        backgroundColor: "black",
+                        borderColor: "black",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Incident Management",
+                        data: incidentData,
+                        backgroundColor: "purple",
+                        borderColor: "purple",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Risk and Issue Management",
+                        data: riskData,
+                        backgroundColor: "yellow",
+                        borderColor: "yellow",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Software Design",
+                        data: designData,
+                        backgroundColor: "orange",
+                        borderColor: "orange",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Teaming",
+                        data: teamingData,
+                        backgroundColor: "brown",
+                        borderColor: "brown",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Release Management",
+                        data: releaseData,
+                        backgroundColor: "grey",
+                        borderColor: "grey",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Quality Assurance",
+                        data: qaData,
+                        backgroundColor: "gold",
+                        borderColor: "gold",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Environments",
+                        data: environmentsData,
+                        backgroundColor: "magenta",
+                        borderColor: "magenta",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    },
+                    {
+                        label: "Feature Teams",
+                        data: featureTeamsData,
+                        backgroundColor: "pink",
+                        borderColor: "pink",
+                        fill: false,
+                        lineTension: 0,
+                        radius: 5
+                    }
+                ]
+            };
+
+            return data;
+
+        };
+
+        var getAssessmentScoreForDimensionAndDate = function(assessments, dateRequested, dimensionName){
+            for(var id in assessments){
+                var assessment = assessments[id];
+                if(assessment.dateAssessed === dateRequested){
+                   return assessment[dimensionName];
+                }
+            }
+
+            return 0;
+        }
 
     }])
 
