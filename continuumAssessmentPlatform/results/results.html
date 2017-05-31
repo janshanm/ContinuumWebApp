@@ -1,14 +1,188 @@
 <p class="lead" ng-init="init()" style="margin-left: 50px">Please find assessment results. For any dimension not aligned please select on the menu and review.</p>
-<div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
-    <p>Assessment results successfully saved</p>
+
+<div id="exTab3" class="container">
+    <ul  class="nav nav-pills">
+        <li ng-class="{active: selectedTab == 1}">
+            <a href="" ng-click="selectedTab = 1;" data-toggle="tab">Assessment Results</a>
+        </li>
+        <li ng-class="{active: selectedTab == 2}"><a href="" ng-click="selectedTab = 2;" data-toggle="tab">Recommended Capabilities</a>
+        </li>
+    </ul>
+
+    <div class="tab-content clearfix">
+        <div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
+            <p>Assessment results successfully saved</p>
+        </div>
+        <div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
+            <p>Something went wrong. Assessment results not saved.</p>
+        </div>
+        <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
+            <canvas id="radar-chart" width="800" height="600"></canvas>
+            <p align="right">
+                <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
+            </p>
+        </div>
+        <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Dimension</th>
+                    <th>Current Level</th>
+                    <th>Next Level</th>
+                    <th>Tasks Required</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Strategy Alignment</td>
+                        <td>{{strategy.current_score}}</td>
+                        <td>{{strategy.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in strategy.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in strategy.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Planning and Requirements</td>
+                        <td>{{planning.current_score}}</td>
+                        <td>{{planning.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in planning.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in planning.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Coding Practices</td>
+                        <td>{{coding.current_score}}</td>
+                        <td>{{coding.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in coding.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in coding.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Continuous Integration</td>
+                        <td>{{ci.current_score}}</td>
+                        <td>{{ci.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in ci.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in ci.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Incident Management</td>
+                        <td>{{incident.current_score}}</td>
+                        <td>{{incident.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in incident.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in incident.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Risk and Issue Management</td>
+                        <td>{{risk.current_score}}</td>
+                        <td>{{risk.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in risk.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in risk.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Software Design</td>
+                        <td>{{design.current_score}}</td>
+                        <td>{{design.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in design.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in design.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Teaming</td>
+                        <td>{{teaming.current_score}}</td>
+                        <td>{{teaming.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in teaming.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in teaming.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Release Management</td>
+                        <td>{{release.current_score}}</td>
+                        <td>{{release.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in release.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in release.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Quality Assurance</td>
+                        <td>{{quality.current_score}}</td>
+                        <td>{{quality.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in quality.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in quality.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>Environments</td>
+                        <td>{{environments.current_score}}</td>
+                        <td>{{environments.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in environments.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in environments.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>Feature Teams</td>
+                        <td>{{featureTeams.current_score}}</td>
+                        <td>{{featureTeams.next_score}}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success" ng-repeat="task in featureTeams.tasks">{{task}}</li>
+                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in featureTeams.undoTasks">{{undoTask}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-<div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
-    <p>Something went wrong. Assessment results not saved.</p>
-</div>
-<canvas id="radar-chart" width="800" height="600"></canvas>
-<p align="right">
-    <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
-</p>
 
 
 

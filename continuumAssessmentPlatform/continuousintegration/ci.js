@@ -177,8 +177,11 @@ angular.module('continuumAssessmentPlatform.ci', ['ngRoute'])
     };
 
     var isMaster = function () {
-        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4 && $scope.master5
-            && $scope.master6 && $scope.master7 && $scope.master8 && $scope.master9 && $scope.master10;
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.expert1 && $scope.expert2
+            && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6 && $scope.expert7 && $scope.master1
+            && $scope.master2 && $scope.master3 && $scope.master4 && $scope.master5
+            && $scope.master6 && $scope.master7 && $scope.master8 && $scope.master9 && $scope.master10 && $scope.professional1
+            && $scope.professional2 && $scope.professional3 && $scope.professional4 && $scope.professional5 && $scope.professional6 && $scope.professional7;
     }
 
 

@@ -46,6 +46,11 @@ describe('continuumAssessmentPlatform.results module', function() {
         });
 
         describe('#init', function(){
+            it('should set the selected tab to 1', function(){
+                scope.init();
+                expect(scope.selectedTab).toEqual(1);
+            });
+
             describe('#noAssessments', function(){
                 it('should set the results data with initialisation values of zero and undefined team name', function(){
                     var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,

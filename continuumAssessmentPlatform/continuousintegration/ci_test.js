@@ -537,7 +537,7 @@ describe('continuumAssessmentPlatform.ci module', function() {
       it('should save the score for ci as 5 if master questions are answered as yes with the appropriate traveller ' +
           ' artisan, expert and professional questions are answered', function(){
           scope.traveller1 = false;
-          scope.traveller2 = true;
+          scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
           scope.traveller5 = false;
@@ -582,7 +582,7 @@ describe('continuumAssessmentPlatform.ci module', function() {
       it('should save the score for ci as 5 if master questions are answered as yes with the appropriate traveller ' +
           ' artisan, expert and professional questions are answered with other assessments', function(){
           scope.traveller1 = false;
-          scope.traveller2 = true;
+          scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
           scope.traveller5 = false;
