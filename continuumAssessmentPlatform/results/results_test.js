@@ -1274,6 +1274,246 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.risk['undoTasks'].length).toEqual(0);
                         });
                     });
+
+                    describe('#SoftwareDesign', function(){
+                        it('should set the design undo tasks based on the selected true questions for level 1', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 1, 'traveller1': true},
+                                'planning': {'score': 1, 'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true},
+                                'coding': {'score': 1, 'traveller1': true},
+                                'ci': {'score': 1},
+                                'incident': {'score': 1, 'traveller1': true},
+                                'risk': {'score': 1, 'traveller1': true, 'traveller2': true},
+                                'design': {'score': 1, 'traveller1': true, 'traveller2': true},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var one = 1;
+                            var two = 2;
+
+                            scope.init();
+                            expect(scope.design['current_score']).toEqual(one);
+                            expect(scope.design['next_score']).toEqual(two);
+                            expect(scope.design['tasks']).toContain(designTasks['artisan1']);
+                            expect(scope.design['tasks']).toContain(designTasks['artisan2']);
+                            expect(scope.design['tasks']).toContain(designTasks['traveller3']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['traveller1']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['traveller2']);
+                            expect(scope.design['undoTasks'].length).toEqual(2);
+                        });
+
+                        it('should set the design undo tasks based on the selected true questions for level 2', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 2, 'artisan1': true},
+                                'planning': {'score': 2, 'artisan1': true, 'traveller5': true},
+                                'coding': {'score': 2},
+                                'ci': {'score': 2},
+                                'incident': {'score': 2}, 'risk': {'score': 2},
+                                'design': {'score': 2, 'traveller1': true, 'traveller2': true, 'traveller3': true},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var two = 2;
+                            var three = 3;
+
+                            scope.init();
+                            expect(scope.design['current_score']).toEqual(two);
+                            expect(scope.design['next_score']).toEqual(three);
+                            expect(scope.design['tasks']).toContain(designTasks['artisan1']);
+                            expect(scope.design['tasks']).toContain(designTasks['artisan2']);
+                            expect(scope.design['tasks']).toContain(designTasks['expert1']);
+                            expect(scope.design['tasks']).toContain(designTasks['expert2']);
+                            expect(scope.design['tasks']).toContain(designTasks['expert3']);
+                            expect(scope.design['tasks']).toContain(designTasks['expert4']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['traveller1']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['traveller2']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['traveller3']);
+                            expect(scope.design['undoTasks'].length).toEqual(3);
+                        });
+
+                        it('should set the design undo tasks based on the selected true questions for level 3', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 3, 'expert1': true},
+                                'planning': {'score': 3, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 3},
+                                'ci': {'score': 3}, 'incident': {'score': 3}, 'risk': {'score': 3}, 'design': {'score': 3},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var three = 3;
+                            var four = 4;
+
+                            scope.init();
+                            expect(scope.design['current_score']).toEqual(three);
+                            expect(scope.design['next_score']).toEqual(four);
+                            expect(scope.design['tasks']).toContain(designTasks['professional1']);
+                            expect(scope.design['tasks']).toContain(designTasks['professional2']);
+                            expect(scope.design['tasks']).toContain(designTasks['professional3']);
+                            expect(scope.design['tasks']).toContain(designTasks['professional4']);
+                            expect(scope.design['tasks']).toContain(designTasks['professional5']);
+                            expect(scope.design['undoTasks'].length).toEqual(0);
+                        });
+
+                        it('should set the design undo tasks based on the selected true questions for level 4', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 4, 'traveller1': true},
+                                'planning': {'score': 4, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 4},
+                                'ci': {'score': 4, 'traveller2': true}, 'incident': {'score': 4}, 'risk': {'score': 4},
+                                'design': {'score': 4, 'professional1': true},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var four = 4;
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.design['current_score']).toEqual(four);
+                            expect(scope.design['next_score']).toEqual(five);
+                            expect(scope.design['tasks']).toContain(designTasks['master1']);
+                            expect(scope.design['tasks']).toContain(designTasks['master2']);
+                            expect(scope.design['undoTasks']).toContain(designTasks['professional1']);
+                            expect(scope.design['undoTasks'].length).toEqual(1);
+                        });
+
+                        it('should set the design undo tasks based on the selected true questions for level 5', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 5, 'traveller1': true}, 'planning': {'score': 5}, 'coding': {'score': 5},
+                                'ci': {'score': 5}, 'incident': {'score': 5}, 'risk': {'score': 5}, 'design': {'score': 5},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.design['current_score']).toEqual(five);
+                            expect(scope.design['next_score']).toEqual(five);
+                            expect(scope.design['tasks'].length).toEqual(0);
+                            expect(scope.design['undoTasks'].length).toEqual(0);
+                        });
+                    });
+
+                    describe('#Teaming', function(){
+                        it('should set the teaming undo tasks based on the selected true questions for level 1', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 1, 'traveller1': true},
+                                'planning': {'score': 1, 'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true},
+                                'coding': {'score': 1, 'traveller1': true},
+                                'ci': {'score': 1},
+                                'incident': {'score': 1, 'traveller1': true},
+                                'risk': {'score': 1, 'traveller1': true, 'traveller2': true},
+                                'design': {'score': 1, 'traveller1': true, 'traveller2': true},
+                                'teaming': {'score': 1, 'traveller2': true, 'traveller3': true},
+                                'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var one = 1;
+                            var two = 2;
+
+                            scope.init();
+                            expect(scope.teaming['current_score']).toEqual(one);
+                            expect(scope.teaming['next_score']).toEqual(two);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['artisan1']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['artisan2']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['artisan3']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['traveller1']);
+                            expect(scope.teaming['undoTasks']).toContain(teamingTasks['traveller2']);
+                            expect(scope.teaming['undoTasks']).toContain(teamingTasks['traveller3']);
+                            expect(scope.teaming['undoTasks'].length).toEqual(2);
+                        });
+
+                        it('should set the teaming undo tasks based on the selected true questions for level 2', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 2, 'artisan1': true},
+                                'planning': {'score': 2, 'artisan1': true, 'traveller5': true},
+                                'coding': {'score': 2},
+                                'ci': {'score': 2},
+                                'incident': {'score': 2}, 'risk': {'score': 2},
+                                'design': {'score': 2, 'traveller1': true, 'traveller2': true, 'traveller3': true},
+                                'teaming': {'score': 2}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var two = 2;
+                            var three = 3;
+
+                            scope.init();
+                            expect(scope.teaming['current_score']).toEqual(two);
+                            expect(scope.teaming['next_score']).toEqual(three);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['expert1']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['expert2']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['expert3']);
+                            expect(scope.teaming['undoTasks'].length).toEqual(0);
+                        });
+
+                        it('should set the teaming undo tasks based on the selected true questions for level 3', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 3, 'expert1': true},
+                                'planning': {'score': 3, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 3},
+                                'ci': {'score': 3}, 'incident': {'score': 3}, 'risk': {'score': 3}, 'design': {'score': 3},
+                                'teaming': {'score': 3}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var three = 3;
+                            var four = 4;
+
+                            scope.init();
+                            expect(scope.teaming['current_score']).toEqual(three);
+                            expect(scope.teaming['next_score']).toEqual(four);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['professional1']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['professional2']);
+                            expect(scope.teaming['undoTasks'].length).toEqual(0);
+                        });
+
+                        it('should set the teaming undo tasks based on the selected true questions for level 4', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 4, 'traveller1': true},
+                                'planning': {'score': 4, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 4},
+                                'ci': {'score': 4, 'traveller2': true}, 'incident': {'score': 4}, 'risk': {'score': 4},
+                                'design': {'score': 4, 'professional1': true},
+                                'teaming': {'score': 4, 'traveller1': true}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var four = 4;
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.teaming['current_score']).toEqual(four);
+                            expect(scope.teaming['next_score']).toEqual(five);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['master1']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['master2']);
+                            expect(scope.teaming['tasks']).toContain(teamingTasks['master3']);
+                            expect(scope.teaming['undoTasks']).toContain(teamingTasks['traveller1']);
+                            expect(scope.teaming['undoTasks'].length).toEqual(1);
+                        });
+
+                        it('should set the teaming undo tasks based on the selected true questions for level 5', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 5, 'traveller1': true}, 'planning': {'score': 5}, 'coding': {'score': 5},
+                                'ci': {'score': 5}, 'incident': {'score': 5}, 'risk': {'score': 5}, 'design': {'score': 5},
+                                'teaming': {'score': 5}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.teaming['current_score']).toEqual(five);
+                            expect(scope.teaming['next_score']).toEqual(five);
+                            expect(scope.teaming['tasks'].length).toEqual(0);
+                            expect(scope.teaming['undoTasks'].length).toEqual(0);
+                        });
+                    });
                 });
             });
         });

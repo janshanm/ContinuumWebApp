@@ -1160,6 +1160,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
+            if(designResults['next_score'] === 6){
+                designResults['next_score'] = 5;
+            }
+
             return designResults;
         };
 
@@ -1242,6 +1246,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 if(!teamingAssessments['master3']){
                     teamingResults['tasks'].push(teamingTasks['master3']);
                 }
+            }
+
+            if(teamingResults['next_score'] === 6){
+                teamingResults['next_score'] = 5;
             }
 
             return teamingResults;
