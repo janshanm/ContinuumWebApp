@@ -51,6 +51,16 @@ describe('continuumAssessmentPlatform.results module', function() {
                 expect(scope.selectedTab).toEqual(1);
             });
 
+            it('should set the default for isSaved to false', function(){
+                scope.init();
+                expect(scope.isSaved).toBeFalsy();
+            });
+
+            it('should set the default for isNotSaved to false', function(){
+                scope.init();
+                expect(scope.isNotSaved).toBeFalsy();
+            });
+
             describe('#noAssessments', function(){
                 it('should set the results data with initialisation values of zero and undefined team name', function(){
                     var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,
@@ -184,6 +194,32 @@ describe('continuumAssessmentPlatform.results module', function() {
                 expect(scope.isSaved).toBeFalsy();
                 expect(scope.isNotSaved).toBeTruthy();
             })
+        });
+
+        describe('#getImages', function(){
+            it('should return traveller female icon if the score is 1', function(){
+                expect(scope.getImage(1)).toEqual('images/traveller_female.png');
+            });
+
+            it('should return artisan female icon if the score is 2', function(){
+                expect(scope.getImage(2)).toEqual('images/artisan_female.png');
+            });
+
+            it('should return expert female icon if the score is 3', function(){
+                expect(scope.getImage(3)).toEqual('images/expert_female.png');
+            });
+
+            it('should return professional female icon if the score is 4', function(){
+                expect(scope.getImage(4)).toEqual('images/professional_female.png');
+            });
+
+            it('should return master female icon if the score is 5', function(){
+                expect(scope.getImage(5)).toEqual('images/master_female.png');
+            });
+
+            it('should return traveller male icon if the score is 0', function(){
+                expect(scope.getImage(0)).toEqual('images/traveller_male.png');
+            });
         });
 
     });
