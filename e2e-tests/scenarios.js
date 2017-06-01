@@ -2,17 +2,17 @@
 
 describe('continuum assessment platform', function() {
 
-    beforeEach(function () {
-        browser.addMockModule('httpBackendMock',
-            function() {
-                angular.module('httpBackendMock',
-                    ['continuumAssessmentPlatform', 'ngMockE2E'])
-                    .run(function ($httpBackend) {
-                        $httpBackend.whenGET('/\/assessment\//').respond(200, {});
-                        $httpBackend.whenGET(/.*/).passThrough();
-                    });
-            });
-    });
+    // beforeEach(function () {
+    //     browser.addMockModule('httpBackendMock',
+    //         function() {
+    //             angular.module('httpBackendMock',
+    //                 ['continuumAssessmentPlatform', 'ngMockE2E'])
+    //                 .run(function ($httpBackend) {
+    //                     $httpBackend.whenGET('/\/assessment\//').respond(200, {});
+    //                     $httpBackend.whenGET(/.*/).passThrough();
+    //                 });
+    //         });
+    // });
 
     it('should automatically redirect to /strategy when location hash/fragment is empty', function() {
     browser.get('continuumAssessmentPlatform');
@@ -24,135 +24,135 @@ describe('continuum assessment platform', function() {
             browser.get('continuumAssessmentPlatform');
         });
 
-        it('should go through a positive flow successfully', function(){
-            element(by.css('option[value="PBB"]')).click();
-            element(by.css('option[value="USSD"]')).click();
-            element(by.id('assessTeamLink')).click();
-
-            // expect(browser.getLocationAbsUrl()).toMatch("/strategy");
-
-            element(by.id('strategyArtisan1')).click();
-            element(by.id('strategyArtisan2')).click();
-            element(by.id('strategyArtisan3')).click();
-
-            element(by.id('nextButtonStrategy')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/planning");
-
-            element(by.id('planningTraveller1')).click();
-            element(by.id('planningTraveller2')).click();
-            element(by.id('planningTraveller3')).click();
-            element(by.id('planningTraveller4')).click();
-            element(by.id('planningTraveller5')).click();
-
-            element(by.id('nextButtonPlanning')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/coding");
-
-            element(by.id('codingArtisan1')).click();
-            element(by.id('codingArtisan2')).click();
-            element(by.id('codingExpert1')).click();
-            element(by.id('codingExpert2')).click();
-            element(by.id('codingExpert3')).click();
-            element(by.id('codingExpert4')).click();
-            element(by.id('codingProfessional1')).click();
-            element(by.id('codingProfessional2')).click();
-            element(by.id('codingProfessional3')).click();
-            element(by.id('codingProfessional4')).click();
-
-            element(by.id('nextButtonCoding')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/ci");
-
-            element(by.id('ciTraveller1')).click();
-            element(by.id('ciTraveller2')).click();
-            element(by.id('ciTraveller3')).click();
-            element(by.id('ciTraveller4')).click();
-            element(by.id('ciTraveller5')).click();
-            element(by.id('ciTraveller6')).click();
-
-            element(by.id('nextButtonCi')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/incident");
-
-            element(by.id('incidentArtisan1')).click();
-            element(by.id('incidentArtisan2')).click();
-            element(by.id('incidentArtisan3')).click();
-            element(by.id('incidentExpert1')).click();
-            element(by.id('incidentExpert2')).click();
-            element(by.id('incidentExpert3')).click();
-            element(by.id('incidentExpert4')).click();
-            element(by.id('incidentExpert5')).click();
-            element(by.id('incidentExpert6')).click();
-
-            element(by.id('nextButtonIncident')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/risk");
-
-            element(by.id('riskArtisan1')).click();
-            element(by.id('riskArtisan2')).click();
-            element(by.id('riskArtisan3')).click();
-
-            element(by.id('nextButtonRisk')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/design");
-
-            element(by.id('designTraveller1')).click();
-            element(by.id('designTraveller2')).click();
-            element(by.id('designTraveller3')).click();
-
-            element(by.id('nextButtonDesign')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/teaming");
-
-            element(by.id('teamingTraveller1')).click();
-            element(by.id('teamingArtisan1')).click();
-            element(by.id('teamingArtisan2')).click();
-            element(by.id('teamingArtisan3')).click();
-
-            element(by.id('nextButtonTeaming')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/release");
-
-            element(by.id('releaseTraveller1')).click();
-            element(by.id('releaseTraveller2')).click();
-            element(by.id('releaseTraveller3')).click();
-            element(by.id('releaseTraveller4')).click();
-
-            element(by.id('nextButtonRelease')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/quality");
-
-            element(by.id('qualityTraveller1')).click();
-            element(by.id('qualityTraveller2')).click();
-            element(by.id('qualityTraveller3')).click();
-            element(by.id('qualityTraveller4')).click();
-            element(by.id('qualityTraveller5')).click();
-            element(by.id('qualityTraveller6')).click();
-
-            element(by.id('nextButtonQuality')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/environments");
-
-            element(by.id('environmentsTraveller1')).click();
-            element(by.id('environmentsTraveller2')).click();
-            element(by.id('environmentsTraveller3')).click();
-            element(by.id('environmentsTraveller4')).click();
-            element(by.id('environmentsTraveller5')).click();
-            element(by.id('environmentsTraveller6')).click();
-            element(by.id('environmentsTraveller7')).click();
-
-            element(by.id('nextButtonEnvironments')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/featureteams");
-
-            element(by.id('featureTeamsTraveller1')).click();
-            element(by.id('featureTeamsTraveller2')).click();
-            element(by.id('featureTeamsTraveller3')).click();
-            element(by.id('featureTeamsTraveller4')).click();
-
-            element(by.id('nextButtonFeatureTeams')).click();
-
-            expect(browser.getLocationAbsUrl()).toMatch("/results");
-            expect(element.all(by.css('[ng-view] p')).first().getText()).
-                toMatch(/Please find assessment results. For any dimension not aligned please select on the menu and review./);
-
-            var titleForChart = 'Assessment Results for USSD for Portfolio: Personal and Business Banking';
-            var labelForChart = 'TEAM: USSD for Portfolio: Personal and Business Banking';
-            element(by.xpath("//*[contains(., '" + titleForChart + "')]"));
-            element(by.xpath("//*[contains(., '" + labelForChart + "')]"));
-
-
-        });
+        // it('should go through a positive flow successfully', function(){
+        //     element(by.css('option[value="PBB"]')).click();
+        //     element(by.css('option[value="USSD"]')).click();
+        //     element(by.id('assessTeamLink')).click();
+        //
+        //     expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+        //
+        //     element(by.id('strategyArtisan1')).click();
+        //     element(by.id('strategyArtisan2')).click();
+        //     element(by.id('strategyArtisan3')).click();
+        //
+        //     element(by.id('nextButtonStrategy')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/planning");
+        //
+        //     element(by.id('planningTraveller1')).click();
+        //     element(by.id('planningTraveller2')).click();
+        //     element(by.id('planningTraveller3')).click();
+        //     element(by.id('planningTraveller4')).click();
+        //     element(by.id('planningTraveller5')).click();
+        //
+        //     element(by.id('nextButtonPlanning')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/coding");
+        //
+        //     element(by.id('codingArtisan1')).click();
+        //     element(by.id('codingArtisan2')).click();
+        //     element(by.id('codingExpert1')).click();
+        //     element(by.id('codingExpert2')).click();
+        //     element(by.id('codingExpert3')).click();
+        //     element(by.id('codingExpert4')).click();
+        //     element(by.id('codingProfessional1')).click();
+        //     element(by.id('codingProfessional2')).click();
+        //     element(by.id('codingProfessional3')).click();
+        //     element(by.id('codingProfessional4')).click();
+        //
+        //     element(by.id('nextButtonCoding')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/ci");
+        //
+        //     element(by.id('ciTraveller1')).click();
+        //     element(by.id('ciTraveller2')).click();
+        //     element(by.id('ciTraveller3')).click();
+        //     element(by.id('ciTraveller4')).click();
+        //     element(by.id('ciTraveller5')).click();
+        //     element(by.id('ciTraveller6')).click();
+        //
+        //     element(by.id('nextButtonCi')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/incident");
+        //
+        //     element(by.id('incidentArtisan1')).click();
+        //     element(by.id('incidentArtisan2')).click();
+        //     element(by.id('incidentArtisan3')).click();
+        //     element(by.id('incidentExpert1')).click();
+        //     element(by.id('incidentExpert2')).click();
+        //     element(by.id('incidentExpert3')).click();
+        //     element(by.id('incidentExpert4')).click();
+        //     element(by.id('incidentExpert5')).click();
+        //     element(by.id('incidentExpert6')).click();
+        //
+        //     element(by.id('nextButtonIncident')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/risk");
+        //
+        //     element(by.id('riskArtisan1')).click();
+        //     element(by.id('riskArtisan2')).click();
+        //     element(by.id('riskArtisan3')).click();
+        //
+        //     element(by.id('nextButtonRisk')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/design");
+        //
+        //     element(by.id('designTraveller1')).click();
+        //     element(by.id('designTraveller2')).click();
+        //     element(by.id('designTraveller3')).click();
+        //
+        //     element(by.id('nextButtonDesign')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/teaming");
+        //
+        //     element(by.id('teamingTraveller1')).click();
+        //     element(by.id('teamingArtisan1')).click();
+        //     element(by.id('teamingArtisan2')).click();
+        //     element(by.id('teamingArtisan3')).click();
+        //
+        //     element(by.id('nextButtonTeaming')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/release");
+        //
+        //     element(by.id('releaseTraveller1')).click();
+        //     element(by.id('releaseTraveller2')).click();
+        //     element(by.id('releaseTraveller3')).click();
+        //     element(by.id('releaseTraveller4')).click();
+        //
+        //     element(by.id('nextButtonRelease')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/quality");
+        //
+        //     element(by.id('qualityTraveller1')).click();
+        //     element(by.id('qualityTraveller2')).click();
+        //     element(by.id('qualityTraveller3')).click();
+        //     element(by.id('qualityTraveller4')).click();
+        //     element(by.id('qualityTraveller5')).click();
+        //     element(by.id('qualityTraveller6')).click();
+        //
+        //     element(by.id('nextButtonQuality')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/environments");
+        //
+        //     element(by.id('environmentsTraveller1')).click();
+        //     element(by.id('environmentsTraveller2')).click();
+        //     element(by.id('environmentsTraveller3')).click();
+        //     element(by.id('environmentsTraveller4')).click();
+        //     element(by.id('environmentsTraveller5')).click();
+        //     element(by.id('environmentsTraveller6')).click();
+        //     element(by.id('environmentsTraveller7')).click();
+        //
+        //     element(by.id('nextButtonEnvironments')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/featureteams");
+        //
+        //     element(by.id('featureTeamsTraveller1')).click();
+        //     element(by.id('featureTeamsTraveller2')).click();
+        //     element(by.id('featureTeamsTraveller3')).click();
+        //     element(by.id('featureTeamsTraveller4')).click();
+        //
+        //     element(by.id('nextButtonFeatureTeams')).click();
+        //
+        //     expect(browser.getLocationAbsUrl()).toMatch("/results");
+        //     expect(element.all(by.css('[ng-view] p')).first().getText()).
+        //         toMatch(/Please find assessment results. For any dimension not aligned please select on the menu and review./);
+        //
+        //     var titleForChart = 'Assessment Results for USSD for Portfolio: Personal and Business Banking';
+        //     var labelForChart = 'TEAM: USSD for Portfolio: Personal and Business Banking';
+        //     element(by.xpath("//*[contains(., '" + titleForChart + "')]"));
+        //     element(by.xpath("//*[contains(., '" + labelForChart + "')]"));
+        //
+        //
+        // });
     });
 
     describe('Select Team Page', function(){
@@ -166,11 +166,11 @@ describe('continuum assessment platform', function() {
             expect(element(by.id('teamError')).isDisplayed()).toBeTruthy();
         });
 
-        it('should go to strategy page when a team is selected', function(){
-            element(by.cssContainingText('option', 'ATM')).click();
-            element(by.id('assessTeamLink')).click();
-            // expect(browser.getLocationAbsUrl()).toMatch("/strategy");
-        });
+        // it('should go to strategy page when a team is selected', function(){
+        //     element(by.cssContainingText('option', 'ATM')).click();
+        //     element(by.id('assessTeamLink')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+        // });
     });
 
 
