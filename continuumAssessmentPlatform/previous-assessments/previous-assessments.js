@@ -117,7 +117,7 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             var assessmentPortfolios = [];
             for(var id in assessments){
                 var portfolioName = assessments[id].portfolio;
-                if(!assessmentPortfolios.includes(portfolioName))
+                if(assessmentPortfolios.indexOf(portfolioName) === -1)
                 {
                     assessmentPortfolios.push(portfolioName);
                 }
@@ -130,7 +130,7 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             for(var id in assessments){
                 var dateAssessed = assessments[id].dateAssessed;
 
-                if(assessments[id].portfolio === portfolio && !assessmentDates.includes(dateAssessed)) {
+                if(assessments[id].portfolio === portfolio && assessmentDates.indexOf(dateAssessed)=== -1) {
                     assessmentDates.push(dateAssessed);
                 }
             }
@@ -154,7 +154,7 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
                 var assessmentArray = assessments[id].assessments;
                 for(var id in assessmentArray) {
                     var assessment = assessmentArray[id];
-                    if (!assessmentNames.includes(assessment.teamName) && assessment.teamName !== 'Average For All The Teams') {
+                    if (assessmentNames.indexOf(assessment.teamName) === -1 && assessment.teamName !== 'Average For All The Teams') {
                         assessmentNames.push(assessment.teamName);
                     }
                 }
@@ -182,8 +182,7 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             var assessmentDates = [];
             for(var id in assessments){
                 var dateAssessed = assessments[id].dateAssessed;
-
-                if(!assessmentDates.includes(dateAssessed)) {
+                if(assessmentDates.indexOf(dateAssessed) === -1) {
                     assessmentDates.push(dateAssessed);
                 }
             }
