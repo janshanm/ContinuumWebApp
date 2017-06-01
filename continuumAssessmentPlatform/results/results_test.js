@@ -916,6 +916,136 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.coding['undoTasks'].length).toEqual(0);
                         });
                     });
+
+                    describe('#continuousIntegration', function(){
+                        it('should set the CI undo tasks based on the selected true questions for level 1', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 1, 'traveller1': true},
+                                'planning': {'score': 1, 'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true},
+                                'coding': {'score': 1, 'traveller1': true},
+                                'ci': {'score': 1, 'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true},
+                                'incident': {'score': 1}, 'risk': {'score': 1}, 'design': {'score': 1},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var one = 1;
+                            var two = 2;
+
+                            scope.init();
+                            expect(scope.ci['current_score']).toEqual(one);
+                            expect(scope.ci['next_score']).toEqual(two);
+                            expect(scope.ci['tasks']).toContain(ciTasks['artisan1']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['artisan2']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['artisan3']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller1']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller3']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller5']);
+                            expect(scope.ci['undoTasks'].length).toEqual(3);
+                        });
+
+                        it('should set the CI undo tasks based on the selected true questions for level 2', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 2, 'artisan1': true},
+                                'planning': {'score': 2, 'artisan1': true, 'traveller5': true},
+                                'coding': {'score': 2},
+                                'ci': {'score': 2, 'traveller4': true, 'traveller6': true}, 'incident': {'score': 1}, 'risk': {'score': 1}, 'design': {'score': 1},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var two = 2;
+                            var three = 3;
+
+                            scope.init();
+                            expect(scope.ci['current_score']).toEqual(two);
+                            expect(scope.ci['next_score']).toEqual(three);
+                            expect(scope.ci['tasks']).toContain(ciTasks['traveller2']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert1']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert2']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert3']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert4']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert5']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert6']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['expert7']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller4']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller6']);
+                            expect(scope.ci['undoTasks'].length).toEqual(2);
+                        });
+
+                        it('should set the CI undo tasks based on the selected true questions for level 3', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 3, 'expert1': true},
+                                'planning': {'score': 3, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 3},
+                                'ci': {'score': 3}, 'incident': {'score': 1}, 'risk': {'score': 1}, 'design': {'score': 1},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var three = 3;
+                            var four = 4;
+
+                            scope.init();
+                            expect(scope.ci['current_score']).toEqual(three);
+                            expect(scope.ci['next_score']).toEqual(four);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional1']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional2']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional3']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional4']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional5']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional6']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['professional7']);
+                            expect(scope.ci['undoTasks'].length).toEqual(0);
+                        });
+
+                        it('should set the CI undo tasks based on the selected true questions for level 4', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 4, 'traveller1': true},
+                                'planning': {'score': 4, 'artisan1': true, 'traveller5': true, 'expert2': true, 'expert4': true},
+                                'coding': {'score': 4},
+                                'ci': {'score': 4, 'traveller2': true}, 'incident': {'score': 1}, 'risk': {'score': 1}, 'design': {'score': 1},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var four = 4;
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.ci['current_score']).toEqual(four);
+                            expect(scope.ci['next_score']).toEqual(five);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master1']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master2']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master3']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master4']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master5']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master6']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master7']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master8']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master9']);
+                            expect(scope.ci['tasks']).toContain(ciTasks['master10']);
+                            expect(scope.ci['undoTasks']).toContain(ciTasks['traveller2']);
+                            expect(scope.ci['undoTasks'].length).toEqual(1);
+                        });
+
+                        it('should set the coding undo tasks based on the selected true questions for level 5', function(){
+                            rootScope.teamName = 'Example Team';
+                            rootScope.selectedPortfolioName = 'Example Portfolio';
+                            rootScope.assessments = {'strategy': {'score': 5, 'traveller1': true}, 'planning': {'score': 5}, 'coding': {'score': 5},
+                                'ci': {'score': 5}, 'incident': {'score': 1}, 'risk': {'score': 1}, 'design': {'score': 1},
+                                'teaming': {'score': 1}, 'release': {'score': 1}, 'QA': {'score': 1}, 'environments': {'score': 1},
+                                'featureTeams': {'score': 1}};
+
+                            var five = 5;
+
+                            scope.init();
+                            expect(scope.ci['current_score']).toEqual(five);
+                            expect(scope.ci['next_score']).toEqual(five);
+                            expect(scope.ci['tasks'].length).toEqual(0);
+                            expect(scope.ci['undoTasks'].length).toEqual(0);
+                        });
+                    });
                 });
             });
         });
