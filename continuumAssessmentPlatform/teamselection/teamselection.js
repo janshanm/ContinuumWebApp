@@ -9,7 +9,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
         });
     }])
 
-    .controller('TeamSelectionCtrl', ['$location', '$scope', '$rootScope', function($location, $scope, $rootScope) {
+    .controller('TeamSelectionCtrl', ['$location', '$scope', '$rootScope', 'RetrieveAssessment', function($location, $scope, $rootScope, RetrieveAssessment) {
         $scope.teams = [{}];
         $scope.selectedTeam = "";
         $scope.selectedPortfolio = "AR";
@@ -113,8 +113,23 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                 $rootScope.hasError = false;
                 $rootScope.teamName = $scope.selectedTeam;
                 $rootScope.selectedPortfolioName = $scope.getPortfolioName($scope.selectedPortfolio);
-                $location.path('/strategy');
+                RetrieveAssessment.getAssessment($scope.selectedTeam).then(function(response){
+                    var data = response.data;
+                    $rootScope.assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
+                    $location.path('/strategy');
+                });
             }
         }
 
+    }])
+
+    .factory('RetrieveAssessment', ['$http', function ($http) {
+        return {
+            getAssessment: function (teamName) {
+                return $http({
+                    url: "http://localhost:4567/assessment?teamName="+teamName,
+                    method: "GET"
+                });
+            }
+        }
     }]);

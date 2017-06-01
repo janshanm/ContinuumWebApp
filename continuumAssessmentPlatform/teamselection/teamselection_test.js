@@ -68,14 +68,17 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
 
     describe('results controller', function () {
 
-        var controller, location;
+        var controller, location, q, deferred, retrieveAssessmentSpy;
         var scope, rootScope;
 
-        beforeEach(inject(function ($location, $controller, $rootScope) {
+        beforeEach(inject(function ($location, $controller, $rootScope, $q, RetrieveAssessment) {
+            q = $q;
+            deferred = $q.defer();
+            retrieveAssessmentSpy = jasmine.createSpyObj("RetrieveAssessment", ['getAssessment']);
             rootScope = $rootScope;
             scope = rootScope.$new();
             location = $location;
-            controller = $controller('TeamSelectionCtrl', {'$scope': scope, '$rootScope': rootScope});
+            controller = $controller('TeamSelectionCtrl', {'$scope': scope, '$rootScope': rootScope, 'RetrieveAssessment': retrieveAssessmentSpy});
         }));
 
         it('should be defined', function () {
@@ -206,6 +209,9 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
             it('should set error flag on rootscope to false if there is a selected team', function(){
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
+                deferred.resolve({'status': 200, 'data': '{}'});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
+
                 scope.saveTeamName();
 
                 expect(rootScope.hasError).toBeFalsy();
@@ -213,13 +219,20 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
 
             it('should proceed to the strategy page if there is a selected team', function(){
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
+                deferred.resolve({'status': 200, 'data': '{}'});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
+
                 scope.saveTeamName();
+                scope.$apply();
 
                 expect(location.path()).toEqual('/strategy');
             });
 
             it('should set the selected team on the root scope based of selected scope team name', function(){
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
+                deferred.resolve({'status': 200, 'data': '{}'});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
+
                 scope.saveTeamName();
 
                 expect(rootScope.teamName).toEqual('Insurance - Coverage Squad 1');
@@ -229,9 +242,42 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 scope.selectedPortfolio = 'W';
                 scope.portfolios = portfolios;
+                deferred.resolve({'status': 200, 'data': '{}'});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
                 scope.saveTeamName();
+                scope.$apply();
 
                 expect(rootScope.selectedPortfolioName).toEqual('Wealth');
+            });
+
+            it('should set the previous data in the rootScope assessment as an object', function(){
+                scope.selectedTeam = 'Insurance - Coverage Squad 1';
+                scope.selectedPortfolio = 'W';
+                scope.portfolios = portfolios;
+                var expectedAssessments = {'test': 'value'};
+
+                deferred.resolve({'status': 200, 'data': { 'rawData': "{\"test\": \"value\" }"}});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
+                scope.saveTeamName();
+                scope.$apply();
+
+                var actualAssessments = rootScope.assessments;
+                expect(actualAssessments).toEqual(expectedAssessments);
+            });
+
+            it('should set the previous data in the rootScope assessment as an empty object if no data', function(){
+                scope.selectedTeam = 'Insurance - Coverage Squad 1';
+                scope.selectedPortfolio = 'W';
+                scope.portfolios = portfolios;
+                var expectedAssessments = {};
+
+                deferred.resolve({'status': 200, 'data': {}});
+                retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
+                scope.saveTeamName();
+                scope.$apply();
+
+                var actualAssessments = rootScope.assessments;
+                expect(actualAssessments).toEqual(expectedAssessments);
             });
         });
     });
