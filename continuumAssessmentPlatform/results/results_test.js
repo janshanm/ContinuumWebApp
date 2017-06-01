@@ -10,6 +10,47 @@ describe('continuumAssessmentPlatform.results module', function() {
         var scope, rootScope;
         var saveResultsSpy;
 
+        var strategyTasks = {'traveller1': 'Any alignment to Strategy is coincidental or opportunistic',
+            'artisan1': 'Upfront engagement with stakeholders to ensure Business and Technical Alignment',
+            'artisan2': 'The product/project vision is explicitly aligned to strategy',
+            'artisan3': 'Post implementation review to confirm strategy alignment',
+            'expert1': 'Occasional engagement with stakeholders throughout delivery cycle to review business and technical alignment',
+            'expert2': 'Backlog items are created to deal with strategy alignment issues',
+            'professional1': 'Frequent engagement with Stakeholders to review Business and technical alignment',
+            'professional2': 'Team presents product to Architecture and Design teams with the intent of picking up alignment issues ',
+            'professional3': 'Metrics to measure strategy elements defined and tracked ',
+            'master1': 'All major strategy alignment backlog items have been resolved',
+            'master2': 'All requirements are attached to business metric',
+            'master3': 'Metrics are tracked over time and improvements targets are set and achieved',
+            'master4': 'Team independently innovates by creating new features or optimisations in support of or extending the strategy. '};
+        var planningTasks = {
+            'traveller1': 'Team is not involved in estimates',
+            'traveller2': 'No Specific prioritization of requirements',
+            'traveller3': 'Iteration lengths are erratic and based on the amount of functionality',
+            'traveller4': 'The team does not know their velocity',
+            'traveller5': 'No Stakeholder management in place ',
+            'artisan1': 'Team performs estimates up-front',
+            'artisan2': 'Requirements are prioritized based on business value',
+            'artisan3': 'Iteration lengths are fixed',
+            'artisan4': 'The team knows their velocity ',
+            'artisan5': 'Stakeholders have been identified and a communication plan is in place',
+            'expert1': 'Team performs estimation iteratively',
+            'expert2': 'When the team estimates, the estimates include all activities to reach \'Done\'.',
+            'expert3': 'The MVP and MVPS have been identified',
+            'expert4': 'The teams velocity is predictable ',
+            'expert5': 'All backlog items are sized by the teams',
+            'expert6': 'Stakeholders attend showcase',
+            'professional1': 'Team tracks performance against estimates',
+            'professional2': 'Requirements are developed on a just –in –time basis',
+            'professional3': 'Analytics are implemented to determine the effectiveness of requirements',
+            'professional4': 'The amount of functionality for each iteration is determined by the teams velocity',
+            'professional5': 'Technical debt and defects are tracked on the backlog and form part of the estimated team velocity',
+            'professional6': 'Stakeholders actively participate in retrospective',
+            'master1': 'Requirements are defined with an expected outcome with an objective measure',
+            'master2': 'Release planning is performed based on the teams current velocity',
+            'master3': 'A process is in place (e.g. a formal beta program)  to allow extended stakeholders and customers to evaluate the software and provide feedback.'};
+
+
         beforeEach(inject(function($controller, $rootScope, $q, SaveResults){
             q = $q;
             deferred = $q.defer();
@@ -74,6 +115,32 @@ describe('continuumAssessmentPlatform.results module', function() {
                 it('should call the draw chart function with the right parameters', function(){
                     scope.init();
                     expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,0,0,0,0,0,0,0,0,0,0,0,0,undefined);
+                });
+
+                it('should have the expected formatted strategy tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.strategy['current_score']).toEqual(zero);
+                    expect(scope.strategy['next_score']).toEqual(two);
+                    expect(scope.strategy['tasks']).toContain(strategyTasks['artisan1']);
+                    expect(scope.strategy['tasks']).toContain(strategyTasks['artisan2']);
+                    expect(scope.strategy['tasks']).toContain(strategyTasks['artisan3']);
+                    expect(scope.strategy['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted planning tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.planning['current_score']).toEqual(zero);
+                    expect(scope.planning['next_score']).toEqual(two);
+                    expect(scope.planning['tasks']).toContain(planningTasks['artisan1']);
+                    expect(scope.planning['tasks']).toContain(planningTasks['artisan2']);
+                    expect(scope.planning['tasks']).toContain(planningTasks['artisan3']);
+                    expect(scope.planning['tasks']).toContain(planningTasks['artisan4']);
+                    expect(scope.planning['tasks']).toContain(planningTasks['artisan5']);
+                    expect(scope.planning['undoTasks'].length).toEqual(zero);
                 });
             });
             describe('#emptyAssessments', function(){
