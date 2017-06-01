@@ -36,6 +36,10 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
         $scope.showChart = function(){
             $scope.assessmentsForDate = getAssessmentsForDate($scope.allAssessments, $scope.dateOfAssessment, $scope.selectedPortfolio);
             $scope.dataSets = createDataSetForChart($scope.assessmentsForDate);
+            $scope.drawRadialChart();
+        };
+
+        $scope.drawRadialChart = function(){
             new Chart(document.getElementById("radar-chart-previous"), {
                 type: 'radar',
                 data: {
@@ -101,12 +105,16 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
                 }
             };
 
+            $scope.drawHistoryChart(options);
+
+        };
+
+        $scope.drawHistoryChart = function(options){
             new Chart(document.getElementById("history-chart-previous"), {
                 type: "line",
                 data: $scope.data,
                 options: options
             });
-
         };
         
         $scope.updateTeamInformation = function(){

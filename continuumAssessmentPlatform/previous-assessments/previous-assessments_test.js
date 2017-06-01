@@ -129,6 +129,112 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
                     expect(scope.showHistory).toHaveBeenCalled();
                 });
             });
+
+        });
+
+        describe('#showChart', function(){
+            beforeEach(function(){
+                deferred.resolve({data: expectedRetrievedAssessments});
+                retrieveAssessmentsSpy.getAssessments.and.returnValue(deferred.promise);
+                spyOn(scope, 'drawRadialChart').and.returnValue(true);
+                spyOn(scope, 'showHistory').and.returnValue(true);
+                scope.init();
+                scope.$apply();
+            });
+
+            it('should set the assessment for dates based on the team and date being assessed', function(){
+                var expectedAssessmentsForDate = [{ 'ci': 0, 'coding': 1, 'dateAssessed': '01-06-2017', 'design': 1,
+                    'environments': 1, 'featureTeams': 2, 'incident': 3, 'planning': 1, 'qa': 0, 'release': 1,
+                    'rawData': {}, 'risk': 3, 'strategy': 1, 'teamName': 'Team 1', 'teaming': 2 }];
+
+                scope.showChart();
+                expect(scope.assessmentsForDate).toEqual(expectedAssessmentsForDate);
+            });
+
+            it('should set the data sets for the chart', function(){
+                var expectedDataSet = [{ 'label': 'TEAM: Team 1', 'fill': true, 'backgroundColor': 'rgba(255,99,132,0.2)',
+                    'borderColor': 'rgba(255,99,132,1)', 'pointBorderColor': '#fff', 'pointBackgroundColor': 'rgba(255,99,132,1)',
+                    'data': [ 1, 1, 1, 0, 3, 3, 1, 2, 1, 0, 1, 2 ] }];
+                scope.showChart();
+                expect(scope.dataSets).toEqual(expectedDataSet);
+            });
+
+            it('should call the draw radial chart method', function(){
+                scope.showChart();
+                expect(scope.drawRadialChart).toHaveBeenCalled();
+            });
+        });
+
+        describe('#showHistory', function(){
+            beforeEach(function(){
+                deferred.resolve({data: expectedRetrievedAssessments});
+                retrieveAssessmentsSpy.getAssessments.and.returnValue(deferred.promise);
+                spyOn(scope, 'drawHistoryChart').and.returnValue(true);
+                spyOn(scope, 'showChart').and.returnValue(true);
+                scope.init();
+                scope.$apply();
+            });
+
+            it('should set the assessment for team based on the selected team', function(){
+                var expectedAssessmentsForTeam = [
+                    { 'ci': 0, 'coding': 1, 'dateAssessed': '01-06-2017', 'design': 1, 'environments': 1, 'featureTeams': 2, 'incident': 3,
+                        'planning': 1, 'qa': 0, 'release': 1, 'rawData': {}, 'risk': 3, 'strategy': 1, 'teamName': 'Team 1', 'teaming': 2 },
+                    { 'ci': 0, 'coding': 1, 'dateAssessed': '30-05-2017', 'design': 1, 'environments': 1, 'featureTeams': 1, 'incident': 2,
+                        'planning': 2, 'qa': 1, 'release': 0, 'rawData': {}, 'risk': 2, 'strategy': 1, 'teamName': 'Team 1', 'teaming': 1 }];
+
+                scope.showHistory();
+                expect(scope.assessmentsForTeam).toEqual(expectedAssessmentsForTeam);
+            });
+
+            it('should set the data sets for the chart', function(){
+                var expectedDataSet = { labels: [ '01-06-2017', '30-05-2017' ],
+                    datasets: [
+                        { label: 'Strategy Alignment', data: [ 1, 1 ], backgroundColor: 'blue', borderColor: 'blue', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Planning and Requirements', data: [ 1, 2 ], backgroundColor: 'green', borderColor: 'green', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Coding Practices', data: [ 1, 1 ], backgroundColor: 'red', borderColor: 'red', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Continuous Integration', data: [ 0, 0 ], backgroundColor: 'black', borderColor: 'black', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Incident Management', data: [ 3, 2 ], backgroundColor: 'purple', borderColor: 'purple', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Risk and Issue Management', data: [ 3, 2 ], backgroundColor: 'yellow', borderColor: 'yellow', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Software Design', data: [ 1, 1 ], backgroundColor: 'orange', borderColor: 'orange', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Teaming', data: [ 2, 1 ], backgroundColor: 'brown', borderColor: 'brown', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Release Management', data: [ 1, 0 ], backgroundColor: 'grey', borderColor: 'grey', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Quality Assurance', data: [ 0, 1 ], backgroundColor: 'gold', borderColor: 'gold', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Environments', data: [ 1, 1 ], backgroundColor: 'magenta', borderColor: 'magenta', fill: false, lineTension: 0, radius: 5 },
+                        { label: 'Feature Teams', data: [ 2, 1 ], backgroundColor: 'pink', borderColor: 'pink', fill: false, lineTension: 0, radius: 5 } ] };
+                scope.showHistory();
+                expect(scope.data).toEqual(expectedDataSet);
+            });
+
+            it('should call the draw radial chart method', function(){
+                var options = {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        position: "top",
+                        text: "Trends for Feature Team Team 1",
+                        fontSize: 18,
+                        fontColor: "#111"
+                    },
+                    legend: {
+                        display: true,
+                        position: "bottom",
+                        labels: {
+                            fontColor: "#333",
+                            fontSize: 16
+                        }
+                    },
+                    scale: {
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 5,
+                            stepSize: 1
+                        }
+                    }
+                };
+                scope.showHistory();
+                expect(scope.drawHistoryChart).toHaveBeenCalledWith(options);
+            });
         });
     });
 });
