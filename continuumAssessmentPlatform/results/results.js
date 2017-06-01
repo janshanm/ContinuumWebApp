@@ -1380,6 +1380,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
+            if(releaseResults['next_score'] === 6){
+                releaseResults['next_score'] = 5;
+            }
+
             return releaseResults;
         };
 
@@ -1545,6 +1549,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 if(!qaAssessments['master4']){
                     qaResults['tasks'].push(qaTasks['master4']);
                 }
+            }
+
+            if(qaResults['next_score'] === 6){
+                qaResults['next_score'] = 5;
             }
 
             return qaResults;
