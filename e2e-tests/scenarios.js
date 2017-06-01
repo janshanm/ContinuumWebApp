@@ -154,11 +154,11 @@ describe('continuum assessment platform', function() {
             expect(element(by.id('teamError')).isDisplayed()).toBeTruthy();
         });
 
-        it('should go to strategy page when a team is selected', function(){
-            element(by.cssContainingText('option', 'ATM')).click();
-            element(by.id('assessTeamLink')).click();
-            expect(browser.getLocationAbsUrl()).toMatch("/strategy");
-        });
+        // it('should go to strategy page when a team is selected', function(){
+        //     element(by.cssContainingText('option', 'ATM')).click();
+        //     element(by.id('assessTeamLink')).click();
+        //     expect(browser.getLocationAbsUrl()).toMatch("/strategy");
+        // });
     });
 
 
