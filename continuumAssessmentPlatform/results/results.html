@@ -19,10 +19,10 @@
         </div>
         <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
             <canvas id="radar-chart" width="800" height="600"></canvas>
-            <p align="right">
-                <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
-            </p>
         </div>
+        <p align="right" ng-show="selectedTab == 1">
+            <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
+        </p>
         <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
             <table class="table table-striped">
                 <thead>
@@ -184,6 +184,3 @@
         </div>
     </div>
 </div>
-
-
-
