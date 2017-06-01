@@ -679,6 +679,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
+            if(codingResults['next_score'] === 6){
+                codingResults['next_score'] = 5;
+            }
+
             return codingResults;
 
         };
