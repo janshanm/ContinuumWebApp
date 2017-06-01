@@ -82,6 +82,28 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
         };
 
+        $scope.getImage = function(score){
+            if(score === 1){
+                return 'images/traveller_female.png';
+            }
+            else if (score === 2) {
+                return 'images/artisan_female.png';
+            }
+            else if (score === 3) {
+                return 'images/expert_female.png';
+            }
+            else if (score === 4) {
+                return 'images/professional_female.png';
+            }
+            else if (score === 5) {
+                return 'images/master_female.png';
+            }
+            else
+            {
+                return 'images/traveller_male.png';
+            }
+        };
+
         var strategyTasks = {'traveller1': 'Any alignment to Strategy is coincidental or opportunistic',
             'artisan1': 'Upfront engagement with stakeholders to ensure Business and Technical Alignment',
             'artisan2': 'The product/project vision is explicitly aligned to strategy',
@@ -1703,6 +1725,22 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
                 if(!featureTeamsAssessments['artisan3']){
                     featureTeamsResults['tasks'].push(featureTeamsTasks['artisan3']);
+                }
+
+                if(featureTeamsAssessments['traveller1']){
+                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller1']);
+                }
+
+                if(featureTeamsAssessments['traveller2']){
+                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller2']);
+                }
+
+                if(featureTeamsAssessments['traveller3']){
+                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller3']);
+                }
+
+                if(featureTeamsAssessments['traveller4']){
+                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller4']);
                 }
             }
 

@@ -3,9 +3,10 @@
 <div id="exTab3" class="container">
     <ul  class="nav nav-pills">
         <li ng-class="{active: selectedTab == 1}">
-            <a href="" ng-click="selectedTab = 1;" data-toggle="tab">Assessment Results</a>
+            <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">Assessment Results</a>
         </li>
-        <li ng-class="{active: selectedTab == 2}"><a href="" ng-click="selectedTab = 2;" data-toggle="tab">Recommended Capabilities</a>
+        <li ng-class="{active: selectedTab == 2}">
+            <a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Recommended Capabilities</a>
         </li>
     </ul>
 
@@ -26,19 +27,19 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Dimension</th>
+                    <th></th>
                     <th>Current Level</th>
+                    <th>Current Mastery</th>
                     <th>Next Level</th>
                     <th>Tasks Required</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Strategy Alignment</td>
-                        <td>{{strategy.current_score}}</td>
-                        <td>{{strategy.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/strategy_alignment.png"></td>
+                        <td align="center" style="vertical-align: middle">{{strategy.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(strategy.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{strategy.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in strategy.tasks">{{task}}</li>
@@ -47,10 +48,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Planning and Requirements</td>
-                        <td>{{planning.current_score}}</td>
-                        <td>{{planning.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/planning.png"></td>
+                        <td align="center" style="vertical-align: middle">{{planning.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(planning.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{planning.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in planning.tasks">{{task}}</li>
@@ -59,10 +60,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Coding Practices</td>
-                        <td>{{coding.current_score}}</td>
-                        <td>{{coding.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/coding_practices.png"></td>
+                        <td align="center" style="vertical-align: middle">{{coding.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(coding.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{coding.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in coding.tasks">{{task}}</li>
@@ -71,10 +72,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">4</th>
-                        <td>Continuous Integration</td>
-                        <td>{{ci.current_score}}</td>
-                        <td>{{ci.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/continuous_integration.png"></td>
+                        <td align="center" style="vertical-align: middle">{{ci.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(ci.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{ci.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in ci.tasks">{{task}}</li>
@@ -83,10 +84,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">5</th>
-                        <td>Incident Management</td>
-                        <td>{{incident.current_score}}</td>
-                        <td>{{incident.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/incident_management.png"></td>
+                        <td align="center" style="vertical-align: middle">{{incident.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(incident.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{incident.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in incident.tasks">{{task}}</li>
@@ -95,10 +96,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">6</th>
-                        <td>Risk and Issue Management</td>
-                        <td>{{risk.current_score}}</td>
-                        <td>{{risk.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/risk.png"></td>
+                        <td align="center" style="vertical-align: middle">{{risk.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(risk.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{risk.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in risk.tasks">{{task}}</li>
@@ -107,10 +108,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">7</th>
-                        <td>Software Design</td>
-                        <td>{{design.current_score}}</td>
-                        <td>{{design.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/design.png"></td>
+                        <td align="center" style="vertical-align: middle">{{design.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(design.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{design.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in design.tasks">{{task}}</li>
@@ -119,10 +120,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">8</th>
-                        <td>Teaming</td>
-                        <td>{{teaming.current_score}}</td>
-                        <td>{{teaming.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/teaming.png"></td>
+                        <td align="center" style="vertical-align: middle">{{teaming.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(teaming.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{teaming.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in teaming.tasks">{{task}}</li>
@@ -131,10 +132,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">9</th>
-                        <td>Release Management</td>
-                        <td>{{release.current_score}}</td>
-                        <td>{{release.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/release_management.png"></td>
+                        <td align="center" style="vertical-align: middle">{{release.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(release.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{release.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in release.tasks">{{task}}</li>
@@ -143,10 +144,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">10</th>
-                        <td>Quality Assurance</td>
-                        <td>{{quality.current_score}}</td>
-                        <td>{{quality.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/quality_assurance.png"></td>
+                        <td align="center" style="vertical-align: middle">{{quality.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(quality.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{quality.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in quality.tasks">{{task}}</li>
@@ -155,10 +156,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">11</th>
-                        <td>Environments</td>
-                        <td>{{environments.current_score}}</td>
-                        <td>{{environments.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/environments.png"></td>
+                        <td align="center" style="vertical-align: middle">{{environments.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(environments.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{environments.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in environments.tasks">{{task}}</li>
@@ -167,10 +168,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">12</th>
-                        <td>Feature Teams</td>
-                        <td>{{featureTeams.current_score}}</td>
-                        <td>{{featureTeams.next_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img src="images/feature_teams.png"></td>
+                        <td align="center" style="vertical-align: middle">{{featureTeams.current_score}}</td>
+                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(featureTeams.current_score)}}"></td>
+                        <td align="center" style="vertical-align: middle">{{featureTeams.next_score}}</td>
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in featureTeams.tasks">{{task}}</li>
