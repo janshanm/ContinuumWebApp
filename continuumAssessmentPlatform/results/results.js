@@ -104,6 +104,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             }
         };
 
+        var limitToFive = function(value){
+            return value > 5 ? 5 : value;
+        };
+
         var strategyTasks = {'traveller1': 'Any alignment to Strategy is coincidental or opportunistic',
             'artisan1': 'Upfront engagement with stakeholders to ensure Business and Technical Alignment',
             'artisan2': 'The product/project vision is explicitly aligned to strategy',
@@ -456,10 +460,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(strategyResults['next_score'] === 6){
-                strategyResults['next_score'] = 5;
-            }
-
+            strategyResults['next_score'] = limitToFive(strategyResults['next_score']);
             return strategyResults;
 
         };
@@ -591,10 +592,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(planningResults['next_score'] === 6){
-                planningResults['next_score'] = 5;
-            }
-
+            planningResults['next_score'] = limitToFive(planningResults['next_score']);
             return planningResults;
 
         };
@@ -679,10 +677,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(codingResults['next_score'] === 6){
-                codingResults['next_score'] = 5;
-            }
-
+            codingResults['next_score'] = limitToFive(codingResults['next_score']);
             return codingResults;
 
         };
@@ -855,10 +850,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(ciResults['next_score'] === 6){
-                ciResults['next_score'] = 5;
-            }
-
+            ciResults['next_score'] = limitToFive(ciResults['next_score']);
             return ciResults;
 
         };
@@ -952,10 +944,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(incidentResults['next_score'] === 6){
-                incidentResults['next_score'] = 5;
-            }
-
+            incidentResults['next_score'] = limitToFive(incidentResults['next_score']);
             return incidentResults;
         };
 
@@ -1043,10 +1032,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(riskResults['next_score'] === 6){
-                riskResults['next_score'] = 5;
-            }
-
+            riskResults['next_score'] = limitToFive(riskResults['next_score']);
             return riskResults;
         };
 
@@ -1160,10 +1146,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(designResults['next_score'] === 6){
-                designResults['next_score'] = 5;
-            }
-
+            designResults['next_score'] = limitToFive(designResults['next_score']);
             return designResults;
         };
 
@@ -1248,10 +1231,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(teamingResults['next_score'] === 6){
-                teamingResults['next_score'] = 5;
-            }
-
+            teamingResults['next_score'] = limitToFive(teamingResults['next_score']);
             return teamingResults;
         };
 
@@ -1380,10 +1360,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(releaseResults['next_score'] === 6){
-                releaseResults['next_score'] = 5;
-            }
-
+            releaseResults['next_score'] = limitToFive(releaseResults['next_score']);
             return releaseResults;
         };
 
@@ -1551,10 +1528,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
-            if(qaResults['next_score'] === 6){
-                qaResults['next_score'] = 5;
-            }
-
+            qaResults['next_score'] = limitToFive(qaResults['next_score']);
             return qaResults;
         };
 
@@ -1723,6 +1697,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
+            environmentsResults['next_score'] = limitToFive(environmentsResults['next_score']);
             return environmentsResults;
         };
 
@@ -1850,6 +1825,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 }
             }
 
+            featureTeamsResults['next_score'] = limitToFive(featureTeamsResults['next_score']);
             return featureTeamsResults;
         };
 
