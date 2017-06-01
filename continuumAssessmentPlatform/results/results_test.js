@@ -23,6 +23,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             'master2': 'All requirements are attached to business metric',
             'master3': 'Metrics are tracked over time and improvements targets are set and achieved',
             'master4': 'Team independently innovates by creating new features or optimisations in support of or extending the strategy. '};
+
         var planningTasks = {
             'traveller1': 'Team is not involved in estimates',
             'traveller2': 'No Specific prioritization of requirements',
@@ -50,6 +51,236 @@ describe('continuumAssessmentPlatform.results module', function() {
             'master2': 'Release planning is performed based on the teams current velocity',
             'master3': 'A process is in place (e.g. a formal beta program)  to allow extended stakeholders and customers to evaluate the software and provide feedback.'};
 
+        var codingTasks = {
+            'traveller1': 'No standards or mechanism\'s for ensuring code quality',
+            'artisan1': 'Guidelines and/or standards are defined.',
+            'artisan2': 'Consistent training process for new team members is in place',
+            'expert1': 'There are mechanism’s in place to ensure that standards are followed',
+            'expert2': 'Process\'s and practices are understood and followed by all',
+            'expert3': 'Metrics are defined but not necessarily reviewed and acted on',
+            'expert4': 'The team proactively improves the code',
+            'professional1': 'Code metrics are part of build automation and continuous integration',
+            'professional2': 'Code metrics are tracked for trends and adjustments made on a continuous basis',
+            'professional3': 'The team regularly performs katas with the objective of improving their skills',
+            'professional4': 'Code is regularly refactored as part of the iteration',
+            'master1': 'Standards and Practices are regularly reviewed and updated',
+            'master2': 'Processes and Practices are regularly reviewed and updated',
+            'master3': 'The code metrics are assessed and backlog items created to drive improvement',
+            'master4': 'Technical debt is minimized'};
+
+        var ciTasks = {
+            'traveller1': 'No version management of artefacts and reports',
+            'traveller2': 'Deployments & Rollbacks are manual',
+            'traveller3': 'Build is performed manually and infrequently.',
+            'traveller4': 'Build is owned by a specific person',
+            'traveller5': 'Testing is manual',
+            'traveller6': 'Development environments manually provisioned and shared between teams',
+            'artisan1': 'Source code is under version management.',
+            'artisan2': 'Build is automated and tests are run as part of the build',
+            'artisan3': 'Testing partially automated, and code coverage greater than 0',
+            'expert1': 'Team checks code into version management system on daily basis.',
+            'expert2': 'All artefacts are under version management.',
+            'expert3': 'Build and Deployment to development environment are automated.',
+            'expert4': 'Anyone in the team can start build at any point in time',
+            'expert5': 'Build status and broken builds are visible to all.',
+            'expert6': 'Testing partially automated – greater than 50% code coverage.',
+            'expert7': 'Release and Change Management partially automated.',
+            'professional1': 'Automated build and test cycle every time a change is committed',
+            'professional2': 'Build metrics gathered, visible, and acted on.',
+            'professional3': 'Builds are not left broken and code is not committed on a broken build.',
+            'professional4': 'Deployment to test environment is automated.',
+            'professional5': 'Non-functional testing is automated.',
+            'professional6': 'Testing is automated as much as is practical.',
+            'professional7': 'Environments can be provisioned at on demand.',
+            'master1': 'Build and deployment are automated as much as is practical',
+            'master2': 'The build pipeline extends directly into production',
+            'master3': 'Tests are run in parallel across multiple machines',
+            'master4': 'Trunk-based development is the standard practice and integration happens continuously. Branches are rarely created and are short lived.',
+            'master5': 'Check-ins occur multiple times each day.',
+            'master6': 'Environment & infrastructure specifications are managed and versioned along with all other artefacts.',
+            'master7': 'The CI build creates and provisions environments to allow scalability for testing.',
+            'master8': 'Release and Change Management fully integrated into deployment processes.',
+            'master9': 'The product is always in releasable state.',
+            'master10': 'Automated release process, release to customers is a business decision.'};
+
+        var incidentTasks = {
+            'traveller1': 'The process for handling problems and incidents is ad-hoc.',
+            'artisan1': 'An incident management process is in place and understood.',
+            'artisan2': 'Key people are identified for incident management.',
+            'artisan3': 'The number of handoffs and teams involved in incident resolution is minimal.',
+            'expert1': 'Incidents and problems feed into backlog',
+            'expert2': 'Operation requirements are identified and tracked in the backlog',
+            'expert3': 'Problem management includes an urgency to address the root cause',
+            'expert4': 'Root cause analysis is consistently performed.',
+            'expert5': 'Level 1, 2, 3 support structure in place',
+            'expert6': 'Instrumentation (monitoring) in place.',
+            'professional1': 'Defects are resolved once and deployed automatically across all environments.',
+            'professional2': 'Defects resolution includes full regression tests',
+            'professional3': 'System health is proactively monitored.',
+            'professional4': 'Root cause analysis is highly valued and regularly trended.',
+            'master1': 'Feature teams do own incident management',
+            'master2': 'Fail Forward (failing in a way that enables you to identify and overcome underlying problem, encapsulates the way forward and reduce the likelihood of failure the next time around)',
+            'master3': 'Team actively manages, monitors and reviews what happens in production, feedback loop is enabled and acted on.'};
+
+        var riskTasks = {
+            'traveller1': 'Risk Management does not exist or is just a box to tick in order to get through a process (i.e. something done to keep risk and audit people happy).',
+            'traveller2': 'There is no awareness or transparency of current risks and issues in the team.',
+            'artisan1': 'Risks have been identified and are captured using an appropriate artefact such as a risk story wall or risk register.',
+            'artisan2': 'Each identified risk has been assigned a risk mitigation or action plan.',
+            'artisan3': ' Risks are discussed as part of the iteration planning process.',
+            'expert1': 'Risks, issues and blockers are discussed and updated in appropriate detail as part of all sessions (stand-ups; iteration planning; showcases; steering committee meetings)',
+            'expert2': 'Unmitigated or uncontrollable risks are easily identifiable.',
+            'expert3': 'Risks, controls and action plans are assigned to appropriate owners: someone who understand the risk, has responsibility and accountability for managing the risk, and has the authority to implement controls and actions.',
+            'professional1': 'The cost and benefits of risk mitigations are evaluated and recorded before they are implemented.',
+            'professional2': 'Risk management roles, responsibilities and accountabilities have been  defined and agreed upon.',
+            'professional3': 'Regular check points with Business Stakeholders to ensure they are aware of all risks and issues.',
+            'master1': 'Risk mitigations and actions are explicitly designed to increase positive outcomes and reduce negative outcomes.',
+            'master2': 'The business participates in developing mitigation strategies',
+            'master3': 'Risk management is used to identify potential opportunities and drive strategy by thinking about risk in terms of uncertainty (which could be positive or negative).',
+            'master4': 'Measures and metrics exist to demonstrate the effectiveness of risk management and where improvement is required.',
+            'master5': 'The financial impact of risk and issues is clearly understood.'
+        };
+
+        var designTasks = {
+            'traveller1': 'Speculative design and technical decisions are made on an ad hoc basis. There is no vision or long team technical planning.',
+            'traveller2': 'BDUF = Big Design Up-Front.',
+            'traveller3': 'Solutions are tightly coupled and brittle.',
+            'artisan1': 'Regular design reviews in place.',
+            'artisan2': 'Design assumptions are tracked and validated during iterations.',
+            'expert1': 'Design issues are tracked and prioritised in the backlog.',
+            'expert2': 'Non-functional requirements are documented and tracked.',
+            'expert3': 'Clear interfaces defined between modules.',
+            'expert4': 'Design is owned by the team.',
+            'professional1': 'There is a partial traceability between design and requirements.',
+            'professional2': 'Design requirements are expressed as automated tests.',
+            'professional3': 'Non-functional requirements are defined and associated metrics tracked automatically.',
+            'professional4': 'Where practical all modules of the system can be simulated.',
+            'professional5': 'Where possible design is captured in a model and code generated.',
+            'master1': 'There is full traceability between design and requirements.',
+            'master2': 'Design activities are performed on a Just In Time basis.'};
+
+        var teamingTasks = {
+            'traveller1': 'The team cannot make decisions without consultation.',
+            'traveller2': 'The teams goals and visions are unclear.',
+            'traveller3': 'The team doesn\'t clearly understand the entire stakeholder landscape.',
+            'artisan1': 'Team vision and goals are agreed, captured and understood.',
+            'artisan2': 'There is a clear understanding of who are the teams stakeholders. (Consumers, partners and clients).',
+            'artisan3': 'There is a clear definition of what the teams success is (definition of \'done\').',
+            'expert1': 'The team actively seeks feedback in an effort to achieve the goals.',
+            'expert2': 'Transparency and high level of collaboration  within the team are in place.',
+            'expert3': 'Impact of blockers and dependencies are minimised and managed and the team knows what these are.',
+            'professional1': 'Balanced participation is in place. Team members contribute as appropriate and each members opinion is valued.',
+            'professional2': 'Team uses adequate measures to monitor success.',
+            'master1': 'All decision-making is internal to the team.',
+            'master2': 'Complete collective ownership is in place, both when team is successful and when it fails.',
+            'master3': 'Team is actively improving. Retrospectives are driving improvement.'};
+
+        var releaseTasks = {
+            'traveller1': 'Cycle time is extremely long.',
+            'traveller2': 'Deployment is mostly manual, very complex and requires high level of coordination between stakeholders on the day of the release.',
+            'traveller3': 'Pace and delivery of work is inconsistent throughout the release cycle.',
+            'traveller4': 'Separate build artefacts are created for each environment.',
+            'artisan1': 'Releases are planned to a regular cycle and features are tracked and managed to the regular time frame.',
+            'artisan2': 'Planned release dates are seldom moved out.',
+            'artisan3': 'The process for handing the release to operations and support teams is in place.',
+            'artisan4': 'Standard build artefacts are defined and produced (release notes, binaries, configurations, test coverage reports...)',
+            'expert1': 'Releases and deployments are mostly automated (might require manual configuration and coordination between teams).',
+            'expert2': 'The confidence level for the release is high.',
+            'professional1': 'Release notes are automatically generated.',
+            'professional2': 'Releases are not reliant on the knowledge of the key individuals.',
+            'professional3': 'Operations teams collaborate closely with the delivery team and contribute to minimize the risk of failure in production.',
+            'professional4': 'Release metrics and trends are tracked.',
+            'master1': 'Releases can be deployed at any time and are fully automated.',
+            'master2': 'The team controls the release.',
+            'master3': 'The product owner is able to determine when release goes into production.',
+            'master4': 'Operations team is part of the product/program team.',
+            'master5': 'Releases are Routine. No roll backs, always roll forward.',
+            'master6': 'Dark launching is enabled (Features can be released in switched of state).'};
+
+        var qaTasks = {
+            'traveller1': 'Testing is manual.',
+            'traveller2': 'There is a high amount of rework due to testing late in the lifecycle.',
+            'traveller3': 'Non-functional testing is not considered upfront.',
+            'traveller4': 'Test cases are designed based only on the requirements document, mainly by testing team.',
+            'traveller5': 'Absence of unit/integration testing.',
+            'traveller6': 'There is very little reuse of Quality Assurance assets.',
+            'artisan1': 'Regression test packs are partially automated.',
+            'artisan2': 'Regression packs run frequently but on an ad hoc basis.',
+            'artisan3': 'Test cases designed by the team, with testing, development and business analysts.',
+            'expert1': 'Regression test packs are fully automated.',
+            'expert2': 'Regression test packs are run as part of the build.',
+            'expert3': '50% coverage automated testing.',
+            'expert4': 'Automated smoke testing is in place.',
+            'expert5': 'Automated performance testing is in place.',
+            'expert6': 'Non-functional requirements are defined and measured.',
+            'expert7': 'Test cases designed by the team as part of the iteration.',
+            'expert8': 'Unit tests are created using TDD..',
+            'professional1': 'Automated infrastructure testing is in place.',
+            'professional2': 'Automated security testing is in place.',
+            'professional3': 'Tests are automated as much as is practical.',
+            'professional4': 'Quality metrics and trends are tracked.',
+            'professional5': 'Anyone can execute the tests.',
+            'master1': 'Active process is in place to understand root cause and respond to it.',
+            'master2': 'Test artefacts are treated with the same importance as code and continually refactored and maintained.',
+            'master3': 'Performance testing metrics are defined early in the process.',
+            'master4': 'Tests drive release readiness.'};
+
+        var environmentsTasks = {
+            'traveller1': 'Data migrations un-versioned and performed manually.',
+            'traveller2': 'Test data is not controllable.',
+            'traveller3': 'Environments are heavily governed.',
+            'traveller4': 'Environments are not refreshed regularly.',
+            'traveller5': 'Test environments and test data are frequently unavailable.',
+            'traveller6': 'Environments are provisioned manually.',
+            'traveller7': 'Key man dependencies.',
+            'artisan1': 'Changes to database are done with automated scripts versioned with application.',
+            'artisan2': 'A separate test environment is available.',
+            'artisan3': 'Test environment is shared with other teams.',
+            'artisan4': 'An external group maintains the environment.',
+            'artisan5': 'Test environments are available during specific dates/time slots.',
+            'artisan6': 'Ability to deploy basic virtual environments.',
+            'artisan7': 'Team has a dedicated development  environment.',
+            'expert1': 'Database changes are performed automatically as part of deployment process.',
+            'expert2': 'Test environments are readily available. Can be reproduced with manual work + coordination between operational teams.',
+            'expert3': 'Access to a production-like environment is restricted to a small group of closely-related application teams, and delays at this level are unusual.',
+            'expert4': 'Environment provisioning partially automated.',
+            'expert5': 'Some virtual environments have interfaces available ‘stubs’ to run end-to-end testing.',
+            'professional1': 'Database upgrades and rollbacks are tested with every deployment.',
+            'professional2': 'Database performance is monitored and optimized.',
+            'professional3': 'Minimal manual work is required to replicate and configure environments but this can be completed within hours.',
+            'professional4': 'Multiple test environments are readily available for the exclusive use of the team, including a production-like environment that’s allows a reasonable level of non-functional and cross-system integration testing and reliable acceptance testing.',
+            'professional5': 'Dev workstations are easily configured and can be built in an automated manner.',
+            'professional6': 'Virtual environments have all interfaces available ‘stubs’ to run end-to-end testing.',
+            'master1': 'Data and environments are treated as code, versioned and frequently re-loaded.',
+            'master2': 'Release to release feedback loop of database performance and deployment process is in place.',
+            'master3': 'Proactive monitoring is in place with shortest possible time to resolve failure.',
+            'master4': 'Infrastructure Provisioning is built into the process, including automated deployment, provisioning, configurations and data. Integral part of the build pipeline.',
+            'master5': 'Environments are managed by the team, the team able to create complete simulated environment on demand.',
+            'master6': 'All environments are managed effectively.',
+            'master7': 'Provisioning is fully automated.',
+            'master8': 'Main dependencies are simulated across the board.',
+            'master9': 'Virtualization is used if applicable.'};
+
+        var featureTeamsTasks = {
+            'traveller1': 'The team doesn\'t have all cross-functional and cross-component knowledge and skills to complete end-to-end customer feature.',
+            'traveller2': 'The team members are not dedicated.',
+            'traveller3': 'The is a low level of collaboration between team members.',
+            'traveller4': 'There are multiple handoffs and dependencies on the external teams and stakeholders.',
+            'artisan1': 'The key skills are part of the team. This includes cross-functional and cross-component skills.',
+            'artisan2': 'Handoffs are identified.',
+            'artisan3': 'Triad is established across three functions, quality, product and technical. Triad is committed to execute a strategy together that gets specific, intended results.',
+            'expert1': 'The team members are dedicated to the team.',
+            'expert2': 'Cross-functional and cross-component skills are within the team, the team works on a complete feature, across all components and disciplines (analysis, programming, testing, …).',
+            'expert3': 'New members are efficiently integrated into feature team.',
+            'expert4': 'Triad is fully-functioning and not dependent on external validation and external authority.',
+            'expert5': 'Goals are clearly prioritized and timeously achieved.',
+            'professional1': 'T-shaped skills emerge (team members can perform more than one function).',
+            'professional2': 'The team is self-organizing. The team is self-managed and has necessary autonomy to modify the design of their team and/or aspects of the organisational context in which the operate.',
+            'professional3': 'Metrics are in place to ensure constant improvement.',
+            'master1': 'All decision-making is internal to the team, who can make decisions on how to deliver artefacts, and as to quality measures applied to artefacts.',
+            'master2': 'T-shaped skill profile is a majority.',
+            'master3': 'Team is responsible for all aspects of feature delivery, from equipment requisition to production.',
+            'master4': 'Continuous improvement is in place, driven by retrospectives within the team and across the teams.'};
 
         beforeEach(inject(function($controller, $rootScope, $q, SaveResults){
             q = $q;
@@ -141,6 +372,143 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.planning['tasks']).toContain(planningTasks['artisan4']);
                     expect(scope.planning['tasks']).toContain(planningTasks['artisan5']);
                     expect(scope.planning['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted coding tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.coding['current_score']).toEqual(zero);
+                    expect(scope.coding['next_score']).toEqual(two);
+                    expect(scope.coding['tasks']).toContain(codingTasks['artisan1']);
+                    expect(scope.coding['tasks']).toContain(codingTasks['artisan2']);
+                    expect(scope.coding['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted ci tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.ci['current_score']).toEqual(zero);
+                    expect(scope.ci['next_score']).toEqual(two);
+                    expect(scope.ci['tasks']).toContain(ciTasks['artisan1']);
+                    expect(scope.ci['tasks']).toContain(ciTasks['artisan2']);
+                    expect(scope.ci['tasks']).toContain(ciTasks['artisan3']);
+                    expect(scope.ci['tasks']).toContain(ciTasks['traveller2']);
+                    expect(scope.ci['tasks']).toContain(ciTasks['traveller4']);
+                    expect(scope.ci['tasks']).toContain(ciTasks['traveller6']);
+                    expect(scope.ci['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted incident tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.incident['current_score']).toEqual(zero);
+                    expect(scope.incident['next_score']).toEqual(two);
+                    expect(scope.incident['tasks']).toContain(incidentTasks['artisan1']);
+                    expect(scope.incident['tasks']).toContain(incidentTasks['artisan2']);
+                    expect(scope.incident['tasks']).toContain(incidentTasks['artisan3']);
+                    expect(scope.incident['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted risk tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.risk['current_score']).toEqual(zero);
+                    expect(scope.risk['next_score']).toEqual(two);
+                    expect(scope.risk['tasks']).toContain(riskTasks['artisan1']);
+                    expect(scope.risk['tasks']).toContain(riskTasks['artisan2']);
+                    expect(scope.risk['tasks']).toContain(riskTasks['artisan3']);
+                    expect(scope.risk['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted design tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.design['current_score']).toEqual(zero);
+                    expect(scope.design['next_score']).toEqual(two);
+                    expect(scope.design['tasks']).toContain(designTasks['artisan1']);
+                    expect(scope.design['tasks']).toContain(designTasks['artisan2']);
+                    expect(scope.design['tasks']).toContain(designTasks['traveller3']);
+                    expect(scope.design['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted teaming tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.teaming['current_score']).toEqual(zero);
+                    expect(scope.teaming['next_score']).toEqual(two);
+                    expect(scope.teaming['tasks']).toContain(teamingTasks['artisan1']);
+                    expect(scope.teaming['tasks']).toContain(teamingTasks['artisan2']);
+                    expect(scope.teaming['tasks']).toContain(teamingTasks['artisan3']);
+                    expect(scope.teaming['tasks']).toContain(teamingTasks['traveller1']);
+                    expect(scope.teaming['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted release tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.release['current_score']).toEqual(zero);
+                    expect(scope.release['next_score']).toEqual(two);
+                    expect(scope.release['tasks']).toContain(releaseTasks['artisan1']);
+                    expect(scope.release['tasks']).toContain(releaseTasks['artisan2']);
+                    expect(scope.release['tasks']).toContain(releaseTasks['artisan3']);
+                    expect(scope.release['tasks']).toContain(releaseTasks['artisan4']);
+                    expect(scope.release['tasks']).toContain(releaseTasks['traveller2']);
+                    expect(scope.release['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted quality tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.quality['current_score']).toEqual(zero);
+                    expect(scope.quality['next_score']).toEqual(two);
+                    expect(scope.quality['tasks']).toContain(qaTasks['artisan1']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['artisan2']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['artisan3']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['traveller2']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['traveller3']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['traveller5']);
+                    expect(scope.quality['tasks']).toContain(qaTasks['traveller6']);
+                    expect(scope.quality['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted environments tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.environments['current_score']).toEqual(zero);
+                    expect(scope.environments['next_score']).toEqual(two);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan1']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan2']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan3']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan4']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan5']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan6']);
+                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan7']);
+                    expect(scope.environments['undoTasks'].length).toEqual(zero);
+                });
+
+                it('should have the expected formatted feature teams tasks', function(){
+                    var zero = 0;
+                    var two = 2;
+                    scope.init();
+                    expect(scope.featureTeams['current_score']).toEqual(zero);
+                    expect(scope.featureTeams['next_score']).toEqual(two);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan1']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller1']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller2']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller3']);
+                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller4']);
+                    expect(scope.featureTeams['undoTasks'].length).toEqual(zero);
                 });
             });
             describe('#emptyAssessments', function(){
