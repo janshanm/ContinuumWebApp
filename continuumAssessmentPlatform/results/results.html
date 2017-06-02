@@ -8,6 +8,9 @@
         <li ng-class="{active: selectedTab == 2}">
             <a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Recommended Capabilities</a>
         </li>
+        <li ng-class="{active: selectedTab == 3}">
+            <a href="" ng-click="selectedTab = 3;" data-toggle="tab" style="color: white">Team Maturity Level</a>
+        </li>
     </ul>
 
     <div class="tab-content clearfix">
@@ -181,6 +184,11 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="tab-pane active" id="maturityLevel" ng-show="selectedTab == 3">
+            <p style="font-weight: bolder;font-size: larger">{{teamName}} team is at Maturity Level {{teamScore}} </p>
+            <p style="vertical-align: middle"><img ng-src="{{getImage(teamScore)}}"></p>
         </div>
     </div>
 </div>

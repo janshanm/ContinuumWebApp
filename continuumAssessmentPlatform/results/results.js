@@ -76,6 +76,12 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.environments = formatResultsForEnvironments($rootScope.assessments, $scope.environmentsScore);
             $scope.featureTeams = formatResultsForFeatureTeams($rootScope.assessments, $scope.featureTeamsScore);
 
+            var totalScore = ($scope.strategyScore + $scope.planningScore + $scope.codingScore + $scope.ciScore
+            + $scope.incidentScore + $scope.riskScore + $scope.designScore + $scope.teamingScore + $scope.releaseScore
+            + $scope.QAScore + $scope.environmentsScore + $scope.featureTeamsScore);
+
+            $scope.teamScore = Math.floor(totalScore/12);
+
             SaveResults.drawChart($rootScope.teamName, $scope.strategyScore, $scope.planningScore, $scope.codingScore, $scope.ciScore,
                 $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore, $scope.releaseScore,
                 $scope.QAScore, $scope.environmentsScore, $scope.featureTeamsScore, $rootScope.selectedPortfolioName);

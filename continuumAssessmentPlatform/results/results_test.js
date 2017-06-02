@@ -341,6 +341,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
+                    expect(scope.teamScore).toEqual(0);
                 });
 
                 it('should call the draw chart function with the right parameters', function(){
@@ -527,6 +528,12 @@ describe('continuumAssessmentPlatform.results module', function() {
                     scope.init();
                     expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,0,0,0,0,0,0,0,0,0,0,0,0,undefined);
                 });
+
+                it('should have a team score of zero', function(){
+                    rootScope.assessments = {};
+                    scope.init();
+                    expect(scope.teamScore).toEqual(0);
+                });
             });
             describe('#withAssessmentResults', function(){
                 it('should set the results data with initialisation values of zero and undefined team name', function(){
@@ -556,6 +563,18 @@ describe('continuumAssessmentPlatform.results module', function() {
                     scope.init();
 
                     expect(saveResultsSpy.drawChart).toHaveBeenCalledWith('Example Team',2,1,3,3,4,1,2,3,2,4,3,2,'Example Portfolio');
+                });
+
+                it('should have a team score of zero', function(){
+                    rootScope.teamName = 'Example Team';
+                    rootScope.selectedPortfolioName = 'Example Portfolio';
+                    rootScope.assessments = {'strategy': {'score': 2}, 'planning': {'score': 1}, 'coding': {'score': 3},
+                        'ci': {'score': 3}, 'incident': {'score': 4}, 'risk': {'score': 1}, 'design': {'score': 2},
+                        'teaming': {'score': 3}, 'release': {'score': 2}, 'QA': {'score': 4}, 'environments': {'score': 3},
+                        'featureTeams': {'score': 2}};
+
+                    scope.init();
+                    expect(scope.teamScore).toEqual(2);
                 });
 
                 it('should set the scope parameters for the different scores', function(){
