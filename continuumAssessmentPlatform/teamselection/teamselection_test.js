@@ -66,7 +66,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
         {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
         {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}];
 
-    describe('results controller', function () {
+    describe('team selection controller', function () {
 
         var controller, location, q, deferred, retrieveAssessmentSpy;
         var scope, rootScope;
@@ -279,6 +279,32 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 var actualAssessments = rootScope.assessments;
                 expect(actualAssessments).toEqual(expectedAssessments);
             });
+        });
+    });
+
+    describe('team selection services', function(){
+        var retrieveAssessmentService, $httpBackend;
+        var teamName = 'Team 1';
+
+        beforeEach(inject(function($injector) {
+            retrieveAssessmentService = $injector.get('RetrieveAssessment');
+            $httpBackend = $injector.get('$httpBackend');
+
+            $httpBackend.when('GET', "http://localhost:4567/assessment?teamName="+teamName).respond("Successfully Retrieved");
+        }));
+
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+
+        it('should respond successfully when the service is called', function(){
+            var expectedResponse = "Successfully Retrieved";
+
+            retrieveAssessmentService.getAssessment(teamName).then(function(response){
+                expect(response.data).toEqual(expectedResponse);
+            });
+            $httpBackend.flush();
         });
     });
 });

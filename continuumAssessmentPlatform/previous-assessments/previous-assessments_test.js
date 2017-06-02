@@ -237,4 +237,29 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
             });
         });
     });
+
+    describe('previousAssessments services', function(){
+        var retrieveAssessmentsService, $httpBackend;
+
+        beforeEach(inject(function($injector) {
+            retrieveAssessmentsService = $injector.get('RetrieveAssessments');
+            $httpBackend = $injector.get('$httpBackend');
+
+            $httpBackend.when('GET', "http://localhost:4567/assessments").respond("Successfully Retrieved");
+        }));
+
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+
+        it('should respond successfully when the service is called', function(){
+            var expectedResponse = "Successfully Retrieved";
+
+            retrieveAssessmentsService.getAssessments().then(function(response){
+                expect(response.data).toEqual(expectedResponse);
+            });
+            $httpBackend.flush();
+        });
+    });
 });

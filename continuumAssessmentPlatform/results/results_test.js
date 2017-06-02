@@ -2186,4 +2186,29 @@ describe('continuumAssessmentPlatform.results module', function() {
         });
 
     });
+
+    describe('results services', function(){
+        var saveResultsService, $httpBackend;
+
+        beforeEach(inject(function($injector) {
+            saveResultsService = $injector.get('SaveResults');
+            $httpBackend = $injector.get('$httpBackend');
+
+            $httpBackend.when('POST', "http://localhost:4567/saveTeamData").respond("Successfully Saved");
+        }));
+
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+
+        it('should respond successfully when the service is called', function(){
+            var expectedResponse = "Successfully Saved";
+
+            saveResultsService.saveAssessments().then(function(response){
+                expect(response.data).toEqual(expectedResponse);
+            });
+            $httpBackend.flush();
+        });
+    });
 });
