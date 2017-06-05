@@ -16,7 +16,7 @@ describe('continuum assessment platform', function() {
 
     it('should automatically redirect to /strategy when location hash/fragment is empty', function() {
     browser.get('continuumAssessmentPlatform');
-    expect(browser.getLocationAbsUrl()).toMatch("/select-team");
+    expect(browser.getLocationAbsUrl()).toMatch("/home");
     });
 
     describe('Complete Flow', function(){
@@ -155,9 +155,30 @@ describe('continuum assessment platform', function() {
         // });
     });
 
+    describe('Welcome Page', function(){
+        beforeEach(function() {
+            browser.get('continuumAssessmentPlatform/');
+        });
+
+        it('should be on the welcome page', function(){
+            expect(browser.getLocationAbsUrl()).toMatch("/home");
+        });
+
+        it('should be on the team selection page when the take assessment button is clicked', function(){
+            element(by.id('takeAssessment')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/select-team");
+        });
+
+        it('should be on the previous assessments page when the previous assessment button is clicked', function(){
+            element(by.id('viewPreviousAssessments')).click();
+            expect(browser.getLocationAbsUrl()).toMatch("/previous-assessments");
+        });
+
+    });
+
     describe('Select Team Page', function(){
         beforeEach(function() {
-            browser.get('continuumAssessmentPlatform');
+            browser.get('continuumAssessmentPlatform/#!/select-team');
         });
 
         it('should have error on the page if Assess is clicked without selecting a team', function(){

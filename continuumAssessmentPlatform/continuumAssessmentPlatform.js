@@ -18,11 +18,12 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.featureteams',
   'continuumAssessmentPlatform.review',
   'continuumAssessmentPlatform.results',
+  'continuumAssessmentPlatform.welcome',
   'continuumAssessmentPlatform.previous-assessments',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/select-team'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);
