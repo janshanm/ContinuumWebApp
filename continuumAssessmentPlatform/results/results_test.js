@@ -2232,7 +2232,6 @@ describe('continuumAssessmentPlatform.results module', function() {
 
 
             spyOn(document, 'getElementById').and.returnValue(true);
-            
             spyOn(window, 'Chart').and.callFake(function(){
                 return true;
             });

@@ -1895,11 +1895,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                                 max: 5,
                                 stepSize: 1
                             }
-                        },
-                        animation: {
-                            onComplete: function () {
-                                window.JSREPORT_READY_TO_START = true
-                            }
                         }
                     }
                 });
