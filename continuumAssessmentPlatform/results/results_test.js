@@ -2232,49 +2232,8 @@ describe('continuumAssessmentPlatform.results module', function() {
 
 
             spyOn(document, 'getElementById').and.returnValue(true);
-
-            var data = {
-                'labels': ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
-                    "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
-                    "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
-                ],
-                    'datasets': [
-                {
-                    'label': "TEAM: " + teamName + " for Portfolio: " + selectedPortfolioName,
-                    'fill': true,
-                    'backgroundColor': "rgba(255,99,132,0.2)",
-                    'borderColor': "rgba(255,99,132,1)",
-                    'pointBorderColor': "#fff",
-                    'pointBackgroundColor': "rgba(255,99,132,1)",
-                    'data': [strategyScore, planningScore, codingScore, ciScore,
-                        incidentScore, riskScore, designScore, teamingScore,
-                        releaseScore, QAScore, environmentsScore, featureTeamsScore
-                    ]
-                }
-            ]
-            };
-
-            var options= {
-                'title': {
-                    'display': true,
-                        'text': 'Assessment Results for ' + teamName + " for Portfolio: " + selectedPortfolioName
-                },
-                'scale': {
-                    'ticks': {
-                        'beginAtZero': true,
-                            'min': 0,
-                            'max': 5,
-                            'stepSize': 1
-                    }
-                },
-                'animation': {
-                    'onComplete': function () {
-                        window.JSREPORT_READY_TO_START = true
-                    }
-                }
-            };
-
-            var chartSpy = spyOn(window, 'Chart').and.callFake(function(){
+            
+            spyOn(window, 'Chart').and.callFake(function(){
                 return true;
             });
 
