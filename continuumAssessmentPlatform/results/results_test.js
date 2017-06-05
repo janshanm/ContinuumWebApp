@@ -2210,5 +2210,79 @@ describe('continuumAssessmentPlatform.results module', function() {
             });
             $httpBackend.flush();
         });
+
+        it('should call the document get by element method', function () {
+            var teamName = 'Team 1', strategyScore = 0, planningScore = 0, codingScore = 0, ciScore = 0, incidentScore = 0,
+                riskScore = 0, designScore = 0, teamingScore = 0, releaseScore = 0, QAScore = 0, environmentsScore = 0,
+                featureTeamsScore = 0, selectedPortfolioName = 'Portfolio 1';
+
+
+            spyOn(document, 'getElementById').and.returnValue(true);
+            saveResultsService.drawChart(teamName, strategyScore, planningScore, codingScore, ciScore, incidentScore, riskScore,
+                designScore, teamingScore, releaseScore, QAScore, environmentsScore, featureTeamsScore,
+                selectedPortfolioName);
+
+            expect(document.getElementById).toHaveBeenCalledWith('radar-chart');
+        });
+
+        it('should have the chart data', function(){
+            var teamName = 'Team 1', strategyScore = 0, planningScore = 0, codingScore = 0, ciScore = 0, incidentScore = 0,
+                riskScore = 0, designScore = 0, teamingScore = 0, releaseScore = 0, QAScore = 0, environmentsScore = 0,
+                featureTeamsScore = 0, selectedPortfolioName = 'Portfolio 1';
+
+
+            spyOn(document, 'getElementById').and.returnValue(true);
+
+            var data = {
+                'labels': ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
+                    "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
+                    "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
+                ],
+                    'datasets': [
+                {
+                    'label': "TEAM: " + teamName + " for Portfolio: " + selectedPortfolioName,
+                    'fill': true,
+                    'backgroundColor': "rgba(255,99,132,0.2)",
+                    'borderColor': "rgba(255,99,132,1)",
+                    'pointBorderColor': "#fff",
+                    'pointBackgroundColor': "rgba(255,99,132,1)",
+                    'data': [strategyScore, planningScore, codingScore, ciScore,
+                        incidentScore, riskScore, designScore, teamingScore,
+                        releaseScore, QAScore, environmentsScore, featureTeamsScore
+                    ]
+                }
+            ]
+            };
+
+            var options= {
+                'title': {
+                    'display': true,
+                        'text': 'Assessment Results for ' + teamName + " for Portfolio: " + selectedPortfolioName
+                },
+                'scale': {
+                    'ticks': {
+                        'beginAtZero': true,
+                            'min': 0,
+                            'max': 5,
+                            'stepSize': 1
+                    }
+                },
+                'animation': {
+                    'onComplete': function () {
+                        window.JSREPORT_READY_TO_START = true
+                    }
+                }
+            };
+
+            var chartSpy = spyOn(window, 'Chart').and.callFake(function(){
+                return true;
+            });
+
+            saveResultsService.drawChart(teamName, strategyScore, planningScore, codingScore, ciScore, incidentScore, riskScore,
+                designScore, teamingScore, releaseScore, QAScore, environmentsScore, featureTeamsScore,
+                selectedPortfolioName);
+
+            expect(window.Chart).toHaveBeenCalled();
+        });
     });
 });
