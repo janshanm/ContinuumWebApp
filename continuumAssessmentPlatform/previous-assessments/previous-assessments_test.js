@@ -165,6 +165,65 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
             });
         });
 
+        describe('#drawRadialChart', function(){
+            it('should call the the document getElementById method with radar-chart-previous ID', function(){
+                spyOn(document, 'getElementById').and.returnValue(true);
+                spyOn(window, 'Chart').and.callFake(function(){
+                    return true;
+                });
+                scope.datasets = ['test data'];
+
+                scope.drawRadialChart();
+
+                expect(document.getElementById).toHaveBeenCalledWith('radar-chart-previous');
+            });
+
+            it('should call the chart constructor with the scope data sets', function(){
+                spyOn(document, 'getElementById').and.returnValue(true);
+                spyOn(window, 'Chart').and.callFake(function(){
+                    return true;
+                });
+
+                var expectedPortfolio = 'Portfolio 1';
+                var expectedDate = '20-01-2017';
+                var expectedDataSets = ['test data'];
+
+                scope.dataSets = expectedDataSets;
+                scope.selectedPortfolio = expectedPortfolio;
+                scope.dateOfAssessment = expectedDate;
+
+                var data = {
+                    type: 'radar',
+                        data: {
+                    labels: ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
+                        "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
+                        "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
+                    ],
+                        datasets: expectedDataSets
+                },
+                    options: {
+                        title: {
+                            display: true,
+                                text: 'Assessment Results for Teams in Portfolio: ' + expectedPortfolio + ' for Date - ' + expectedDate
+                        },
+                        scale: {
+                            ticks: {
+                                beginAtZero: true,
+                                    min: 0,
+                                    max: 5,
+                                    stepSize: 1
+                            }
+                        }
+                    }
+                };
+
+                scope.drawRadialChart();
+
+                expect(window.Chart).toHaveBeenCalled();
+                expect(window.Chart).toHaveBeenCalledWith(true, data);
+            });
+        });
+
         describe('#showHistory', function(){
             beforeEach(function(){
                 deferred.resolve({data: expectedRetrievedAssessments});
@@ -234,6 +293,58 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
                 };
                 scope.showHistory();
                 expect(scope.drawHistoryChart).toHaveBeenCalledWith(options);
+            });
+        });
+
+        describe('#drawHistoryChart', function(){
+            it('should call the the document getElementById method with history-chart-previous ID', function(){
+                spyOn(document, 'getElementById').and.returnValue(true);
+                spyOn(window, 'Chart').and.callFake(function(){
+                    return true;
+                });
+                scope.data = ['test data'];
+
+                scope.drawHistoryChart();
+
+                expect(document.getElementById).toHaveBeenCalledWith('history-chart-previous');
+            });
+
+            it('should call the chart constructor with the scope data', function(){
+                spyOn(document, 'getElementById').and.returnValue(true);
+                spyOn(window, 'Chart').and.callFake(function(){
+                    return true;
+                });
+
+                var expectedPortfolio = 'Portfolio 1';
+                var expectedDate = '20-01-2017';
+                var expectedData = ['test data'];
+                var options = {
+                    title: {
+                        display: true,
+                            text: 'Assessment Results for Teams in Portfolio: ' + expectedPortfolio + ' for Date - ' + expectedDate
+                    },
+                    scale: {
+                        ticks: {
+                            beginAtZero: true,
+                                min: 0,
+                                max: 5,
+                                stepSize: 1
+                        }
+                    }
+                };
+
+                scope.data = expectedData;
+
+                var data = {
+                    type: "line",
+                    data: expectedData,
+                    options: options
+                };
+
+                scope.drawHistoryChart(options);
+
+                expect(window.Chart).toHaveBeenCalled();
+                expect(window.Chart).toHaveBeenCalledWith(true, data);
             });
         });
     });
