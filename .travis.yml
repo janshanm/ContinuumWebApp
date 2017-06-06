@@ -11,6 +11,7 @@ script:
   - npm run test-single-run
   - npm run protractor-ci
   - ./modify_api.sh "backend:1234"
+  - cat continuumAssessmentPlatform/teamselection/teamselection.js
   - npm run test-single-run
 
 after_script:
