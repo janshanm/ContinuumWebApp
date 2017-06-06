@@ -385,8 +385,6 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
                    return assessment[dimensionName];
                 }
             }
-
-            return 0;
         }
 
     }])
