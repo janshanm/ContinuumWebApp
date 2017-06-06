@@ -10,6 +10,8 @@ before_script:
 script:
   - npm run test-single-run
   - npm run protractor-ci
+  - ./modify_api.sh "backend:1234"
+  - npm run test-single-run
 
 after_script:
   - cat ./coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js
