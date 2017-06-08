@@ -284,6 +284,22 @@
         The unit tests coverage is not less than 50% and the build is failed if the unit tests coverage is lower than this.
         Developers write tests as they build functionality. Testing is not out-sourced to quality assurance engineers.</p></div>
 </div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input id="qualityExpert9" type="checkbox" ng-model="expert9">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Quality metrics are defined but not reviewed or acted on.
+        </label>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert9)">The quality metrics such as test coverage and test run times
+        are defined and readily available to the team. These metrics are however not reviewed to improve the quality practices.</p></div>
+</div>
 <hr>
 <h4 align="center">Professional</h4>
 <div class="row well well-sm">
@@ -363,6 +379,38 @@
         </label>
     </div>
     <div class="col-xs-7"><p ng-class="getClass(professional5)">Any team member can execute the tests via script runs or on the build pipelines.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input id="qualityProfessional6" type="checkbox" ng-model="professional6">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Quality metrics are part of build automation and continuous integration.
+        </label>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional6)">The build automation tool generates the quality metrics which can be
+        automatically fed to SonarQube or used for representative dashboards.</p></div>
+</div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input id="qualityProfessional7" type="checkbox" ng-model="professional7">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Quality metrics are tracked for trends and adjustments made on a continuous basis.
+        </label>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional7)"> The team maintains a graph of historic quality metrics. The quality
+        metrics are addressed by the team every iteration.</p></div>
 </div>
 <hr>
 <h4 align="center">Master</h4>

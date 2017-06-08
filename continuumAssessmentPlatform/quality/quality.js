@@ -28,11 +28,14 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
     $scope.expert6 = false;
     $scope.expert7 = false;
     $scope.expert8 = false;
+    $scope.expert9 = false;
     $scope.professional1 = false;
     $scope.professional2 = false;
     $scope.professional3 = false;
     $scope.professional4 = false;
     $scope.professional5 = false;
+    $scope.professional6 = false;
+    $scope.professional7 = false;
     $scope.master1 = false;
     $scope.master2 = false;
     $scope.master3 = false;
@@ -60,11 +63,14 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
                 $scope.expert6 = QA['expert6'];
                 $scope.expert7 = QA['expert7'];
                 $scope.expert8 = QA['expert8'];
+                $scope.expert9 = QA['expert9'];
                 $scope.professional1 = QA['professional1'];
                 $scope.professional2 = QA['professional2'];
                 $scope.professional3 = QA['professional3'];
                 $scope.professional4 = QA['professional4'];
                 $scope.professional5 = QA['professional5'];
+                $scope.professional6 = QA['professional6'];
+                $scope.professional7 = QA['professional7'];
                 $scope.master1 = QA['master1'];
                 $scope.master2 = QA['master2'];
                 $scope.master3 = QA['master3'];
@@ -100,11 +106,14 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
             'expert6': $scope.expert6,
             'expert7': $scope.expert7,
             'expert8': $scope.expert8,
+            'expert9': $scope.expert9,
             'professional1': $scope.professional1,
             'professional2': $scope.professional2,
             'professional3': $scope.professional3,
             'professional4': $scope.professional4,
             'professional5': $scope.professional5,
+            'professional6': $scope.professional6,
+            'professional7': $scope.professional7,
             'master1': $scope.master1,
             'master2': $scope.master2,
             'master3': $scope.master3,
@@ -147,11 +156,13 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
 
     var isExpert = function() {
         return !isTraveller() && !$scope.artisan1 && !$scope.artisan2 && !$scope.artisan3 && $scope.expert1
-            && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6 && $scope.expert7 && $scope.expert8;
+            && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6 && $scope.expert7
+            && $scope.expert8 && $scope.expert9;
     };
 
     var isProfessional = function () {
-        return isExpert() && $scope.professional1 && $scope.professional2 && $scope.professional3 && $scope.professional4 && $scope.professional5;
+        return isExpert() && $scope.professional1 && $scope.professional2 && $scope.professional3 && $scope.professional4
+            && $scope.professional5 && $scope.professional6 && $scope.professional7;
     };
 
     var isMaster = function () {
