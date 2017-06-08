@@ -1734,6 +1734,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['expert6']);
                             expect(scope.quality['tasks']).toContain(qaTasks['expert7']);
                             expect(scope.quality['tasks']).toContain(qaTasks['expert8']);
+                            expect(scope.quality['tasks']).toContain(qaTasks['expert9']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller1']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller2']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller3']);
@@ -1768,6 +1769,8 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['professional3']);
                             expect(scope.quality['tasks']).toContain(qaTasks['professional4']);
                             expect(scope.quality['tasks']).toContain(qaTasks['professional5']);
+                            expect(scope.quality['tasks']).toContain(qaTasks['professional6']);
+                            expect(scope.quality['tasks']).toContain(qaTasks['professional7']);
                             expect(scope.quality['undoTasks'].length).toEqual(0);
                         });
 
@@ -1794,6 +1797,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['master2']);
                             expect(scope.quality['tasks']).toContain(qaTasks['master3']);
                             expect(scope.quality['tasks']).toContain(qaTasks['master4']);
+                            expect(scope.quality['tasks']).toContain(qaTasks['master5']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller1']);
                             expect(scope.quality['undoTasks'].length).toEqual(1);
                         });
