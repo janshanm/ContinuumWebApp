@@ -226,7 +226,8 @@ describe('continuumAssessmentPlatform.results module', function() {
             'master1': 'Active process is in place to understand root cause and respond to it.',
             'master2': 'Test artefacts are treated with the same importance as code and continually refactored and maintained.',
             'master3': 'Performance testing metrics are defined early in the process.',
-            'master4': 'Tests drive release readiness.'};
+            'master4': 'Tests drive release readiness.',
+            'master5': 'The quality metrics are assessed and backlog items created to drive improvement.'};
 
         var environmentsTasks = {
             'traveller1': 'Data migrations un-versioned and performed manually.',

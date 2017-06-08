@@ -40,6 +40,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
     $scope.master2 = false;
     $scope.master3 = false;
     $scope.master4 = false;
+    $scope.master5 = false;
 
     $scope.init = function () {
         if(typeof $rootScope.assessments !== "undefined"){
@@ -75,6 +76,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
                 $scope.master2 = QA['master2'];
                 $scope.master3 = QA['master3'];
                 $scope.master4 = QA['master4'];
+                $scope.master5 = QA['master5'];
             }
         }
     };
@@ -118,6 +120,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
             'master2': $scope.master2,
             'master3': $scope.master3,
             'master4': $scope.master4,
+            'master5': $scope.master5,
             'score': $scope.computeStrategyAssessmentScore()
         };
     };
@@ -166,7 +169,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
     };
 
     var isMaster = function () {
-        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4;
+        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4 && $scope.master5;
     };
 
 }]);
