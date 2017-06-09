@@ -214,7 +214,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             'expert5': 'Automated performance testing is in place.',
             'expert6': 'Non-functional requirements are defined and measured.',
             'expert7': 'Test cases designed by the team as part of the iteration.',
-            'expert8': 'Unit tests are created using TDD.',
+            'expert8': 'Unit tests are created using a test first approach.',
             'expert9': 'Quality metrics are defined but not reviewed or acted on.',
             'professional1': 'Automated infrastructure testing is in place.',
             'professional2': 'Automated security testing is in place.',
@@ -223,11 +223,11 @@ describe('continuumAssessmentPlatform.results module', function() {
             'professional5': 'Anyone can execute the tests.',
             'professional6': 'Quality metrics are part of build automation and continuous integration.',
             'professional7': 'Quality metrics are tracked for trends and adjustments made on a continuous basis.',
+            'professional8': 'Non-functional testing metrics are defined early in the process.',
             'master1': 'Active process is in place to understand root cause and respond to it.',
             'master2': 'Test artefacts are treated with the same importance as code and continually refactored and maintained.',
             'master3': 'Performance testing metrics are defined early in the process.',
-            'master4': 'Tests drive release readiness.',
-            'master5': 'The quality metrics are assessed and backlog items created to drive improvement.'};
+            'master4': 'Tests drive release readiness.'};
 
         var environmentsTasks = {
             'traveller1': 'Data migrations un-versioned and performed manually.',
@@ -1771,6 +1771,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['professional5']);
                             expect(scope.quality['tasks']).toContain(qaTasks['professional6']);
                             expect(scope.quality['tasks']).toContain(qaTasks['professional7']);
+                            expect(scope.quality['tasks']).toContain(qaTasks['professional8']);
                             expect(scope.quality['undoTasks'].length).toEqual(0);
                         });
 
@@ -1797,7 +1798,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['master2']);
                             expect(scope.quality['tasks']).toContain(qaTasks['master3']);
                             expect(scope.quality['tasks']).toContain(qaTasks['master4']);
-                            expect(scope.quality['tasks']).toContain(qaTasks['master5']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller1']);
                             expect(scope.quality['undoTasks'].length).toEqual(1);
                         });

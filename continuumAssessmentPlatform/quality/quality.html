@@ -15,7 +15,7 @@
         </label>
     </div>
     <div class="col-xs-7"><p ng-class="getClass(traveller1)">The testing is purely manual at this level of maturity. Teams rely on manual
-        testers to find defects and bugs. Teams need to start writing some automated tests.</p></div>
+        testers to find defects and bugs. Teams need to start writing some automated tests. No record of the testing done is kept.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -277,7 +277,7 @@
     </div>
     <div class="col-xs-4">
         <label>
-            Unit tests are created using TDD.
+            Unit tests are created using a test first approach.
         </label>
     </div>
     <div class="col-xs-7"><p ng-class="getClass(expert8)">The team writes unit tests using established frameworks and methodologies.
@@ -347,7 +347,8 @@
             Tests are automated as much as is practical.
         </label>
     </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">Test are automated and only the exploratory type tests are left unautomated.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">Tests are automated and only the exploratory type tests
+        are left unautomated. Exploratory tests are performed manually but well documented.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -412,6 +413,22 @@
     <div class="col-xs-7"><p ng-class="getClass(professional7)"> The team maintains a graph of historic quality metrics. The quality
         metrics are addressed by the team every iteration.</p></div>
 </div>
+<div class="row well well-sm">
+    <div class="col-xs-1">
+        <p align="center">
+            <label>
+                <input id="qualityProfessional8" type="checkbox" ng-model="professional8">
+            </label>
+        </p>
+    </div>
+    <div class="col-xs-4">
+        <label>
+            Non-functional testing metrics are defined early in the process.
+        </label>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional8)">Non-functional test metrics are clearly defined and available to the team members
+        early in the lifecycle. These are displayed on the team walls for all team members to be aware of and reviewed every iteration.</p></div>
+</div>
 <hr>
 <h4 align="center">Master</h4>
 <div class="row well well-sm">
@@ -456,11 +473,11 @@
     </div>
     <div class="col-xs-4">
         <label>
-            Performance testing metrics are defined early in the process.
+            Tests drive release readiness.
         </label>
     </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">Performance metrics are clearly defined and available to the team members
-        early in the lifecycle. These are displayed on the team walls for all team members to be aware of and reviewed every iteration.</p></div>
+    <div class="col-xs-7"><p ng-class="getClass(master3)">Tests drive the release readiness while business drives the release decisions.
+        A release candidate is only generated and available in the pipeline if all the tests have passed.</p></div>
 </div>
 <div class="row well well-sm">
     <div class="col-xs-1">
@@ -472,26 +489,10 @@
     </div>
     <div class="col-xs-4">
         <label>
-            Tests drive release readiness.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master4)">Tests drive the release readiness while business drives the release decisions.
-        A release candidate is only generated and available in the pipeline if all the tests have passed.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
-            <label>
-                <input id="qualityMaster5" type="checkbox" ng-model="master5">
-            </label>
-        </p>
-    </div>
-    <div class="col-xs-4">
-        <label>
             The quality metrics are assessed and backlog items created to drive improvement.
         </label>
     </div>
-    <div class="col-xs-7"><p ng-class="getClass(master5)">There are continuous assessments of the quality metrics to ensure the team is
+    <div class="col-xs-7"><p ng-class="getClass(master4)">There are continuous assessments of the quality metrics to ensure the team is
         aligned to the quality standards. Backlog items are created to address gaps identified from the quality metrics'
         perspective and these are tracked and prioritized.</p></div>
 </div>

@@ -76,6 +76,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.professional5).toBeDefined();
           expect(scope.professional6).toBeDefined();
           expect(scope.professional7).toBeDefined();
+          expect(scope.professional8).toBeDefined();
 
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
@@ -84,6 +85,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.professional5).toBeFalsy();
           expect(scope.professional6).toBeFalsy();
           expect(scope.professional7).toBeFalsy();
+          expect(scope.professional8).toBeFalsy();
       });
 
       it('should have defaults as false for the master questions', function(){
@@ -91,13 +93,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.master2).toBeDefined();
           expect(scope.master3).toBeDefined();
           expect(scope.master4).toBeDefined();
-          expect(scope.master5).toBeDefined();
 
           expect(scope.master1).toBeFalsy();
           expect(scope.master2).toBeFalsy();
           expect(scope.master3).toBeFalsy();
           expect(scope.master4).toBeFalsy();
-          expect(scope.master5).toBeFalsy();
       });
 
       it('should set the default values based on the rootScope if they are present', inject(function($controller){
@@ -105,8 +105,8 @@ describe('continuumAssessmentPlatform.quality module', function() {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false,
               'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false, 'expert7': false, 'expert8': false, 'expert9': false,
-              'professional1': false, 'professional2': true, 'professional3': true, 'professional4': true, 'professional5': true, 'professional6': true, 'professional7': true,
-              'master1': true, 'master2': false, 'master3': false, 'master4': false, 'master5': false}}};
+              'professional1': false, 'professional2': true, 'professional3': true, 'professional4': true, 'professional5': true, 'professional6': true, 'professional7': true, 'professional8': true,
+              'master1': true, 'master2': false, 'master3': false, 'master4': false}}};
 
           controller = $controller('QualityCtrl', {'$scope': scope, '$rootScope': rootScope});
           scope.init();
@@ -135,11 +135,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.professional5).toBeTruthy();
           expect(scope.professional6).toBeTruthy();
           expect(scope.professional7).toBeTruthy();
+          expect(scope.professional8).toBeTruthy();
           expect(scope.master1).toBeTruthy();
           expect(scope.master2).toBeFalsy();
           expect(scope.master3).toBeFalsy();
           expect(scope.master4).toBeFalsy();
-          expect(scope.master5).toBeFalsy();
       }));
 
       it('should set the default values based on the initial values if rootScope not set', inject(function($controller){
@@ -172,11 +172,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.professional5).toBeFalsy();
           expect(scope.professional6).toBeFalsy();
           expect(scope.professional7).toBeFalsy();
+          expect(scope.professional8).toBeFalsy();
           expect(scope.master1).toBeFalsy();
           expect(scope.master2).toBeFalsy();
           expect(scope.master3).toBeFalsy();
           expect(scope.master4).toBeFalsy();
-          expect(scope.master5).toBeFalsy();
       }));
 
       it('should set the default values based on the initial values if rootScope not set with assessments', inject(function($controller){
@@ -209,11 +209,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(scope.professional5).toBeFalsy();
           expect(scope.professional6).toBeFalsy();
           expect(scope.professional7).toBeFalsy();
+          expect(scope.professional8).toBeFalsy();
           expect(scope.master1).toBeFalsy();
           expect(scope.master2).toBeFalsy();
           expect(scope.master3).toBeFalsy();
           expect(scope.master4).toBeFalsy();
-          expect(scope.master5).toBeFalsy();
       }));
 
       it('should save the values for the assessment results for quality assurance', function(){
@@ -242,18 +242,18 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = false;
           scope.professional6 = false;
           scope.professional7 = false;
+          scope.professional8 = false;
           scope.master1 = false;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQA = {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false,
               'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true, 'expert6': true, 'expert7': true, 'expert8': true, 'expert9': true,
-              'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false, 'professional7': false,
-              'master1': false, 'master2': false, 'master3': false, 'master4': false, 'master5': false};
+              'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false, 'professional7': false, 'professional8': false,
+              'master1': false, 'master2': false, 'master3': false, 'master4': false};
 
           scope.saveAssessments();
           var QA = rootScope.assessments['QA'];
@@ -283,11 +283,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(QA['professional5']).toEqual(expectedQA[['professional5']]);
           expect(QA['professional6']).toEqual(expectedQA[['professional6']]);
           expect(QA['professional7']).toEqual(expectedQA[['professional7']]);
+          expect(QA['professional8']).toEqual(expectedQA[['professional8']]);
           expect(QA['master1']).toEqual(expectedQA[['master1']]);
           expect(QA['master2']).toEqual(expectedQA[['master2']]);
           expect(QA['master3']).toEqual(expectedQA[['master3']]);
           expect(QA['master4']).toEqual(expectedQA[['master4']]);
-          expect(QA['master5']).toEqual(expectedQA[['master5']]);
       });
 
       it('should save the score for quality assurance as 0 if no question is answered', function(){
@@ -316,11 +316,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = false;
           scope.professional6 = false;
           scope.professional7 = false;
+          scope.professional8 = false;
           scope.master1 = false;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQAScore = 0;
 
@@ -356,11 +356,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = false;
           scope.professional6 = false;
           scope.professional7 = false;
+          scope.professional8 = false;
           scope.master1 = false;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQAScore = 1;
 
@@ -396,11 +396,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = false;
           scope.professional6 = false;
           scope.professional7 = false;
+          scope.professional8 = false;
           scope.master1 = false;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQAScore = 2;
 
@@ -436,11 +436,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = false;
           scope.professional6 = false;
           scope.professional7 = false;
+          scope.professional8 = false;
           scope.master1 = false;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQAScore = 3;
 
@@ -476,11 +476,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = true;
           scope.professional6 = true;
           scope.professional7 = true;
+          scope.professional8 = true;
           scope.master1 = true;
           scope.master2 = false;
           scope.master3 = false;
           scope.master4 = false;
-          scope.master5 = false;
 
           var expectedQAScore = 4;
 
@@ -516,11 +516,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = true;
           scope.professional6 = true;
           scope.professional7 = true;
+          scope.professional8 = true;
           scope.master1 = true;
           scope.master2 = true;
           scope.master3 = true;
           scope.master4 = true;
-          scope.master5 = true;
 
           var expectedQAScore = 5;
 
@@ -556,11 +556,11 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.professional5 = true;
           scope.professional6 = true;
           scope.professional7 = true;
+          scope.professional8 = true;
           scope.master1 = true;
           scope.master2 = true;
           scope.master3 = true;
           scope.master4 = true;
-          scope.master5 = true;
 
           var expectedQAScore = 5;
           rootScope.assessments = {'coding': {}};

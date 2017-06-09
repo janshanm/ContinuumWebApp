@@ -36,11 +36,11 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
     $scope.professional5 = false;
     $scope.professional6 = false;
     $scope.professional7 = false;
+    $scope.professional8 = false;
     $scope.master1 = false;
     $scope.master2 = false;
     $scope.master3 = false;
     $scope.master4 = false;
-    $scope.master5 = false;
 
     $scope.init = function () {
         if(typeof $rootScope.assessments !== "undefined"){
@@ -72,11 +72,11 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
                 $scope.professional5 = QA['professional5'];
                 $scope.professional6 = QA['professional6'];
                 $scope.professional7 = QA['professional7'];
+                $scope.professional8 = QA['professional8'];
                 $scope.master1 = QA['master1'];
                 $scope.master2 = QA['master2'];
                 $scope.master3 = QA['master3'];
                 $scope.master4 = QA['master4'];
-                $scope.master5 = QA['master5'];
             }
         }
     };
@@ -116,11 +116,11 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
             'professional5': $scope.professional5,
             'professional6': $scope.professional6,
             'professional7': $scope.professional7,
+            'professional8': $scope.professional8,
             'master1': $scope.master1,
             'master2': $scope.master2,
             'master3': $scope.master3,
             'master4': $scope.master4,
-            'master5': $scope.master5,
             'score': $scope.computeStrategyAssessmentScore()
         };
     };
@@ -165,11 +165,11 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
 
     var isProfessional = function () {
         return isExpert() && $scope.professional1 && $scope.professional2 && $scope.professional3 && $scope.professional4
-            && $scope.professional5 && $scope.professional6 && $scope.professional7;
+            && $scope.professional5 && $scope.professional6 && $scope.professional7 && $scope.professional8;
     };
 
     var isMaster = function () {
-        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4 && $scope.master5;
+        return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4;
     };
 
 }]);

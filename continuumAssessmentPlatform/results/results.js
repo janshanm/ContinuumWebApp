@@ -318,7 +318,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'expert5': 'Automated performance testing is in place.',
             'expert6': 'Non-functional requirements are defined and measured.',
             'expert7': 'Test cases designed by the team as part of the iteration.',
-            'expert8': 'Unit tests are created using TDD.',
+            'expert8': 'Unit tests are created using a test first approach.',
             'expert9': 'Quality metrics are defined but not reviewed or acted on.',
             'professional1': 'Automated infrastructure testing is in place.',
             'professional2': 'Automated security testing is in place.',
@@ -327,11 +327,11 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'professional5': 'Anyone can execute the tests.',
             'professional6': 'Quality metrics are part of build automation and continuous integration.',
             'professional7': 'Quality metrics are tracked for trends and adjustments made on a continuous basis.',
+            'professional8': 'Non-functional testing metrics are defined early in the process.',
             'master1': 'Active process is in place to understand root cause and respond to it.',
             'master2': 'Test artefacts are treated with the same importance as code and continually refactored and maintained.',
             'master3': 'Performance testing metrics are defined early in the process.',
-            'master4': 'Tests drive release readiness.',
-            'master5': 'The quality metrics are assessed and backlog items created to drive improvement.'};
+            'master4': 'Tests drive release readiness.'};
 
         var environmentsTasks = {
             'traveller1': 'Data migrations un-versioned and performed manually.',
@@ -1526,6 +1526,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 if(!qaAssessments['professional7']){
                     qaResults['tasks'].push(qaTasks['professional7']);
                 }
+
+                if(!qaAssessments['professional8']){
+                    qaResults['tasks'].push(qaTasks['professional8']);
+                }
             }
 
             if(score === 4){
@@ -1547,10 +1551,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
                 if(!qaAssessments['master4']){
                     qaResults['tasks'].push(qaTasks['master4']);
-                }
-
-                if(!qaAssessments['master5']){
-                    qaResults['tasks'].push(qaTasks['master5']);
                 }
             }
 
