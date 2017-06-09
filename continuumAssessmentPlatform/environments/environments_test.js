@@ -45,6 +45,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.artisan5).toBeDefined();
           expect(scope.artisan6).toBeDefined();
           expect(scope.artisan7).toBeDefined();
+          expect(scope.artisan8).toBeDefined();
 
           expect(scope.artisan1).toBeFalsy();
           expect(scope.artisan2).toBeFalsy();
@@ -53,6 +54,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.artisan5).toBeFalsy();
           expect(scope.artisan6).toBeFalsy();
           expect(scope.artisan7).toBeFalsy();
+          expect(scope.artisan8).toBeFalsy();
       });
 
       it('should have defaults as false for the expert questions', function(){
@@ -61,6 +63,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeDefined();
           expect(scope.expert4).toBeDefined();
           expect(scope.expert5).toBeDefined();
+          expect(scope.expert6).toBeDefined();
 
           expect(scope.expert1).toBeFalsy();
           expect(scope.expert2).toBeFalsy();
@@ -68,6 +71,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
       });
 
       it('should have defaults as false for the professional questions', function(){
@@ -111,8 +115,8 @@ describe('continuumAssessmentPlatform.environments module', function() {
       it('should set the default values based on the rootScope if they are present', inject(function($controller){
           rootScope = {'assessments': {'environments': {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true, 'traveller7': true,
-              'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false,
-              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false,
+              'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false, 'artisan8': false,
+              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
               'professional1': false, 'professional2': true, 'professional3': true, 'professional4': true, 'professional5': true, 'professional6': true,
               'master1': true, 'master2': false, 'master3': false, 'master4': false, 'master5': false, 'master6': false, 'master7': false, 'master8': false, 'master9': false}}};
 
@@ -132,11 +136,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.artisan5).toBeFalsy();
           expect(scope.artisan6).toBeFalsy();
           expect(scope.artisan7).toBeFalsy();
+          expect(scope.artisan8).toBeFalsy();
           expect(scope.expert1).toBeTruthy();
           expect(scope.expert2).toBeFalsy();
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeTruthy();
           expect(scope.professional3).toBeTruthy();
@@ -173,11 +179,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.artisan5).toBeFalsy();
           expect(scope.artisan6).toBeFalsy();
           expect(scope.artisan7).toBeFalsy();
+          expect(scope.artisan8).toBeFalsy();
           expect(scope.expert1).toBeFalsy();
           expect(scope.expert2).toBeFalsy();
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
           expect(scope.professional3).toBeFalsy();
@@ -214,11 +222,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(scope.artisan5).toBeFalsy();
           expect(scope.artisan6).toBeFalsy();
           expect(scope.artisan7).toBeFalsy();
+          expect(scope.artisan8).toBeFalsy();
           expect(scope.expert1).toBeFalsy();
           expect(scope.expert2).toBeFalsy();
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
           expect(scope.professional3).toBeFalsy();
@@ -251,11 +261,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = false;
           scope.artisan7 = false;
+          scope.artisan8 = false;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -274,8 +286,8 @@ describe('continuumAssessmentPlatform.environments module', function() {
 
           var expectedEnvironments = {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true, 'traveller7': true,
-              'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false,
-              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true,
+              'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false, 'artisan6': false, 'artisan7': false, 'artisan8': false,
+              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true, 'expert6': true,
               'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false,
               'master1': false, 'master2': false, 'master3': false, 'master4': false, 'master5': false, 'master6': false, 'master7': false, 'master8': false, 'master9': false};
 
@@ -296,11 +308,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['artisan5']).toEqual(expectedEnvironments[['artisan5']]);
           expect(environments['artisan6']).toEqual(expectedEnvironments[['artisan6']]);
           expect(environments['artisan7']).toEqual(expectedEnvironments[['artisan7']]);
+          expect(environments['artisan8']).toEqual(expectedEnvironments[['artisan8']]);
           expect(environments['expert1']).toEqual(expectedEnvironments[['expert1']]);
           expect(environments['expert2']).toEqual(expectedEnvironments[['expert2']]);
           expect(environments['expert3']).toEqual(expectedEnvironments[['expert3']]);
           expect(environments['expert4']).toEqual(expectedEnvironments[['expert4']]);
           expect(environments['expert5']).toEqual(expectedEnvironments[['expert5']]);
+          expect(environments['expert6']).toEqual(expectedEnvironments[['expert6']]);
           expect(environments['professional1']).toEqual(expectedEnvironments[['professional1']]);
           expect(environments['professional2']).toEqual(expectedEnvironments[['professional2']]);
           expect(environments['professional3']).toEqual(expectedEnvironments[['professional3']]);
@@ -333,11 +347,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = false;
           scope.artisan7 = false;
+          scope.artisan8 = false;
           scope.expert1 = false;
           scope.expert2 = false;
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -377,11 +393,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = false;
           scope.artisan7 = false;
+          scope.artisan8 = false;
           scope.expert1 = false;
           scope.expert2 = false;
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -421,11 +439,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = true;
           scope.artisan6 = true;
           scope.artisan7 = true;
+          scope.artisan8 = true;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -465,11 +485,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = true;
           scope.artisan7 = true;
+          scope.artisan8 = true;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -509,11 +531,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = true;
           scope.artisan7 = true;
+          scope.artisan8 = true;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;
@@ -553,11 +577,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = true;
           scope.artisan7 = true;
+          scope.artisan8 = true;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;
@@ -597,11 +623,13 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.artisan5 = false;
           scope.artisan6 = true;
           scope.artisan7 = true;
+          scope.artisan8 = true;
           scope.expert1 = true;
           scope.expert2 = true;
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;

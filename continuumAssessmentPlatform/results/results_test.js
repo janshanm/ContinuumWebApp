@@ -244,11 +244,13 @@ describe('continuumAssessmentPlatform.results module', function() {
             'artisan5': 'Test environments are available during specific dates/time slots.',
             'artisan6': 'Ability to deploy basic virtual environments.',
             'artisan7': 'Team has a dedicated development  environment.',
+            'artisan8': 'Test Data is readily available to the team.',
             'expert1': 'Database changes are performed automatically as part of deployment process.',
             'expert2': 'Test environments are readily available. Can be reproduced with manual work + coordination between operational teams.',
             'expert3': 'Access to a production-like environment is restricted to a small group of closely-related application teams, and delays at this level are unusual.',
             'expert4': 'Environment provisioning partially automated.',
             'expert5': 'Some virtual environments have interfaces available ‘stubs’ to run end-to-end testing.',
+            'expert6': 'Test Data for non-functional test requirements are provisioned and readily available.',
             'professional1': 'Database upgrades and rollbacks are tested with every deployment.',
             'professional2': 'Database performance is monitored and optimized.',
             'professional3': 'Minimal manual work is required to replicate and configure environments but this can be completed within hours.',
@@ -1852,6 +1854,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan5']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan6']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan7']);
+                            expect(scope.environments['tasks']).toContain(environmentsTasks['artisan8']);
                             expect(scope.environments['undoTasks']).toContain(environmentsTasks['traveller1']);
                             expect(scope.environments['undoTasks']).toContain(environmentsTasks['traveller2']);
                             expect(scope.environments['undoTasks']).toContain(environmentsTasks['traveller3']);
@@ -1889,6 +1892,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.environments['tasks']).toContain(environmentsTasks['expert3']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['expert4']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['expert5']);
+                            expect(scope.environments['tasks']).toContain(environmentsTasks['expert6']);
                             expect(scope.environments['undoTasks']).toContain(environmentsTasks['artisan1']);
                             expect(scope.environments['undoTasks']).toContain(environmentsTasks['artisan5']);
                             expect(scope.environments['undoTasks'].length).toEqual(2);

@@ -25,11 +25,13 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
     $scope.artisan5 = false;
     $scope.artisan6 = false;
     $scope.artisan7 = false;
+    $scope.artisan8 = false;
     $scope.expert1 = false;
     $scope.expert2 = false;
     $scope.expert3 = false;
     $scope.expert4 = false;
     $scope.expert5 = false;
+    $scope.expert6 = false;
     $scope.professional1 = false;
     $scope.professional2 = false;
     $scope.professional3 = false;
@@ -65,11 +67,13 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
                 $scope.artisan5 = environments['artisan5'];
                 $scope.artisan6 = environments['artisan6'];
                 $scope.artisan7 = environments['artisan7'];
+                $scope.artisan8 = environments['artisan8'];
                 $scope.expert1 = environments['expert1'];
                 $scope.expert2 = environments['expert2'];
                 $scope.expert3 = environments['expert3'];
                 $scope.expert4 = environments['expert4'];
                 $scope.expert5 = environments['expert5'];
+                $scope.expert6 = environments['expert6'];
                 $scope.professional1 = environments['professional1'];
                 $scope.professional2 = environments['professional2'];
                 $scope.professional3 = environments['professional3'];
@@ -113,11 +117,13 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             'artisan5': $scope.artisan5,
             'artisan6': $scope.artisan6,
             'artisan7': $scope.artisan7,
+            'artisan8': $scope.artisan8,
             'expert1': $scope.expert1,
             'expert2': $scope.expert2,
             'expert3': $scope.expert3,
             'expert4': $scope.expert4,
             'expert5': $scope.expert5,
+            'expert6': $scope.expert6,
             'professional1': $scope.professional1,
             'professional2': $scope.professional2,
             'professional3': $scope.professional3,
@@ -166,13 +172,13 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
 
     var isArtisan = function () {
         return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
-            && $scope.artisan5 && $scope.artisan6 && $scope.artisan7;
+            && $scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8;
     };
 
     var isExpert = function() {
         return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
-            && !$scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.expert1 && $scope.expert2
-            && $scope.expert3 && $scope.expert4 && $scope.expert5;
+            && !$scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8 && $scope.expert1 && $scope.expert2
+            && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
 
     var isProfessional = function () {
