@@ -280,6 +280,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             'expert3': 'New members are efficiently integrated into feature team.',
             'expert4': 'Triad is fully-functioning and not dependent on external validation and external authority.',
             'expert5': 'Goals are clearly prioritized and timeously achieved.',
+            'expert6': 'Team understands the full impact of deployments.',
             'professional1': 'T-shaped skills emerge (team members can perform more than one function).',
             'professional2': 'The team is self-organizing. The team is self-managed and has necessary autonomy to modify the design of their team and/or aspects of the organisational context in which the operate.',
             'professional3': 'Metrics are in place to ensure constant improvement.',
@@ -2039,6 +2040,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['expert3']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['expert4']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['expert5']);
+                            expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['expert6']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
                             expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['artisan1']);

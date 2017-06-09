@@ -384,6 +384,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'expert3': 'New members are efficiently integrated into feature team.',
             'expert4': 'Triad is fully-functioning and not dependent on external validation and external authority.',
             'expert5': 'Goals are clearly prioritized and timeously achieved.',
+            'expert6': 'Team understands the full impact of deployments.',
             'professional1': 'T-shaped skills emerge (team members can perform more than one function).',
             'professional2': 'The team is self-organizing. The team is self-managed and has necessary autonomy to modify the design of their team and/or aspects of the organisational context in which the operate.',
             'professional3': 'Metrics are in place to ensure constant improvement.',
@@ -1826,6 +1827,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
                 if(!featureTeamsAssessments['expert5']){
                     featureTeamsResults['tasks'].push(featureTeamsTasks['expert5']);
+                }
+
+                if(!featureTeamsAssessments['expert6']){
+                    featureTeamsResults['tasks'].push(featureTeamsTasks['expert6']);
                 }
             }
 

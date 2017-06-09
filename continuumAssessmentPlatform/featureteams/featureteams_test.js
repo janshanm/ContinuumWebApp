@@ -47,6 +47,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(scope.expert3).toBeDefined();
           expect(scope.expert4).toBeDefined();
           expect(scope.expert5).toBeDefined();
+          expect(scope.expert6).toBeDefined();
 
           expect(scope.expert1).toBeFalsy();
           expect(scope.expert2).toBeFalsy();
@@ -54,6 +55,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
       });
 
       it('should have defaults as false for the professional questions', function(){
@@ -82,7 +84,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           rootScope = {'assessments': {'featureTeams': {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false,
-              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false,
+              'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
               'professional1': false, 'professional2': true, 'professional3': true,
               'master1': true, 'master2': false, 'master3': false, 'master4': false}}};
 
@@ -100,6 +102,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeTruthy();
           expect(scope.professional3).toBeTruthy();
@@ -126,6 +129,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
           expect(scope.professional3).toBeFalsy();
@@ -152,6 +156,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(scope.expert3).toBeFalsy();
           expect(scope.expert4).toBeFalsy();
           expect(scope.expert5).toBeFalsy();
+          expect(scope.expert6).toBeFalsy();
           expect(scope.professional1).toBeFalsy();
           expect(scope.professional2).toBeFalsy();
           expect(scope.professional3).toBeFalsy();
@@ -174,6 +179,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -185,7 +191,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           var expectedFeatureTeams = {
               'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true,
               'artisan1': true, 'artisan2': false, 'artisan3': false,
-              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true,
+              'expert1': true, 'expert2': true, 'expert3': true, 'expert4': true, 'expert5': true, 'expert6': true,
               'professional1': false, 'professional2': false, 'professional3': false,
               'master1': false, 'master2': false, 'master3': false, 'master4': false};
 
@@ -204,6 +210,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(featureTeams['expert3']).toEqual(expectedFeatureTeams[['expert3']]);
           expect(featureTeams['expert4']).toEqual(expectedFeatureTeams[['expert4']]);
           expect(featureTeams['expert5']).toEqual(expectedFeatureTeams[['expert5']]);
+          expect(featureTeams['expert6']).toEqual(expectedFeatureTeams[['expert6']]);
           expect(featureTeams['professional1']).toEqual(expectedFeatureTeams[['professional1']]);
           expect(featureTeams['professional2']).toEqual(expectedFeatureTeams[['professional2']]);
           expect(featureTeams['professional3']).toEqual(expectedFeatureTeams[['professional3']]);
@@ -226,6 +233,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -255,6 +263,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -284,6 +293,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = false;
           scope.expert4 = false;
           scope.expert5 = false;
+          scope.expert6 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -313,6 +323,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -342,6 +353,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;
@@ -371,6 +383,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;
@@ -400,6 +413,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.expert3 = true;
           scope.expert4 = true;
           scope.expert5 = true;
+          scope.expert6 = true;
           scope.professional1 = true;
           scope.professional2 = true;
           scope.professional3 = true;

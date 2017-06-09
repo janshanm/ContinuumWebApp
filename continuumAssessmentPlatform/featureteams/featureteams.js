@@ -23,6 +23,7 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
     $scope.expert3 = false;
     $scope.expert4 = false;
     $scope.expert5 = false;
+    $scope.expert6 = false;
     $scope.professional1 = false;
     $scope.professional2 = false;
     $scope.professional3 = false;
@@ -48,6 +49,7 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
                 $scope.expert3 = featureTeams['expert3'];
                 $scope.expert4 = featureTeams['expert4'];
                 $scope.expert5 = featureTeams['expert5'];
+                $scope.expert6 = featureTeams['expert6'];
                 $scope.professional1 = featureTeams['professional1'];
                 $scope.professional2 = featureTeams['professional2'];
                 $scope.professional3 = featureTeams['professional3'];
@@ -81,6 +83,7 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
             'expert3': $scope.expert3,
             'expert4': $scope.expert4,
             'expert5': $scope.expert5,
+            'expert6': $scope.expert6,
             'professional1': $scope.professional1,
             'professional2': $scope.professional2,
             'professional3': $scope.professional3,
@@ -124,7 +127,7 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
 
     var isExpert = function() {
         return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.expert1
-            && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5;
+            && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
 
     var isProfessional = function () {
