@@ -99,7 +99,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             'master5': 'Check-ins occur multiple times each day.',
             'master6': 'Environment & infrastructure specifications are managed and versioned along with all other artefacts.',
             'master7': 'The CI build creates and provisions environments to allow scalability for testing.',
-            'master8': 'Release and Change Management fully integrated into deployment processes.',
+            'master8': 'Release and Change Management requirements can be generated and are fully integrated into deployment processes.',
             'master9': 'The product is always in releasable state.',
             'master10': 'Automated release process, release to customers is a business decision.'};
 
@@ -226,7 +226,7 @@ describe('continuumAssessmentPlatform.results module', function() {
             'professional8': 'Non-functional testing metrics are defined early in the process.',
             'master1': 'Active process is in place to understand root cause and respond to it.',
             'master2': 'Test artefacts are treated with the same importance as code and continually refactored and maintained.',
-            'master3': 'Performance testing metrics are defined early in the process.',
+            'master3': 'The quality metrics are assessed and backlog items created to drive improvement.',
             'master4': 'Tests drive release readiness.'};
 
         var environmentsTasks = {
