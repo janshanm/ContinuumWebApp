@@ -34,7 +34,8 @@
                     <th>Current Level</th>
                     <th>Current Mastery</th>
                     <th>Next Level</th>
-                    <th>Tasks Required</th>
+                    <th>Start Doing</th>
+                    <th>Stop Doing</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in strategy.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in strategy.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -58,6 +63,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in planning.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in planning.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -70,6 +79,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in coding.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in coding.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -82,6 +95,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in ci.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in ci.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -94,6 +111,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in incident.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in incident.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -106,6 +127,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in risk.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in risk.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -118,6 +143,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in design.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in design.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -130,6 +159,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in teaming.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in teaming.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -142,6 +175,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in release.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in release.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -154,6 +191,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in quality.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in quality.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -166,6 +207,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in environments.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in environments.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
@@ -178,6 +223,10 @@
                         <td>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-success" ng-repeat="task in featureTeams.tasks">{{task}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in featureTeams.undoTasks">{{undoTask}}</li>
                             </ul>
                         </td>
