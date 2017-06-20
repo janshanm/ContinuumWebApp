@@ -37,7 +37,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             {'name': 'Digital ID and Entitlements'}, {'name': 'Insurance, Homeloans, VAF, Kids'}, {'name': 'Order Management'},
             {'name': 'Personal and SE - Account Management'}, {'name': 'Personal and SE - Transactional and VAS'},
             {'name': 'Staff Foundation'}, {'name': 'Virtual Banking - Squad 1'}, {'name': 'Virtual Banking - Squad 2'},
-            {'name': 'Web Presence and Community'}],
+            {'name': 'Web for Customer'}, {'name': 'Web for Staff'}, {'name': 'Web Presence and Community'}],
         'EWT': [{'name': 'Domain Architecture'}, {'name': 'BPM - Digital Squad'}, {'name': 'BPM - GEF Squad'},
             {'name': 'BPM - Squad 1'}, {'name': 'BPM Platform'}, {'name': 'ECM CIB'},
             {'name': 'ECM Core'}, {'name': 'ECM Correspondence'}, {'name': 'ECM Enterprise'},

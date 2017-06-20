@@ -27,7 +27,7 @@
             <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
         </p>
         <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
-            <table class="table table-striped">
+            <table id="resultTable" class="table table-striped">
                 <thead>
                 <tr>
                     <th></th>
@@ -184,6 +184,8 @@
                     </tr>
                 </tbody>
             </table>
+            <a download="resultRecommendations.xls" href="#!/results" onclick="return ExcellentExport.excel(this, 'resultTable', 'Recommendations');">Export to Excel</a>
+            <a download="resultRecommendations.csv" href="#!/results" onclick="return ExcellentExport.csv(this, 'resultTable');">Export to CSV</a>
         </div>
 
         <div class="tab-pane active" id="maturityLevel" ng-show="selectedTab == 3">
