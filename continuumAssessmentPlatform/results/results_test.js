@@ -440,7 +440,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.design['next_score']).toEqual(two);
                     expect(scope.design['tasks']).toContain(designTasks['artisan1']);
                     expect(scope.design['tasks']).toContain(designTasks['artisan2']);
-                    expect(scope.design['tasks']).toContain(designTasks['traveller3']);
                     expect(scope.design['undoTasks'].length).toEqual(zero);
                 });
 
@@ -453,7 +452,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.teaming['tasks']).toContain(teamingTasks['artisan1']);
                     expect(scope.teaming['tasks']).toContain(teamingTasks['artisan2']);
                     expect(scope.teaming['tasks']).toContain(teamingTasks['artisan3']);
-                    expect(scope.teaming['tasks']).toContain(teamingTasks['traveller1']);
                     expect(scope.teaming['undoTasks'].length).toEqual(zero);
                 });
 
@@ -467,7 +465,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.release['tasks']).toContain(releaseTasks['artisan2']);
                     expect(scope.release['tasks']).toContain(releaseTasks['artisan3']);
                     expect(scope.release['tasks']).toContain(releaseTasks['artisan4']);
-                    expect(scope.release['tasks']).toContain(releaseTasks['traveller2']);
                     expect(scope.release['undoTasks'].length).toEqual(zero);
                 });
 
@@ -480,10 +477,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.quality['tasks']).toContain(qaTasks['artisan1']);
                     expect(scope.quality['tasks']).toContain(qaTasks['artisan2']);
                     expect(scope.quality['tasks']).toContain(qaTasks['artisan3']);
-                    expect(scope.quality['tasks']).toContain(qaTasks['traveller2']);
-                    expect(scope.quality['tasks']).toContain(qaTasks['traveller3']);
-                    expect(scope.quality['tasks']).toContain(qaTasks['traveller5']);
-                    expect(scope.quality['tasks']).toContain(qaTasks['traveller6']);
                     expect(scope.quality['undoTasks'].length).toEqual(zero);
                 });
 
@@ -512,10 +505,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan1']);
                     expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
                     expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
-                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller1']);
-                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller2']);
-                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller3']);
-                    expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller4']);
                     expect(scope.featureTeams['undoTasks'].length).toEqual(zero);
                 });
             });
@@ -1323,7 +1312,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.design['next_score']).toEqual(two);
                             expect(scope.design['tasks']).toContain(designTasks['artisan1']);
                             expect(scope.design['tasks']).toContain(designTasks['artisan2']);
-                            expect(scope.design['tasks']).toContain(designTasks['traveller3']);
                             expect(scope.design['undoTasks']).toContain(designTasks['traveller1']);
                             expect(scope.design['undoTasks']).toContain(designTasks['traveller2']);
                             expect(scope.design['undoTasks'].length).toEqual(2);
@@ -1448,7 +1436,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.teaming['tasks']).toContain(teamingTasks['artisan1']);
                             expect(scope.teaming['tasks']).toContain(teamingTasks['artisan2']);
                             expect(scope.teaming['tasks']).toContain(teamingTasks['artisan3']);
-                            expect(scope.teaming['tasks']).toContain(teamingTasks['traveller1']);
                             expect(scope.teaming['undoTasks']).toContain(teamingTasks['traveller2']);
                             expect(scope.teaming['undoTasks']).toContain(teamingTasks['traveller3']);
                             expect(scope.teaming['undoTasks'].length).toEqual(2);
@@ -1567,7 +1554,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.release['tasks']).toContain(releaseTasks['artisan2']);
                             expect(scope.release['tasks']).toContain(releaseTasks['artisan3']);
                             expect(scope.release['tasks']).toContain(releaseTasks['artisan4']);
-                            expect(scope.release['tasks']).toContain(releaseTasks['traveller2']);
                             expect(scope.release['undoTasks']).toContain(releaseTasks['traveller1']);
                             expect(scope.release['undoTasks']).toContain(releaseTasks['traveller3']);
                             expect(scope.release['undoTasks']).toContain(releaseTasks['traveller4']);
@@ -1698,10 +1684,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['tasks']).toContain(qaTasks['artisan1']);
                             expect(scope.quality['tasks']).toContain(qaTasks['artisan2']);
                             expect(scope.quality['tasks']).toContain(qaTasks['artisan3']);
-                            expect(scope.quality['tasks']).toContain(qaTasks['traveller2']);
-                            expect(scope.quality['tasks']).toContain(qaTasks['traveller3']);
-                            expect(scope.quality['tasks']).toContain(qaTasks['traveller5']);
-                            expect(scope.quality['tasks']).toContain(qaTasks['traveller6']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller1']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller4']);
                             expect(scope.quality['undoTasks'].length).toEqual(2);
@@ -2005,10 +1987,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan1']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
-                            expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller1']);
-                            expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller2']);
-                            expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller3']);
-                            expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['traveller4']);
                             expect(scope.featureTeams['undoTasks'].length).toEqual(0);
                         });
 

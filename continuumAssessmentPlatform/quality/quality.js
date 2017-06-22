@@ -153,8 +153,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !$scope.traveller1 && $scope.traveller2 && $scope.traveller3 && !$scope.traveller4
-            && $scope.traveller5 && $scope.traveller6 && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
     };
 
     var isExpert = function() {

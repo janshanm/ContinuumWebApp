@@ -1062,10 +1062,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             designResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!designAssessments['traveller3']){
-                    designResults['tasks'].push(designTasks['traveller3']);
-                }
-
                 if(!designAssessments['artisan1']){
                     designResults['tasks'].push(designTasks['artisan1']);
                 }
@@ -1176,10 +1172,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             teamingResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!teamingAssessments['traveller1']){
-                    teamingResults['tasks'].push(teamingTasks['traveller1']);
-                }
-
                 if(!teamingAssessments['artisan1']){
                     teamingResults['tasks'].push(teamingTasks['artisan1']);
                 }
@@ -1261,10 +1253,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             releaseResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!releaseAssessments['traveller2']){
-                    releaseResults['tasks'].push(releaseTasks['traveller2']);
-                }
-
                 if(!releaseAssessments['artisan1']){
                     releaseResults['tasks'].push(releaseTasks['artisan1']);
                 }
@@ -1390,22 +1378,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             qaResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!qaAssessments['traveller2']){
-                    qaResults['tasks'].push(qaTasks['traveller2']);
-                }
-
-                if(!qaAssessments['traveller3']){
-                    qaResults['tasks'].push(qaTasks['traveller3']);
-                }
-
-                if(!qaAssessments['traveller5']){
-                    qaResults['tasks'].push(qaTasks['traveller5']);
-                }
-
-                if(!qaAssessments['traveller6']){
-                    qaResults['tasks'].push(qaTasks['traveller6']);
-                }
-
                 if(!qaAssessments['artisan1']){
                     qaResults['tasks'].push(qaTasks['artisan1']);
                 }
@@ -1751,22 +1723,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             featureTeamsResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!featureTeamsAssessments['traveller1']){
-                    featureTeamsResults['tasks'].push(featureTeamsTasks['traveller1']);
-                }
-
-                if(!featureTeamsAssessments['traveller2']){
-                    featureTeamsResults['tasks'].push(featureTeamsTasks['traveller2']);
-                }
-
-                if(!featureTeamsAssessments['traveller3']){
-                    featureTeamsResults['tasks'].push(featureTeamsTasks['traveller3']);
-                }
-
-                if(!featureTeamsAssessments['traveller4']){
-                    featureTeamsResults['tasks'].push(featureTeamsTasks['traveller4']);
-                }
-
                 if(!featureTeamsAssessments['artisan1']){
                     featureTeamsResults['tasks'].push(featureTeamsTasks['artisan1']);
                 }

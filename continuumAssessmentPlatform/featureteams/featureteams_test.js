@@ -281,10 +281,10 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
       });
 
       it('should save the score for feature teams as 2 if appropriate traveller questions not answered and artisan questions answered', function(){
-          scope.traveller1 = true;
-          scope.traveller2 = true;
-          scope.traveller3 = true;
-          scope.traveller4 = true;
+          scope.traveller1 = false;
+          scope.traveller2 = false;
+          scope.traveller3 = false;
+          scope.traveller4 = false;
           scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
@@ -315,7 +315,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;
@@ -345,7 +345,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;
@@ -375,7 +375,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;
@@ -405,7 +405,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.traveller2 = false;
           scope.traveller3 = false;
           scope.traveller4 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;

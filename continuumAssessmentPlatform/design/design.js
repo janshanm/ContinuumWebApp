@@ -110,7 +110,7 @@ angular.module('continuumAssessmentPlatform.design', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !$scope.traveller1 && !$scope.traveller2 && $scope.traveller3 && $scope.artisan1 && $scope.artisan2;
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2;
     };
 
     var isExpert = function() {

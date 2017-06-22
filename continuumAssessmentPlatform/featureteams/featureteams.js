@@ -122,11 +122,11 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
     };
 
     var isExpert = function() {
-        return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.expert1
+        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.expert1
             && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
 
