@@ -290,7 +290,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           expect(QA['master4']).toEqual(expectedQA[['master4']]);
       });
 
-      it('should save the score for quality assurance as 0 if no question is answered', function(){
+      it('should save the score for quality assurance as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -322,7 +322,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.master3 = false;
           scope.master4 = false;
 
-          var expectedQAScore = 0;
+          var expectedQAScore = 1;
 
           scope.saveAssessments();
           var QA = rootScope.assessments['QA'];

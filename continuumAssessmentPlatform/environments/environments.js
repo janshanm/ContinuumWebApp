@@ -160,7 +160,7 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             return 5;
         }
         else{
-            return 0;
+            return 1;
         }
 
     };

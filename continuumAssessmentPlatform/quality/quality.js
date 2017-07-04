@@ -142,7 +142,7 @@ angular.module('continuumAssessmentPlatform.quality', ['ngRoute'])
             return 5;
         }
         else{
-            return 0;
+            return 1;
         }
 
     };

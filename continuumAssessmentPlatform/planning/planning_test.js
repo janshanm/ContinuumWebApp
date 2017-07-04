@@ -255,7 +255,7 @@ describe('continuumAssessmentPlatform.planning module', function() {
 
       });
 
-      it('should save the score for planning as 0 if no question is answered', function(){
+      it('should save the score for planning as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -282,7 +282,7 @@ describe('continuumAssessmentPlatform.planning module', function() {
           scope.master2 = false;
           scope.master3 = false;
 
-          var expectedPlanningScore = 0;
+          var expectedPlanningScore = 1;
 
           scope.saveAssessments();
           var planning = rootScope.assessments['planning'];

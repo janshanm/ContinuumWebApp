@@ -11,18 +11,18 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
     .controller('ResultsCtrl', ['$scope', '$rootScope', 'SaveResults', function($scope, $rootScope, SaveResults) {
 
-        $scope.strategyScore = 0;
-        $scope.planningScore = 0;
-        $scope.codingScore = 0;
-        $scope.ciScore = 0;
-        $scope.incidentScore = 0;
-        $scope.riskScore = 0;
-        $scope.designScore = 0;
-        $scope.teamingScore = 0;
-        $scope.releaseScore = 0;
-        $scope.QAScore = 0;
-        $scope.environmentsScore = 0;
-        $scope.featureTeamsScore = 0;
+        $scope.strategyScore = 1;
+        $scope.planningScore = 1;
+        $scope.codingScore = 1;
+        $scope.ciScore = 1;
+        $scope.incidentScore = 1;
+        $scope.riskScore = 1;
+        $scope.designScore = 1;
+        $scope.teamingScore = 1;
+        $scope.releaseScore = 1;
+        $scope.QAScore = 1;
+        $scope.environmentsScore = 1;
+        $scope.featureTeamsScore = 1;
         $scope.resultsData = {};
         $scope.selectedTab = 1;
 
@@ -33,18 +33,18 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
             var assessments = $rootScope.assessments;
             if(typeof assessments !== "undefined") {
-                $scope.strategyScore = assessments['strategy'] !== undefined ? assessments['strategy'].score : 0;
-                $scope.planningScore = assessments['planning'] !== undefined ? assessments['planning'].score : 0;
-                $scope.codingScore = assessments['coding'] !== undefined ? assessments['coding'].score : 0;
-                $scope.ciScore = assessments['ci'] !== undefined ? assessments['ci'].score : 0;
-                $scope.incidentScore = assessments['incident'] !== undefined ? assessments['incident'].score : 0;
-                $scope.riskScore = assessments['risk'] !== undefined ? assessments['risk'].score : 0;
-                $scope.designScore = assessments['design'] !== undefined ? assessments['design'].score : 0;
-                $scope.teamingScore = assessments['teaming'] !== undefined ? assessments['teaming'].score : 0;
-                $scope.releaseScore = assessments['release'] !== undefined ? assessments['release'].score : 0;
-                $scope.QAScore = assessments['QA'] !== undefined ? assessments['QA'].score : 0;
-                $scope.environmentsScore = assessments['environments'] !== undefined ? assessments['environments'].score : 0;
-                $scope.featureTeamsScore = assessments['featureTeams'] !== undefined ? assessments['featureTeams'].score : 0;
+                $scope.strategyScore = assessments['strategy'] !== undefined ? assessments['strategy'].score : 1;
+                $scope.planningScore = assessments['planning'] !== undefined ? assessments['planning'].score : 1;
+                $scope.codingScore = assessments['coding'] !== undefined ? assessments['coding'].score : 1;
+                $scope.ciScore = assessments['ci'] !== undefined ? assessments['ci'].score : 1;
+                $scope.incidentScore = assessments['incident'] !== undefined ? assessments['incident'].score : 1;
+                $scope.riskScore = assessments['risk'] !== undefined ? assessments['risk'].score : 1;
+                $scope.designScore = assessments['design'] !== undefined ? assessments['design'].score : 1;
+                $scope.teamingScore = assessments['teaming'] !== undefined ? assessments['teaming'].score : 1;
+                $scope.releaseScore = assessments['release'] !== undefined ? assessments['release'].score : 1;
+                $scope.QAScore = assessments['QA'] !== undefined ? assessments['QA'].score : 1;
+                $scope.environmentsScore = assessments['environments'] !== undefined ? assessments['environments'].score : 1;
+                $scope.featureTeamsScore = assessments['featureTeams'] !== undefined ? assessments['featureTeams'].score : 1;
             }
 
             $scope.resultsData['teamName'] = $rootScope.teamName;
@@ -1463,14 +1463,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 if(qaAssessments['artisan1']){
                     qaResults['undoTasks'].push(qaTasks['artisan1']);
                 }
-
-                if(qaAssessments['artisan2']){
-                    qaResults['undoTasks'].push(qaTasks['artisan2']);
-                }
-
-                if(qaAssessments['artisan3']){
-                    qaResults['undoTasks'].push(qaTasks['artisan3']);
-                }
             }
 
             if(score === 3){
@@ -1552,18 +1544,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
                 if(!environmentsAssessments['artisan2']){
                     environmentsResults['tasks'].push(environmentsTasks['artisan2']);
-                }
-
-                if(!environmentsAssessments['artisan3']){
-                    environmentsResults['tasks'].push(environmentsTasks['artisan3']);
-                }
-
-                if(!environmentsAssessments['artisan4']){
-                    environmentsResults['tasks'].push(environmentsTasks['artisan4']);
-                }
-
-                if(!environmentsAssessments['artisan5']){
-                    environmentsResults['tasks'].push(environmentsTasks['artisan5']);
                 }
 
                 if(!environmentsAssessments['artisan6']){

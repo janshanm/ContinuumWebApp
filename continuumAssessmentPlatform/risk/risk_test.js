@@ -192,7 +192,7 @@ describe('continuumAssessmentPlatform.risk module', function() {
 
       });
 
-      it('should save the score for risk as 0 if no question is answered', function(){
+      it('should save the score for risk as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.artisan1 = false;
@@ -210,7 +210,7 @@ describe('continuumAssessmentPlatform.risk module', function() {
           scope.master4 = false;
           scope.master5 = false;
 
-          var expectedRiskScore = 0;
+          var expectedRiskScore = 1;
 
           scope.saveAssessments();
           var risk = rootScope.assessments['risk'];

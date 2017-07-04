@@ -164,7 +164,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
 
       });
 
-      it('should save the score for strategy as 0 if no question is answered', function(){
+      it('should save the score for strategy as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.artisan1 = false;
           scope.artisan2 = false;
@@ -179,7 +179,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
           scope.master3 = false;
           scope.master4 = false;
 
-          var expectedStrategyScore = 0;
+          var expectedStrategyScore = 1;
 
           scope.saveAssessments();
           var strategy = rootScope.assessments['strategy'];

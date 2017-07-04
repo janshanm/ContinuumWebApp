@@ -332,7 +332,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           expect(environments['master9']).toEqual(expectedEnvironments[['master9']]);
       });
 
-      it('should save the score for environments as 0 if no question is answered', function(){
+      it('should save the score for environments as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -370,7 +370,7 @@ describe('continuumAssessmentPlatform.environments module', function() {
           scope.master8 = false;
           scope.master9 = false;
 
-          var expectedEnvironmentsScore = 0;
+          var expectedEnvironmentsScore = 1;
 
           scope.saveAssessments();
           var environments = rootScope.assessments['environments'];

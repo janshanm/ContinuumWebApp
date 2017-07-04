@@ -94,7 +94,7 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
             return 5;
         }
         else{
-            return 0;
+            return 1;
         }
 
     };

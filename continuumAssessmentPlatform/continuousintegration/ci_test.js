@@ -311,7 +311,7 @@ describe('continuumAssessmentPlatform.ci module', function() {
 
       });
 
-      it('should save the score for ci as 0 if no question is answered', function(){
+      it('should save the score for ci as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -346,7 +346,7 @@ describe('continuumAssessmentPlatform.ci module', function() {
           scope.master9 = false;
           scope.master10 = false;
 
-          var expectedCIScore = 0;
+          var expectedCIScore = 1;
 
           scope.saveAssessments();
           var ci = rootScope.assessments['ci'];

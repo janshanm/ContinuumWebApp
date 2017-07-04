@@ -220,7 +220,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           expect(featureTeams['master4']).toEqual(expectedFeatureTeams[['master4']]);
       });
 
-      it('should save the score for feature teams as 0 if no question is answered', function(){
+      it('should save the score for feature teams as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -242,7 +242,7 @@ describe('continuumAssessmentPlatform.featureteams module', function() {
           scope.master3 = false;
           scope.master4 = false;
 
-          var expectedFeatureTeamsScore = 0;
+          var expectedFeatureTeamsScore = 1;
 
           scope.saveAssessments();
           var featureTeams = rootScope.assessments['featureTeams'];

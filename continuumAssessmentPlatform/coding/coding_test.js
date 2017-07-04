@@ -186,7 +186,7 @@ describe('continuumAssessmentPlatform.coding module', function() {
 
       });
 
-      it('should save the score for coding as 0 if no question is answered', function(){
+      it('should save the score for coding as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.artisan1 = false;
           scope.artisan2 = false;
@@ -203,7 +203,7 @@ describe('continuumAssessmentPlatform.coding module', function() {
           scope.master3 = false;
           scope.master4 = false;
 
-          var expectedCodingScore = 0;
+          var expectedCodingScore = 1;
 
           scope.saveAssessments();
           var coding = rootScope.assessments['coding'];

@@ -219,7 +219,7 @@ describe('continuumAssessmentPlatform.release module', function() {
           expect(release['master6']).toEqual(expectedRelease[['master6']]);
       });
 
-      it('should save the score for release management as 0 if no question is answered', function(){
+      it('should save the score for release management as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -241,7 +241,7 @@ describe('continuumAssessmentPlatform.release module', function() {
           scope.master5 = false;
           scope.master6 = false;
 
-          var expectedReleaseScore = 0;
+          var expectedReleaseScore = 1;
 
           scope.saveAssessments();
           var release = rootScope.assessments['release'];

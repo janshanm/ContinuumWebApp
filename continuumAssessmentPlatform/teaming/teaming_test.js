@@ -177,7 +177,7 @@ describe('continuumAssessmentPlatform.teaming module', function() {
           expect(teaming['master3']).toEqual(expectedTeaming[['master3']]);
       });
 
-      it('should save the score for teaming as 0 if no question is answered', function(){
+      it('should save the score for teaming as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -193,7 +193,7 @@ describe('continuumAssessmentPlatform.teaming module', function() {
           scope.master2 = false;
           scope.master3 = false;
 
-          var expectedTeamingScore = 0;
+          var expectedTeamingScore = 1;
 
           scope.saveAssessments();
           var teaming = rootScope.assessments['teaming'];

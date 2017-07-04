@@ -191,7 +191,7 @@ describe('continuumAssessmentPlatform.design module', function() {
           expect(design['master2']).toEqual(expectedDesign[['master2']]);
       });
 
-      it('should save the score for software design as 0 if no question is answered', function(){
+      it('should save the score for software design as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.traveller2 = false;
           scope.traveller3 = false;
@@ -209,7 +209,7 @@ describe('continuumAssessmentPlatform.design module', function() {
           scope.master1 = false;
           scope.master2 = false;
 
-          var expectedDesignScore = 0;
+          var expectedDesignScore = 1;
 
           scope.saveAssessments();
           var design = rootScope.assessments['design'];

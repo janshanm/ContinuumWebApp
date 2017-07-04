@@ -96,7 +96,7 @@ angular.module('continuumAssessmentPlatform.coding', ['ngRoute'])
             return 5;
         }
         else{
-            return 0;
+            return 1;
         }
 
     };

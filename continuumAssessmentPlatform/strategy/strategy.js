@@ -90,7 +90,7 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
       return 5;
     }
     else{
-      return 0;
+      return 1;
     }
 
   };

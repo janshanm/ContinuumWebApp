@@ -199,7 +199,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
 
       });
 
-      it('should save the score for incident as 0 if no question is answered', function(){
+      it('should save the score for incident as 1 if no question is answered', function(){
           scope.traveller1 = false;
           scope.artisan1 = false;
           scope.artisan2 = false;
@@ -218,7 +218,7 @@ describe('continuumAssessmentPlatform.incident module', function() {
           scope.master2 = false;
           scope.master3 = false;
 
-          var expectedPlanningScore = 0;
+          var expectedPlanningScore = 1;
 
           scope.saveAssessments();
           var incident = rootScope.assessments['incident'];

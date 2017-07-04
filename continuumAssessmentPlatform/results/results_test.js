@@ -303,20 +303,20 @@ describe('continuumAssessmentPlatform.results module', function() {
         });
 
         it('should have the default values set for scores as zero', function(){
-            var zero = 0;
+            var one = 1;
 
-            expect(scope.strategyScore).toEqual(zero);
-            expect(scope.planningScore).toEqual(zero);
-            expect(scope.codingScore).toEqual(zero);
-            expect(scope.ciScore).toEqual(zero);
-            expect(scope.incidentScore).toEqual(zero);
-            expect(scope.riskScore).toEqual(zero);
-            expect(scope.designScore).toEqual(zero);
-            expect(scope.teamingScore).toEqual(zero);
-            expect(scope.releaseScore).toEqual(zero);
-            expect(scope.QAScore).toEqual(zero);
-            expect(scope.environmentsScore).toEqual(zero);
-            expect(scope.featureTeamsScore).toEqual(zero);
+            expect(scope.strategyScore).toEqual(one);
+            expect(scope.planningScore).toEqual(one);
+            expect(scope.codingScore).toEqual(one);
+            expect(scope.ciScore).toEqual(one);
+            expect(scope.incidentScore).toEqual(one);
+            expect(scope.riskScore).toEqual(one);
+            expect(scope.designScore).toEqual(one);
+            expect(scope.teamingScore).toEqual(one);
+            expect(scope.releaseScore).toEqual(one);
+            expect(scope.QAScore).toEqual(one);
+            expect(scope.environmentsScore).toEqual(one);
+            expect(scope.featureTeamsScore).toEqual(one);
         });
 
         it('should have the no results data', function(){
@@ -341,26 +341,26 @@ describe('continuumAssessmentPlatform.results module', function() {
             });
 
             describe('#noAssessments', function(){
-                it('should set the results data with initialisation values of zero and undefined team name', function(){
-                    var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,
-                    'incident': 0, 'risk': 0, 'design': 0, 'teaming': 0, 'release': 0, 'qa': 0, 'environments': 0,
-                    'featureTeams': 0, 'portfolioName': undefined, 'rawData': undefined};
+                it('should set the results data with initialisation values of one and undefined team name', function(){
+                    var expectedResultData = {'teamName': undefined, 'strategy': 1, 'planning': 1, 'coding': 1, 'ci': 1,
+                    'incident': 1, 'risk': 1, 'design': 1, 'teaming': 1, 'release': 1, 'qa': 1, 'environments': 1,
+                    'featureTeams': 1, 'portfolioName': undefined, 'rawData': undefined};
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
-                    expect(scope.teamScore).toEqual(0);
+                    expect(scope.teamScore).toEqual(1);
                 });
 
                 it('should call the draw chart function with the right parameters', function(){
                     scope.init();
-                    expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,0,0,0,0,0,0,0,0,0,0,0,0,undefined);
+                    expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,1,1,1,1,1,1,1,1,1,1,1,1,undefined);
                 });
 
                 it('should have the expected formatted strategy tasks', function(){
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.strategy['current_score']).toEqual(zero);
+                    expect(scope.strategy['current_score']).toEqual(1);
                     expect(scope.strategy['next_score']).toEqual(two);
                     expect(scope.strategy['tasks']).toContain(strategyTasks['artisan1']);
                     expect(scope.strategy['tasks']).toContain(strategyTasks['artisan2']);
@@ -372,7 +372,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.planning['current_score']).toEqual(zero);
+                    expect(scope.planning['current_score']).toEqual(1);
                     expect(scope.planning['next_score']).toEqual(two);
                     expect(scope.planning['tasks']).toContain(planningTasks['artisan1']);
                     expect(scope.planning['tasks']).toContain(planningTasks['artisan2']);
@@ -386,7 +386,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.coding['current_score']).toEqual(zero);
+                    expect(scope.coding['current_score']).toEqual(1);
                     expect(scope.coding['next_score']).toEqual(two);
                     expect(scope.coding['tasks']).toContain(codingTasks['artisan1']);
                     expect(scope.coding['tasks']).toContain(codingTasks['artisan2']);
@@ -397,7 +397,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.ci['current_score']).toEqual(zero);
+                    expect(scope.ci['current_score']).toEqual(1);
                     expect(scope.ci['next_score']).toEqual(two);
                     expect(scope.ci['tasks']).toContain(ciTasks['artisan1']);
                     expect(scope.ci['tasks']).toContain(ciTasks['artisan2']);
@@ -412,7 +412,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.incident['current_score']).toEqual(zero);
+                    expect(scope.incident['current_score']).toEqual(1);
                     expect(scope.incident['next_score']).toEqual(two);
                     expect(scope.incident['tasks']).toContain(incidentTasks['artisan1']);
                     expect(scope.incident['tasks']).toContain(incidentTasks['artisan2']);
@@ -424,7 +424,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.risk['current_score']).toEqual(zero);
+                    expect(scope.risk['current_score']).toEqual(1);
                     expect(scope.risk['next_score']).toEqual(two);
                     expect(scope.risk['tasks']).toContain(riskTasks['artisan1']);
                     expect(scope.risk['tasks']).toContain(riskTasks['artisan2']);
@@ -436,7 +436,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.design['current_score']).toEqual(zero);
+                    expect(scope.design['current_score']).toEqual(1);
                     expect(scope.design['next_score']).toEqual(two);
                     expect(scope.design['tasks']).toContain(designTasks['artisan1']);
                     expect(scope.design['tasks']).toContain(designTasks['artisan2']);
@@ -447,7 +447,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.teaming['current_score']).toEqual(zero);
+                    expect(scope.teaming['current_score']).toEqual(1);
                     expect(scope.teaming['next_score']).toEqual(two);
                     expect(scope.teaming['tasks']).toContain(teamingTasks['artisan1']);
                     expect(scope.teaming['tasks']).toContain(teamingTasks['artisan2']);
@@ -459,7 +459,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.release['current_score']).toEqual(zero);
+                    expect(scope.release['current_score']).toEqual(1);
                     expect(scope.release['next_score']).toEqual(two);
                     expect(scope.release['tasks']).toContain(releaseTasks['artisan1']);
                     expect(scope.release['tasks']).toContain(releaseTasks['artisan2']);
@@ -472,7 +472,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.quality['current_score']).toEqual(zero);
+                    expect(scope.quality['current_score']).toEqual(1);
                     expect(scope.quality['next_score']).toEqual(two);
                     expect(scope.quality['tasks']).toContain(qaTasks['artisan1']);
                     expect(scope.quality['tasks']).toContain(qaTasks['artisan2']);
@@ -484,13 +484,10 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.environments['current_score']).toEqual(zero);
+                    expect(scope.environments['current_score']).toEqual(1);
                     expect(scope.environments['next_score']).toEqual(two);
                     expect(scope.environments['tasks']).toContain(environmentsTasks['artisan1']);
                     expect(scope.environments['tasks']).toContain(environmentsTasks['artisan2']);
-                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan3']);
-                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan4']);
-                    expect(scope.environments['tasks']).toContain(environmentsTasks['artisan5']);
                     expect(scope.environments['tasks']).toContain(environmentsTasks['artisan6']);
                     expect(scope.environments['tasks']).toContain(environmentsTasks['artisan7']);
                     expect(scope.environments['undoTasks'].length).toEqual(zero);
@@ -500,7 +497,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                     var zero = 0;
                     var two = 2;
                     scope.init();
-                    expect(scope.featureTeams['current_score']).toEqual(zero);
+                    expect(scope.featureTeams['current_score']).toEqual(1);
                     expect(scope.featureTeams['next_score']).toEqual(two);
                     expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan1']);
                     expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
@@ -511,9 +508,9 @@ describe('continuumAssessmentPlatform.results module', function() {
             describe('#emptyAssessments', function(){
                 it('should set the results data with initialisation values of zero and undefined team name', function(){
                     rootScope.assessments = {};
-                    var expectedResultData = {'teamName': undefined, 'strategy': 0, 'planning': 0, 'coding': 0, 'ci': 0,
-                        'incident': 0, 'risk': 0, 'design': 0, 'teaming': 0, 'release': 0, 'qa': 0, 'environments': 0,
-                        'featureTeams': 0, 'portfolioName': undefined, 'rawData': {}};
+                    var expectedResultData = {'teamName': undefined, 'strategy': 1, 'planning': 1, 'coding': 1, 'ci': 1,
+                        'incident': 1, 'risk': 1, 'design': 1, 'teaming': 1, 'release': 1, 'qa': 1, 'environments': 1,
+                        'featureTeams': 1, 'portfolioName': undefined, 'rawData': {}};
                     scope.init();
 
                     expect(scope.resultsData).toEqual(expectedResultData);
@@ -522,13 +519,13 @@ describe('continuumAssessmentPlatform.results module', function() {
                 it('should call the draw chart function with the right parameters', function(){
                     rootScope.assessments = {};
                     scope.init();
-                    expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,0,0,0,0,0,0,0,0,0,0,0,0,undefined);
+                    expect(saveResultsSpy.drawChart).toHaveBeenCalledWith(undefined,1,1,1,1,1,1,1,1,1,1,1,1,undefined);
                 });
 
                 it('should have a team score of zero', function(){
                     rootScope.assessments = {};
                     scope.init();
-                    expect(scope.teamScore).toEqual(0);
+                    expect(scope.teamScore).toEqual(1);
                 });
             });
             describe('#withAssessmentResults', function(){
@@ -1727,9 +1724,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller5']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['traveller6']);
                             expect(scope.quality['undoTasks']).toContain(qaTasks['artisan1']);
-                            expect(scope.quality['undoTasks']).toContain(qaTasks['artisan2']);
-                            expect(scope.quality['undoTasks']).toContain(qaTasks['artisan3']);
-                            expect(scope.quality['undoTasks'].length).toEqual(9);
+                            expect(scope.quality['undoTasks'].length).toEqual(7);
                         });
 
                         it('should set the quality undo tasks based on the selected true questions for level 3', function(){
@@ -1832,9 +1827,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.environments['next_score']).toEqual(two);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan1']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan2']);
-                            expect(scope.environments['tasks']).toContain(environmentsTasks['artisan3']);
-                            expect(scope.environments['tasks']).toContain(environmentsTasks['artisan4']);
-                            expect(scope.environments['tasks']).toContain(environmentsTasks['artisan5']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan6']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan7']);
                             expect(scope.environments['tasks']).toContain(environmentsTasks['artisan8']);
