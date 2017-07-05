@@ -7,7 +7,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
         'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
             {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
             {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}],
-        'Card': [{'name': 'Acquiring - Flex'}, {'name': 'Acquiring - Product'}, {'name': 'Acquiring - Rest of Africa'},
+        'Card': [{'name': 'Acquiring - Rest of Africa'},
             {'name': 'Diners Auths and Release Compliance'}, {'name': 'Diners Digitalization'}, {'name': 'Diners Transactional'},
             {'name': 'EMV - Squad 1'}, {'name': 'EMV - Squad 2'}, {'name': 'Issuing - Customer Experience (Genesis)'},
             {'name': 'Issuing - Innovation'}, {'name': 'Issuing - Product Squad 1'}, {'name': 'Issuing - Product Squad 2'},
@@ -286,7 +286,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             retrieveAssessmentService = $injector.get('RetrieveAssessment');
             $httpBackend = $injector.get('$httpBackend');
 
-            $httpBackend.when('GET', "http://localhost:4567/assessment?teamName="+teamName).respond("Successfully Retrieved");
+            $httpBackend.when('GET', "http://localhost:8080/assessment?teamName="+teamName).respond("Successfully Retrieved");
         }));
 
         afterEach(function() {

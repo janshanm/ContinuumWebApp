@@ -1824,7 +1824,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         return {
             saveAssessments: function (data) {
                 return $http({
-                    url: "http://localhost:4567/saveTeamData",
+                    url: "http://localhost:8080/saveTeamData",
                     method: "POST",
                     params: data
                 });

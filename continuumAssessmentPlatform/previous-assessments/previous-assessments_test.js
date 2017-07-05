@@ -356,7 +356,7 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
             retrieveAssessmentsService = $injector.get('RetrieveAssessments');
             $httpBackend = $injector.get('$httpBackend');
 
-            $httpBackend.when('GET', "http://localhost:4567/assessments").respond("Successfully Retrieved");
+            $httpBackend.when('GET', "http://localhost:8080/assessments").respond("Successfully Retrieved");
         }));
 
         afterEach(function() {
