@@ -24,6 +24,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         $scope.environmentsScore = 1;
         $scope.featureTeamsScore = 1;
         $scope.resultsData = {};
+        $scope.bodyData = {};
         $scope.selectedTab = 1;
 
         $scope.init = function () {
@@ -76,6 +77,9 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.environments = formatResultsForEnvironments($rootScope.assessments, $scope.environmentsScore);
             $scope.featureTeams = formatResultsForFeatureTeams($rootScope.assessments, $scope.featureTeamsScore);
 
+            $scope.bodyData['recommendedCapabilities'] = $scope.getRecommendedCapabilities('tasks');
+            $scope.bodyData['capabilitiesToStop'] = $scope.getRecommendedCapabilities('undoTasks');
+
             var totalScore = ($scope.strategyScore + $scope.planningScore + $scope.codingScore + $scope.ciScore
             + $scope.incidentScore + $scope.riskScore + $scope.designScore + $scope.teamingScore + $scope.releaseScore
             + $scope.QAScore + $scope.environmentsScore + $scope.featureTeamsScore);
@@ -86,6 +90,24 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore, $scope.releaseScore,
                 $scope.QAScore, $scope.environmentsScore, $scope.featureTeamsScore, $rootScope.selectedPortfolioName);
 
+        };
+
+        $scope.getRecommendedCapabilities = function (typeOfTask) {
+            var tasks = {};
+            tasks['strategy'] = $scope.strategy[typeOfTask];
+            tasks['planning'] = $scope.planning[typeOfTask];
+            tasks['coding'] = $scope.coding[typeOfTask];
+            tasks['ci'] = $scope.ci[typeOfTask];
+            tasks['incident'] = $scope.incident[typeOfTask];
+            tasks['risk'] = $scope.risk[typeOfTask];
+            tasks['design'] = $scope.design[typeOfTask];
+            tasks['teaming'] = $scope.teaming[typeOfTask];
+            tasks['release'] = $scope.release[typeOfTask];
+            tasks['quality'] = $scope.quality[typeOfTask];
+            tasks['environments'] = $scope.environments[typeOfTask];
+            tasks['featureTeams'] = $scope.featureTeams[typeOfTask];
+
+            return tasks;
         };
 
         $scope.getImage = function(score){
@@ -1807,7 +1829,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         };
 
         $scope.saveAssessmentResult = function () {
-            SaveResults.saveAssessments($scope.resultsData).then(function (response) {
+            SaveResults.saveAssessments($scope.resultsData, $scope.bodyData).then(function (response) {
                 console.log(response.data);
                 $scope.isSaved = true;
                 $scope.isNotSaved = false;
@@ -1822,11 +1844,12 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
 
     .factory('SaveResults', ['$http', function ($http) {
         return {
-            saveAssessments: function (data) {
+            saveAssessments: function (data, body) {
                 return $http({
                     url: "http://localhost:8080/saveTeamData",
                     method: "POST",
-                    params: data
+                    params: data,
+                    data: body
                 });
             },
             drawChart: function (teamName, strategyScore, planningScore, codingScore, ciScore, incidentScore, riskScore,

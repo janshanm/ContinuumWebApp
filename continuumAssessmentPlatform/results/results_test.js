@@ -537,6 +537,32 @@ describe('continuumAssessmentPlatform.results module', function() {
                         'teaming': {'score': 3}, 'release': {'score': 2}, 'QA': {'score': 4}, 'environments': {'score': 3},
                         'featureTeams': {'score': 2}};
 
+                    var bodyDataExpected = {'recommendedCapabilities': { strategy: [ 'Occasional engagement with stakeholders throughout delivery cycle to review business and technical alignment', 'Backlog items are created to deal with strategy alignment issues' ], planning: [ 'Team performs estimates up-front', 'Requirements are prioritized based on business value', 'Iteration lengths are fixed', 'The team knows their velocity ', 'Stakeholders have been identified and a communication plan is in place' ],
+                        coding: [ 'Code metrics are part of build automation and continuous integration', 'Code metrics are tracked for trends and adjustments made on a continuous basis', 'The team regularly performs katas with the objective of improving their skills', 'Code is regularly refactored as part of the iteration' ],
+                        ci: [ 'Automated build and test cycle every time a change is committed', 'Build metrics gathered, visible, and acted on.', 'Builds are not left broken and code is not committed on a broken build.', 'Deployment to test environment is automated.', 'Non-functional testing is automated.', 'Testing is automated as much as is practical.', 'Environments can be provisioned at on demand.' ],
+                        incident: [ 'Feature teams do own incident management', 'Fail Forward (failing in a way that enables you to identify and overcome underlying problem, encapsulates the way forward and reduce the likelihood of failure the next time around)', 'Team actively manages, monitors and reviews what happens in production, feedback loop is enabled and acted on.' ],
+                        risk: [ 'Risks have been identified and are captured using an appropriate artefact such as a risk story wall or risk register.', 'Each identified risk has been assigned a risk mitigation or action plan.', ' Risks are discussed as part of the iteration planning process.' ],
+                        design: [ 'Regular design reviews in place.', 'Design assumptions are tracked and validated during iterations.', 'Design issues are tracked and prioritised in the backlog.', 'Non-functional requirements are documented and tracked.', 'Clear interfaces defined between modules.', 'Design is owned by the team.' ],
+                        teaming: [ 'Balanced participation is in place. Team members contribute as appropriate and each members opinion is valued.', 'Team uses adequate measures to monitor success.' ],
+                        release: [ 'Releases and deployments are mostly automated (might require manual configuration and coordination between teams).', 'The confidence level for the release is high.' ],
+                        quality: [ 'Active process is in place to understand root cause and respond to it.', 'Test artefacts are treated with the same importance as code and continually refactored and maintained.', 'The quality metrics are assessed and backlog items created to drive improvement.', 'Tests drive release readiness.' ],
+                        environments: [ 'Database upgrades and rollbacks are tested with every deployment.', 'Database performance is monitored and optimized.', 'Minimal manual work is required to replicate and configure environments but this can be completed within hours.', 'Multiple test environments are readily available for the exclusive use of the team, including a production-like environment that’s allows a reasonable level of non-functional and cross-system integration testing and reliable acceptance testing.', 'Dev workstations are easily configured and can be built in an automated manner.', 'Virtual environments have all interfaces available ‘stubs’ to run end-to-end testing.' ],
+                        featureTeams: [ 'Handoffs are identified.', 'Triad is established across three functions, quality, product and technical. Triad is committed to execute a strategy together that gets specific, intended results.', 'The team members are dedicated to the team.', 'Cross-functional and cross-component skills are within the team, the team works on a complete feature, across all components and disciplines (analysis, programming, testing, …).', 'New members are efficiently integrated into feature team.', 'Triad is fully-functioning and not dependent on external validation and external authority.', 'Goals are clearly prioritized and timeously achieved.', 'Team understands the full impact of deployments.' ] },
+                    'capabilitiesToStop': { strategy: [  ], planning: [  ], coding: [  ], ci: [  ], incident: [  ], risk: [  ], design: [  ], teaming: [  ], release: [  ], quality: [  ], environments: [  ], featureTeams: [  ] } };
+
+                    scope.init();
+
+                    expect(scope.bodyData).toEqual(bodyDataExpected);
+                });
+
+                it('should set the body data with initialisation values of zero', function(){
+                    rootScope.teamName = 'Example Team';
+                    rootScope.selectedPortfolioName = 'Example Portfolio';
+                    rootScope.assessments = {'strategy': {'score': 2}, 'planning': {'score': 1}, 'coding': {'score': 3},
+                        'ci': {'score': 3}, 'incident': {'score': 4}, 'risk': {'score': 1}, 'design': {'score': 2},
+                        'teaming': {'score': 3}, 'release': {'score': 2}, 'QA': {'score': 4}, 'environments': {'score': 3},
+                        'featureTeams': {'score': 2}};
+
                     var expectedResultData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
                         'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
                         'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': rootScope.assessments};
@@ -2102,13 +2128,14 @@ describe('continuumAssessmentPlatform.results module', function() {
                     'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
                     'featureTeams': 2, 'portfolioName': 'Example Portfolio'};
                 scope.resultsData = resultsData;
+                scope.bodyData = resultsData;
                 deferred.resolve({'status': 200, 'data': 'Saved Successfully'});
                 saveResultsSpy.saveAssessments.and.returnValue(deferred.promise);
 
                 scope.$apply();
                 scope.saveAssessmentResult();
 
-                expect(saveResultsSpy.saveAssessments).toHaveBeenCalledWith(resultsData);
+                expect(saveResultsSpy.saveAssessments).toHaveBeenCalledWith(resultsData, resultsData);
             });
 
             it('should set the flags for the save appropriately', function () {
@@ -2166,6 +2193,30 @@ describe('continuumAssessmentPlatform.results module', function() {
 
             it('should return traveller male icon if the score is 0', function(){
                 expect(scope.getImage(0)).toEqual('images/traveller_male.png');
+            });
+        });
+
+        describe('#getRecommendedCapabilities', function(){
+            it('should set the tasks based on the selected tasks', function(){
+               scope.strategy = {'tasks': 'one'};
+               scope.planning = {'tasks': 'two'};
+               scope.coding = {'tasks': 'three'};
+               scope.ci = {'tasks': 'four'};
+               scope.incident = {'tasks': 'five'};
+               scope.risk = {'tasks': 'six'};
+               scope.design = {'tasks': 'seven'};
+               scope.teaming = {'tasks': 'eight'};
+               scope.release = {'tasks': 'nine'};
+               scope.quality = {'tasks': 'ten'};
+               scope.environments = {'tasks': 'eleven'};
+               scope.featureTeams = {'tasks': 'twelve'};
+
+               var tasks = {'strategy': 'one', 'planning': 'two', 'coding': 'three',
+                'ci': 'four', 'incident': 'five', 'risk': 'six', 'design': 'seven',
+                'teaming': 'eight', 'release': 'nine', 'quality': 'ten', 'environments': 'eleven',
+                'featureTeams': 'twelve'};
+
+               expect(scope.getRecommendedCapabilities('tasks')).toEqual(tasks);
             });
         });
 
