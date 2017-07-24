@@ -1,0 +1,26 @@
+<p class="lead" ng-init="init()" style="margin-left: 50px;color: white">Please enter username and password to login</p>
+<div class="row">
+    <div class="col-md-3">
+        <p style="vertical-align: middle;"><img style="width: 130%" src="images/logo.png"></p>
+    </div>
+    <div class="col-md-9 align-self-center">
+        <div class="team-selection">
+            <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasError">
+                <p>Username and password combination does not match an existing user.</p>
+            </div>
+            <div >
+                <label for="username" style="padding-left: 50px"> Username: </label>
+                <input name="username" type="text" id="username" ng-model="userName"/>
+            </div>
+            <div >
+                <label for="password" style="padding-left: 50px"> Password: </label>
+                <input type="password"  name="password" id="password" ng-model="password"/>
+            </div>
+            <div>
+                <p class="assess-button">
+                    <a id="loginbutton" class="btn btn-primary btn-lg" href="" ng-click="confirmLoginDetails()">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
