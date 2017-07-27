@@ -1,276 +1,278 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/design.png">Software Design: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/design.png">Software Design: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designTraveller1" type="checkbox" ng-model="traveller1">
+                Speculative design and technical decisions are made on an ad hoc basis. There is no vision or long team technical planning.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Design and technical decisions are done in an adhoc manner with no vision
+            of the application road map. Technical team members are not aware of the overall technical design decisions and
+            this is not documented in any form.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Speculative design and technical decisions are made on an ad hoc basis. There is no vision or long team technical planning.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">Design and technical decisions are done in an adhoc manner with no vision
-        of the application road map. Technical team members are not aware of the overall technical design decisions and
-        this is not documented in any form.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designTraveller2" type="checkbox" ng-model="traveller2">
+                BDUF = Big Design Up-Front.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">At this level of proficiency, the team does a lot of Big Up-Front designs
+            for the systems as opposed to a "just enough" design approach. There are several ceremonial design sessions for
+            the entire application without necessarily taking into effect the fact that there might need to be changes should
+            the product vision change.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            BDUF = Big Design Up-Front.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller2)">At this level of proficiency, the team does a lot of Big Up-Front designs
-        for the systems as opposed to a "just enough" design approach. There are several ceremonial design sessions for
-        the entire application without necessarily taking into effect the fact that there might need to be changes should
-        the product vision change.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designTraveller3" type="checkbox" ng-model="traveller3">
+                Solutions are tightly coupled and brittle.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Technologists at this level of proficiency design highly tightly coupled
+            and brittle systems. The goal should be to start designing loosely coupled systems so that they are independently
+            deployable and can be monitored in isolation.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Solutions are tightly coupled and brittle.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Technologists at this level of proficiency design highly tightly coupled
-        and brittle systems. The goal should be to start designing loosely coupled systems so that they are independently
-        deployable and can be monitored in isolation.</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designArtisan1" type="checkbox" ng-model="artisan1">
+                Regular design reviews in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this proficiency level, the designs are done more regularly and reviews
+            are put in place to ensure that product vision change causes a validation of the technical design. The team also
+            gets a view of the technical design decisions and roadmap.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Regular design reviews in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this proficiency level, the designs are done more regularly and reviews
-        are put in place to ensure that product vision change causes a validation of the technical design. The team also
-        gets a view of the technical design decisions and roadmap.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designArtisan2" type="checkbox" ng-model="artisan2">
+                Design assumptions are tracked and validated during iterations.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Design assumptions are tracked and recorded on the team wall and these are
+            validated during the iteration as well as during the iteration planning sessions.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Design assumptions are tracked and validated during iterations.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">Design assumptions are tracked and recorded on the team wall and these are
-        validated during the iteration as well as during the iteration planning sessions.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designExpert1" type="checkbox" ng-model="expert1">
+                Design issues are tracked and prioritised in the backlog.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Design issues identified are tracked and prioritised in the backlog and
+            attended to, similar to the technical debts.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Design issues are tracked and prioritised in the backlog.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">Design issues identified are tracked and prioritised in the backlog and
-        attended to, similar to the technical debts.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designExpert2" type="checkbox" ng-model="expert2">
+                Non-functional requirements are documented and tracked.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">The system non-functional requirements are documented and tracked.
+            These are also prioritised in the backlog.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Non-functional requirements are documented and tracked.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">The system non-functional requirements are documented and tracked.
-        These are also prioritised in the backlog.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designExpert3" type="checkbox" ng-model="expert3">
+                Clear interfaces defined between modules.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">The team emphasizes a modular design of the application with clearly defined
+            interfaces between the modules and clear communication protocols between the modules (for example clearly defined
+            APIs using RESTful protocols).</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Clear interfaces defined between modules.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert3)">The team emphasizes a modular design of the application with clearly defined
-        interfaces between the modules and clear communication protocols between the modules (for example clearly defined
-        APIs using RESTful protocols).</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designExpert4" type="checkbox" ng-model="expert4">
+                Design is owned by the team.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">The technical design is owned by the feature teams. The technical architect
+            is part of the core team and is not a stakeholder, external to the team and making decisions on their behalf.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Design is owned by the team.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert4)">The technical design is owned by the feature teams. The technical architect
-        is part of the core team and is not a stakeholder, external to the team and making decisions on their behalf.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designProfessional1" type="checkbox" ng-model="professional1">
+                There is a partial traceability between design and requirements.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Some design decisions can be linked to the requirements, however,
+            not all the design decisions are.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is a partial traceability between design and requirements.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">Some design decisions can be linked to the requirements, however,
-        not all the design decisions are.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designProfessional2" type="checkbox" ng-model="professional2">
+                Design requirements are expressed as automated tests.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">The design requirements are captured in automated test cases, to ensure
+            that these have been met.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Design requirements are expressed as automated tests.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">The design requirements are captured in automated test cases, to ensure
-        that these have been met.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designProfessional3" type="checkbox" ng-model="professional3">
+                Non-functional requirements are defined and associated metrics tracked automatically.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Non-functional requirements are clearly defined and documented.
+            Associated metrics are tracked on the team dashboards automatically and are constantly monitored and optimized.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Non-functional requirements are defined and associated metrics tracked automatically.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">Non-functional requirements are clearly defined and documented.
-        Associated metrics are tracked on the team dashboards automatically and are constantly monitored and optimized.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designProfessional4" type="checkbox" ng-model="professional4">
+                Where practical all modules of the system can be simulated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Modules of the system can be simulated using stubs or mocks where
+            applicable to ensure autonomy and isolation.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Where practical all modules of the system can be simulated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional4)">Modules of the system can be simulated using stubs or mocks where
-        applicable to ensure autonomy and isolation.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designProfessional5" type="checkbox" ng-model="professional5">
+                Where possible design is captured in a model and code generated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Design is captured in a model and generated by software applications.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Where possible design is captured in a model and code generated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional5)">Design is captured in a model and generated by software applications.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designMaster1" type="checkbox" ng-model="master1">
+                There is full traceability between design and requirements.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">All the design decisions can be traced to system requirements.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is full traceability between design and requirements.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">All the design decisions can be traced to system requirements.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="designMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="designMaster2" type="checkbox" ng-model="master2">
+                Design activities are performed on a Just In Time basis.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Design happens as a Just-In-Time activity following paradigms like TDD and
+            Evolutionary Architecture.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Design activities are performed on a Just In Time basis.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">Design happens as a Just-In-Time activity following paradigms like TDD and
-        Evolutionary Architecture.</p></div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonDesign" class="btn btn-primary btn-lg" href="#!/risk">Last Dimension</a>
+        <a id="nextButtonDesign" class="btn btn-primary btn-lg" href="#!/teaming" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="previousButtonDesign" class="btn btn-primary btn-lg" href="#!/risk">Last Dimension</a>
-    <a id="nextButtonDesign" class="btn btn-primary btn-lg" href="#!/teaming" ng-click="saveAssessments()">Next Dimension</a>
-</p>

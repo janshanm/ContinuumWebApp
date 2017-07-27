@@ -1,290 +1,292 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/incident_management.png">Incident Management: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/incident_management.png">Incident Management: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentTraveller1" type="checkbox" ng-model="traveller1">
+                The process for handling problems and incidents is ad-hoc.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Current process for handling incidents/defects is ad-hoc. The team needs to start
+            instituting an incident/defect management process and document it so it is easily accessible by all the team members.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The process for handling problems and incidents is ad-hoc.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">Current process for handling incidents/defects is ad-hoc. The team needs to start
-        instituting an incident/defect management process and document it so it is easily accessible by all the team members.</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentArtisan1" type="checkbox" ng-model="artisan1">
+                An incident management process is in place and understood.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">An incident/defect management process is documented and in place. The team knows
+            where to find the document and uses it to manage incidents. Incidents/defects are also recorded on the team wall.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            An incident management process is in place and understood.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">An incident/defect management process is documented and in place. The team knows
-        where to find the document and uses it to manage incidents. Incidents/defects are also recorded on the team wall.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentArtisan2" type="checkbox" ng-model="artisan2">
+                Key people are identified for incident management.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">There are key people identified to handle incidents and
+            this is well known by the team.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Key people are identified for incident management.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">There are key people identified to handle incidents and
-        this is well known by the team.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentArtisan3" type="checkbox" ng-model="artisan3">
+                The number of handoffs and teams involved in incident resolution is minimal.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is very minimal handoffs. The resolution is effective and involves
+            very few teams, generally the core team and the dependent system team.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The number of handoffs and teams involved in incident resolution is minimal.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is very minimal handoffs. The resolution is effective and involves
-        very few teams, generally the core team and the dependent system team.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert1" type="checkbox" ng-model="expert1">
+                Incidents and problems feed into backlog.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">The incidents/defects are recorded in the team backlog and prioritised together
+            with all the other work in flight. There is an understanding of incident/defect classification and the turn around time
+            for the different classes of incidents/defects. The team reacts appropriately based on the class of the incident/defects.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Incidents and problems feed into backlog.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">The incidents/defects are recorded in the team backlog and prioritised together
-        with all the other work in flight. There is an understanding of incident/defect classification and the turn around time
-        for the different classes of incidents/defects. The team reacts appropriately based on the class of the incident/defects.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert2" type="checkbox" ng-model="expert2">
+                Operation requirements are identified and tracked in the backlog.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Operational requirements for the application are identified and tracked in
+            the backlog. Some of these requirements are MTTR, System Downtime, Service/Application response times,
+            Service/Application downtime etc. These are displayed in dashboards in the team area.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Operation requirements are identified and tracked in the backlog.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">Operational requirements for the application are identified and tracked in
-        the backlog. Some of these requirements are MTTR, System Downtime, Service/Application response times,
-        Service/Application downtime etc. These are displayed in dashboards in the team area.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert3" type="checkbox" ng-model="expert3">
+                Problem management includes an urgency to address the root cause.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">The team is encouraged to address the root cause of the incidents/problems/defects.
+            The tasks are prioritised, estimated and planned within the iteration to give the team enough time to address the root cause.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Problem management includes an urgency to address the root cause.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert3)">The team is encouraged to address the root cause of the incidents/problems/defects.
-        The tasks are prioritised, estimated and planned within the iteration to give the team enough time to address the root cause.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert4" type="checkbox" ng-model="expert4">
+                Root cause analysis is consistently performed.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Root cause analysis is performed for each incident/defect.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Root cause analysis is consistently performed.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert4)">Root cause analysis is performed for each incident/defect.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert5" type="checkbox" ng-model="expert5">
+                Level 1, 2, 3 support structure in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">The different support levels are in place and known by the team and stakeholders.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Level 1, 2, 3 support structure in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert5)">The different support levels are in place and known by the team and stakeholders.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentExpert6" type="checkbox" ng-model="expert6">
+                Instrumentation (monitoring) in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Team has implemented monitoring and alerting for the applications they are
+            working on. This proactively lets the team know of any incidents/defects before the stakeholders inform the team and
+            the team strives to resolve incidents/defects before they become evident to the stakeholders.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Instrumentation (monitoring) in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert6)">Team has implemented monitoring and alerting for the applications they are
-        working on. This proactively lets the team know of any incidents/defects before the stakeholders inform the team and
-        the team strives to resolve incidents/defects before they become evident to the stakeholders.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentProfessional1" type="checkbox" ng-model="professional1">
+                Defects are resolved once and deployed automatically across all environments.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Defect management is automated and follows the same continuous integration
+            life cycle as features. </p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Defects are resolved once and deployed automatically across all environments.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">Defect management is automated and follows the same continuous integration
-        life cycle as features. </p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentProfessional2" type="checkbox" ng-model="professional2">
+                Defects resolution includes full regression tests.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">For each defect, a test is written which is run on completion of the defect
+            resolution as part of the regression suite to ensure that the defect does not re-occur or
+            the team is notified if it re-occurs.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Defects resolution includes full regression tests.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">For each defect, a test is written which is run on completion of the defect
-        resolution as part of the regression suite to ensure that the defect does not re-occur or
-        the team is notified if it re-occurs.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentProfessional3" type="checkbox" ng-model="professional3">
+                System health is proactively monitored.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">The system health is proactively monitored and displayed on dashboards in
+            the team space. Some health status include MTTR, downtime, application response times, concurrent connections, number of defects resolved etc.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            System health is proactively monitored.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">The system health is proactively monitored and displayed on dashboards in
-        the team space. Some health status include MTTR, downtime, application response times, concurrent connections, number of defects resolved etc.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentProfessional4" type="checkbox" ng-model="professional4">
+                Root cause analysis is highly valued and regularly trended.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">The root cause analysis tasks are tracked and recorded so the team has a history of them.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Root cause analysis is highly valued and regularly trended.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional4)">The root cause analysis tasks are tracked and recorded so the team has a history of them.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentMaster1" type="checkbox" ng-model="master1">
+                Feature teams do own incident management.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Each feature team does their own incident/defect management as opposed to a
+            centralised incident/defect management team distributing tasks to the various teams.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Feature teams do own incident management.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">Each feature team does their own incident/defect management as opposed to a
-        centralised incident/defect management team distributing tasks to the various teams.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentMaster2" type="checkbox" ng-model="master2">
+                Fail Forward (failing in a way that enables you to identify and overcome
+                underlying problem, encapsulates the way forward and reduce the likelihood of failure the next time around).
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">The culture in the team is to fail forward. Incidents/defects are managed, tracked
+            and documented to ensure they are not repeated. Test cases are put in place to reduce the likelihood of failure.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Fail Forward (failing in a way that enables you to identify and overcome
-            underlying problem, encapsulates the way forward and reduce the likelihood of failure the next time around).
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">The culture in the team is to fail forward. Incidents/defects are managed, tracked
-        and documented to ensure they are not repeated. Test cases are put in place to reduce the likelihood of failure.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="incidentMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="incidentMaster3" type="checkbox" ng-model="master3">
+                Team actively manages, monitors and reviews what happens in production, feedback loop is enabled and acted on.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">The feature teams have dashboards monitoring the state of the application
+            in production and uses the feedback from the monitoring to drive tasks for operational optimisation.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team actively manages, monitors and reviews what happens in production, feedback loop is enabled and acted on.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">The feature teams have dashboards monitoring the state of the application
-        in production and uses the feedback from the monitoring to drive tasks for operational optimisation.</p></div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonIncident" class="btn btn-primary btn-lg" href="#!/ci">Last Dimension</a>
+        <a id="nextButtonIncident" class="btn btn-primary btn-lg" href="#!/risk" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="previousButtonIncident" class="btn btn-primary btn-lg" href="#!/ci">Last Dimension</a>
-    <a id="nextButtonIncident" class="btn btn-primary btn-lg" href="#!/risk" ng-click="saveAssessments()">Next Dimension</a>
-</p>

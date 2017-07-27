@@ -11,6 +11,7 @@ angular.module('continuumAssessmentPlatform.login', ['ngRoute'])
 
     .controller('LoginCtrl', ['$location', '$scope', '$rootScope', 'PasswordService', function($location, $scope, $rootScope, PasswordService) {
         $scope.user = {};
+        $rootScope.isLoggedIn = false;
 
         $scope.init = function () {
 
@@ -24,12 +25,14 @@ angular.module('continuumAssessmentPlatform.login', ['ngRoute'])
                 var data = response.data;
 
                 if(data["Error"] !== undefined){
+                    $rootScope.isLoggedIn = false;
                     $scope.hasError = true;
                 }
                 else{
                     $scope.hasError = false;
                     $rootScope.selectedTeam = data['teamname'];
                     $rootScope.selectedPortfolio = data['portfolio'];
+                    $rootScope.isLoggedIn = true;
                     $location.path('/home');
                 }
             });

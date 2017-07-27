@@ -1,0 +1,231 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Process and Practices: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Test Automation Process is not well understood across the team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">There are no formal strategy in place for test automation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Governance
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">There is no governance structure whatsoever.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Governance
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">There are no common practices nor rules in place for the team.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Governance
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">All written scripts are reviewed by whole team and follows
+            a standards that is agreed by the team.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Process and practices are understood and followed by all.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Proper strategy is in place on how to tackle any automation project or activity thereof.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Checklists and Guidelines are available and used by whole team.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Test Automation Strategy is aligned to QA Strategy.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Test Automation Strategy is aligned to bank Strategy.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Governance
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Fit for purpose governance makes it an enabler
+            rather than a hindrance.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Processes and Practices are regularly reviewed and updated
+            to cater for methodology/approach changes.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Test Automation Strategy
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Strategy is regularly reviewed and updated to cater for
+            methodology/approach changes.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="processMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Governance
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Governance values team throughput and value add.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonResearch" class="btn btn-primary btn-lg" href="#!/resultsqa" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

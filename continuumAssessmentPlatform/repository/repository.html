@@ -1,0 +1,170 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Repository: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Data
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Test data stored on local machine.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Script
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">There are no use of common repository and all test artefacts are stored locally.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Script
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Scripts are stored in a common repository but not updated frequently.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Object Map
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Object Map or object repository is stored on common repository but not frequently updated.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Data
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Test data is accessible on the central repository upon
+            request based on test execution schedule.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Script
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Scripts are stored in a common repository and updated after
+            every deployment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Object Map
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Object map or repository is kept up to date.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Data
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Test data is accessible on the central access
+            controlled repository upon request based on test run schedule or maintenance activities.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Script
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Script Repository being used has powerful integration capabilities.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="repositoryMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Script
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">All artifacts are under version management.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonResearch" class="btn btn-primary btn-lg" href="#!/execution" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

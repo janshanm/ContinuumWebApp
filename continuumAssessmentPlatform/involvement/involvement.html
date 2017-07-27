@@ -1,0 +1,273 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Moment of Involvement: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Testing is involved at the end of life-cycle just before release.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">GUI only test automation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Automation planning is done by test automation engineers alone.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">There are dedicated (automation) testing phases during project lifecycle.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Test Data available upon request.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">All test cases are designed so as to accommodate for automation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Automation team is fully aware and have a clear understanding of the workflow and page transition for the whole application.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">Automation planning is done between Test Automation Engineers and Test Analysts only.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Test processes are agreed upon at the beginning of project.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">API layer automation starts to see the day.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Automation life-cycle has a maintenance phase to ensure
+            that script is up to date and the script does not break during testing activities.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Testing happens at every stage of the SDLC.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Pair programming practice is enforced and Power of 3 works together.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Whole team is involved in automation planning and scope definition.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Test Automation is an activity and done by all (team members).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Approach (Shift Left: TDD, BDD)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Test Automation involved in product development by default.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="involvementMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Planning
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Minimal external dependencies. Team is in full control of flow and data.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonResearch" class="btn btn-primary btn-lg" href="#!/repository" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

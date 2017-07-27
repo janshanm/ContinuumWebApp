@@ -1,0 +1,362 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Documentation: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Issues are not documented and there are no proper follow up process.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Issues are not categorised in any way.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Workaround
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Work arounds are not documented.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Workaround
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Work around seem to become the definite solution.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Solution
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Solutions are not documented.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller6" type="checkbox" ng-model="traveller6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller6)">No version management of artefacts and reports.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationTraveller7" type="checkbox" ng-model="traveller7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller7)">There are no documentation whatsoever.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Issues are tracked down and there is a follow up process in place to check on state at any given point.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Solution
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Automation scripts are commented within the script but no separate documents.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Processes are documented but not updated frequently.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Simple "How To" documents start to appear.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Definition of Done / Readiness
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">A proper definition of Done is in place.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationArtisan6" type="checkbox" ng-model="artisan6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Definition of Done / Readiness
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan6)">No definition of readiness.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Workaround
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">All Workarounds and Solutions are documented for referencing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Solution
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Processes are documented and updated frequently but not on shared repository.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Separate documentation for scripts available for references and training purposes.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">User Guide is available for reference and is Updated after every change.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Proper categorization of issue based on priority and severity is set in place.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Proper turn around time is decided by team and is set based on severity of issues.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Definition of Done / Readiness
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Proper definition of readiness is set in place.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Issues
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">SLA is respected >95% of the time.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                User Guide
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">All documents on shared version controlled and access controlled repository.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="documentationMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Definition of Done / Readiness
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Definition of Done and Readiness are reviewed as part of retrospective session.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonDocumentation" class="btn btn-primary btn-lg" href="#!/assessment-process" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

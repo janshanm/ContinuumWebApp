@@ -1,0 +1,244 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Execution: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">All scripts are run from local machines.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">All test results are stored on local machine.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">All test results and run results are sent manually via email.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">All automated tests are kicked off manually.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Regression
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Regression pack is not reviewed and changes are not incorporated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionTraveller6" type="checkbox" ng-model="traveller6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Regression
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller6)">There is no proper regression pack available for automation.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">(Physical) Lab is set in place and all automation scripts are run from the lab.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Regression
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Regression pack is in place and ready to run whenever needed.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Results are generated and stored automatically.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Making use of Virtual Machines to increase execution capabilities.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Regression
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">The regression pack is reviewed after every changes and
+            updated based on new scenarios.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Use of schedulers to have scripts executed after hours.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Regression
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Metrics are in place to easily identify Automated
+            Regression pack status and contents.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Results are shared to all stakeholders automatically.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="executionMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Lab (Scheduler)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Use of schedulers to kick off scripts automatically after every release.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonResearch" class="btn btn-primary btn-lg" href="#!/process" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

@@ -1,0 +1,182 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Integration: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool (e.g. QC to QTP)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">There is no tool integration whatsoever.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">No CI server installed.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool (e.g. QC to QTP)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Tools integration is investigated and lightly documented as part of Automation architecture.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Functional testing is partially automated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Code coverage > 0 %</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool (e.g. QC to QTP)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Test Automation tool talks to at least one additional (external) tool.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Code coverage > 50%.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool (e.g. QC to QTP)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Automation Tool(s) is/are talking to test management tool, task management tool, defect management tool, reporting tool, code repository, scheduler.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Non-functional testing is automated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuous Integration
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Functional testing is 100% automated.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="integrationMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool (e.g. QC to QTP)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Full toolset integration that enables automated metrics generation, updating of testware statuses, auto-scheduled executions, etc.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonIntegration" class="btn btn-primary btn-lg" href="#!/stakeholder-management" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

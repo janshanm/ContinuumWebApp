@@ -1,245 +1,247 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px">Please find assessment results. For any dimension not aligned please select on the menu and review.</p>
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Please find assessment results. For any dimension not aligned please select on the menu and review.</p>
 
-<div id="exTab3" class="container">
-    <ul  class="nav nav-pills">
-        <li ng-class="{active: selectedTab == 1}">
-            <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">Assessment Results</a>
-        </li>
-        <li ng-class="{active: selectedTab == 2}">
-            <a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Recommended Capabilities</a>
-        </li>
-        <li ng-class="{active: selectedTab == 3}">
-            <a href="" ng-click="selectedTab = 3;" data-toggle="tab" style="color: white">Team Maturity Level</a>
-        </li>
-    </ul>
+    <div id="exTab3" class="container">
+        <ul  class="nav nav-pills">
+            <li ng-class="{active: selectedTab == 1}">
+                <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">Assessment Results</a>
+            </li>
+            <li ng-class="{active: selectedTab == 2}">
+                <a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Recommended Capabilities</a>
+            </li>
+            <li ng-class="{active: selectedTab == 3}">
+                <a href="" ng-click="selectedTab = 3;" data-toggle="tab" style="color: white">Team Maturity Level</a>
+            </li>
+        </ul>
 
-    <div class="tab-content clearfix">
-        <div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
-            <p>Assessment results successfully saved</p>
-        </div>
-        <div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
-            <p>Something went wrong. Assessment results not saved.</p>
-        </div>
-        <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
-            <canvas id="radar-chart" width="800" height="600"></canvas>
-        </div>
-        <p align="right" ng-show="selectedTab == 1">
-            <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
-        </p>
-        <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
-            <table id="resultTable" class="table table-striped">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Current Level</th>
-                    <th>Current Mastery</th>
-                    <th>Next Level</th>
-                    <th>Start Doing</th>
-                    <th>Stop Doing</th>
-                </tr>
-                </thead>
-                <tbody>
+        <div class="tab-content clearfix">
+            <div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
+                <p>Assessment results successfully saved</p>
+            </div>
+            <div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
+                <p>Something went wrong. Assessment results not saved.</p>
+            </div>
+            <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
+                <canvas id="radar-chart" width="800" height="600"></canvas>
+            </div>
+            <p align="right" ng-show="selectedTab == 1">
+                <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
+            </p>
+            <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
+                <table id="resultTable" class="table table-striped">
+                    <thead>
                     <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/strategy_alignment.png"></td>
-                        <td align="center" style="vertical-align: middle">{{strategy.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(strategy.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{strategy.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in strategy.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in strategy.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
+                        <th></th>
+                        <th>Current Level</th>
+                        <th>Current Mastery</th>
+                        <th>Next Level</th>
+                        <th>Start Doing</th>
+                        <th>Stop Doing</th>
                     </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/planning.png"></td>
-                        <td align="center" style="vertical-align: middle">{{planning.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(planning.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{planning.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in planning.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in planning.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/coding_practices.png"></td>
-                        <td align="center" style="vertical-align: middle">{{coding.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(coding.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{coding.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in coding.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in coding.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/continuous_integration.png"></td>
-                        <td align="center" style="vertical-align: middle">{{ci.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(ci.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{ci.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in ci.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in ci.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/incident_management.png"></td>
-                        <td align="center" style="vertical-align: middle">{{incident.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(incident.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{incident.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in incident.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in incident.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/risk.png"></td>
-                        <td align="center" style="vertical-align: middle">{{risk.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(risk.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{risk.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in risk.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in risk.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/design.png"></td>
-                        <td align="center" style="vertical-align: middle">{{design.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(design.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{design.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in design.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in design.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/teaming.png"></td>
-                        <td align="center" style="vertical-align: middle">{{teaming.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(teaming.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{teaming.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in teaming.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in teaming.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/release_management.png"></td>
-                        <td align="center" style="vertical-align: middle">{{release.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(release.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{release.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in release.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in release.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/quality_assurance.png"></td>
-                        <td align="center" style="vertical-align: middle">{{quality.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(quality.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{quality.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in quality.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in quality.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/environments.png"></td>
-                        <td align="center" style="vertical-align: middle">{{environments.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(environments.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{environments.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in environments.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in environments.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="vertical-align: middle"><img src="images/feature_teams.png"></td>
-                        <td align="center" style="vertical-align: middle">{{featureTeams.current_score}}</td>
-                        <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(featureTeams.current_score)}}"></td>
-                        <td align="center" style="vertical-align: middle">{{featureTeams.next_score}}</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success" ng-repeat="task in featureTeams.tasks">{{task}}</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in featureTeams.undoTasks">{{undoTask}}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <a download="resultRecommendations.xls" href="#!/results" onclick="return ExcellentExport.excel(this, 'resultTable', 'Recommendations');">Export to Excel</a>
-            <a download="resultRecommendations.csv" href="#!/results" onclick="return ExcellentExport.csv(this, 'resultTable');">Export to CSV</a>
-        </div>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/strategy_alignment.png"></td>
+                            <td align="center" style="vertical-align: middle">{{strategy.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(strategy.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{strategy.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in strategy.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in strategy.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/planning.png"></td>
+                            <td align="center" style="vertical-align: middle">{{planning.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(planning.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{planning.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in planning.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in planning.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/coding_practices.png"></td>
+                            <td align="center" style="vertical-align: middle">{{coding.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(coding.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{coding.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in coding.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in coding.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/continuous_integration.png"></td>
+                            <td align="center" style="vertical-align: middle">{{ci.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(ci.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{ci.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in ci.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in ci.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/incident_management.png"></td>
+                            <td align="center" style="vertical-align: middle">{{incident.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(incident.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{incident.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in incident.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in incident.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/risk.png"></td>
+                            <td align="center" style="vertical-align: middle">{{risk.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(risk.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{risk.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in risk.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in risk.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/design.png"></td>
+                            <td align="center" style="vertical-align: middle">{{design.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(design.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{design.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in design.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in design.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/teaming.png"></td>
+                            <td align="center" style="vertical-align: middle">{{teaming.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(teaming.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{teaming.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in teaming.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in teaming.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/release_management.png"></td>
+                            <td align="center" style="vertical-align: middle">{{release.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(release.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{release.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in release.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in release.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/quality_assurance.png"></td>
+                            <td align="center" style="vertical-align: middle">{{quality.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(quality.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{quality.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in quality.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in quality.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/environments.png"></td>
+                            <td align="center" style="vertical-align: middle">{{environments.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(environments.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{environments.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in environments.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in environments.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="vertical-align: middle"><img src="images/feature_teams.png"></td>
+                            <td align="center" style="vertical-align: middle">{{featureTeams.current_score}}</td>
+                            <td align="center" style="vertical-align: middle"><img ng-src="{{getImage(featureTeams.current_score)}}"></td>
+                            <td align="center" style="vertical-align: middle">{{featureTeams.next_score}}</td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success" ng-repeat="task in featureTeams.tasks">{{task}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-danger" ng-repeat="undoTask in featureTeams.undoTasks">{{undoTask}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a download="resultRecommendations.xls" href="#!/results" onclick="return ExcellentExport.excel(this, 'resultTable', 'Recommendations');">Export to Excel</a>
+                <a download="resultRecommendations.csv" href="#!/results" onclick="return ExcellentExport.csv(this, 'resultTable');">Export to CSV</a>
+            </div>
 
-        <div class="tab-pane active" id="maturityLevel" ng-show="selectedTab == 3">
-            <p style="font-weight: bolder;font-size: larger">{{teamName}} team is at Maturity Level {{teamScore}} </p>
-            <p style="vertical-align: middle"><img ng-src="{{getImage(teamScore)}}"></p>
+            <div class="tab-pane active" id="maturityLevel" ng-show="selectedTab == 3">
+                <p style="font-weight: bolder;font-size: larger">{{teamName}} team is at Maturity Level {{teamScore}} </p>
+                <p style="vertical-align: middle"><img ng-src="{{getImage(teamScore)}}"></p>
+            </div>
         </div>
     </div>
 </div>

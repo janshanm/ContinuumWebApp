@@ -1,0 +1,423 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Metrics and Reporting: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Results
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Default reporting by automation tool on individual machines</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Frequency
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">No Metrics are being generated</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Results
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Test automation execution results are manually consolidated and uploaded to access controlled central location</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Metrics are defined and agreed upon</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Metrics consolidation = 100% Manual</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Practice of basic automated test coverage measurement (Test runs, Pass and fail rate)</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Frequency
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">Metrics are created reactively to requests</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsArtisan6" type="checkbox" ng-model="artisan6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                ROI
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan6)">Method/platform to get ROI metrics is set up</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Results
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Execution results are customized and uploaded to test management tool</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Metrics are defined and shared but not necessarily reviewed and acted on</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Some aspects of the reports are generated automatically</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Automation vs manual test coverage reports are catered for</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Automated test coverage > 50%</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Automated test coverage is measured and reported</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Frequency
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">All metrics and reporting are published after every release</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsExpert8" type="checkbox" ng-model="expert8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                ROI
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert8)">ROI reported on upon request</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Results
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Execution results are fed into test management tool automatically with the aim to standardize metrics</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Metrics are regularly (at least once a month) discussed and reviewed with stakeholders in a retrospective session</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Action Items are identified on how to increase productivity and coverage</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Automated test coverage > 90%</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                ROI
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">ROI shared and discussed with stakeholders regularly</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Team has access to test automation real-time metrics
+            regularly published and updated automatically on a template dashboard (ideally through BI tool)</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Visibility
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Sufficient metrics is enabling trending and forecasting</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automated Test Coverage
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Automated test coverage tracked for trends and improvements made on a continuous basis</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Frequency
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Real-time metrics is automatically updated daily</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                ROI
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">ROI is forecasted with accuracy based on experience and trending data</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="metricsMaster6" type="checkbox" ng-model="master6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                ROI
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master6)">Decisions are made proactively based on forecast</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonMetrics" class="btn btn-primary btn-lg" href="#!/integration" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

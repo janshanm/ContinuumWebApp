@@ -1,27 +1,35 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px;color: white">CONTINUUM ASSESSMENT KIT</p>
-<div class="row">
-    <div class="col-md-3">
-        <p style="vertical-align: middle;"><img style="width: 130%" src="images/logo.png"></p>
-    </div>
-    <div class="col-md-9">
-        <div>
-            <div >
-                <div class="col-md-4" style="text-align:center">
-                    <a id="takeAssessment" href="#!/select-team"><img style="width: 70%" src="images/take_assessments_icon.png">
-                        <p style="color: white">
-                            Take Assessment
-                        </p>
-                    </a>
-                </div>
-                <div class="col-md-4" style="text-align:center">
-                    <a id="viewPreviousAssessments" href="#!/previous-assessments"><img  style="width: 100%;padding-top: 5%" src="images/assessments_icon.png">
-                        <p style="padding-top: 5%;color: white">
-                            View Previous Assessments
-                        </p>
-                    </a>
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px;color: white">CONTINUUM ASSESSMENT KIT</p>
+    <div class="row">
+        <div class="col-md-3">
+            <p style="vertical-align: middle;"><img style="width: 130%" src="images/logo.png"></p>
+        </div>
+        <div class="col-md-9">
+            <div>
+                <div >
+                    <div class="col-md-3" style="text-align:center">
+                        <a id="takeAssessment" href="#!/select-team"><img style="width: 70%" src="images/take_assessments_icon.png">
+                            <p style="color: white">
+                                Take Continuum Assessment
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-md-3" style="text-align:center">
+                        <a id="takeQaMaMAssessment" href="#!/select-qa-team"><img style="width: 70%" src="images/take_assessments_icon.png">
+                            <p style="color: white">
+                                Take QaMaM Assessment
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-md-3" style="text-align:center">
+                        <a id="viewPreviousAssessments" href="#!/previous-assessments"><img  style="width: 100%;padding-top: 5%" src="images/assessments_icon.png">
+                            <p style="padding-top: 5%;color: white">
+                                View Previous Assessments
+                            </p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-

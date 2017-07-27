@@ -5,6 +5,7 @@ angular.module('continuumAssessmentPlatform', [
   'ngRoute',
   'continuumAssessmentPlatform.login',
   'continuumAssessmentPlatform.teamselection',
+  'continuumAssessmentPlatform.teamselectionqa',
   'continuumAssessmentPlatform.strategy',
   'continuumAssessmentPlatform.planning',
   'continuumAssessmentPlatform.coding',
@@ -21,6 +22,19 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.results',
   'continuumAssessmentPlatform.welcome',
   'continuumAssessmentPlatform.previous-assessments',
+  'continuumAssessmentPlatform.standards',
+  'continuumAssessmentPlatform.metrics',
+  'continuumAssessmentPlatform.integration',
+  'continuumAssessmentPlatform.stakeholder-management',
+  'continuumAssessmentPlatform.team-management',
+  'continuumAssessmentPlatform.documentation',
+  'continuumAssessmentPlatform.assessment-process',
+  'continuumAssessmentPlatform.research',
+  'continuumAssessmentPlatform.involvement',
+  'continuumAssessmentPlatform.repository',
+  'continuumAssessmentPlatform.execution',
+  'continuumAssessmentPlatform.process',
+  'continuumAssessmentPlatform.resultsqa',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

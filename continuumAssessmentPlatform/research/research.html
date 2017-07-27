@@ -1,0 +1,288 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Research & Innovation and Technology: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Research and Development
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Team members are used 100%. No room for innovation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Sharing Forum
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">There are no sharing forums to discuss ideas and trends.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                New tool on the market
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Team sticks with what gets the work done.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                New tool on the market
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">No innovative ideas or new tools proposition.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Tools used are what is available by the bank.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller6" type="checkbox" ng-model="traveller6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller6)">There are  limitations to what platforms can be automated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchTraveller7" type="checkbox" ng-model="traveller7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller7)">There are limitations to languages that can used on Tool.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Sharing Forum
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team enables sharing through dedicated showcase times. Platform exists.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Research and Development
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Team Commitment to dedicate a few hours a week on Research.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Sharing Forum
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Monthly (or higher frequency) showcase of knowledge and practices.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                New tool on the market
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Tools assessment is done before every project or before every
+            release and tolls list is re-considered based on budget and Team experience.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Automation tool can accommodate multiple languages.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Automation tool provides cross platform and cross browser testing capabilities.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Sharing Forum
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Showcased practices are adopted by team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                New tool on the market
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Research on new tools.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Automation Tool used
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Automation tool has satisfactory remote support.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Research and Development
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Dedicated team for Research & Innovation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="researchMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                New tool on the market
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Research shared via Proof of Theory.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonResearch" class="btn btn-primary btn-lg" href="#!/involvement" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

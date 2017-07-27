@@ -1,0 +1,317 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Team management: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Once-off informal in-house trainings conducted.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Handover is informal and not documented.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Email is the primary method of communication.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Seldom face-to-face interactions between team members.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Training requirement is identified regularly.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Consistent training process for new team members is in place.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Handover is documented and available but not maintained.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Formal meetings required for in-team discussions.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Formal trainings are arranged and gone through based on demand.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Formal handover documentation continuously reviewed and updated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Team members are comfortable with casual chats on work related items, not only formal meetings.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Knowledge sharing sessions are happening proactively within team members.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Team members voice out unhappiness, concerns in a professional and respectful  manner.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Open-mindedness present.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Team celebrates success stories and achievements.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Formal training requirements are forecasted inline with PDP and Bank's strategy.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Training
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Training refreshers done regularly (i.e. every quarter).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Knowledge sharing sessions are attended by whole team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Continuity Plan (Handover Process)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Knowledge sharing sessions are set up and happen twice a month.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Team Dynamics
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">Regular out-of-office get-togethers (once every quarter).</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonTeam" class="btn btn-primary btn-lg" href="#!/documentation" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

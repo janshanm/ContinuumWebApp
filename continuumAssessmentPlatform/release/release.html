@@ -1,345 +1,347 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/release_management.png">Release Management: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/release_management.png">Release Management: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseTraveller1" type="checkbox" ng-model="traveller1">
+                Cycle time is extremely long.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">The release cycle is extremely long. It takes 6months or more to release
+            software into production. The team needs to work on reducing the cycle time</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Cycle time is extremely long.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The release cycle is extremely long. It takes 6months or more to release
-        software into production. The team needs to work on reducing the cycle time</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseTraveller2" type="checkbox" ng-model="traveller2">
+                Deployment is mostly manual, very complex and requires high level of coordination between stakeholders on
+                the day of the release.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Deployment is manual and very complex. It is generally a ceremony which
+            requires high coordination between several stakeholders such as DBAs, Ops, Devs etc. This needs to be optimized
+            and simplified so that the team is responsible for the deployment. Manual interventions should be minimized.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Deployment is mostly manual, very complex and requires high level of coordination between stakeholders on
-            the day of the release.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller2)">Deployment is manual and very complex. It is generally a ceremony which
-        requires high coordination between several stakeholders such as DBAs, Ops, Devs etc. This needs to be optimized
-        and simplified so that the team is responsible for the deployment. Manual interventions should be minimized.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseTraveller3" type="checkbox" ng-model="traveller3">
+                Pace and delivery of work is inconsistent throughout the release cycle.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">The pace and delivery of work is inconsistent. The team is unable to give a
+            definitive answer on when features will be delivered in production or how long it will take for the team to avail
+            a certain feature to the customers upon completion of the development tasks.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Pace and delivery of work is inconsistent throughout the release cycle.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller3)">The pace and delivery of work is inconsistent. The team is unable to give a
-        definitive answer on when features will be delivered in production or how long it will take for the team to avail
-        a certain feature to the customers upon completion of the development tasks.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseTraveller4" type="checkbox" ng-model="traveller4">
+                Separate build artefacts are created for each environment.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Each environment has it's own artefacts with high levels of configuration
+            required to make them work in those environments. The team needs to start moving towards a configuration-as-code
+            approach where the artefacts can simply be promoted from one environment to the other painlessly.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Separate build artefacts are created for each environment.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller4)">Each environment has it's own artefacts with high levels of configuration
-        required to make them work in those environments. The team needs to start moving towards a configuration-as-code
-        approach where the artefacts can simply be promoted from one environment to the other painlessly.</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseArtisan1" type="checkbox" ng-model="artisan1">
+                Releases are planned to a regular cycle and features are tracked and managed to the regular time frame.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">The team is able to plan releases to a regular cycle and can track and manage
+            features within regular time frames. Delivery is more predictable and captured on the team walls.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Releases are planned to a regular cycle and features are tracked and managed to the regular time frame.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">The team is able to plan releases to a regular cycle and can track and manage
-        features within regular time frames. Delivery is more predictable and captured on the team walls.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseArtisan2" type="checkbox" ng-model="artisan2">
+                Planned release dates are seldom moved out.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">The release dates are seldom moved out. The team is able to reduce the
+            release features rather than the move out the release dates.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Planned release dates are seldom moved out.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The release dates are seldom moved out. The team is able to reduce the
-        release features rather than the move out the release dates.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseArtisan3" type="checkbox" ng-model="artisan3">
+                The process for handing the release to operations and support teams is in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is a well defined process for handling the release of the artefacts
+            to operations and support teams in place. This is documented and well understood by all the team members.
+            The team at this level is investigating means of embedding operations/support in the team structure.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The process for handing the release to operations and support teams is in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is a well defined process for handling the release of the artefacts
-        to operations and support teams in place. This is documented and well understood by all the team members.
-        The team at this level is investigating means of embedding operations/support in the team structure.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseArtisan4" type="checkbox" ng-model="artisan4">
+                Standard build artefacts are defined and produced (release notes, binaries, configurations, test coverage reports...)
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Build artefacts are well defined and produced preferably by the build/continuous
+            integration tool. These artefacts are readily available to the team as well as the operations and support teams.
+            The team is able to tell which artefact was deployed when.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Standard build artefacts are defined and produced (release notes, binaries, configurations, test coverage reports...)
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan4)">Build artefacts are well defined and produced preferably by the build/continuous
-        integration tool. These artefacts are readily available to the team as well as the operations and support teams.
-        The team is able to tell which artefact was deployed when.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseExpert1" type="checkbox" ng-model="expert1">
+                Releases and deployments are mostly automated (might require manual configuration and coordination between teams).
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">The releases and deployments are automated using pipelines.
+            These pipelines are visible on dashboards in the team spaces. There may however still be some manual dependencies
+            such as environment configurations but the artefacts are packaged in a ready to deploy state.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Releases and deployments are mostly automated (might require manual configuration and coordination between teams).
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">The releases and deployments are automated using pipelines.
-        These pipelines are visible on dashboards in the team spaces. There may however still be some manual dependencies
-        such as environment configurations but the artefacts are packaged in a ready to deploy state.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseExpert2" type="checkbox" ng-model="expert2">
+                The confidence level for the release is high.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Teams have a high level of confidence for releases. Releases are no longer
+            considered as a ceremonial activity but as a regular cadence.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The confidence level for the release is high.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">Teams have a high level of confidence for releases. Releases are no longer
-        considered as a ceremonial activity but as a regular cadence.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseProfessional1" type="checkbox" ng-model="professional1">
+                Release notes are automatically generated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Release notes are automatically generated as part of the release/build scripts.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Release notes are automatically generated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">Release notes are automatically generated as part of the release/build scripts.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseProfessional2" type="checkbox" ng-model="professional2">
+                Releases are not reliant on the knowledge of the key individuals.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">The team does not have a key man dependency for releases. The release process
+            is automated such that any individual in the team can perform a release. Releases can be audited and tracked.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Releases are not reliant on the knowledge of the key individuals.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">The team does not have a key man dependency for releases. The release process
-        is automated such that any individual in the team can perform a release. Releases can be audited and tracked.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseProfessional3" type="checkbox" ng-model="professional3">
+                Operations teams collaborate closely with the delivery team and contribute to minimize the risk of failure in production.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">The operations teams collaborate very closely with the delivery teams and
+            have backlog item tasks during development of the features to ensure that on completing development the applications
+            are also ready to be deployed and released.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Operations teams collaborate closely with the delivery team and contribute to minimize the risk of failure in production.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">The operations teams collaborate very closely with the delivery teams and
-        have backlog item tasks during development of the features to ensure that on completing development the applications
-        are also ready to be deployed and released.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseProfessional4" type="checkbox" ng-model="professional4">
+                Release metrics and trends are tracked.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">The team constantly tracks and monitors the release metrics and trends on
+            the story wall and all stakeholders are able to interact with these metrics on the dashboards.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Release metrics and trends are tracked.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional4)">The team constantly tracks and monitors the release metrics and trends on
-        the story wall and all stakeholders are able to interact with these metrics on the dashboards.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster1" type="checkbox" ng-model="master1">
+                Releases can be deployed at any time and are fully automated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Releases can be deployed at anytime due to complete automation of the release
+            tasks. Teams have release scripts and these are integrated in the build pipelines and dashboards.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Releases can be deployed at any time and are fully automated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">Releases can be deployed at anytime due to complete automation of the release
-        tasks. Teams have release scripts and these are integrated in the build pipelines and dashboards.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster2" type="checkbox" ng-model="master2">
+                The team controls the release.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">The team controls the release and does not depend on a third party team to
+            compile and release their software. They can release software anytime to any of the environments.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The team controls the release.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">The team controls the release and does not depend on a third party team to
-        compile and release their software. They can release software anytime to any of the environments.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster3" type="checkbox" ng-model="master3">
+                The product owner is able to determine when release goes into production.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">The product owner can decide when the release goes into production.
+            In certain instances, the product owner can click on the deploy to production button and trigger a release to production.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The product owner is able to determine when release goes into production.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">The product owner can decide when the release goes into production.
-        In certain instances, the product owner can click on the deploy to production button and trigger a release to production.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster4" type="checkbox" ng-model="master4">
+                Operations team is part of the product/program team.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">The operations team is part of the product/program team as opposed to being
+            a hand-off team. They work hand-in-hand with the development teams to ensure the readiness of the application for
+            production releases.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Operations team is part of the product/program team.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master4)">The operations team is part of the product/program team as opposed to being
-        a hand-off team. They work hand-in-hand with the development teams to ensure the readiness of the application for
-        production releases.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster5" type="checkbox" ng-model="master5">
+                Releases are Routine. No roll backs, always roll forward.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">Releases happen frequently and are routine. There are no application roll
+            backs but rather roll forwards. Redeployment is favoured over system roll backs.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Releases are Routine. No roll backs, always roll forward.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master5)">Releases happen frequently and are routine. There are no application roll
-        backs but rather roll forwards. Redeployment is favoured over system roll backs.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="releaseMaster6" type="checkbox" ng-model="master6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="releaseMaster6" type="checkbox" ng-model="master6">
+                Dark launching is enabled (Features can be released in switched of state).
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master6)">Team is able to release toggled off features using methodologies like
+            Feature Toggling or Branching by Abstraction. Team is able to perform Blue-Green deployments with minimal
+            downtimes to the application from a customer perspective.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Dark launching is enabled (Features can be released in switched of state).
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master6)">Team is able to release toggled off features using methodologies like
-        Feature Toggling or Branching by Abstraction. Team is able to perform Blue-Green deployments with minimal
-        downtimes to the application from a customer perspective.</p></div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonRelease" class="btn btn-primary btn-lg" href="#!/teaming">Last Dimension</a>
+        <a id="nextButtonRelease" class="btn btn-primary btn-lg" href="#!/quality" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="previousButtonRelease" class="btn btn-primary btn-lg" href="#!/teaming">Last Dimension</a>
-    <a id="nextButtonRelease" class="btn btn-primary btn-lg" href="#!/quality" ng-click="saveAssessments()">Next Dimension</a>
-</p>

@@ -1,0 +1,195 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Assessment Process: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Estimation
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Estimation done for projects do not cater for Technical Aspects such as Automation and NFT Testing nor complexity upfront.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool Identification
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Feasibility of Automation and NFT done based on predefined toolset.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">There are no formal process regarding follow-ups and re-assessments.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">All work done is a once off attempt and set aside never to go back to again.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Estimation
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Automation and NFT process is taken into consideration and Automation and NFT Specialists are involved during the planning phase.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Follow-Ups and re-assessments are done for major issues and show-stoppers with finding a solution as the only objective.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool Identification
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Tools are chosen to fit the purpose of the project and not the other way around.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Proper deadlines set for follow-up process based on priority and severity scaled that has been agreed upon by whole team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Proper monitoring and moderation carried out to ensure that dead-lines are met for all queries (Team Lead or Scrum Master).</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Estimation
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Estimation is based on factual history and trending metrics.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Tool Identification
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Checklist available for assessment consistency.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="assessmentProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Process (follow-ups, re-assessments)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Self-managed team responds to all queries.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonAssessmentProcess" class="btn btn-primary btn-lg" href="#!/research" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

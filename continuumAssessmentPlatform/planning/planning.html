@@ -1,430 +1,431 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/planning.png">Planning and Requirements: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+<div ng-show="isLoggedIn">
+  <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/planning.png">Planning and Requirements: Please select all the check boxes applicable to your team.</p>
+  <hr>
+  <h4 align="center">Traveller</h4>
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningTraveller1" type="checkbox" ng-model="traveller1">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningTraveller1" type="checkbox" ng-model="traveller1">
+        Team is not involved in estimates
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The estimation of the work is done without the team's involvement and passed
+      down to the team. The team works on tasks without changing the estimated time/effort required to complete the tasks.
+      The team has no control over the estimates.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Team is not involved in estimates
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(traveller1)">The estimation of the work is done without the team's involvement and passed
-    down to the team. The team works on tasks without changing the estimated time/effort required to complete the tasks.
-    The team has no control over the estimates.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningTraveller2" type="checkbox" ng-model="traveller2">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningTraveller2" type="checkbox" ng-model="traveller2">
+        No Specific prioritization of requirements
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The tasks in the backlog are not prioritized. Business owners add stories to
+      the backlog without prioritizing the work. Team delivers the tasks eventhough they are not prioritized.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      No Specific prioritization of requirements
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(traveller2)">The tasks in the backlog are not prioritized. Business owners add stories to
-    the backlog without prioritizing the work. Team delivers the tasks eventhough they are not prioritized.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningTraveller3" type="checkbox" ng-model="traveller3">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningTraveller3" type="checkbox" ng-model="traveller3">
+        Iteration lengths are erratic and based on the amount of functionality
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller3)">The iterations exists in the team but there are no fixed iteration lengths.
+      The iteration time frames get modified based on the functionality the team wants to deliver. The team has the
+      concept of iterations though.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Iteration lengths are erratic and based on the amount of functionality
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(traveller3)">The iterations exists in the team but there are no fixed iteration lengths.
-    The iteration time frames get modified based on the functionality the team wants to deliver. The team has the
-    concept of iterations though.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningTraveller4" type="checkbox" ng-model="traveller4">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningTraveller4" type="checkbox" ng-model="traveller4">
+        The team does not know their velocity
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller4)">The team delivers functionality every iteration but is unable to estimate
+      before the iteration kicks-off how much work the team can do. The team has not been tracking the velocity. </p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      The team does not know their velocity
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(traveller4)">The team delivers functionality every iteration but is unable to estimate
-    before the iteration kicks-off how much work the team can do. The team has not been tracking the velocity. </p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningTraveller5" type="checkbox" ng-model="traveller5">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningTraveller5" type="checkbox" ng-model="traveller5">
+        No Stakeholder management in place
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(traveller5)">The team knows the stakeholders, however every steakholder can modify
+      the tasks the team is working on without it being coordinated.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      No Stakeholder management in place
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(traveller5)">The team knows the stakeholders, however every steakholder can modify
-    the tasks the team is working on without it being coordinated.</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <hr>
+  <h4 align="center">Artisan</h4>
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningArtisan1" type="checkbox" ng-model="artisan1">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningArtisan1" type="checkbox" ng-model="artisan1">
+        Team performs estimates up-front
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team estimates all of the tasks for the whole project up-front
+      post the PI planning session rather than iteratively. If the team estimates all the stories upfront then this tasks
+      can be marked as completed. The team includes a non-functional technical specialists as part of the estimation team
+      ensuring that security and performance aspects are also considered when estimating. </p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Team performs estimates up-front
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team estimates all of the tasks for the whole project up-front
-    post the PI planning session rather than iteratively. If the team estimates all the stories upfront then this tasks
-    can be marked as completed. The team includes a non-functional technical specialists as part of the estimation team
-    ensuring that security and performance aspects are also considered when estimating. </p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningArtisan2" type="checkbox" ng-model="artisan2">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningArtisan2" type="checkbox" ng-model="artisan2">
+        Requirements are prioritized based on business value
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The requirement items in the backlog are prioritized by the
+      business stakeholder. It should be noted that the prioritization is not based on the technical team's decision but
+      based on the business stakeholder to ensure alignment with strategy. Customer value is also considered as core
+      during the prioritization discussions with business.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Requirements are prioritized based on business value
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(artisan2)">The requirement items in the backlog are prioritized by the
-    business stakeholder. It should be noted that the prioritization is not based on the technical team's decision but
-    based on the business stakeholder to ensure alignment with strategy. Customer value is also considered as core
-    during the prioritization discussions with business.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningArtisan3" type="checkbox" ng-model="artisan3">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningArtisan3" type="checkbox" ng-model="artisan3">
+        Iteration lengths are fixed
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team has fixed iteration lengths rather than iteration lengths that change
+      based on functionality.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Iteration lengths are fixed
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team has fixed iteration lengths rather than iteration lengths that change
-    based on functionality.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningArtisan4" type="checkbox" ng-model="artisan4">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningArtisan4" type="checkbox" ng-model="artisan4">
+        The team knows their velocity
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan4)">Team has measured their velocity and this is visual on their wall.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      The team knows their velocity
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(artisan4)">Team has measured their velocity and this is visual on their wall.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningArtisan5" type="checkbox" ng-model="artisan5">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningArtisan5" type="checkbox" ng-model="artisan5">
+        Stakeholders have been identified and a communication plan is in place
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(artisan5)">Team has a coordinated stakeholder management plan. Team has a well
+      defined plan which everyone is aware of on stakeholder communication/interaction. Stakeholders are properly defined
+      and articulated including the business owners, customers, end-users, internal users etc</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Stakeholders have been identified and a communication plan is in place
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(artisan5)">Team has a coordinated stakeholder management plan. Team has a well
-    defined plan which everyone is aware of on stakeholder communication/interaction. Stakeholders are properly defined
-    and articulated including the business owners, customers, end-users, internal users etc</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <hr>
+  <h4 align="center">Expert</h4>
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert1" type="checkbox" ng-model="expert1">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert1" type="checkbox" ng-model="expert1">
+        Team performs estimation iteratively
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert1)">This task is complete when the team stops estimating all of the work up-front
+      but rather estimates the work iteratively. Team estimates work in small batches as opposed
+      to a big bang estimation approach.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Team performs estimation iteratively
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert1)">This task is complete when the team stops estimating all of the work up-front
-    but rather estimates the work iteratively. Team estimates work in small batches as opposed
-    to a big bang estimation approach.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert2" type="checkbox" ng-model="expert2">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert2" type="checkbox" ng-model="expert2">
+        When the team estimates, the estimates include all activities to reach 'Done'.
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert2)">Team has a definition of what 'Done' is, which is understood by everyone
+      in the team. All the estimates take into account activities required to get to Done,
+      which may include amongst others testing, deployment etc.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      When the team estimates, the estimates include all activities to reach 'Done'.
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert2)">Team has a definition of what 'Done' is, which is understood by everyone
-    in the team. All the estimates take into account activities required to get to Done,
-    which may include amongst others testing, deployment etc.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert3" type="checkbox" ng-model="expert3">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert3" type="checkbox" ng-model="expert3">
+        The MVP and MVPS have been identified
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert3)">There is a clearly defined MVP, which is communicated and radiated to all
+      the team members and the stakeholders.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      The MVP and MVPS have been identified
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert3)">There is a clearly defined MVP, which is communicated and radiated to all
-    the team members and the stakeholders.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert4" type="checkbox" ng-model="expert4">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert4" type="checkbox" ng-model="expert4">
+        The teams velocity is predictable
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert4)">The team velocity over a few iterations is consistent within a tolerance
+      of 1-2 velocity points. Team confidently delivers the velocity committed to.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      The teams velocity is predictable
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert4)">The team velocity over a few iterations is consistent within a tolerance
-    of 1-2 velocity points. Team confidently delivers the velocity committed to.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert5" type="checkbox" ng-model="expert5">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert5" type="checkbox" ng-model="expert5">
+        All backlog items are sized by the teams
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert5)">Backlog items planned for each iteration has been estimated by the team
+      working on the functionality.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      All backlog items are sized by the teams
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert5)">Backlog items planned for each iteration has been estimated by the team
-    working on the functionality.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningExpert6" type="checkbox" ng-model="expert6">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningExpert6" type="checkbox" ng-model="expert6">
+        Stakeholders attend showcase
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(expert6)">The stakeholders are always present for the showcases.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Stakeholders attend showcase
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(expert6)">The stakeholders are always present for the showcases.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <hr>
+  <h4 align="center">Professional</h4>
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional1" type="checkbox" ng-model="professional1">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional1" type="checkbox" ng-model="professional1">
+        Team tracks performance against estimates
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional1)">The team reviews the estimates every end of the iteration to improve on
+      their estimation accuracies for future iterations. There is a document available for any estimated discrepancies</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Team tracks performance against estimates
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional1)">The team reviews the estimates every end of the iteration to improve on
-    their estimation accuracies for future iterations. There is a document available for any estimated discrepancies</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional2" type="checkbox" ng-model="professional2">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional2" type="checkbox" ng-model="professional2">
+        Requirements are developed on a just–in–time basis
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional2)">Acceptance criteria are used for the stories to be worked on.
+      The requirements are not done many months before the work is performed but rather one or two iterations in advance.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Requirements are developed on a just–in–time basis
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional2)">Acceptance criteria are used for the stories to be worked on.
-    The requirements are not done many months before the work is performed but rather one or two iterations in advance.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional3" type="checkbox" ng-model="professional3">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional3" type="checkbox" ng-model="professional3">
+        Analytics are implemented to determine the effectiveness of requirements
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional3)">A lists is maintained of stories that have been completed as well as stories
+      that have gone through the flow and had to be sent back to analysis after showcase.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Analytics are implemented to determine the effectiveness of requirements
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional3)">A lists is maintained of stories that have been completed as well as stories
-    that have gone through the flow and had to be sent back to analysis after showcase.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional4" type="checkbox" ng-model="professional4">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional4" type="checkbox" ng-model="professional4">
+        The amount of functionality for each iteration is determined by the teams velocity
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional4)">The team's velocity drives the amount of work the team commits to and this
+      is not influenced by the amount of functionality the stakeholders want to push on the team.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      The amount of functionality for each iteration is determined by the teams velocity
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional4)">The team's velocity drives the amount of work the team commits to and this
-    is not influenced by the amount of functionality the stakeholders want to push on the team.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional5" type="checkbox" ng-model="professional5">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional5" type="checkbox" ng-model="professional5">
+        Technical debt and defects are tracked on the backlog and form part of the estimated team velocity
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional5)">Team caters for technical debt as part of the normal workflow lifecycle.
+      Stories are created for such technical debt in the backlog and these are prioritised, planned and executed in
+      the same flow as other business relevant stories. Stakeholders are informed of the significance and impact of
+      the technical debt.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Technical debt and defects are tracked on the backlog and form part of the estimated team velocity
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional5)">Team caters for technical debt as part of the normal workflow lifecycle.
-    Stories are created for such technical debt in the backlog and these are prioritised, planned and executed in
-    the same flow as other business relevant stories. Stakeholders are informed of the significance and impact of
-    the technical debt.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningProfessional6" type="checkbox" ng-model="professional6">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningProfessional6" type="checkbox" ng-model="professional6">
+        Stakeholders actively participate in retrospective
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(professional6)">The retrospectives are run every iteration and the stakeholders are present
+      in the retrospectives. Stakeholders contribute to retrospectives and action items, which are allocated to them
+      are tracked by the team on the team wall.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Stakeholders actively participate in retrospective
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(professional6)">The retrospectives are run every iteration and the stakeholders are present
-    in the retrospectives. Stakeholders contribute to retrospectives and action items, which are allocated to them
-    are tracked by the team on the team wall.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <hr>
+  <h4 align="center">Master</h4>
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningMaster1" type="checkbox" ng-model="master1">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningMaster1" type="checkbox" ng-model="master1">
+        Requirements are defined with an expected outcome with an objective measure
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(master1)">The requirements on the backlog have acceptance criteria with clear outcomes
+      and objective measures of what success is.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Requirements are defined with an expected outcome with an objective measure
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(master1)">The requirements on the backlog have acceptance criteria with clear outcomes
-    and objective measures of what success is.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningMaster2" type="checkbox" ng-model="master2">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningMaster2" type="checkbox" ng-model="master2">
+        Release planning is performed based on the teams current velocity
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(master2)">The release planning for future releases takes into account the team's per
+      iteration velocity to scope the amount of work possible for the release.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      Release planning is performed based on the teams current velocity
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(master2)">The release planning for future releases takes into account the team's per
-    iteration velocity to scope the amount of work possible for the release.</p></div>
-</div>
-<div class="row well well-sm">
-  <div class="col-xs-1">
-    <p align="center">
+  <div class="row well well-sm">
+    <div class="col-xs-1">
+      <p align="center">
+        <label>
+          <input id="planningMaster3" type="checkbox" ng-model="master3">
+        </label>
+      </p>
+    </div>
+    <div class="col-xs-4">
       <label>
-        <input id="planningMaster3" type="checkbox" ng-model="master3">
+        A process is in place (e.g. a formal beta program) to allow extended stakeholders and customers to evaluate
+        the software and provide feedback.
       </label>
-    </p>
+    </div>
+    <div class="col-xs-7"><p ng-class="getClass(master3)">Process exists and is understood by all the stakeholders on how to give
+      feedback about the software and how to raise enhancements required. These are tracked in the story management
+      tool and used in the PI pre-planning sessions.</p></div>
   </div>
-  <div class="col-xs-4">
-    <label>
-      A process is in place (e.g. a formal beta program) to allow extended stakeholders and customers to evaluate
-      the software and provide feedback.
-    </label>
-  </div>
-  <div class="col-xs-7"><p ng-class="getClass(master3)">Process exists and is understood by all the stakeholders on how to give
-    feedback about the software and how to raise enhancements required. These are tracked in the story management
-    tool and used in the PI pre-planning sessions.</p></div>
+  <hr>
+  <p align="right">
+    <a id="previousButtonPlanning" class="btn btn-primary btn-lg" href="#!/strategy">Last Dimension</a>
+    <a id="nextButtonPlanning" class="btn btn-primary btn-lg" href="#!/coding" ng-click="saveAssessments()">Next Dimension</a>
+  </p>
 </div>
-<hr>
-<p align="right">
-  <a id="previousButtonPlanning" class="btn btn-primary btn-lg" href="#!/strategy">Last Dimension</a>
-  <a id="nextButtonPlanning" class="btn btn-primary btn-lg" href="#!/coding" ng-click="saveAssessments()">Next Dimension</a>
-</p>
-
 

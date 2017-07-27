@@ -1,0 +1,227 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Stakeholder management: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Forecast
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">HLE accuracy far out of estimate bound (Above 50% off set).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Feedback session happens only during crisis situations.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Engagement
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Stakeholders are involved after automation planning is done.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Forecast
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Project stakeholders are provided with more accurate HLE (accuracy above 90%).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Feedback amongst all Project stakeholders happens at the beginning and end of project lifecycle.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Fortnigthly automation feedback to Project Stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Monthly Showcase to Enabling Stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Engagement
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Have the Project stakeholders involved in all discussions and planning.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Forecast
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Anticipating, Adapting and resolving issues through discussion.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Feedback amongst all Project stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Engagement
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Project Stakeholders have full ownership of the project.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Engagement
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">No Blame game.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Feedback
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Engendering Safety and Stakeholder Confidence.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="stakeholderMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Engagement
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Know how your Enabling Stakeholders are and have a clear line of communication established.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonStakeholder" class="btn btn-primary btn-lg" href="#!/team-management" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>

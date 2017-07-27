@@ -1,242 +1,244 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/teaming.png">Teaming: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/teaming.png">Teaming: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingTraveller1" type="checkbox" ng-model="traveller1">
+                The team cannot make decisions without consultation.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">The teams at this level of proficiency do not have autonomy with respect to
+            decision making. They need to consult for any decisions they make and cannot be qualified as autonomous teams.
+            To move from this level teams need to start making their own decisions and have some autonomy.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The team cannot make decisions without consultation.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The teams at this level of proficiency do not have autonomy with respect to
-        decision making. They need to consult for any decisions they make and cannot be qualified as autonomous teams.
-        To move from this level teams need to start making their own decisions and have some autonomy.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingTraveller2" type="checkbox" ng-model="traveller2">
+                The teams goals and visions are unclear.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">The teams work on functionality without necessarily knowing what the goal
+            and vision is. Some people in the team or some stakeholders may know the vision but this is not shared across
+            and this has not been documented. The goals/vision need to be documented and easily accessible.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The teams goals and visions are unclear.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The teams work on functionality without necessarily knowing what the goal
-        and vision is. Some people in the team or some stakeholders may know the vision but this is not shared across
-        and this has not been documented. The goals/vision need to be documented and easily accessible.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingTraveller3" type="checkbox" ng-model="traveller3">
+                The team doesn't clearly understand the entire stakeholder landscape.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Few individuals in the team understand the stakeholder landscape but the
+            whole team is unaware of the entire stakeholder landscape. </p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The team doesn't clearly understand the entire stakeholder landscape.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Few individuals in the team understand the stakeholder landscape but the
-        whole team is unaware of the entire stakeholder landscape. </p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingArtisan1" type="checkbox" ng-model="artisan1">
+                Team vision and goals are agreed, captured and understood.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team works towards shared goals and vision which is agreed, captured and
+            understood. The vision is clear on the team wall and also recorded on the story management system.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team vision and goals are agreed, captured and understood.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">Team works towards shared goals and vision which is agreed, captured and
-        understood. The vision is clear on the team wall and also recorded on the story management system.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingArtisan2" type="checkbox" ng-model="artisan2">
+                There is a clear understanding of who are the teams stakeholders. (Consumers, partners and clients).
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">The teams stakeholders are clearly understood and also captured on the
+            team story management system. This is accessible to all team members.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is a clear understanding of who are the teams stakeholders. (Consumers, partners and clients).
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The teams stakeholders are clearly understood and also captured on the
-        team story management system. This is accessible to all team members.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingArtisan3" type="checkbox" ng-model="artisan3">
+                There is a clear definition of what the teams success is (definition of ‘done’).
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">The definition of "done" is well understood by the team and this is also
+            captured on the team wall. This is revisited and refined as necessary in the team planning sessions.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is a clear definition of what the teams success is (definition of ‘done’).
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The definition of "done" is well understood by the team and this is also
-        captured on the team wall. This is revisited and refined as necessary in the team planning sessions.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingExpert1" type="checkbox" ng-model="expert1">
+                The team actively seeks feedback in an effort to achieve the goals.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">The team is always actively seeking feedback from stakeholders and action
+            items are captured and prioritised towards achieving the team goals.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The team actively seeks feedback in an effort to achieve the goals.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">The team is always actively seeking feedback from stakeholders and action
-        items are captured and prioritised towards achieving the team goals.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingExpert2" type="checkbox" ng-model="expert2">
+                Transparency and high level of collaboration  within the team are in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">There is a high level of collective ownership and collaboration within the team.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Transparency and high level of collaboration  within the team are in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">There is a high level of collective ownership and collaboration within the team.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingExpert3" type="checkbox" ng-model="expert3">
+                Impact of blockers and dependencies are minimised and managed and the team knows what these are.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">The blockers and dependencies are minimised and managed. These are recorded
+            on the story management system and captured on the team walls making them very visible to all the team members.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Impact of blockers and dependencies are minimised and managed and the team knows what these are.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert3)">The blockers and dependencies are minimised and managed. These are recorded
-        on the story management system and captured on the team walls making them very visible to all the team members.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingProfessional1" type="checkbox" ng-model="professional1">
+                Balanced participation is in place. Team members contribute as appropriate and each members opinion is valued.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">There is open communication lines in the team and all members are able to
+            contribute as appropriate. Retrospectives are used to elicit participation from every member in the team.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Balanced participation is in place. Team members contribute as appropriate and each members opinion is valued.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">There is open communication lines in the team and all members are able to
-        contribute as appropriate. Retrospectives are used to elicit participation from every member in the team.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingProfessional2" type="checkbox" ng-model="professional2">
+                Team uses adequate measures to monitor success.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">The team has measures in place to monitor success and this is visually
+            communicated to the team members and the stakeholders.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team uses adequate measures to monitor success.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">The team has measures in place to monitor success and this is visually
-        communicated to the team members and the stakeholders.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingMaster1" type="checkbox" ng-model="master1">
+                All decision-making is internal to the team.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">The team is completely autonomous and drives all decision making.
+            Consultations are used to get information that can feed into their decision making but the decision making
+            is entirely up to the teams.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            All decision-making is internal to the team.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">The team is completely autonomous and drives all decision making.
-        Consultations are used to get information that can feed into their decision making but the decision making
-        is entirely up to the teams.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingMaster2" type="checkbox" ng-model="master2">
+                Complete collective ownership is in place, both when team is successful and when it fails.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Team collectively acknowledges failure or success and the culture is
+            driven by collective ownership.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Complete collective ownership is in place, both when team is successful and when it fails.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">Team collectively acknowledges failure or success and the culture is
-        driven by collective ownership.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="teamingMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="teamingMaster3" type="checkbox" ng-model="master3">
+                Team is actively improving. Retrospectives are driving improvement.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Retrospectives happen every iteration. Action items from retrospectives are
+            tracked and used to drive continuous improvement.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team is actively improving. Retrospectives are driving improvement.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">Retrospectives happen every iteration. Action items from retrospectives are
-        tracked and used to drive continuous improvement.</p></div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonTeaming" class="btn btn-primary btn-lg" href="#!/design">Last Dimension</a>
+        <a id="nextButtonTeaming" class="btn btn-primary btn-lg" href="#!/release" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="previousButtonTeaming" class="btn btn-primary btn-lg" href="#!/design">Last Dimension</a>
-    <a id="nextButtonTeaming" class="btn btn-primary btn-lg" href="#!/release" ng-click="saveAssessments()">Next Dimension</a>
-</p>

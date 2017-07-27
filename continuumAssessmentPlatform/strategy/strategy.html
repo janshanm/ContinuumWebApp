@@ -1,227 +1,229 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/strategy_alignment.png">Strategy Alignment: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/strategy_alignment.png">Strategy Alignment: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyTraveller1" type="checkbox" ng-model="traveller1">
+                Any alignment to Strategy is coincidental or opportunistic
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">There is no explicit definition of the strategy in the teams.
+            The team does not have a shared accessible document where they can see the strategy.
+            Alignment is purely coincidental and not deliberate</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Any alignment to Strategy is coincidental or opportunistic
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">There is no explicit definition of the strategy in the teams.
-        The team does not have a shared accessible document where they can see the strategy.
-        Alignment is purely coincidental and not deliberate</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyArtisan1" type="checkbox" ng-model="artisan1">
+                Upfront engagement with stakeholders to ensure Business and Technical Alignment
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Business and Technology stakeholders are both present in the PI Planning sessions.
+            The team engages with both the business and technical stakeholders for the strategy and goal setting.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Upfront engagement with stakeholders to ensure Business and Technical Alignment
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">Business and Technology stakeholders are both present in the PI Planning sessions.
-        The team engages with both the business and technical stakeholders for the strategy and goal setting.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyArtisan2" type="checkbox" ng-model="artisan2">
+                The product/project vision is explicitly aligned to strategy
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">The team has access to the product/project vision as well as the strategy. T
+            here is clear visualisation of how the vision aligns to the strategy and all the team members can access
+            the document that links the two.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The product/project vision is explicitly aligned to strategy
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The team has access to the product/project vision as well as the strategy. T
-        here is clear visualisation of how the vision aligns to the strategy and all the team members can access
-        the document that links the two.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyArtisan3" type="checkbox" ng-model="artisan3">
+                Post implementation review to confirm strategy alignment
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is a review of alignment to strategy in the Post implementation PI sessions
+            but no review during the implementation stage.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Post implementation review to confirm strategy alignment
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan3)">There is a review of alignment to strategy in the Post implementation PI sessions
-        but no review during the implementation stage.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyExpert1" type="checkbox" ng-model="expert1">
+                Occasional engagement with stakeholders throughout delivery cycle to review business and technical alignment
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">The team engages with the stake holders during implementation to ensure business
+            and technical alignment. This engagement is however occasional for example once every 2 months or so.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Occasional engagement with stakeholders throughout delivery cycle to review business and technical alignment
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">The team engages with the stake holders during implementation to ensure business
-        and technical alignment. This engagement is however occasional for example once every 2 months or so.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyExpert2" type="checkbox" ng-model="expert2">
+                Backlog items are created to deal with strategy alignment issues
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">There are stories in the backlog to ensure strategy alignment.
+            Also a RAID card to ensure the team is always re-aligning in case of deviation.
+            Strategy alignment issues can be tracked and managed.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Backlog items are created to deal with strategy alignment issues
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">There are stories in the backlog to ensure strategy alignment.
-        Also a RAID card to ensure the team is always re-aligning in case of deviation.
-        Strategy alignment issues can be tracked and managed.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyProfessional1" type="checkbox" ng-model="professional1">
+                Frequent engagement with Stakeholders to review Business and technical alignment
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">The team is in frequent communication with the stakeholders to ensure
+            alignment to the strategy. This has become part of the sprint planning/retrospective sessions
+            and happens every sprint.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Frequent engagement with Stakeholders to review Business and technical alignment
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">The team is in frequent communication with the stakeholders to ensure
-        alignment to the strategy. This has become part of the sprint planning/retrospective sessions
-        and happens every sprint.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyProfessional2" type="checkbox" ng-model="professional2">
+                Team presents product to Architecture and Design teams with the intent of picking up alignment issues
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Meetings happen between team, architecture and design where necessary
+            to ensure alignment every sprint. Incremental product is presented in these meetings to ensure any misalignment is picked up.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team presents product to Architecture and Design teams with the intent of picking up alignment issues
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">Meetings happen between team, architecture and design where necessary
-        to ensure alignment every sprint. Incremental product is presented in these meetings to ensure any misalignment is picked up.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyProfessional3" type="checkbox" ng-model="professional3">
+                Metrics to measure strategy elements defined and tracked
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Team has metrics visible on their wall defined for strategy alignment
+            and these are tracked and measured. There is prioritisation of the tasks with the team deliverables.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Metrics to measure strategy elements defined and tracked
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">Team has metrics visible on their wall defined for strategy alignment
-        and these are tracked and measured. There is prioritisation of the tasks with the team deliverables.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyMaster1" type="checkbox" ng-model="master1">
+                All major strategy alignment backlog items have been resolved
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">The team has resolved all the strategy alignment items that were defined
+            in their backlog.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            All major strategy alignment backlog items have been resolved
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">The team has resolved all the strategy alignment items that were defined
-        in their backlog.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyMaster2" type="checkbox" ng-model="master2">
+                All requirements are attached to business metric
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">The user stories on the team walls can be tracked and traced to a business
+            metric, which the team members are aware of. </p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            All requirements are attached to business metric
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">The user stories on the team walls can be tracked and traced to a business
-        metric, which the team members are aware of. </p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyMaster3" type="checkbox" ng-model="master3">
+                Metrics are tracked over time and improvements targets are set and achieved
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Strategy metrics are constantly tracked, monitored and updated where required.
+            Separate user stories are written for improvements and are prioritized in the backlog items.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Metrics are tracked over time and improvements targets are set and achieved
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">Strategy metrics are constantly tracked, monitored and updated where required.
-        Separate user stories are written for improvements and are prioritized in the backlog items.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="strategyMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="strategyMaster4" type="checkbox" ng-model="master4">
+                Team independently innovates by creating new features or optimisations in support of or extending the strategy.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">There is visible innovation/optimisation in the team in line with the strategy.
+            These are captured as cards on the team's story wall and as extra achievements in the scope management tool.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Team independently innovates by creating new features or optimisations in support of or extending the strategy.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master4)">There is visible innovation/optimisation in the team in line with the strategy.
-        These are captured as cards on the team's story wall and as extra achievements in the scope management tool.</p></div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonStrategy" class="btn btn-primary btn-lg" href="#!/planning" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="nextButtonStrategy" class="btn btn-primary btn-lg" href="#!/planning" ng-click="saveAssessments()">Next Dimension</a>
-</p>

@@ -1,503 +1,505 @@
-<p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/quality_assurance.png">Quality Assurance: Please select all the check boxes applicable to your team.</p>
-<hr>
-<h4 align="center">Traveller</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px"><img src="images/quality_assurance.png">Quality Assurance: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller1" type="checkbox" ng-model="traveller1">
+                Testing is manual.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">The testing is purely manual at this level of maturity. Teams rely on manual
+            testers to find defects and bugs. Teams need to start writing some automated tests. No record of the testing done is kept.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Testing is manual.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller1)">The testing is purely manual at this level of maturity. Teams rely on manual
-        testers to find defects and bugs. Teams need to start writing some automated tests. No record of the testing done is kept.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller2" type="checkbox" ng-model="traveller2">
+                There is a high amount of rework due to testing late in the lifecycle.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">The cycle time of features and functionality is impacted due to testing late
+            in the lifecycle. Functionality is stopped from being deployed due to defects/bugs being found at later stages of the lifecycle.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is a high amount of rework due to testing late in the lifecycle.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller2)">The cycle time of features and functionality is impacted due to testing late
-        in the lifecycle. Functionality is stopped from being deployed due to defects/bugs being found at later stages of the lifecycle.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller3" type="checkbox" ng-model="traveller3">
+                Non-functional testing is not considered upfront.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Non-functional testing is considered as an afterthought when the Software
+            is about to be released. Teams do not factor non-functional testing in their designs and implementation. Teams
+            need to start considering non-functional testing such as how the application will behave under load into consideration.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Non-functional testing is not considered upfront.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller3)">Non-functional testing is considered as an afterthought when the Software
-        is about to be released. Teams do not factor non-functional testing in their designs and implementation. Teams
-        need to start considering non-functional testing such as how the application will behave under load into consideration.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller4" type="checkbox" ng-model="traveller4">
+                Test cases are designed based only on the requirements document, mainly by testing team.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">There is a separate testing team that designs test cases based on the
+            requirements document without interacting with the teams. There should be closer collaboration with the development team.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Test cases are designed based only on the requirements document, mainly by testing team.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller4)">There is a separate testing team that designs test cases based on the
-        requirements document without interacting with the teams. There should be closer collaboration with the development team.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller5" type="checkbox" ng-model="traveller5">
+                Absence of unit/integration testing.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">The code base has very little or no unit/integration tests.
+            Developers rely on testers to find bugs/defects in their implementation.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Absence of unit/integration testing.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller5)">The code base has very little or no unit/integration tests.
-        Developers rely on testers to find bugs/defects in their implementation.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityTraveller6" type="checkbox" ng-model="traveller6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityTraveller6" type="checkbox" ng-model="traveller6">
+                There is very little reuse of Quality Assurance assets.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller6)">The Quality Assurance assets are non-reusable due to it being very manual
+            and specific to each application. The test cases are driven by the requirements so no frameworks in place.
+            The team should start investigating frameworks, which can be extended for other test cases so that any team
+            member is able to contribute to testing.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            There is very little reuse of Quality Assurance assets.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(traveller6)">The Quality Assurance assets are non-reusable due to it being very manual
-        and specific to each application. The test cases are driven by the requirements so no frameworks in place.
-        The team should start investigating frameworks, which can be extended for other test cases so that any team
-        member is able to contribute to testing.</p></div>
-</div>
-<hr>
-<h4 align="center">Artisan</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityArtisan1" type="checkbox" ng-model="artisan1">
+                Regression test packs are partially automated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this maturity level, some of the regression tests are automated
+            even though all the business critical cases do not have automated regression tests.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Regression test packs are partially automated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan1)">At this maturity level, some of the regression tests are automated
-        even though all the business critical cases do not have automated regression tests.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityArtisan2" type="checkbox" ng-model="artisan2">
+                Regression packs run frequently but on an ad hoc basis.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">The regression tests are run on an ad hoc basis as opposed to on every critical
+            change to the application. The regression tests should be run as part of the build and release towards production
+            automatically to move from this level</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Regression packs run frequently but on an ad hoc basis.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan2)">The regression tests are run on an ad hoc basis as opposed to on every critical
-        change to the application. The regression tests should be run as part of the build and release towards production
-        automatically to move from this level</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityArtisan3" type="checkbox" ng-model="artisan3">
+                Test cases designed by the team, with testing, development and business analysts.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">The test cases are designed by the team working on the application in
+            collaboration with the stake holders. The team is aware of the business critical functionality and designs test
+            cases to cater for these.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Test cases designed by the team, with testing, development and business analysts.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(artisan3)">The test cases are designed by the team working on the application in
-        collaboration with the stake holders. The team is aware of the business critical functionality and designs test
-        cases to cater for these.</p></div>
-</div>
-<hr>
-<h4 align="center">Expert</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert1" type="checkbox" ng-model="expert1">
+                Regression test packs are fully automated.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Regression test packs are fully automated for the application.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Regression test packs are fully automated.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert1)">Regression test packs are fully automated for the application.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert2" type="checkbox" ng-model="expert2">
+                Regression test packs are run as part of the build.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Regression tests are triggered by the build pipeline and run as part of the
+            normal pipeline process. They are scheduled as daily run tasks due to the typical slowness in regression tests execution.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Regression test packs are run as part of the build.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert2)">Regression tests are triggered by the build pipeline and run as part of the
-        normal pipeline process. They are scheduled as daily run tasks due to the typical slowness in regression tests execution.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert3" type="checkbox" ng-model="expert3">
+                50% coverage automated testing.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">At least 50% of the code base is test covered. The test coverage metrics are
+            captured on the team pipeline dashboards and the build is failed if the coverage threshold is less than 50%.
+            A failing tests is always fixed before extra functionality is built.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            50% coverage automated testing.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert3)">At least 50% of the code base is test covered. The test coverage metrics are
-        captured on the team pipeline dashboards and the build is failed if the coverage threshold is less than 50%.
-        A failing tests is always fixed before extra functionality is built.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert4" type="checkbox" ng-model="expert4">
+                Automated smoke testing is in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">The team has implemented smoke tests and these are run as part of every code
+            check-in. The smoke tests report are also displayed on the team tests metrics on the dashboard.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Automated smoke testing is in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert4)">The team has implemented smoke tests and these are run as part of every code
-        check-in. The smoke tests report are also displayed on the team tests metrics on the dashboard.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert5" type="checkbox" ng-model="expert5">
+                Automated performance testing is in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Performance tests are automated and the performance metrics are displayed
+            on the dashboards. The build pipeline is failed if the performance metrics expected is not met.
+            Due to the slow nature of performance tests, these are run as scheduled tasks on a nightly basis.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Automated performance testing is in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert5)">Performance tests are automated and the performance metrics are displayed
-        on the dashboards. The build pipeline is failed if the performance metrics expected is not met.
-        Due to the slow nature of performance tests, these are run as scheduled tasks on a nightly basis.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert6" type="checkbox" ng-model="expert6">
+                Non-functional requirements are defined and measured.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Non-functional requirements such as response times are defined and measured
+            with test cases that are also displayed on the dashboards.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Non-functional requirements are defined and measured.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert6)">Non-functional requirements such as response times are defined and measured
-        with test cases that are also displayed on the dashboards.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert7" type="checkbox" ng-model="expert7">
+                Test cases designed by the team as part of the iteration.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">The team designs the test cases as part of the iteration and when building
+            the functionality as opposed to as a pre-project process. Test cases are adapted to suit changes in the product vision and goal.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Test cases designed by the team as part of the iteration.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert7)">The team designs the test cases as part of the iteration and when building
-        the functionality as opposed to as a pre-project process. Test cases are adapted to suit changes in the product vision and goal.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert8" type="checkbox" ng-model="expert8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert8" type="checkbox" ng-model="expert8">
+                Unit tests are created using a test first approach.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert8)">The team writes unit tests using established frameworks and methodologies.
+            The unit tests coverage is not less than 50% and the build is failed if the unit tests coverage is lower than this.
+            Developers write tests as they build functionality. Testing is not out-sourced to quality assurance engineers.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Unit tests are created using a test first approach.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert8)">The team writes unit tests using established frameworks and methodologies.
-        The unit tests coverage is not less than 50% and the build is failed if the unit tests coverage is lower than this.
-        Developers write tests as they build functionality. Testing is not out-sourced to quality assurance engineers.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityExpert9" type="checkbox" ng-model="expert9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityExpert9" type="checkbox" ng-model="expert9">
+                Quality metrics are defined but not reviewed or acted on.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert9)">The quality metrics such as test coverage and test run times
+            are defined and readily available to the team. These metrics are however not reviewed to improve the quality practices.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Quality metrics are defined but not reviewed or acted on.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(expert9)">The quality metrics such as test coverage and test run times
-        are defined and readily available to the team. These metrics are however not reviewed to improve the quality practices.</p></div>
-</div>
-<hr>
-<h4 align="center">Professional</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional1" type="checkbox" ng-model="professional1">
+                Automated infrastructure testing is in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Infrastructure is automated and can be generated from scripts in the version
+            control management system. The infrastructure automation is also tested using tools like ChefSpec.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Automated infrastructure testing is in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional1)">Infrastructure is automated and can be generated from scripts in the version
-        control management system. The infrastructure automation is also tested using tools like ChefSpec.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional2" type="checkbox" ng-model="professional2">
+                Automated security testing is in place.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Automation security testing is implemented and is part of the build pipeline
+            using tools such as ZAP (Zed-Attack Proxy). The build is failed if security testing fails.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Automated security testing is in place.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional2)">Automation security testing is implemented and is part of the build pipeline
-        using tools such as ZAP (Zed-Attack Proxy). The build is failed if security testing fails.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional3" type="checkbox" ng-model="professional3">
+                Tests are automated as much as is practical.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Tests are automated and only the exploratory type tests
+            are left unautomated. Exploratory tests are performed manually but well documented.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Tests are automated as much as is practical.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional3)">Tests are automated and only the exploratory type tests
-        are left unautomated. Exploratory tests are performed manually but well documented.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional4" type="checkbox" ng-model="professional4">
+                Quality metrics and trends are tracked.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Quality metrics are measured and tracked. Historical trends of the quality
+            metrics are displayed on dashboards to the teams to drive the right culture of always improving quality.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Quality metrics and trends are tracked.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional4)">Quality metrics are measured and tracked. Historical trends of the quality
-        metrics are displayed on dashboards to the teams to drive the right culture of always improving quality.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional5" type="checkbox" ng-model="professional5">
+                Anyone can execute the tests.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Any team member can execute the tests via script runs or on the build pipelines.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Anyone can execute the tests.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional5)">Any team member can execute the tests via script runs or on the build pipelines.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional6" type="checkbox" ng-model="professional6">
+                Quality metrics are part of build automation and continuous integration.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">The build automation tool generates the quality metrics which can be
+            automatically fed to SonarQube or used for representative dashboards.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Quality metrics are part of build automation and continuous integration.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional6)">The build automation tool generates the quality metrics which can be
-        automatically fed to SonarQube or used for representative dashboards.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional7" type="checkbox" ng-model="professional7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional7" type="checkbox" ng-model="professional7">
+                Quality metrics are tracked for trends and adjustments made on a continuous basis.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional7)"> The team maintains a graph of historic quality metrics. The quality
+            metrics are addressed by the team every iteration.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Quality metrics are tracked for trends and adjustments made on a continuous basis.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional7)"> The team maintains a graph of historic quality metrics. The quality
-        metrics are addressed by the team every iteration.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityProfessional8" type="checkbox" ng-model="professional8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityProfessional8" type="checkbox" ng-model="professional8">
+                Non-functional testing metrics are defined early in the process.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional8)">Non-functional test metrics are clearly defined and available to the team members
+            early in the lifecycle. These are displayed on the team walls for all team members to be aware of and reviewed every iteration.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Non-functional testing metrics are defined early in the process.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(professional8)">Non-functional test metrics are clearly defined and available to the team members
-        early in the lifecycle. These are displayed on the team walls for all team members to be aware of and reviewed every iteration.</p></div>
-</div>
-<hr>
-<h4 align="center">Master</h4>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityMaster1" type="checkbox" ng-model="master1">
+                Active process is in place to understand root cause and respond to it.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">There are documented processes in place to understand the root cause of test
+            failures and how to respond to them especially for the non-functional requirements testing.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Active process is in place to understand root cause and respond to it.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master1)">There are documented processes in place to understand the root cause of test
-        failures and how to respond to them especially for the non-functional requirements testing.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityMaster2" type="checkbox" ng-model="master2">
+                Test artefacts are treated with the same importance as code and continually refactored and maintained.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Tests artefacts have same significance and importance as the application
+            code and are continually refactored and maintained.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Test artefacts are treated with the same importance as code and continually refactored and maintained.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master2)">Tests artefacts have same significance and importance as the application
-        code and are continually refactored and maintained.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityMaster3" type="checkbox" ng-model="master3">
+                The quality metrics are assessed and backlog items created to drive improvement.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">There are continuous assessments of the quality metrics to ensure the team is
+            aligned to the quality standards. Backlog items are created to address gaps identified from the quality metrics'
+            perspective and these are tracked and prioritized.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            The quality metrics are assessed and backlog items created to drive improvement.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master3)">There are continuous assessments of the quality metrics to ensure the team is
-        aligned to the quality standards. Backlog items are created to address gaps identified from the quality metrics'
-        perspective and these are tracked and prioritized.</p></div>
-</div>
-<div class="row well well-sm">
-    <div class="col-xs-1">
-        <p align="center">
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="qualityMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
             <label>
-                <input id="qualityMaster4" type="checkbox" ng-model="master4">
+                Tests drive release readiness.
             </label>
-        </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Tests drive the release readiness while business drives the release decisions.
+            A release candidate is only generated and available in the pipeline if all the tests have passed.</p></div>
     </div>
-    <div class="col-xs-4">
-        <label>
-            Tests drive release readiness.
-        </label>
-    </div>
-    <div class="col-xs-7"><p ng-class="getClass(master4)">Tests drive the release readiness while business drives the release decisions.
-        A release candidate is only generated and available in the pipeline if all the tests have passed.</p></div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonQuality" class="btn btn-primary btn-lg" href="#!/release">Last Dimension</a>
+        <a id="nextButtonQuality" class="btn btn-primary btn-lg" href="#!/environments" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
 </div>
-<hr>
-<p align="right">
-    <a id="previousButtonQuality" class="btn btn-primary btn-lg" href="#!/release">Last Dimension</a>
-    <a id="nextButtonQuality" class="btn btn-primary btn-lg" href="#!/environments" ng-click="saveAssessments()">Next Dimension</a>
-</p>

@@ -1,0 +1,681 @@
+<div ng-show="isLoggedIn">
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Scripts standards and Quality: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Traditional automation is used with no specific structure</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">No Indentation, No Comments</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">No naming convention for variables, functions, etc.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Data is hard coded</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Re-Usability (DRY Principle)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Same code block is copied across if used again</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsTraveller6" type="checkbox" ng-model="traveller6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Reliability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller6)">Script crashes on non-happy paths</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Structured traditional automation with some module/functions re-use</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Indentation is there for some loops (e.g. If…Then...Else)</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Use of alignments (left margin), proper white space.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Some variables are declared before use.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">Use of short variable names</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan6" type="checkbox" ng-model="artisan6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan6)">Scenario data is stored separately to test scripts.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsArtisan7" type="checkbox" ng-model="artisan7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Re-Usability (DRY Principle)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan7)">Attempt to use functions an/or subroutines</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Basic framework with structured modules.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Functions/Modules categorised in different libraries</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Indentation is there for all loops</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Code block starting point and ending point are easily identifiable.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Comments written for some code blocks.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">All variables are declared and initialised before use.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">The team proactively improves the automation scripts.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert8" type="checkbox" ng-model="expert8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert8)">Test Automation script is under version management.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert9" type="checkbox" ng-model="expert9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Re-Usability (DRY Principle)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert9)">Functions used with parameter passing to maximize re-use.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert10" type="checkbox" ng-model="expert10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Re-Usability (DRY Principle)
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert10)">Same code block is not repeated more than once.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert11" type="checkbox" ng-model="expert11">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Reliability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert11)">All variables are cleaned-up after use.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsExpert12" type="checkbox" ng-model="expert12">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Reliability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert12)">Error Handling mechanisms in place to cater for exceptions.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Heavy functions/modules re-use.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">New scenarios can be created without any framework script changes.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Data driven framework.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">All variables and functions created have standard naming conventions and are consistent.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">All functions/modules have header with minimum
+            information that explains what the function does, creation date, author, parameters used.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">Code is regularly refactored as part of the iteration.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional7" type="checkbox" ng-model="professional7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional7)">Team checks code into version management system on a daily basis.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional8" type="checkbox" ng-model="professional8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional8)">Support is provided to log the flow of control.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional9" type="checkbox" ng-model="professional9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional9)">Existing Automation scripts can be changed/amended and tested in less than 8 hours.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsProfessional10" type="checkbox" ng-model="professional10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Reliability
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional10)">Script/Framework can recover from highest severity
+            application defects, reports them and continues execution.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Framework is upgraded regularly (at least twice per year)
+            to cater for new challenges and harness platform features.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Framework has robust script standards built-in.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Framework
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Framework is tool independent and can be replicated onto other test automation tool(s).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Code fits in the standard 14 inch laptop screen. There is no need to scroll horizontally to view the code.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">No commented codes are present in live code.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster6" type="checkbox" ng-model="master6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Readability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master6)">Comments on why codes are written that way, not what the code is doing only.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster7" type="checkbox" ng-model="master7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master7)">Standards are regularly reviewed and updated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster8" type="checkbox" ng-model="master8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Maintainability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master8)">Support is provided to "watch" parameter data and exception
+            details to find the root cause easily.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="standardsMaster9" type="checkbox" ng-model="master9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-4">
+            <label>
+                Reliability.
+            </label>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master9)">Script/Framework is robust and runs unattended until complete.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonStandards" class="btn btn-primary btn-lg" href="#!/metrics" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
+</div>
