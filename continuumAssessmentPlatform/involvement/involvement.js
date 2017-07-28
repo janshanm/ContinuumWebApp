@@ -88,7 +88,7 @@ angular.module('continuumAssessmentPlatform.involvement', ['ngRoute'])
             if(isTraveller()){
                 return 1;
             }
-            else if(isArtisan()){
+            else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
                 return 2;
             }
             else if(isExpert() && !isProfessional() && !isMaster()){

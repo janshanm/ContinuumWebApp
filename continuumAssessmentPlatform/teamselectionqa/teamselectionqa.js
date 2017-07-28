@@ -9,7 +9,7 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
         });
     }])
 
-    .controller('TeamQASelectionCtrl', ['$location', '$scope', '$rootScope', 'RetrieveAssessment', function($location, $scope, $rootScope, RetrieveAssessment) {
+    .controller('TeamQASelectionCtrl', ['$location', '$scope', '$rootScope', 'RetrieveQAAssessment', function($location, $scope, $rootScope, RetrieveQAAssessment) {
         $scope.teams = [{}];
         $scope.selectedTeam = "";
         $scope.selectedPortfolio = "AR";
@@ -109,21 +109,21 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
                 $rootScope.hasError = false;
                 $rootScope.teamName = $scope.selectedTeam;
                 $rootScope.selectedPortfolioName = $scope.getPortfolioName($scope.selectedPortfolio);
-                $location.path('/standards');
-                // RetrieveAssessment.getAssessment($scope.selectedTeam).then(function(response){
-                //     var data = response.data;
-                //     $rootScope.assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
-                // });
+                RetrieveQAAssessment.getAssessment($scope.selectedTeam).then(function(response){
+                    var data = response.data;
+                    $rootScope.assessmentsQa = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
+                    $location.path('/standards');
+                });
             }
         }
 
     }])
 
-    .factory('RetrieveAssessment', ['$http', function ($http) {
+    .factory('RetrieveQAAssessment', ['$http', function ($http) {
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8080/assessmentqa?teamName="+teamName,
+                    url: "http://localhost:8081/assessment?teamName="+teamName,
                     method: "GET"
                 });
             }
