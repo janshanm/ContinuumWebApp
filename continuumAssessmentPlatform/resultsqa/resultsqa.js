@@ -38,7 +38,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
             if(teamName !== undefined){
                 RetrieveQAAssessment.getAssessment(teamName).then(function(response){
                     var data = response.data;
-
+                    $rootScope.teamName = data['teamName'];
                     var assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
                     $scope.generateResultsChart(assessments);
                 });
@@ -1796,7 +1796,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
                         ],
                         datasets: [
                             {
-                                label: "TEAM: " + teamName + " for Portfolio: " + selectedPortfolioName,
+                                label: "TEAM: " + teamName,
                                 fill: true,
                                 backgroundColor: "rgba(255,99,132,0.2)",
                                 borderColor: "rgba(255,99,132,1)",
@@ -1812,7 +1812,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
                     options: {
                         title: {
                             display: true,
-                            text: 'QaMaM Assessment Results for ' + teamName + " for Portfolio: " + selectedPortfolioName
+                            text: 'QaMaM Assessment Results for ' + teamName
                         },
                         scale: {
                             ticks: {
