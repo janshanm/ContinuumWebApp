@@ -9,7 +9,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
         });
     }])
 
-    .controller('ResultsQACtrl', ['$scope', '$rootScope', 'SaveQAResults', function($scope, $rootScope, SaveQAResults) {
+    .controller('ResultsQACtrl', ['$scope', '$rootScope', 'SaveQAResults', 'RetrieveQAAssessment', '$location', function($scope, $rootScope, SaveQAResults, RetrieveQAAssessment, $location) {
 
         $scope.standardsScore = 1;
         $scope.metricsScore = 1;
@@ -32,7 +32,24 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
             $scope.isSaved = false;
             $scope.isNotSaved = false;
 
-            var assessments = $rootScope.assessmentsQa;
+            var parameters = $location.search();
+            var teamName = parameters.teamName;
+
+            if(teamName !== undefined){
+                RetrieveQAAssessment.getAssessment(teamName).then(function(response){
+                    var data = response.data;
+
+                    var assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
+                    $scope.generateResultsChart(assessments);
+                });
+            }
+            else{
+                $scope.generateResultsChart($rootScope.assessments);
+            }
+
+        };
+
+        $scope.generateResultsChart = function(assessments) {
             if(typeof assessments !== "undefined") {
                 $scope.standardsScore = assessments['standards'] !== undefined ? assessments['standards'].score : 1;
                 $scope.metricsScore = assessments['metrics'] !== undefined ? assessments['metrics'].score : 1;
@@ -1806,6 +1823,17 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
                             }
                         }
                     }
+                });
+            }
+        }
+    }])
+
+    .factory('RetrieveQAAssessment', ['$http', function ($http) {
+        return {
+            getAssessment: function (teamName) {
+                return $http({
+                    url: "http://localhost:8081/assessment?teamName="+teamName,
+                    method: "GET"
                 });
             }
         }

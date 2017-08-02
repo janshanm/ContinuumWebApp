@@ -9,7 +9,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         });
     }])
 
-    .controller('ResultsCtrl', ['$scope', '$rootScope', 'SaveResults', function($scope, $rootScope, SaveResults) {
+    .controller('ResultsCtrl', ['$scope', '$rootScope', 'SaveResults', '$location', 'RetrieveAssessment', function($scope, $rootScope, SaveResults, $location, RetrieveAssessment) {
 
         $scope.strategyScore = 1;
         $scope.planningScore = 1;
@@ -32,8 +32,25 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             $scope.isSaved = false;
             $scope.isNotSaved = false;
 
-            var assessments = $rootScope.assessments;
-            if(typeof assessments !== "undefined") {
+
+            var parameters = $location.search();
+            var teamName = parameters.teamName;
+
+            if(teamName !== undefined){
+                RetrieveAssessment.getAssessment(teamName).then(function(response){
+                    var data = response.data;
+
+                    var assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
+                    $scope.generateResultsChart(assessments);
+                });
+            }
+            else{
+                $scope.generateResultsChart($rootScope.assessments);
+            }
+        };
+
+        $scope.generateResultsChart = function(assessments) {
+            if (typeof assessments !== "undefined") {
                 $scope.strategyScore = assessments['strategy'] !== undefined ? assessments['strategy'].score : 1;
                 $scope.planningScore = assessments['planning'] !== undefined ? assessments['planning'].score : 1;
                 $scope.codingScore = assessments['coding'] !== undefined ? assessments['coding'].score : 1;
@@ -84,12 +101,11 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             + $scope.incidentScore + $scope.riskScore + $scope.designScore + $scope.teamingScore + $scope.releaseScore
             + $scope.QAScore + $scope.environmentsScore + $scope.featureTeamsScore);
 
-            $scope.teamScore = Math.floor(totalScore/12);
+            $scope.teamScore = Math.floor(totalScore / 12);
 
             SaveResults.drawChart($rootScope.teamName, $scope.strategyScore, $scope.planningScore, $scope.codingScore, $scope.ciScore,
                 $scope.incidentScore, $scope.riskScore, $scope.designScore, $scope.teamingScore, $scope.releaseScore,
                 $scope.QAScore, $scope.environmentsScore, $scope.featureTeamsScore, $rootScope.selectedPortfolioName);
-
         };
 
         $scope.getRecommendedCapabilities = function (typeOfTask) {
@@ -1894,4 +1910,16 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 });
             }
     }
+    }])
+
+    .factory('RetrieveAssessment', ['$http', function ($http) {
+        return {
+            getAssessment: function (teamName) {
+                return $http({
+                    url: "http://localhost:8080/assessment?teamName="+teamName,
+                    method: "GET"
+                });
+            }
+        }
     }]);
+
