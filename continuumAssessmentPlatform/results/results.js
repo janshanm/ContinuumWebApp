@@ -178,7 +178,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'artisan4': 'The team knows their velocity ',
             'artisan5': 'Stakeholders have been identified and a communication plan is in place',
             'expert1': 'Team performs estimation iteratively',
-            'expert2': 'When the team estimates, the estimates include all activities to reach \'Done\'.',
+            'expert2': 'When the team estimates, the estimates include all activities to reach Done.',
             'expert3': 'The MVP and MVPS have been identified',
             'expert4': 'The teams velocity is predictable ',
             'expert5': 'All backlog items are sized by the teams',
@@ -194,11 +194,11 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'master3': 'A process is in place (e.g. a formal beta program)  to allow extended stakeholders and customers to evaluate the software and provide feedback.'};
 
         var codingTasks = {
-            'traveller1': 'No standards or mechanism\'s for ensuring code quality',
+            'traveller1': 'No standards or mechanisms for ensuring code quality',
             'artisan1': 'Guidelines and/or standards are defined.',
             'artisan2': 'Consistent training process for new team members is in place',
             'expert1': 'There are mechanism’s in place to ensure that standards are followed',
-            'expert2': 'Process\'s and practices are understood and followed by all',
+            'expert2': 'Processes and practices are understood and followed by all',
             'expert3': 'Metrics are defined but not necessarily reviewed and acted on',
             'expert4': 'The team proactively improves the code',
             'professional1': 'Code metrics are part of build automation and continuous integration',
@@ -304,10 +304,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
         var teamingTasks = {
             'traveller1': 'The team cannot make decisions without consultation.',
             'traveller2': 'The teams goals and visions are unclear.',
-            'traveller3': 'The team doesn\'t clearly understand the entire stakeholder landscape.',
+            'traveller3': 'The team does not clearly understand the entire stakeholder landscape.',
             'artisan1': 'Team vision and goals are agreed, captured and understood.',
             'artisan2': 'There is a clear understanding of who are the teams stakeholders. (Consumers, partners and clients).',
-            'artisan3': 'There is a clear definition of what the teams success is (definition of \'done\').',
+            'artisan3': 'There is a clear definition of what the teams success is (definition of done).',
             'expert1': 'The team actively seeks feedback in an effort to achieve the goals.',
             'expert2': 'Transparency and high level of collaboration  within the team are in place.',
             'expert3': 'Impact of blockers and dependencies are minimised and managed and the team knows what these are.',
@@ -410,7 +410,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             'master9': 'Virtualization is used if applicable.'};
 
         var featureTeamsTasks = {
-            'traveller1': 'The team doesn\'t have all cross-functional and cross-component knowledge and skills to complete end-to-end customer feature.',
+            'traveller1': 'The team does not have all cross-functional and cross-component knowledge and skills to complete end-to-end customer feature.',
             'traveller2': 'The team members are not dedicated.',
             'traveller3': 'The is a low level of collaboration between team members.',
             'traveller4': 'There are multiple handoffs and dependencies on the external teams and stakeholders.',
@@ -1871,7 +1871,11 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             drawChart: function (teamName, strategyScore, planningScore, codingScore, ciScore, incidentScore, riskScore,
                                  designScore, teamingScore, releaseScore, QAScore, environmentsScore, featureTeamsScore,
                                  selectedPortfolioName) {
-                new Chart(document.getElementById("radar-chart"), {
+
+                if(window.myChart != undefined)
+                    window.myChart.destroy();
+
+                window.myChart = new Chart(document.getElementById("radar-chart"), {
                     type: 'radar',
                     data: {
                         labels: ["Strategy Alignment", "Planning and Requirements", "Coding Practices",

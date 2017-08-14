@@ -1,0 +1,311 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Please complete the table below with your scores</p>
+    <div style="margin-bottom: 25px;">
+        <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasError">
+            <p>Please select a your name from the dropdown before proceeding.</p>
+        </div>
+        <label for="bioNameSelect" style="padding-left: 50px" class='required'> Name: </label>
+        <select style="width: 425px" name="bioNameSelect" id="bioNameSelect" ng-model="selectedBIO">
+            <option value="">Please Select Your Name From The List</option>
+            <option ng-repeat="bio in BIOLists" value="{{bio.id}}">{{bio.name}}</option>
+        </select>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="color: darkred">Survey Already Completed</h4>
+                </div>
+                <div class="modal-body">
+                    <p>The surveyee: <span style="color: darkred;font-weight: bold; font-size: large">{{selectedBIO}}</span> has already completed the survey for this quarter. Do you want to update the survey results to the current entry, view previous survey scores or cancel.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" ng-click="continueToReview()">Update</button>
+                    <button class="btn btn-warning" ng-click="loadPreviousSurveyToReview()">View Previous</button>
+                    <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-3">
+            <p align="center">
+                <label class="alert-danger col-xs-6" style="color: darkred">
+                    Rating Scale: 1 - 5 <br/>
+                    (1 = Poor, 5 = Great)
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                Software Engineering
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                Agile Coaching
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                Change & Release Management
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                Quality Engineering ("Testing")
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                Enterprise Architecture
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                Solutions Architecture
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                Data Services
+            </label>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-3">
+            <p align="center">
+                <label>
+                    The practice provides me capable engineers.
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="softwareEngineering1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="agileCoaching1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="changeAndRelease1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="qualityEngineering1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="enterpriseArchitecture1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="solutionsArchitecture1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="dataServices1">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-3">
+            <p align="center">
+                <label>
+                    The practice provides thought leadership w.r.t how things should be done.
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="softwareEngineering2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="agileCoaching2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="changeAndRelease2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="qualityEngineering2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="enterpriseArchitecture2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="solutionsArchitecture2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="dataServices2">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-3">
+            <p align="center">
+                <label>
+                    Practice initiatives are prioritized on my portfolio/program/team backlog.
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="softwareEngineering3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="agileCoaching3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="changeAndRelease3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="qualityEngineering3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="enterpriseArchitecture3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="solutionsArchitecture3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="dataServices3">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-3">
+            <p align="center">
+                <label>
+                    Practice initiatives are delivering value.
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="softwareEngineering4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="agileCoaching4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="changeAndRelease4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="qualityEngineering4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="enterpriseArchitecture4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 col-xs-1-5 text-center">
+            <label>
+                <select ng-model="solutionsArchitecture4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-1 text-center">
+            <label>
+                <select ng-model="dataServices4">
+                    <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <p/>
+    <p align="center">
+        <a id="saveSurvey" class="btn btn-primary btn-lg" href="" ng-click="saveSurveyResults()">Review Survey</a>
+    </p>

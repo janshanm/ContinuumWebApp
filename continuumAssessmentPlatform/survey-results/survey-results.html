@@ -1,0 +1,38 @@
+
+    <p class="lead" ng-init="init()" style="text-align: center">Please find survey results for different teams that have been completed.</p>
+
+    <div id="exTab3" class="container">
+        <ul  class="nav nav-pills">
+            <li ng-class="{active: selectedTab == 1}">
+                <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">Survey Results</a>
+            </li>
+            <!--<li ng-class="{active: selectedTab == 2}">-->
+                <!--<a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Survey History</a>-->
+            <!--</li>-->
+        </ul>
+
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
+                <label for="selectedTeamNameRadial" style="padding-left: 50px; margin-bottom: 25px; margin-top: 25px"> Select Different Team: </label>
+                <select name="selectedTeamName" id="selectedTeamNameRadial" ng-model="selectedTeam" ng-change="updatePeriodInformation()">
+                    <option ng-repeat="teamName in allTeams" value="{{teamName}}">{{teamName}}</option>
+                </select>
+                <label for="selectedPeriod" style="padding-left: 50px; margin-bottom: 25px;  margin-top: 25px"> Select Different Period: </label>
+                <select name="selectedPeriod" id="selectedPeriod" ng-model="selectedPeriodOfTheYear" ng-change="updateChart()">
+                    <option ng-repeat="period in periodsOfYear" value="{{period}}">{{period}}</option>
+                </select>
+                <div class="progress" style="margin-bottom: 25px; ">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" ng-style="{'width': completionRateStyle}" aria-valuenow="{{completionRate}}" aria-valuemin="0" aria-valuemax="100">{{completionRate}}% Completed</div>
+                </div>
+                <canvas id="radar-chart-results" width="800" height="600"></canvas>
+            </div>
+            <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
+                <!--<label for="selectedTeamName" style="padding-left: 50px"> Select Different Team: </label>-->
+                <!--<select name="selectedTeamName" id="selectedTeamName" ng-model="selectedTeamName" ng-change="updateTeamInformation()">-->
+                    <!--<option ng-repeat="teamName in allTeams" value="{{teamName}}">{{teamName}}</option>-->
+                <!--</select>-->
+                <!--<canvas id="history-chart-previous" width="800" height="600"></canvas>-->
+            </div>
+
+        </div>
+    </div>

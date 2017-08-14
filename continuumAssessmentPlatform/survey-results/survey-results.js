@@ -1,61 +1,76 @@
 'use strict';
 
-angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
+angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/previous-assessments', {
-            templateUrl: 'previous-assessments/previous-assessments.html',
-            controller: 'PreviousAssessmentsCtrl'
+        $routeProvider.when('/survey-results', {
+            templateUrl: 'survey-results/survey-results.html',
+            controller: 'SurveyResultsCtrl'
         });
     }])
 
-    .controller('PreviousAssessmentsCtrl', ['$scope', 'RetrieveAssessments', function($scope, RetrieveAssessments) {
-        var myChart;
+    .controller('SurveyResultsCtrl', ['$scope', '$rootScope', '$location', 'RetrieveSurveys', function($scope, $rootScope, $location, RetrieveSurveys) {
+        $scope.softwareScore = 1;
+        $scope.agileCoachingScore = 1;
+        $scope.changeAndReleaseScore = 1;
+        $scope.qualityEngineeringScore = 1;
+        $scope.enterpriseArchitectureScore = 1;
+        $scope.solutionsArchitectureScore = 1;
+        $scope.dataServicesScore = 1;
+
+        $scope.resultsData = {};
+        $scope.bodyData = {};
+        $scope.selectedTab = 1;
+
         $scope.init = function () {
             $scope.selectedTab = 1;
-            RetrieveAssessments.getAssessments().then(function (response) {
-                $scope.allAssessments = response.data;
-                $scope.assessmentPortfolios = getAllPortfolios($scope.allAssessments);
-                $scope.selectedPortfolio = $scope.assessmentPortfolios[0];
-                $scope.assessmentDates = getAssessmentDates($scope.allAssessments, $scope.selectedPortfolio);
-                $scope.dateOfAssessment = $scope.assessmentDates[0];
-                $scope.teamNames = getTeamNames($scope.allAssessments);
-                $scope.selectedTeamName = $scope.teamNames[0];
-                $scope.showChart();
-                $scope.showHistory();
 
+            var parameters = $location.search();
+            var teamName = parameters.teamName;
+
+            RetrieveSurveys.getSurveyResultsForTeam(teamName).then(function(response){
+                $scope.allSurveyResults = response.data;
+                $scope.allTeams = getSurveyTeams($scope.allSurveyResults);
+                $scope.selectedTeam = $scope.allTeams[0];
+                $scope.periodsOfYear = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+                $scope.selectedPeriodOfTheYear = $scope.periodsOfYear[0];
+
+                $scope.showChart();
+                // $scope.showHistory();
             });
         };
 
-        $scope.updatePortfolio = function(){
-            $scope.assessmentDates = getAssessmentDates($scope.allAssessments, $scope.selectedPortfolio);
-            $scope.dateOfAssessment = $scope.assessmentDates[0];
+        $scope.updatePeriodInformation = function(){
+            $scope.periodsOfYear = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+            $scope.selectedPeriodOfTheYear = $scope.periodsOfYear[0];
             $scope.showChart();
         };
 
         $scope.showChart = function(){
-            $scope.assessmentsForDate = getAssessmentsForDate($scope.allAssessments, $scope.dateOfAssessment, $scope.selectedPortfolio);
-            $scope.dataSets = createDataSetForChart($scope.assessmentsForDate);
+            $scope.surveysForPeriod = getSurveysForPeriod($scope.allSurveyResults, $scope.selectedPeriodOfTheYear, $scope.selectedTeam);
+            $scope.completionRate = Math.round($scope.surveysForPeriod['completionRate']);
+            $scope.completionRateStyle = $scope.completionRate + "%";
+
+            $scope.dataSets = createDataSetForChart($scope.surveysForPeriod);
             $scope.drawRadialChart();
         };
 
         $scope.drawRadialChart = function(){
-            if(window.myPreviousChart != undefined)
-                window.myPreviousChart.destroy();
+            if(window.mySurveyChart != undefined)
+                window.mySurveyChart.destroy();
 
-            window.myPreviousChart = new Chart(document.getElementById("radar-chart-previous"), {
+            window.mySurveyChart = new Chart(document.getElementById("radar-chart-results"), {
                 type: 'radar',
                 data: {
-                    labels: ["Strategy Alignment", "Planning and Requirements", "Coding Practices",
-                        "Continuous Integration", "Incident Management", "Risk and Issue Management", "Software Design",
-                        "Teaming", "Release Management", "Quality Assurance", "Environments", "Feature Teams"
+                    labels: ["Software Engineering", "Agile Coaching", "Change & Release Management",
+                        "Quality Engineering (\"Testing\")", "Enterprise Architecture", "Solutions Architecture", "Data Services"
                     ],
                     datasets: $scope.dataSets
                 },
                 options: {
                     title: {
                         display: true,
-                        text: 'Assessment Results for Teams in Portfolio: ' + $scope.selectedPortfolio + ' for Date - ' + $scope.dateOfAssessment
+                        text: 'Survey Results for Team: ' + $scope.selectedTeam + ' for Period - ' + $scope.selectedPeriodOfTheYear
                     },
                     scale: {
                         ticks: {
@@ -73,130 +88,135 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             $scope.showChart();
         };
 
-        $scope.showHistory = function(){
-            $scope.assessmentsForTeam = getAssessmentsForTeam($scope.allAssessments, $scope.selectedTeamName);
-            $scope.data = createDataSetForHistory($scope.assessmentsForTeam);
-            var options = {
-                responsive: true,
-                title: {
-                    display: true,
-                    position: "top",
-                    text: "Trends for Feature Team " + $scope.selectedTeamName,
-                    fontSize: 18,
-                    fontColor: "#111"
-                },
-                legend: {
-                    display: true,
-                    position: "bottom",
-                    labels: {
-                        fontColor: "#333",
-                        fontSize: 16
-                    }
-                },
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 5,
-                        stepSize: 1
-                    }
-                }
-            };
-
-            $scope.drawHistoryChart(options);
-
-        };
+        // $scope.showHistory = function(){
+        //     $scope.surveysForTeam = getSurveysForTeam($scope.allSurveyResults, $scope.selectedTeam);
+        //     $scope.data = createDataSetForHistory($scope.surveysForTeam);
+        //     var options = {
+        //         responsive: true,
+        //         title: {
+        //             display: true,
+        //             position: "top",
+        //             text: "Trends for Feature Team " + $scope.selectedTeamName,
+        //             fontSize: 18,
+        //             fontColor: "#111"
+        //         },
+        //         legend: {
+        //             display: true,
+        //             position: "bottom",
+        //             labels: {
+        //                 fontColor: "#333",
+        //                 fontSize: 16
+        //             }
+        //         },
+        //         scale: {
+        //             ticks: {
+        //                 beginAtZero: true,
+        //                 min: 0,
+        //                 max: 5,
+        //                 stepSize: 1
+        //             }
+        //         }
+        //     };
+        //
+        //     $scope.drawHistoryChart(options);
+        // };
 
         $scope.drawHistoryChart = function(options){
-            if(window.myHistoryChart != undefined)
-                window.myHistoryChart.destroy();
-
-            window.myHistoryChart = new Chart(document.getElementById("history-chart-previous"), {
+            new Chart(document.getElementById("history-chart-previous"), {
                 type: "line",
                 data: $scope.data,
                 options: options
             });
         };
-        
+
         $scope.updateTeamInformation = function(){
             $scope.showHistory();
         };
 
-        var getAllPortfolios = function(assessments){
-            var assessmentPortfolios = [];
-            for(var id in assessments){
-                var portfolioName = assessments[id].portfolio;
-                if(assessmentPortfolios.indexOf(portfolioName) === -1)
-                {
-                    assessmentPortfolios.push(portfolioName);
+        var getSurveyTeams = function(surveyResultsList){
+            var surveyTeams = [];
+            for(var id in surveyResultsList){
+                var teamName = surveyResultsList[id].teamName;
+                if (surveyTeams.indexOf(teamName) === -1) {
+                    surveyTeams.push(teamName);
                 }
             }
-            return assessmentPortfolios;
+            return surveyTeams;
         };
 
-        var getAssessmentDates = function(assessments, portfolio){
-            var assessmentDates = [];
-            for(var id in assessments){
-                var dateAssessed = assessments[id].dateAssessed;
+        var getSurveyPeriods = function(surveyResultsList, teamName){
+            var surveyPeriods = [];
+            for(var id in surveyResultsList){
+                var surveyResults = surveyResultsList[id].surveyResults;
 
-                if(assessments[id].portfolio === portfolio && assessmentDates.indexOf(dateAssessed)=== -1) {
-                    assessmentDates.push(dateAssessed);
-                }
-            }
+                if(teamName === surveyResultsList[id].teamName) {
+                    for (var counter in surveyResults) {
+                        var surveyPeriod = surveyResults[counter].periodOfYear;
 
-            return assessmentDates;
-        };
-
-        var getAssessmentsForDate = function(assessments, dateRequested, portfolio){
-            var assessmentsForDate = [];
-            for(var id in assessments){
-                if(assessments[id].dateAssessed === dateRequested && assessments[id].portfolio === portfolio) {
-                    assessmentsForDate = assessments[id].assessments;
-                }
-            }
-            return assessmentsForDate;
-        };
-
-        var getTeamNames = function (assessments) {
-            var assessmentNames = [];
-            for(var id in assessments){
-                var assessmentArray = assessments[id].assessments;
-                for(var id in assessmentArray) {
-                    var assessment = assessmentArray[id];
-                    if (assessmentNames.indexOf(assessment.teamName) === -1 && assessment.teamName !== 'Average For All The Teams') {
-                        assessmentNames.push(assessment.teamName);
+                        if (surveyPeriods.indexOf(surveyPeriod) === -1) {
+                            surveyPeriods.push(surveyPeriod);
+                        }
                     }
                 }
+
             }
-            return assessmentNames;
+
+            return surveyPeriods;
         };
 
-        var getAssessmentsForTeam = function(assessments, teamName){
-            var teamAssessments = [];
-            for(var id in assessments){
-                var assessment = assessments[id].assessments;
-                var dateAssessed = assessments[id].dateAssessed;
-                for(var a_id in assessment) {
-                    var assessment2 = assessment[a_id];
-                    if (assessment2.teamName === teamName) {
-                        assessment2['dateAssessed'] = dateAssessed;
-                        teamAssessments.push(assessment2);
+        var getSurveysForPeriod = function(surveyResultsList, periodOfYear, teamName){
+            var formattedSurveyData = {};
+
+            var surveys = [];
+            var numberCompleted = 0;
+
+            for(var id in surveyResultsList){
+                if(teamName === surveyResultsList[id].teamName){
+                    var totalNumber = parseInt(surveyResultsList[id].totalNumberOfBIO);
+
+                    var surveysCompleted = surveyResultsList[id].surveyResults;
+
+                    for(var counter in surveysCompleted){
+                        if(periodOfYear === surveysCompleted[counter].periodOfYear){
+                            surveys.push(surveysCompleted[counter]);
+                            numberCompleted++;
+                        }
                     }
+
+                    formattedSurveyData['completionRate'] = (numberCompleted / totalNumber) * 100;
+                    formattedSurveyData['surveys'] = surveys;
                 }
             }
-            return teamAssessments;
+
+            return formattedSurveyData;
         };
 
-        var getAssessmentDatesForTeam = function(assessments){
-            var assessmentDates = [];
-            for(var id in assessments){
-                var dateAssessed = assessments[id].dateAssessed;
-                if(assessmentDates.indexOf(dateAssessed) === -1) {
-                    assessmentDates.push(dateAssessed);
-                }
-            }
-            return assessmentDates;
-        };
+        // var getSurveysForTeam = function(surveyResultsList, teamName){
+        //     var formattedSurveyData = {};
+        //
+        //     var surveys = [];
+        //     var numberCompleted = 0;
+        //
+        //     for(var id in surveyResultsList){
+        //         if(teamName.equals(surveyResultsList[id].teamName)){
+        //             var totalNumber = parseInt(surveyResultsList[id].totalNumberOfBIO);
+        //
+        //             var surveysCompleted = surveyResultsList[id].surveyResults;
+        //
+        //             for(var counter in surveysCompleted){
+        //                 if(periodOfYear.equals(surveysCompleted[counter].periodOfYear)){
+        //                     surveys.push(surveysCompleted[counter]);
+        //                     numberCompleted++;
+        //                 }
+        //             }
+        //
+        //             formattedSurveyData['completionRate'] = numberCompleted / totalNumber;
+        //             formattedSurveyData['surveys'] = surveys;
+        //         }
+        //     }
+        //
+        //     return formattedSurveyData;
+        // };
 
         var foreColors = ["rgba(255,99,132,1)", "rgba(141, 92, 7, 1)","rgba(216, 239, 42, 1)", "rgba(130, 239, 42, 1)",
             "rgba(42, 239, 58, 1)", "rgba(116, 164, 120, 1)", "rgba(116, 153, 164, 1)", "rgba(116, 136, 164, 1)",
@@ -212,21 +232,21 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             "rgba(223, 58, 93, 0.2)", "rgba(53, 3, 14, 0.2)", "rgba(87, 5, 22, 0.2)", "rgba(251, 187, 201, 0.2)",
             "rgba(92, 60, 5, 0.2)", "rgba(239, 147, 42, 0.2)", "rgba(242, 158, 13, 0.2)", "rgba(251, 228, 187, 0.2)"];
 
-        var createDataSetForChart = function(assessments){
+        var createDataSetForChart = function(surveysForPeriod){
             var dataSets = [];
             var colorSelector = 0;
-            for(var id in assessments){
+            var surveys = surveysForPeriod['surveys'];
+            for(var id in surveys){
                 var formattedData = {
-                    label: "TEAM: " + assessments[id].teamName,
+                    label: "Surveyee: " + surveys[id].BIO,
                     fill: true,
                     backgroundColor: backColors[colorSelector],
                     borderColor: foreColors[colorSelector],
                     pointBorderColor: "#fff",
                     pointBackgroundColor: foreColors[colorSelector],
-                    data: [assessments[id].strategy, assessments[id].planning, assessments[id].coding, assessments[id].ci,
-                        assessments[id].incident, assessments[id].risk, assessments[id].design, assessments[id].teaming,
-                        assessments[id].release, assessments[id].qa, assessments[id].environments, assessments[id].featureTeams
-                    ]
+                    data: [surveys[id].softwareScore, surveys[id].agileCoachingScore, surveys[id].changeAndReleaseScore,
+                        surveys[id].qualityEngineeringScore, surveys[id].enterpriseArchitectureScore,
+                        surveys[id].solutionsArchitectureScore, surveys[id].dataServicesScore]
                 };
                 dataSets.push(formattedData);
                 colorSelector = colorSelector + 1;
@@ -388,20 +408,21 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
             for(var id in assessments){
                 var assessment = assessments[id];
                 if(assessment.dateAssessed === dateRequested){
-                   return assessment[dimensionName];
+                    return assessment[dimensionName];
                 }
             }
-        }
+        };
 
     }])
 
-    .factory('RetrieveAssessments', ['$http', function ($http) {
+    .factory('RetrieveSurveys', ['$http', function ($http) {
         return {
-            getAssessments: function () {
+            getSurveyResultsForTeam: function (teamName) {
                 return $http({
-                    url: "http://localhost:8080/assessments",
+                    url: "http://localhost:8082/surveys?teamName=" + teamName,
                     method: "GET"
                 });
             }
         }
     }]);
+

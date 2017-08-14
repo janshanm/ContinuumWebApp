@@ -1,0 +1,203 @@
+angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
+
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/survey', {
+            templateUrl: 'practice-management/practice-management.html',
+            controller: 'PracticeManagementCtrl'
+        });
+    }])
+
+    .controller('PracticeManagementCtrl', ['$window','$location', '$scope', '$rootScope', 'PracticeService', function($window, $location, $scope, $rootScope, PracticeService) {
+        $scope.softwareEngineering1 = '3';
+        $scope.softwareEngineering2 = '3';
+        $scope.softwareEngineering3 = '3';
+        $scope.softwareEngineering4 = '3';
+        $scope.agileCoaching1 = '3';
+        $scope.agileCoaching2 = '3';
+        $scope.agileCoaching3 = '3';
+        $scope.agileCoaching4 = '3';
+        $scope.changeAndRelease1 = '3';
+        $scope.changeAndRelease2 = '3';
+        $scope.changeAndRelease3 = '3';
+        $scope.changeAndRelease4 = '3';
+        $scope.qualityEngineering1 = '3';
+        $scope.qualityEngineering2 = '3';
+        $scope.qualityEngineering3 = '3';
+        $scope.qualityEngineering4 = '3';
+        $scope.enterpriseArchitecture1 = '3';
+        $scope.enterpriseArchitecture2 = '3';
+        $scope.enterpriseArchitecture3 = '3';
+        $scope.enterpriseArchitecture4 = '3';
+        $scope.solutionsArchitecture1 = '3';
+        $scope.solutionsArchitecture2 = '3';
+        $scope.solutionsArchitecture3 = '3';
+        $scope.solutionsArchitecture4 = '3';
+        $scope.dataServices1 = '3';
+        $scope.dataServices2 = '3';
+        $scope.dataServices3 = '3';
+        $scope.dataServices4 = '3';
+        $scope.bodyData = {};
+        $scope.selectedBIO = '';
+        $scope.hasCompletedSurveyAlready = false;
+
+        $scope.init = function () {
+            $scope.BIOLists = [{'id': 'Test', 'name': 'Test'}, {'id': 'Test2', 'name': 'Test2'},
+                {'id': 'Test3', 'name': 'Test3'}, {'id': 'Test4', 'name': 'Test4'}];
+            $scope.bodyData= {};
+
+            $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
+                {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
+                {'scale': 'highest', 'value': 5}];
+
+            if($rootScope.surveyData !== undefined){
+                $scope.setData();
+            }
+            else {
+                $scope.initializeData();
+            }
+        };
+
+        $scope.initializeData = function () {
+            $scope.hasCompletedSurveyAlready = false;
+            $scope.softwareEngineering1 = '3';
+            $scope.softwareEngineering2 = '3';
+            $scope.softwareEngineering3 = '3';
+            $scope.softwareEngineering4 = '3';
+            $scope.agileCoaching1 = '3';
+            $scope.agileCoaching2 = '3';
+            $scope.agileCoaching3 = '3';
+            $scope.agileCoaching4 = '3';
+            $scope.changeAndRelease1 = '3';
+            $scope.changeAndRelease2 = '3';
+            $scope.changeAndRelease3 = '3';
+            $scope.changeAndRelease4 = '3';
+            $scope.qualityEngineering1 = '3';
+            $scope.qualityEngineering2 = '3';
+            $scope.qualityEngineering3 = '3';
+            $scope.qualityEngineering4 = '3';
+            $scope.enterpriseArchitecture1 = '3';
+            $scope.enterpriseArchitecture2 = '3';
+            $scope.enterpriseArchitecture3 = '3';
+            $scope.enterpriseArchitecture4 = '3';
+            $scope.solutionsArchitecture1 = '3';
+            $scope.solutionsArchitecture2 = '3';
+            $scope.solutionsArchitecture3 = '3';
+            $scope.solutionsArchitecture4 = '3';
+            $scope.dataServices1 = '3';
+            $scope.dataServices2 = '3';
+            $scope.dataServices3 = '3';
+            $scope.dataServices4 = '3';
+        };
+
+        $scope.setData = function () {
+            $scope.hasCompletedSurveyAlready = false;
+            $scope.selectedBIO = $rootScope.surveyData['BIO'];
+            $scope.softwareEngineering1 = $rootScope.surveyData['softwareEngineering1'];
+            $scope.softwareEngineering2 = $rootScope.surveyData['softwareEngineering2'];
+            $scope.softwareEngineering3 = $rootScope.surveyData['softwareEngineering3'];
+            $scope.softwareEngineering4 = $rootScope.surveyData['softwareEngineering4'];
+            $scope.agileCoaching1 = $rootScope.surveyData['agileCoaching1'];
+            $scope.agileCoaching2 = $rootScope.surveyData['agileCoaching2'];
+            $scope.agileCoaching3 = $rootScope.surveyData['agileCoaching3'];
+            $scope.agileCoaching4 = $rootScope.surveyData['agileCoaching4'];
+            $scope.changeAndRelease1 = $rootScope.surveyData['changeAndRelease1'];
+            $scope.changeAndRelease2 = $rootScope.surveyData['changeAndRelease2'];
+            $scope.changeAndRelease3 = $rootScope.surveyData['changeAndRelease3'];
+            $scope.changeAndRelease4 = $rootScope.surveyData['changeAndRelease4'];
+            $scope.qualityEngineering1 = $rootScope.surveyData['qualityEngineering1'];
+            $scope.qualityEngineering2 = $rootScope.surveyData['qualityEngineering2'];
+            $scope.qualityEngineering3 = $rootScope.surveyData['qualityEngineering3'];
+            $scope.qualityEngineering4 = $rootScope.surveyData['qualityEngineering4'];
+            $scope.enterpriseArchitecture1 = $rootScope.surveyData['enterpriseArchitecture1'];
+            $scope.enterpriseArchitecture2 = $rootScope.surveyData['enterpriseArchitecture2'];
+            $scope.enterpriseArchitecture3 = $rootScope.surveyData['enterpriseArchitecture3'];
+            $scope.enterpriseArchitecture4 = $rootScope.surveyData['enterpriseArchitecture4'];
+            $scope.solutionsArchitecture1 = $rootScope.surveyData['solutionsArchitecture1'];
+            $scope.solutionsArchitecture2 = $rootScope.surveyData['solutionsArchitecture2'];
+            $scope.solutionsArchitecture3 = $rootScope.surveyData['solutionsArchitecture3'];
+            $scope.solutionsArchitecture4 = $rootScope.surveyData['solutionsArchitecture4'];
+            $scope.dataServices1 = $rootScope.surveyData['dataServices1'];
+            $scope.dataServices2 = $rootScope.surveyData['dataServices2'];
+            $scope.dataServices3 = $rootScope.surveyData['dataServices3'];
+            $scope.dataServices4 = $rootScope.surveyData['dataServices4'];
+        };
+
+        $scope.saveSurveyResults = function(){
+            $scope.bodyData['BIO'] = $scope.selectedBIO;
+            $scope.bodyData['softwareEngineering1'] = $scope.softwareEngineering1;
+            $scope.bodyData['softwareEngineering2'] = $scope.softwareEngineering2;
+            $scope.bodyData['softwareEngineering3'] = $scope.softwareEngineering3;
+            $scope.bodyData['softwareEngineering4'] = $scope.softwareEngineering4;
+            $scope.bodyData['agileCoaching1'] = $scope.agileCoaching1;
+            $scope.bodyData['agileCoaching2'] = $scope.agileCoaching2;
+            $scope.bodyData['agileCoaching3'] = $scope.agileCoaching3;
+            $scope.bodyData['agileCoaching4'] = $scope.agileCoaching4;
+            $scope.bodyData['changeAndRelease1'] = $scope.changeAndRelease1;
+            $scope.bodyData['changeAndRelease2'] = $scope.changeAndRelease2;
+            $scope.bodyData['changeAndRelease3'] = $scope.changeAndRelease3;
+            $scope.bodyData['changeAndRelease4'] = $scope.changeAndRelease4;
+            $scope.bodyData['qualityEngineering1'] = $scope.qualityEngineering1;
+            $scope.bodyData['qualityEngineering2'] = $scope.qualityEngineering2;
+            $scope.bodyData['qualityEngineering3'] = $scope.qualityEngineering3;
+            $scope.bodyData['qualityEngineering4'] = $scope.qualityEngineering4;
+            $scope.bodyData['enterpriseArchitecture1'] = $scope.enterpriseArchitecture1;
+            $scope.bodyData['enterpriseArchitecture2'] = $scope.enterpriseArchitecture2;
+            $scope.bodyData['enterpriseArchitecture3'] = $scope.enterpriseArchitecture3;
+            $scope.bodyData['enterpriseArchitecture4'] = $scope.enterpriseArchitecture4;
+            $scope.bodyData['solutionsArchitecture1'] = $scope.solutionsArchitecture1;
+            $scope.bodyData['solutionsArchitecture2'] = $scope.solutionsArchitecture2;
+            $scope.bodyData['solutionsArchitecture3'] = $scope.solutionsArchitecture3;
+            $scope.bodyData['solutionsArchitecture4'] = $scope.solutionsArchitecture4;
+            $scope.bodyData['dataServices1'] = $scope.dataServices1;
+            $scope.bodyData['dataServices2'] = $scope.dataServices2;
+            $scope.bodyData['dataServices3'] = $scope.dataServices3;
+            $scope.bodyData['dataServices4'] = $scope.dataServices4;
+            $rootScope.surveyData = $scope.bodyData;
+
+            if($scope.selectedBIO === ""){
+                $scope.hasError = true;
+            }
+            else{
+                $scope.hasError = false;
+                PracticeService.surveyTaken($scope.selectedBIO).then(function(response){
+                   $scope.surveyResponse = response.data;
+
+                   if($scope.surveyResponse['softwareScore'] !== undefined){
+                       $('#myModal').modal('show');
+                   }
+                   else{
+                       $('#myModal').modal('hide');
+                       $location.path('/complete-survey');
+                   }
+                });
+            }
+        };
+
+        $scope.continueToReview = function(){
+            $('#myModal').modal('hide');
+            $location.path('/complete-survey');
+        };
+
+        $scope.cancel = function(){
+            $('#myModal').modal('hide');
+        };
+
+        $scope.loadPreviousSurveyToReview = function () {
+            $rootScope.surveyData =$scope.surveyResponse['rawData'] !== undefined ? JSON.parse($scope.surveyResponse['rawData']) : {};
+            console.log($rootScope.surveyData);
+
+            $scope.setData();
+            $('#myModal').modal('hide');
+        }
+    }])
+
+    .factory('PracticeService', ['$http', function ($http) {
+        return {
+            surveyTaken: function (surveyeeName) {
+                return $http({
+                    url: "http://localhost:8082/surveyTaken?surveyee="+surveyeeName,
+                    method: "GET"
+                });
+            }
+        }
+    }]);

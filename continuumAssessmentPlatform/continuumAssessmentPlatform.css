@@ -47,3 +47,9 @@
   padding-top: 1%;
   padding-left: 15%;
 }
+
+.col-xs-1-5 {
+  width: 12.49995%;
+}
+
+label.required { color: white; }
