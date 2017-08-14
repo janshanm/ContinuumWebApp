@@ -41,20 +41,27 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         $scope.hasCompletedSurveyAlready = false;
 
         $scope.init = function () {
-            $scope.BIOLists = [{'id': 'Test', 'name': 'Test'}, {'id': 'Test2', 'name': 'Test2'},
-                {'id': 'Test3', 'name': 'Test3'}, {'id': 'Test4', 'name': 'Test4'}];
-            $scope.bodyData= {};
+            PracticeService.getSurveyees().then(function(response){
+                var formattedSurveyees = [];
 
-            $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
-                {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
-                {'scale': 'highest', 'value': 5}];
+                var retrievedSurveyees = response.data;
+                for(var id in retrievedSurveyees){
+                    formattedSurveyees.push({'id': retrievedSurveyees[id].surveyeeName, 'name': retrievedSurveyees[id].surveyeeName});
+                }
 
-            if($rootScope.surveyData !== undefined){
-                $scope.setData();
-            }
-            else {
-                $scope.initializeData();
-            }
+                $scope.BIOLists = formattedSurveyees;
+
+                $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
+                    {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
+                    {'scale': 'highest', 'value': 5}];
+
+                if($rootScope.surveyData !== undefined){
+                    $scope.setData();
+                }
+                else {
+                    $scope.initializeData();
+                }
+            });
         };
 
         $scope.initializeData = function () {
@@ -196,6 +203,12 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             surveyTaken: function (surveyeeName) {
                 return $http({
                     url: "http://localhost:8082/surveyTaken?surveyee="+surveyeeName,
+                    method: "GET"
+                });
+            },
+            getSurveyees: function(){
+                return $http({
+                    url: "http://localhost:8082/surveyees",
                     method: "GET"
                 });
             }
