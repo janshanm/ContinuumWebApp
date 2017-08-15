@@ -2,9 +2,13 @@
     <p class="lead" ng-init="init()" style="margin-left: 50px">Please complete the table below with your scores</p>
     <div style="margin-bottom: 25px;">
         <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasError">
-            <p>Please select a your name from the dropdown before proceeding.</p>
+            <p>Please select a your name from the second dropdown before proceeding.</p>
         </div>
-        <label for="bioNameSelect" style="padding-left: 50px" class='required'> Name: </label>
+        <label for="teamNameSelect" style="padding-left: 50px" class='required'> Select Portfolio: </label>
+        <select style="width: 425px" name="teamNameSelect" id="teamNameSelect" ng-model="selectedTeam" ng-change="updateTeams()">
+            <option ng-repeat="teamName in teamNames" value="{{teamName}}">{{teamName}}</option>
+        </select>
+        <label for="bioNameSelect" style="padding-left: 50px" class='required'> Select Name: </label>
         <select style="width: 425px" name="bioNameSelect" id="bioNameSelect" ng-model="selectedBIO">
             <option value="">Please Select Your Name From The List</option>
             <option ng-repeat="bio in BIOLists" value="{{bio.id}}">{{bio.name}}</option>

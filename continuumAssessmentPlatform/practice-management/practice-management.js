@@ -38,18 +38,16 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         $scope.dataServices4 = '3';
         $scope.bodyData = {};
         $scope.selectedBIO = '';
+        $scope.selectedTeam = '';
         $scope.hasCompletedSurveyAlready = false;
 
         $scope.init = function () {
             PracticeService.getSurveyees().then(function(response){
-                var formattedSurveyees = [];
 
-                var retrievedSurveyees = response.data;
-                for(var id in retrievedSurveyees){
-                    formattedSurveyees.push({'id': retrievedSurveyees[id].surveyeeName, 'name': retrievedSurveyees[id].surveyeeName});
-                }
-
-                $scope.BIOLists = formattedSurveyees;
+                $scope.allSurveyees = response.data;
+                $scope.teamNames = getSurveyTeams($scope.allSurveyees);
+                $scope.selectedTeam = $scope.teamNames[0];
+                $scope.BIOLists = getSurveyeesForTeam($scope.allSurveyees, $scope.teamNames[0]);
 
                 $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
                     {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
@@ -62,6 +60,34 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
                     $scope.initializeData();
                 }
             });
+        };
+
+        var getSurveyTeams = function(surveyees){
+            var surveyTeams = [];
+            for(var id in surveyees){
+                var teamName = surveyees[id].teamName;
+                if (surveyTeams.indexOf(teamName) === -1) {
+                    surveyTeams.push(teamName);
+                }
+            }
+            return surveyTeams;
+        };
+
+        var getSurveyeesForTeam = function (allSurveyees, teamName) {
+          var surveyees = [];
+
+            for(var id in allSurveyees){
+                if(allSurveyees[id].teamName === teamName){
+                    surveyees.push({'id': allSurveyees[id].surveyeeName, 'name': allSurveyees[id].surveyeeName})
+                }
+            }
+
+            return surveyees;
+        };
+
+        $scope.updateTeams = function(){
+            $scope.selectedBIO = "";
+            $scope.BIOLists = getSurveyeesForTeam($scope.allSurveyees, $scope.selectedTeam);
         };
 
         $scope.initializeData = function () {
@@ -99,6 +125,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         $scope.setData = function () {
             $scope.hasCompletedSurveyAlready = false;
             $scope.selectedBIO = $rootScope.surveyData['BIO'];
+            $scope.selectedTeam = $rootScope.surveyData['teamName'];
             $scope.softwareEngineering1 = $rootScope.surveyData['softwareEngineering1'];
             $scope.softwareEngineering2 = $rootScope.surveyData['softwareEngineering2'];
             $scope.softwareEngineering3 = $rootScope.surveyData['softwareEngineering3'];
@@ -159,6 +186,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             $scope.bodyData['dataServices2'] = $scope.dataServices2;
             $scope.bodyData['dataServices3'] = $scope.dataServices3;
             $scope.bodyData['dataServices4'] = $scope.dataServices4;
+            $scope.bodyData['teamName'] = $scope.selectedTeam;
             $rootScope.surveyData = $scope.bodyData;
 
             if($scope.selectedBIO === ""){
