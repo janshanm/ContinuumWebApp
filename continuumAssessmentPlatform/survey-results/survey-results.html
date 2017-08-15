@@ -21,8 +21,11 @@
                 <select name="selectedPeriod" id="selectedPeriod" ng-model="selectedPeriodOfTheYear" ng-change="updateChart()">
                     <option ng-repeat="period in periodsOfYear" value="{{period}}">{{period}}</option>
                 </select>
-                <div class="progress" style="margin-bottom: 25px; ">
-                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" ng-style="{'width': completionRateStyle}" aria-valuenow="{{completionRate}}" aria-valuemin="0" aria-valuemax="100">{{completionRate}}% Completed</div>
+                <div class="progress green" style="margin-bottom: 25px; ">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" ng-style="{'width': completionRateStyle}" aria-valuenow="{{completionRate}}">{{completionRate}}% Completed</div>
+                    <div class="progress-bar progress-bar-danger" role="progressbar" ng-style="{'width': incompletionRateStyle}" aria-valuenow="{{incompletionRate}}">
+                        {{incompletionRate}}% Not Completed
+                    </div>
                 </div>
                 <canvas id="radar-chart-results" width="800" height="600"></canvas>
             </div>

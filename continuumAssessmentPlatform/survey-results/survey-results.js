@@ -32,7 +32,8 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
                 $scope.allSurveyResults = response.data;
                 $scope.allTeams = getSurveyTeams($scope.allSurveyResults);
                 $scope.selectedTeam = $scope.allTeams[0];
-                $scope.periodsOfYear = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+                var surveyPeriods = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+                $scope.periodsOfYear = surveyPeriods.length === 0 ? getCurrentQuarter() : surveyPeriods ;
                 $scope.selectedPeriodOfTheYear = $scope.periodsOfYear[0];
 
                 $scope.showChart();
@@ -40,8 +41,32 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
             });
         };
 
+        var getCurrentQuarter = function(){
+            var currentDate = new Date();
+            var month = currentDate.getUTCMonth() + 1;
+            var year = currentDate.getUTCFullYear();
+
+            var quarter = "";
+
+            if(month <= 2){
+                quarter = "Quarter 1 - " + year;
+            }
+            else if(month > 2 && month <= 5){
+                quarter = "Quarter 2 - " + year;
+            }
+            else if(month > 5 && month <= 8){
+                quarter = "Quarter 3 - " + year;
+            }
+            else{
+                quarter = "Quarter 4 - " + year;
+            }
+
+            return [quarter];
+        };
+
         $scope.updatePeriodInformation = function(){
-            $scope.periodsOfYear = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+            var surveyPeriods = getSurveyPeriods($scope.allSurveyResults, $scope.selectedTeam);
+            $scope.periodsOfYear = surveyPeriods.length === 0 ? getCurrentQuarter() : surveyPeriods ;
             $scope.selectedPeriodOfTheYear = $scope.periodsOfYear[0];
             $scope.showChart();
         };
@@ -49,7 +74,9 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
         $scope.showChart = function(){
             $scope.surveysForPeriod = getSurveysForPeriod($scope.allSurveyResults, $scope.selectedPeriodOfTheYear, $scope.selectedTeam);
             $scope.completionRate = Math.round($scope.surveysForPeriod['completionRate']);
+            $scope.incompletionRate = 100 - $scope.completionRate;
             $scope.completionRateStyle = $scope.completionRate + "%";
+            $scope.incompletionRateStyle = $scope.incompletionRate + "%";
 
             $scope.dataSets = createDataSetForChart($scope.surveysForPeriod);
             $scope.drawRadialChart();
