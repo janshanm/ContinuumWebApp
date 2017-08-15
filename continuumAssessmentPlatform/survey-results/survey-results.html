@@ -1,5 +1,5 @@
 
-    <p class="lead" ng-init="init()" style="text-align: center">Please find survey results for different teams that have been completed.</p>
+    <p class="lead" ng-init="init()" style="text-align: center">Please find survey results for different portfolios that have been completed.</p>
 
     <div id="exTab3" class="container">
         <ul  class="nav nav-pills">
@@ -13,7 +13,7 @@
 
         <div class="tab-content clearfix">
             <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
-                <label for="selectedTeamNameRadial" style="padding-left: 50px; margin-bottom: 25px; margin-top: 25px"> Select Different Team: </label>
+                <label for="selectedTeamNameRadial" style="padding-left: 50px; margin-bottom: 25px; margin-top: 25px"> Select Different Portfolio: </label>
                 <select name="selectedTeamName" id="selectedTeamNameRadial" ng-model="selectedTeam" ng-change="updatePeriodInformation()">
                     <option ng-repeat="teamName in allTeams" value="{{teamName}}">{{teamName}}</option>
                 </select>
