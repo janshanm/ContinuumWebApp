@@ -164,11 +164,20 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
             var surveyTeams = [];
             for(var id in surveyResultsList){
                 var teamName = surveyResultsList[id].teamName;
-                if (surveyTeams.indexOf(teamName) === -1) {
+                var portfolio = surveyResultsList[id].portfolioName;
+                if (surveyTeams.indexOf(teamName) === -1 && teamName !== portfolio) {
                     surveyTeams.push(teamName);
                 }
             }
             return surveyTeams;
+        };
+
+        var getSurveyTeamPortfolio = function (surveyResultsList, teamName){
+            for(var id in surveyResultsList){
+                if (surveyResultsList[id].teamName === teamName) {
+                    return surveyResultsList[id].portfolioName;
+                }
+            }
         };
 
         var getSurveyPeriods = function(surveyResultsList, teamName){
@@ -197,8 +206,12 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
             var surveys = [];
             var numberCompleted = 0;
 
+            var portfolio = getSurveyTeamPortfolio(surveyResultsList, teamName);
+
             for(var id in surveyResultsList){
-                if(teamName === surveyResultsList[id].teamName){
+                var surveyTeamName = surveyResultsList[id].teamName;
+
+                if(teamName === surveyTeamName || portfolio === surveyTeamName){
                     var totalNumber = parseInt(surveyResultsList[id].totalNumberOfBIO);
 
                     var surveysCompleted = surveyResultsList[id].surveyResults;
@@ -206,7 +219,9 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
                     for(var counter in surveysCompleted){
                         if(periodOfYear === surveysCompleted[counter].periodOfYear){
                             surveys.push(surveysCompleted[counter]);
-                            numberCompleted++;
+                            if(surveyTeamName !== portfolio) {
+                                numberCompleted++;
+                            }
                         }
                     }
 

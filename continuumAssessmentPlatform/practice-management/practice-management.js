@@ -65,9 +65,9 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         var getSurveyTeams = function(surveyees){
             var surveyTeams = [];
             for(var id in surveyees){
-                var teamName = surveyees[id].teamName;
-                if (surveyTeams.indexOf(teamName) === -1) {
-                    surveyTeams.push(teamName);
+                var portfolio = surveyees[id].portfolio;
+                if (surveyTeams.indexOf(portfolio) === -1) {
+                    surveyTeams.push(portfolio);
                 }
             }
             return surveyTeams;
@@ -77,7 +77,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
           var surveyees = [];
 
             for(var id in allSurveyees){
-                if(allSurveyees[id].teamName === teamName){
+                if(allSurveyees[id].portfolio === teamName){
                     surveyees.push({'id': allSurveyees[id].surveyeeName, 'name': allSurveyees[id].surveyeeName})
                 }
             }
