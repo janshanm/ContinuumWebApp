@@ -215,7 +215,6 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
                     if(surveyTeamName !== portfolio) {
                         var totalNumber = parseInt(surveyResultsList[id].totalNumberOfBIO);
                     }
-
                     var surveysCompleted = surveyResultsList[id].surveyResults;
 
                     for(var counter in surveysCompleted){
