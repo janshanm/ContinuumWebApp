@@ -229,7 +229,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         return {
             surveyTaken: function (surveyeeName, teamName) {
                 return $http({
-                    url: "http://localhost:8082/surveyTaken?surveyee="+surveyeeName,
+                    url: "http://localhost:8082/surveyTaken",
                     method: "GET",
                     params: {'surveyee': surveyeeName, 'teamName': teamName}
                 });
