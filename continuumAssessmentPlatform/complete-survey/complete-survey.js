@@ -109,6 +109,7 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
 
             SurveyService.saveSurvey(formattedData).then(function(response){
                 $scope.hasSaved = true;
+                $rootScope.surveyData = undefined;
                 $rootScope.successMessage = response.data;
                 $location.path('/complete-survey');
             });

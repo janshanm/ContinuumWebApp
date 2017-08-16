@@ -43,12 +43,8 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
 
         $scope.init = function () {
             PracticeService.getSurveyees().then(function(response){
-
                 $scope.allSurveyees = response.data;
                 $scope.teamNames = getSurveyTeams($scope.allSurveyees);
-                $scope.selectedTeam = $scope.teamNames[0];
-                $scope.BIOLists = getSurveyeesForTeam($scope.allSurveyees, $scope.teamNames[0]);
-
                 $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
                     {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
                     {'scale': 'highest', 'value': 5}];
@@ -57,6 +53,8 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
                     $scope.setData();
                 }
                 else {
+                    $scope.selectedTeam = $scope.teamNames[0];
+                    $scope.BIOLists = getSurveyeesForTeam($scope.allSurveyees, $scope.teamNames[0]);
                     $scope.initializeData();
                 }
             });
@@ -65,9 +63,9 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         var getSurveyTeams = function(surveyees){
             var surveyTeams = [];
             for(var id in surveyees){
-                var teamName = surveyees[id].teamName;
-                if (surveyTeams.indexOf(teamName) === -1) {
-                    surveyTeams.push(teamName);
+                var portfolio = surveyees[id].portfolio;
+                if (surveyTeams.indexOf(portfolio) === -1) {
+                    surveyTeams.push(portfolio);
                 }
             }
             return surveyTeams;
@@ -77,7 +75,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
           var surveyees = [];
 
             for(var id in allSurveyees){
-                if(allSurveyees[id].teamName === teamName){
+                if(allSurveyees[id].portfolio === teamName){
                     surveyees.push({'id': allSurveyees[id].surveyeeName, 'name': allSurveyees[id].surveyeeName})
                 }
             }
@@ -123,6 +121,8 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         };
 
         $scope.setData = function () {
+            $scope.selectedTeam = $rootScope.surveyData['teamName'];
+            $scope.BIOLists = getSurveyeesForTeam($scope.allSurveyees, $scope.selectedTeam);
             $scope.hasCompletedSurveyAlready = false;
             $scope.selectedBIO = $rootScope.surveyData['BIO'];
             $scope.selectedTeam = $rootScope.surveyData['teamName'];
@@ -154,6 +154,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             $scope.dataServices2 = $rootScope.surveyData['dataServices2'];
             $scope.dataServices3 = $rootScope.surveyData['dataServices3'];
             $scope.dataServices4 = $rootScope.surveyData['dataServices4'];
+
         };
 
         $scope.saveSurveyResults = function(){
@@ -194,7 +195,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             }
             else{
                 $scope.hasError = false;
-                PracticeService.surveyTaken($scope.selectedBIO).then(function(response){
+                PracticeService.surveyTaken($scope.selectedBIO, $scope.selectedTeam).then(function(response){
                    $scope.surveyResponse = response.data;
 
                    if($scope.surveyResponse['softwareScore'] !== undefined){
@@ -219,8 +220,6 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
 
         $scope.loadPreviousSurveyToReview = function () {
             $rootScope.surveyData =$scope.surveyResponse['rawData'] !== undefined ? JSON.parse($scope.surveyResponse['rawData']) : {};
-            console.log($rootScope.surveyData);
-
             $scope.setData();
             $('#myModal').modal('hide');
         }
@@ -228,10 +227,11 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
 
     .factory('PracticeService', ['$http', function ($http) {
         return {
-            surveyTaken: function (surveyeeName) {
+            surveyTaken: function (surveyeeName, teamName) {
                 return $http({
                     url: "http://localhost:8082/surveyTaken?surveyee="+surveyeeName,
-                    method: "GET"
+                    method: "GET",
+                    params: {'surveyee': surveyeeName, 'teamName': teamName}
                 });
             },
             getSurveyees: function(){
