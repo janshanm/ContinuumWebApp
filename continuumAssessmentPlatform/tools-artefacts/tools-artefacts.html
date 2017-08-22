@@ -1,0 +1,306 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Tools and Artefacts: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="traveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Test Artefacts on test management tool is created once off and not maintained.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="traveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Test results require manual intervention to be created.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="traveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">No reporting process in place, team not aware of any reporting needs.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="traveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Tools used are ones that were used previously with no collaboration/integration whatsoever.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="artisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Metrics Report are provided only when requested.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="artisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Only high-level details provided.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="artisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team uses tools such as Jira and Confluence to collaborate with one other.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="artisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">Other stakeholders have access to Jira/Confluence to view issues and pages with only viewer rights.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="artisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">Tools integration is investigated and lightly documented as part of Test Architecture.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">All scripts are stored on a central repository and called upon when required.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Common UI used to store all test artefacts and scripts.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Release status is shared regularly with stakeholders, with information about the  current status of the PI.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">The team understands and uses tools (like Mind Maps etc.) for Collaboration.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Collaboration tools are used to breakdown problems into smaller chunks to work with and identify the tasks involved in a user story.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Stakeholders are constantly involved to help the team align.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="expert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">Test tool talks to at least one additional (external test or task management) tool.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">A dedicated team is assigned to repository maintenance and version control.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Test artefacts and scripts can be accessed from anywhere and continuously maintained.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Proper log tracking and reports created for use of artefacts and related information.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Daily update are shared to relevant stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Template for report is in place with escalation in terms of PI/Release risks.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">Collaboration Tools are used throughout to align and collaborate within and across Feature Teams and the Release Train (including System/Specialist Teams) for successful delivery of value to end customer.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional7" type="checkbox" ng-model="professional7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional7)">Use of collaboration tools to provide updates  for all tasks and progress and metrics charts and are updated often. (e.g. scrum/Kanban boards and printed charts and graphs).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional8" type="checkbox" ng-model="professional8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional8)">Testing Tool(s) is/are talking to test management tool, task management tool, defect management tool, reporting tool, code repository, scheduler.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="professional9" type="checkbox" ng-model="professional9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional9)">The team applies organisation wide standard on tool used.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="master1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Real-time update of all status via the Dashboard and is accessible to all stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="master2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Real-time update of all progress and metrics constantly displayed and is visible and accessible to all individual throughout the levels of SAFE.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="master3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Use of Customer feedback platforms to gather feedback and information which enables the team to collaborate on and prioritize customer feature requests and create stories for possible inclusion in upcoming releases.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="master4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Full toolset integration that enables automated metrics generation, updating of testware statuses, auto-scheduled executions, etc.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/qamam-results" ng-click="saveAssessments()">Next Dimension</a>
+    </p>

@@ -1,0 +1,220 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Testing - Defect Management and Exploratory\Session-Based Testing: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">No defects logged, and no defect process flow identified.
+            No defect strategy identified, including the defect life cycle.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">No use of Exploratory Testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Don't know what Exploratory Testing is or have investigated but not applied.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Defects are logged as and when team sees it necessary. Defects
+            are logged but not properly communicated to stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Some basic adhoc use of Exploratory Testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">No list of issues, bugs, list of features and/or notes on the testing conducted.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Defect strategy and process flow is identified and documented, and communicated to all stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Exploratory Testing is considered as part of the testing effort and included as part of the estimate of a user story.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">All Exploratory Test sessions are recorded and documented on a spreadsheet or some other tool.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">A tool is used to record issues/incidents/defects.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">High priority defects that are carried forward are reported, tracked and tested whenever fixed.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Defects are prioritised and re-tested according to their priority.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Use of a Test Charter for exploratory session to record and document the testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Exploratory techniques are recommended and used, but there is still room for improvement.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">Exploratory testing does not overlap basic Functional tests already covered and are reported in terms of Test Coverage metrics.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">All defects are properly logged, and all stakeholders are aware of the defect process and it is being followed accordingly.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">All defects are properly fixed, and re-tested.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Use of a Standardised Test Charter or Tool to record a proper Session Based Exploratory Test.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Exploratory techniques are fully used, strategies
+            are fully documented and used by all stakeholders.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">Estimation of work includes effort for automating tests that find
+            bugs using Exploratory Testing techniques.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/automation-testing" ng-click="saveAssessments()">Next Dimension</a>
+    </p>

@@ -1,0 +1,368 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Testing - Test Automation and Non-Functional Testing: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">There are no use of common repository and all test artefacts
+            are stored locally.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">Tools used are what is available at the bank.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">There are limitations to what platforms can be automated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">There are limitations to languages that can be used.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Performance and Security testing is not considered upfront.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Scripts are stored in a common repository but not updated frequently.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Object Map or object repository is stored on common repository but not frequently updated.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team understands the importance of performance and security
+            testing but do not have specialised skills, resources or platform to perform non-functional tests.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Scripts are stored in a common repository and updated after every deployment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Object map or repository is kept up to date.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Automation tool can accommodate multiple languages.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Automation tool provides cross platform and cross browser testing capabilities.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Basic functionality tests includes performance and security concerns.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Test conditions for Non-Functional are extracted with basic functional test conditions.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">Failed performance and security tests mean code failure is not allowed to go live.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Script repository being used has powerful integration capabilities.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Automation tool has satisfactory remote support.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">% Automation test coverage are calculated using Lightsabre stats from Automation team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Performance test for each functionality being developed with use of stubs and drivers.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Use of Static Code Analysis tools by Developers to improve security of overall application.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">Have a realistic mechanism to define and perform security tests.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional7" type="checkbox" ng-model="professional7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional7)">Have sufficient expertise to perform adequate security testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional8" type="checkbox" ng-model="professional8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional8)">Have predefined Security Dimensions (such as Access Control, Password Control, Logging and monitoring) covered by tests in alignment with Security Team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional9" type="checkbox" ng-model="professional9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional9)">Security specialists are involved in scrum of srum meetings and have global knowledge of the work of all feature teams.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional10" type="checkbox" ng-model="professional10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional10)">Automated Performance and Security Tests in place to check application against deployment environment.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">All artefacts are under version management.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Test related metrics also have the required level of support.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Tools provide support for test case design and defect collection.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">% Automated test coverage are calculated by collaborating with Automation team for automation tools or repository (e.g lightsabre, CHEF, etc).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">Constant maintenance of Non-Functional Regression pack based on Performance and Security Registers and Audits (Internal and External).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster6" type="checkbox" ng-model="master6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master6)">Analytics results used to improve Performance, Security and overall User Experience of Application even after Go Live.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster7" type="checkbox" ng-model="master7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master7)">Have threat modelling scenarios and acceptable risk levels established up front.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster8" type="checkbox" ng-model="master8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master8)">Set of documents that identify and justify the security requirements of the application is in place.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster9" type="checkbox" ng-model="master9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master9)">Security professionals and Developers sit down together to analyse applications from an attacker's point of view.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster10" type="checkbox" ng-model="master10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master10)">Use of Dynamic Code analysis tools (such as WebInspect) planned and used for all code deployments</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/test-metrics" ng-click="saveAssessments()">Next Dimension</a>
+    </p>

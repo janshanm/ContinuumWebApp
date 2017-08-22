@@ -1,0 +1,242 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Testing - Test Criteria: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">Team does not take part in scope identification</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">User Stories have only one acceptance criteria that is defined upfront.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">Team applies same logic/technique to all testing activities.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Acceptance criteria is only used to derive acceptance tests.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Certain user stories may have more than one acceptance criteria (i.e happy and unhappy path).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team investigates different test approaches per user story for different scenarios.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">A proper Definition of Done is defined for testing tasks. (E.g a Testing Checklist)</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">No definition of readiness.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Whole team reviews and defines acceptance criteria for user stories.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Acceptance criteria specifies both functional and
+            non-functional requirements of increment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Test conditions are extracted from each Acceptance Criterion
+        to help define testing requirements.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Team applies a Risk level to each Test Condition extracted.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">Team applies some form of Context Driven approach to testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Proper definition of readiness is defined.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Acceptance Criteria are INVEST(Independent, Negotiable,
+            Valuable, Estimable, Small and Testable).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Test conditions are prioritised based on the risk level.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Testing is focused on the intent behind
+        Software/Application Usage.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Manual testing (such as Exploratory Testing) is conducted
+            based on logical reasoning, heuristics and critical thinking.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Definition of Done and Readiness are reviewed as part of retrospective session.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">Cross Feature Team Dependencies addressed in Scrum of Scrums Meeting.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Acceptance criterion have clear Pass/Fail results - No Partial Acceptance.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Test process applies dynamic and progressive risk analysis
+        and is constantly evolving as the team evolves.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/defect-and-exploratory" ng-click="saveAssessments()">Next Dimension</a>
+    </p>

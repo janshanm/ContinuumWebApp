@@ -1,0 +1,477 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Test Metrics: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <h4 align="center">Traveller</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller1" type="checkbox" ng-model="traveller1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller1)">No metrics at all and/or metrics only provided when requested.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller2" type="checkbox" ng-model="traveller2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller2)">No predefined standards for metrics and reporting.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller3" type="checkbox" ng-model="traveller3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller3)">No tracking of Test Coverage.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller4" type="checkbox" ng-model="traveller4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller4)">Work estimation not done or understood at all, stakeholders not involved in the work estimation process and not attending the work estimation ceremonies, e.g. PI Planning, Release Planning, etc.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaTraveller5" type="checkbox" ng-model="traveller5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(traveller5)">Best guess techniques are used to estimate work.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Artisan</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan1" type="checkbox" ng-model="artisan1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan1)">Few basic ad-hoc metrics in place.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan2" type="checkbox" ng-model="artisan2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan2)">Sharing of delivery metrics to relevant member when requested only.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan3" type="checkbox" ng-model="artisan3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan3)">Team uses a physical board for their user story cards and update the feature with test excution results.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan4" type="checkbox" ng-model="artisan4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan4)">No metrics to record test coverage for reporting.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan5" type="checkbox" ng-model="artisan5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan5)">Work estimation involves taking deadlines/dates into consideration.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan6" type="checkbox" ng-model="artisan6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan6)">Work estimation does not cater for all activities, e.g. testing, automation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan7" type="checkbox" ng-model="artisan7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan7)">Some stakeholders are involved in the estimation process.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaArtisan8" type="checkbox" ng-model="artisan8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(artisan8)">Estimates are based on historical data.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Expert</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert1" type="checkbox" ng-model="expert1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert1)">Recording of team metrics with delivery highlights and lowlights in some form of template (e.g. word, excel).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert2" type="checkbox" ng-model="expert2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert2)">Team follows a predefined standard for metrics and reporting.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert3" type="checkbox" ng-model="expert3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert3)">Use a tool to create user stories.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert4" type="checkbox" ng-model="expert4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert4)">Test coverage is linked to a user story  by means of subtasks.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert5" type="checkbox" ng-model="expert5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert5)">The tool is used to  track the coverage of test scenarios and results.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert6" type="checkbox" ng-model="expert6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert6)">Work estimates involve taking activities (coding, testing, automation) into consideration rather than deadlines.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert7" type="checkbox" ng-model="expert7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert7)">Work is estimated using pre-defined estimation  techniques to understand what effort is needed.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaExpert8" type="checkbox" ng-model="expert8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(expert8)">Work estimates are done using more formal techniques like user story points involving the whole team.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Professional</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional1" type="checkbox" ng-model="professional1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional1)">Metrics are used to monitor the delivery trends.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional2" type="checkbox" ng-model="professional2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional2)">Use of a dashboard to provide visibility.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional3" type="checkbox" ng-model="professional3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional3)">Use of unified metrics for projects health check and work forecasting.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional4" type="checkbox" ng-model="professional4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional4)">Sprint highlights and lowlights are concise,  traceable, useful and simple to understand.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional5" type="checkbox" ng-model="professional5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional5)">Quality Metrics include Security and Performance of build increment(s).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional6" type="checkbox" ng-model="professional6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional6)">There is traceability of test coverage for epics, features/compnents,  user stories, release version and subtasks.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional7" type="checkbox" ng-model="professional7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional7)">Test scenarios and test results are  tracked under the user story and are recorded in the tool with  a repository to extract coverage metrics.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional8" type="checkbox" ng-model="professional8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional8)">Coverage metrics are shared with programme team at the end of each release/sprint.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional9" type="checkbox" ng-model="professional9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional9)">Work estimation techniques are applied to Epics and features as well as user stories.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional10" type="checkbox" ng-model="professional10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional10)">Work estimates are used to define release dates/deadlines.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional11" type="checkbox" ng-model="professional11">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional11)">Definition of readiness and definition of done is defined and agreed by team.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaProfessional12" type="checkbox" ng-model="professional12">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(professional12)">Accuracy of estimation is included in the retrospectives and continuous refinement to the process is applied.</p></div>
+    </div>
+    <hr>
+    <h4 align="center">Master</h4>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster1" type="checkbox" ng-model="master1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master1)">Metrics and coverage reports displayed on enterprise's monitoring tool and is updated in real-time.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster2" type="checkbox" ng-model="master2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master2)">Dashboard is easily accessible and open to all with clear understandable graphs and detail.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster3" type="checkbox" ng-model="master3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master3)">Use of forecasting figures in planning sessions.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster4" type="checkbox" ng-model="master4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master4)">Metrics are continuously used to identify risks and action items.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster5" type="checkbox" ng-model="master5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master5)">Metrics are fully (forward and backward) traceable.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster6" type="checkbox" ng-model="master6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master6)">Useful metrics evolve as the team matures.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster7" type="checkbox" ng-model="master7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master7)">Metrics align to bank-wide standards.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster8" type="checkbox" ng-model="master8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master8)">Tool/s are  used by feature team to manage release, epics, user stories, components, features, subtask and issues/defects carried forward for an end to end view of a release.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster9" type="checkbox" ng-model="master9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master9)">A defined template to extract issues of type user story and subtasks to track test coverage and test results.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster10" type="checkbox" ng-model="master10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master10)">Coverage metric showcase trends of % test covered for manual and automation tests.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster11" type="checkbox" ng-model="master11">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master11)">Work estimates techniques, DOR and DOD are continuously evolving as the team matures
+            Stakeholders are a crucial part of the estimation process.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster12" type="checkbox" ng-model="master12">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master12)">Work estimates aligns across other teams and the organization.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="testCriteriaMaster13" type="checkbox" ng-model="master13">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-7"><p ng-class="getClass(master13)">Data specific to estimates are kept and utilised to predict future work.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonRisk" class="btn btn-primary btn-lg" href="#!/quality-alignment" ng-click="saveAssessments()">Next Dimension</a>
+    </p>
