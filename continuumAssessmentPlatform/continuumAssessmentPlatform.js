@@ -48,6 +48,7 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.practice-management',
   'continuumAssessmentPlatform.complete-survey',
   'continuumAssessmentPlatform.survey-results',
+  'continuumAssessmentPlatform.configure-survey',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
