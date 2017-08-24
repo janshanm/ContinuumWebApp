@@ -11,14 +11,14 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
         $scope.selectedBIO = '';
         $scope.selectedPortfolio = '';
         $scope.enteredName = '';
-        $scope.enteredPortfolio = '';
+        $scope.selectedPortfolio = '';
+        $scope.portfolioEnteredName = '';
 
         $scope.init = function () {
             ConfigureSurveyService.getSurveyees().then(function(response){
                 $scope.allSurveyees = response.data;
                 $scope.portfolioNames = getSurveyPortfolio($scope.allSurveyees);
                 $scope.BIOLists = getSurveyeesFormatted($scope.allSurveyees);
-                $scope.selectedPortfolio = $scope.portfolioNames[0];
             });
         };
 
@@ -64,14 +64,16 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
         };
 
         $scope.saveDetails = function(){
-            if($scope.enteredName !== '' && $scope.enteredTeam !== '') {
-                ConfigureSurveyService.saveDetails($scope.enteredName, $scope.enteredTeam, $scope.selectedPortfolio).then(function () {
+            var portfolioName = $scope.selectedPortfolio !== '' ? $scope.selectedPortfolio : $scope.portfolioEnteredName;
+            if($scope.enteredName !== '' && $scope.enteredTeam !== '' && portfolioName !== '') {
+                ConfigureSurveyService.saveDetails($scope.enteredName, $scope.enteredTeam, portfolioName).then(function () {
                     $scope.hasError = false;
                     $scope.hasSaved = true;
                 });
             }
             else{
                 $scope.hasError = true;
+                $scope.hasSaved = false;
             }
         };
     }])

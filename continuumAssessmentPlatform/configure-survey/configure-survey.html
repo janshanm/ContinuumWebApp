@@ -20,9 +20,14 @@
             <input type="text" name="portfolioField" id="portfolioField" ng-model="enteredTeam">
 
             <label for="portfolioSelect" style="padding-left: 50px" class='required'> Select Portfolio: </label>
-            <select style="width: 425px" name="portfolioSelect" id="portfolioSelect" ng-model="selectedPortfolio">
+            <select style="width: 300px" name="portfolioSelect" id="portfolioSelect" ng-model="selectedPortfolio">
+                <option value="">Please Select Your Portfolio</option>
                 <option ng-repeat="portfolioName in portfolioNames" value="{{portfolioName}}">{{portfolioName}}</option>
             </select>
+
+            <label for="portfolioEnteredField" style="padding-left: 50px" class='required' ng-show="selectedPortfolio === ''"> Enter Portfolio Name: </label>
+            <input type="text" name="portfolioEnteredField" id="portfolioEnteredField" ng-model="portfolioEnteredName" ng-show="selectedPortfolio === ''">
+
         </div>
     </div>
     <p align="center">
