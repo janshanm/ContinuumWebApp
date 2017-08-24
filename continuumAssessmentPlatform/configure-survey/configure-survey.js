@@ -11,7 +11,6 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
         $scope.selectedBIO = '';
         $scope.selectedPortfolio = '';
         $scope.enteredName = '';
-        $scope.selectedPortfolio = '';
         $scope.portfolioEnteredName = '';
 
         $scope.init = function () {
@@ -35,9 +34,9 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
 
         var getSurveyeesFormatted = function (allSurveyees) {
           var surveyees = [];
-
             for(var id in allSurveyees){
-                surveyees.push({'id': allSurveyees[id].surveyeeName, 'name': allSurveyees[id].surveyeeName})
+                surveyees.push({'id': allSurveyees[id].surveyeeName, 'name': allSurveyees[id].surveyeeName,
+                    'portfolio': allSurveyees[id].portfolio})
             }
 
             return surveyees;
@@ -76,6 +75,43 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
                 $scope.hasSaved = false;
             }
         };
+
+        $scope.deleteDetails = function(){
+            var portfolioName = $scope.selectedPortfolio !== '' ? $scope.selectedPortfolio : $scope.portfolioEnteredName;
+            if($scope.enteredName !== '' && $scope.enteredTeam !== '' && portfolioName !== '') {
+                ConfigureSurveyService.deleteDetails($scope.enteredName, $scope.enteredTeam, portfolioName).then(function () {
+                    $scope.hasError = false;
+                    $scope.hasDeleted = true;
+                    $scope.BIOLists = removeFromSurveyees($scope.BIOLists, $scope.enteredName, portfolioName);
+                    $scope.selectedBIO = '';
+                    $scope.selectedPortfolio = '';
+                    $scope.enteredName = '';
+                    $scope.portfolioEnteredName = '';
+
+                });
+            }
+            else{
+                $scope.hasError = true;
+                $scope.hasDeleted = false;
+            }
+        };
+
+        var removeFromSurveyees = function (originalList, surveyeeName, portfolio) {
+            var updatedList = [];
+            for(var id in originalList){
+                if(originalList[id].name !== surveyeeName){
+                    updatedList.push(originalList[id]);
+                }
+                else {
+                    if(originalList[id].portfolio !== portfolio){
+                        updatedList.push(originalList[id]);
+                    }
+                }
+            }
+            return updatedList;
+        };
+
+
     }])
 
     .factory('ConfigureSurveyService', ['$http', function ($http) {
@@ -91,6 +127,13 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
                 return $http({
                     url: "http://localhost:8081/surveyees",
                     method: "GET"
+                });
+            },
+            deleteDetails: function (surveyeeName, teamName, portfolio) {
+                return $http({
+                    url: "http://localhost:8081/delete",
+                    method: "DELETE",
+                    params: {'surveyee': surveyeeName, 'teamName': teamName, 'portfolio': portfolio}
                 });
             }
         }
