@@ -80,14 +80,14 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
         return {
             saveDetails: function (surveyeeName, teamName, portfolio) {
                 return $http({
-                    url: "http://localhost:8082/update",
+                    url: "http://localhost:8081/update",
                     method: "POST",
                     params: {'surveyee': surveyeeName, 'teamName': teamName, 'portfolio': portfolio}
                 });
             },
             getSurveyees: function(){
                 return $http({
-                    url: "http://localhost:8082/surveyees",
+                    url: "http://localhost:8081/surveyees",
                     method: "GET"
                 });
             }

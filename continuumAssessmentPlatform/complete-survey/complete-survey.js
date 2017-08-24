@@ -37,6 +37,7 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
         $scope.dataServices3 = 3;
         $scope.dataServices4 = 3;
         $scope.selectedBIO = '';
+        $scope.selectedPracticeTeam = '';
         $scope.hasSaved = false;
 
         $scope.init = function () {
@@ -70,6 +71,7 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
                 $scope.dataServices2 = $rootScope.surveyData['dataServices2'];
                 $scope.dataServices3 = $rootScope.surveyData['dataServices3'];
                 $scope.dataServices4 = $rootScope.surveyData['dataServices4'];
+                $scope.selectedPracticeTeam = $rootScope.surveyData['selectedPracticeTeam'];
             }
 
             $scope.softwareScore = parseInt($scope.softwareEngineering1) + parseInt($scope.softwareEngineering2) +
@@ -107,6 +109,10 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
             formattedData['solutionsArchitectureScore'] = $scope.solutionsArchitectureScore / 4;
             formattedData['dataServicesScore'] = $scope.dataServicesScore / 4;
 
+            if($scope.selectedPracticeTeam !== ''){
+                formattedData['selectedPracticeTeam'] = $scope.selectedPracticeTeam;
+            }
+
             SurveyService.saveSurvey(formattedData).then(function(response){
                 $scope.hasSaved = true;
                 $rootScope.surveyData = undefined;
@@ -121,7 +127,7 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
         return {
             saveSurvey: function (body) {
                 return $http({
-                    url: "http://localhost:8082/saveSurvey",
+                    url: "http://localhost:8081/saveSurvey",
                     method: "POST",
                     data: body
                 });

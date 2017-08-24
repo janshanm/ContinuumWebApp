@@ -39,6 +39,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         $scope.bodyData = {};
         $scope.selectedBIO = '';
         $scope.selectedTeam = '';
+        $scope.selectedPracticeTeam = '';
         $scope.hasCompletedSurveyAlready = false;
 
         $scope.init = function () {
@@ -126,6 +127,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             $scope.hasCompletedSurveyAlready = false;
             $scope.selectedBIO = $rootScope.surveyData['BIO'];
             $scope.selectedTeam = $rootScope.surveyData['teamName'];
+            $scope.selectedPracticeTeam = $rootScope.surveyData['selectedPracticeTeam'];
             $scope.softwareEngineering1 = $rootScope.surveyData['softwareEngineering1'];
             $scope.softwareEngineering2 = $rootScope.surveyData['softwareEngineering2'];
             $scope.softwareEngineering3 = $rootScope.surveyData['softwareEngineering3'];
@@ -188,6 +190,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             $scope.bodyData['dataServices3'] = $scope.dataServices3;
             $scope.bodyData['dataServices4'] = $scope.dataServices4;
             $scope.bodyData['teamName'] = $scope.selectedTeam;
+            $scope.bodyData['selectedPracticeTeam'] = $scope.selectedPracticeTeam;
             $rootScope.surveyData = $scope.bodyData;
 
             if($scope.selectedBIO === ""){
@@ -195,7 +198,10 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             }
             else{
                 $scope.hasError = false;
-                PracticeService.surveyTaken($scope.selectedBIO, $scope.selectedTeam).then(function(response){
+
+                var teamName = $scope.selectedTeam === 'CTO' ? $scope.selectedTeam : $scope.selectedPracticeTeam;
+
+                PracticeService.surveyTaken($scope.selectedBIO, teamName).then(function(response){
                    $scope.surveyResponse = response.data;
 
                    if($scope.surveyResponse['softwareScore'] !== undefined){
@@ -229,14 +235,14 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         return {
             surveyTaken: function (surveyeeName, teamName) {
                 return $http({
-                    url: "http://localhost:8082/surveyTaken",
+                    url: "http://localhost:8081/surveyTaken",
                     method: "GET",
                     params: {'surveyee': surveyeeName, 'teamName': teamName}
                 });
             },
             getSurveyees: function(){
                 return $http({
-                    url: "http://localhost:8082/surveyees",
+                    url: "http://localhost:8081/surveyees",
                     method: "GET"
                 });
             }
