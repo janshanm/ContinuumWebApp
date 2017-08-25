@@ -86,6 +86,7 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
                     $scope.selectedBIO = '';
                     $scope.selectedPortfolio = '';
                     $scope.enteredName = '';
+                    $scope.enteredTeam = '';
                     $scope.portfolioEnteredName = '';
 
                 });
