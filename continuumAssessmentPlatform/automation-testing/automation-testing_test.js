@@ -4,7 +4,7 @@ describe('continuumAssessmentPlatform.automation-testing module', function() {
 
     beforeEach(module('continuumAssessmentPlatform.automation-testing'));
 
-    describe('assessment process controller', function(){
+    describe('Automation Testing controller', function(){
 
         var controller;
         var scope, rootScope;
@@ -245,7 +245,7 @@ describe('continuumAssessmentPlatform.automation-testing module', function() {
                 'test-criteria': {'traveller1': false, 'traveller2': false, 'traveller3': false},
                 'defect-and-exploratory': {'traveller1': false, 'traveller2': false, 'traveller3': false}
             };
-            
+
             scope.traveller1 = true;
             scope.traveller2 = true;
             scope.traveller3 = true;

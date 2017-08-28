@@ -71,6 +71,7 @@ module.exports = function(config) {
         'previous-assessments/previous-assessments.js',
         'previous-assessments-qa/previous-assessments-qa.js',
         'complete-survey/complete-survey.js',
+        'complete-survey/complete-survey_test.js',
         'practice-management/practice-management.js',
         'survey-results/survey-results.js',
         'configure-survey/configure-survey.js',
