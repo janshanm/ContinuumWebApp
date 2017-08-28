@@ -52,6 +52,7 @@ module.exports = function(config) {
         'stakeholder-management/stakeholder-management.js',
         'team-management/team-management.js',
         'documentation/documentation.js',
+        'documentation/documentation_test.js',
         'assessment-process/assessment-process.js',
         'assessment-process/assessment-process_test.js',
         'research/research.js',
