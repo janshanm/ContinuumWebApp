@@ -1872,7 +1872,7 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                                  designScore, teamingScore, releaseScore, QAScore, environmentsScore, featureTeamsScore,
                                  selectedPortfolioName) {
 
-                if(window.myChart != undefined)
+                if(window.myChart != undefined && Object.keys(window.myChart).length !== 0)
                     window.myChart.destroy();
 
                 window.myChart = new Chart(document.getElementById("radar-chart"), {
