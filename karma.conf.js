@@ -61,6 +61,7 @@ module.exports = function(config) {
         'process/process.js',
         'test-criteria/test-criteria.js',
         'defect-and-exploratory/defect-and-exploratory.js',
+        'defect-and-exploratory/defect-and-exploratory_test.js',
         'automation-testing/automation-testing.js',
         'automation-testing/automation-testing_test.js',
         'test-metrics/test-metrics.js',
