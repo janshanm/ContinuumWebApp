@@ -157,7 +157,7 @@ describe('continuum assessment platform', function() {
 
     describe('Welcome Page', function(){
         beforeEach(function() {
-            browser.get('continuumAssessmentPlatform/home');
+            browser.get('continuumAssessmentPlatform/#!/home');
         });
 
         it('should be on the welcome page', function(){
