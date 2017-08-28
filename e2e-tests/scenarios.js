@@ -16,7 +16,7 @@ describe('continuum assessment platform', function() {
 
     it('should automatically redirect to /strategy when location hash/fragment is empty', function() {
     browser.get('continuumAssessmentPlatform');
-    expect(browser.getLocationAbsUrl()).toMatch("/home");
+    expect(browser.getLocationAbsUrl()).toMatch("/login");
     });
 
     describe('Complete Flow', function(){
@@ -157,7 +157,7 @@ describe('continuum assessment platform', function() {
 
     describe('Welcome Page', function(){
         beforeEach(function() {
-            browser.get('continuumAssessmentPlatform/');
+            browser.get('continuumAssessmentPlatform/home');
         });
 
         it('should be on the welcome page', function(){
