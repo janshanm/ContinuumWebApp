@@ -1,11 +1,10 @@
 'use strict';
-'use strict';
 
-describe('continuumAssessmentPlatform.defect-and-exploratory module', function() {
+describe('continuumAssessmentPlatform.test-criteria module', function() {
 
-    beforeEach(module('continuumAssessmentPlatform.defect-and-exploratory'));
+    beforeEach(module('continuumAssessmentPlatform.test-criteria'));
 
-    describe('Defect and Exploratory controller', function(){
+    describe('Test Criteria controller', function(){
 
         var controller;
         var scope, rootScope;
@@ -13,7 +12,7 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
         beforeEach(inject(function($controller, $rootScope){
             rootScope = $rootScope;
             scope = rootScope.$new();
-            controller = $controller('DefectAndExploratoryCtrl', {'$scope': scope, '$rootScope': rootScope});
+            controller = $controller('TestCriteriaCtrl', {'$scope': scope, '$rootScope': rootScope});
         }));
 
         it('should be defined', function() {
@@ -34,20 +33,30 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.artisan1).toBeDefined();
             expect(scope.artisan2).toBeDefined();
             expect(scope.artisan3).toBeDefined();
+            expect(scope.artisan4).toBeDefined();
+            expect(scope.artisan5).toBeDefined();
 
             expect(scope.artisan1).toBeFalsy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.artisan3).toBeFalsy();
+            expect(scope.artisan4).toBeFalsy();
+            expect(scope.artisan5).toBeFalsy();
         });
 
         it('should have defaults as false for the expert questions', function(){
             expect(scope.expert1).toBeDefined();
             expect(scope.expert2).toBeDefined();
             expect(scope.expert3).toBeDefined();
+            expect(scope.expert4).toBeDefined();
+            expect(scope.expert5).toBeDefined();
+            expect(scope.expert6).toBeDefined();
 
             expect(scope.expert1).toBeFalsy();
             expect(scope.expert2).toBeFalsy();
             expect(scope.expert3).toBeFalsy();
+            expect(scope.expert4).toBeFalsy();
+            expect(scope.expert5).toBeFalsy();
+            expect(scope.expert6).toBeFalsy();
         });
 
         it('should have defaults as false for the professional questions', function(){
@@ -69,26 +78,20 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
         it('should have defaults as false for the master questions', function(){
             expect(scope.master1).toBeDefined();
             expect(scope.master2).toBeDefined();
-            expect(scope.master3).toBeDefined();
-            expect(scope.master4).toBeDefined();
-            expect(scope.master5).toBeDefined();
 
             expect(scope.master1).toBeFalsy();
             expect(scope.master2).toBeFalsy();
-            expect(scope.master3).toBeFalsy();
-            expect(scope.master4).toBeFalsy();
-            expect(scope.master5).toBeFalsy();
         });
 
         it('should set the default values based on the rootScope if they are present', inject(function($controller){
-            rootScope = {'assessmentsQaMaM': {'defect-and-exploratory': {
+            rootScope = {'assessmentsQaMaM': {'test-criteria': {
                 'traveller1': true, 'traveller2': true, 'traveller3': true,
-                'artisan1': true, 'artisan2': false, 'artisan3': false,
-                'expert1': true, 'expert2': false, 'expert3': false,
+                'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false,
+                'expert1': true, 'expert2': false, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
                 'professional1': false, 'professional2': true, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false,
-                'master1': true, 'master2': false, 'master3': false, 'master4': false,  'master5': false}}};
+                'master1': true, 'master2': false}}};
 
-            controller = $controller('DefectAndExploratoryCtrl', {'$scope': scope, '$rootScope': rootScope});
+            controller = $controller('TestCriteriaCtrl', {'$scope': scope, '$rootScope': rootScope});
             scope.init();
             expect(scope.traveller1).toBeTruthy();
             expect(scope.traveller2).toBeTruthy();
@@ -96,9 +99,14 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.artisan1).toBeTruthy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.artisan3).toBeFalsy();
+            expect(scope.artisan4).toBeFalsy();
+            expect(scope.artisan5).toBeFalsy();
             expect(scope.expert1).toBeTruthy();
             expect(scope.expert2).toBeFalsy();
             expect(scope.expert3).toBeFalsy();
+            expect(scope.expert4).toBeFalsy();
+            expect(scope.expert5).toBeFalsy();
+            expect(scope.expert6).toBeFalsy();
             expect(scope.professional1).toBeFalsy();
             expect(scope.professional2).toBeTruthy();
             expect(scope.professional3).toBeFalsy();
@@ -107,15 +115,12 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.professional6).toBeFalsy();
             expect(scope.master1).toBeTruthy();
             expect(scope.master2).toBeFalsy();
-            expect(scope.master3).toBeFalsy();
-            expect(scope.master4).toBeFalsy();
-            expect(scope.master5).toBeFalsy();
         }));
 
         it('should set the default values based on the initial values if rootScope not set', inject(function($controller){
             rootScope = {};
 
-            controller = $controller('DefectAndExploratoryCtrl', {'$scope': scope, '$rootScope': rootScope});
+            controller = $controller('TestCriteriaCtrl', {'$scope': scope, '$rootScope': rootScope});
             scope.init();
             expect(scope.traveller1).toBeFalsy();
             expect(scope.traveller2).toBeFalsy();
@@ -123,9 +128,14 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.artisan1).toBeFalsy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.artisan3).toBeFalsy();
+            expect(scope.artisan4).toBeFalsy();
+            expect(scope.artisan5).toBeFalsy();
             expect(scope.expert1).toBeFalsy();
             expect(scope.expert2).toBeFalsy();
             expect(scope.expert3).toBeFalsy();
+            expect(scope.expert4).toBeFalsy();
+            expect(scope.expert5).toBeFalsy();
+            expect(scope.expert6).toBeFalsy();
             expect(scope.professional1).toBeFalsy();
             expect(scope.professional2).toBeFalsy();
             expect(scope.professional3).toBeFalsy();
@@ -134,15 +144,12 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.professional6).toBeFalsy();
             expect(scope.master1).toBeFalsy();
             expect(scope.master2).toBeFalsy();
-            expect(scope.master3).toBeFalsy();
-            expect(scope.master4).toBeFalsy();
-            expect(scope.master5).toBeFalsy();
         }));
 
         it('should set the default values based on the initial values if rootScope not set even though there are assessments', inject(function($controller){
             rootScope = {'assessments': {'assessmentsQaMaM': {}}};
 
-            controller = $controller('DefectAndExploratoryCtrl', {'$scope': scope, '$rootScope': rootScope});
+            controller = $controller('TestCriteriaCtrl', {'$scope': scope, '$rootScope': rootScope});
             scope.init();
             expect(scope.traveller1).toBeFalsy();
             expect(scope.traveller2).toBeFalsy();
@@ -150,9 +157,14 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.artisan1).toBeFalsy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.artisan3).toBeFalsy();
+            expect(scope.artisan4).toBeFalsy();
+            expect(scope.artisan5).toBeFalsy();
             expect(scope.expert1).toBeFalsy();
             expect(scope.expert2).toBeFalsy();
             expect(scope.expert3).toBeFalsy();
+            expect(scope.expert4).toBeFalsy();
+            expect(scope.expert5).toBeFalsy();
+            expect(scope.expert6).toBeFalsy();
             expect(scope.professional1).toBeFalsy();
             expect(scope.professional2).toBeFalsy();
             expect(scope.professional3).toBeFalsy();
@@ -161,21 +173,23 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             expect(scope.professional6).toBeFalsy();
             expect(scope.master1).toBeFalsy();
             expect(scope.master2).toBeFalsy();
-            expect(scope.master3).toBeFalsy();
-            expect(scope.master4).toBeFalsy();
-            expect(scope.master5).toBeFalsy();
         }));
 
-        it('should save the values for the assessment results for defect and exploratory', function(){
+        it('should save the values for the assessment results for test criteria', function(){
             scope.traveller1 = true;
             scope.traveller2 = true;
             scope.traveller3 = true;
             scope.artisan1 = true;
             scope.artisan2 = false;
             scope.artisan3 = false;
+            scope.artisan4 = false;
+            scope.artisan5 = false;
             scope.expert1 = true;
             scope.expert2 = true;
             scope.expert3 = false;
+            scope.expert4 = false;
+            scope.expert5 = false;
+            scope.expert6 = false;
             scope.professional1 = false;
             scope.professional2 = false;
             scope.professional3 = false;
@@ -184,48 +198,57 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             scope.professional6 = false;
             scope.master1 = false;
             scope.master2 = false;
-            scope.master3 = false;
-            scope.master4 = false;
-            scope.master5 = false;
 
-            var expectedDefectAndExploratory = {
+            var expectedTestCriteria = {
                 'traveller1': true, 'traveller2': true, 'traveller3': true,
-                'artisan1': true, 'artisan2': false, 'artisan3': false,
-                'expert1': true, 'expert2': true, 'expert3': false,
+                'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false,
+                'expert1': true, 'expert2': true, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
                 'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false,
-                'master1': false, 'master2': false, 'master3': false, 'master4': false,  'master5': false};
+                'master1': false, 'master2': false};
 
             scope.saveAssessments();
-            var defectAndExploratory = rootScope.assessmentsQaMaM['defect-and-exploratory'];
+            var testCriteria = rootScope.assessmentsQaMaM['test-criteria'];
 
-            expect(defectAndExploratory['traveller1']).toEqual(expectedDefectAndExploratory[['traveller1']]);
-            expect(defectAndExploratory['artisan1']).toEqual(expectedDefectAndExploratory[['artisan1']]);
-            expect(defectAndExploratory['artisan2']).toEqual(expectedDefectAndExploratory[['artisan2']]);
-            expect(defectAndExploratory['expert1']).toEqual(expectedDefectAndExploratory[['expert1']]);
-            expect(defectAndExploratory['expert2']).toEqual(expectedDefectAndExploratory[['expert2']]);
-            expect(defectAndExploratory['expert3']).toEqual(expectedDefectAndExploratory[['expert3']]);
-            expect(defectAndExploratory['expert4']).toEqual(expectedDefectAndExploratory[['expert4']]);
-            expect(defectAndExploratory['professional1']).toEqual(expectedDefectAndExploratory[['professional1']]);
-            expect(defectAndExploratory['professional2']).toEqual(expectedDefectAndExploratory[['professional2']]);
-            expect(defectAndExploratory['professional3']).toEqual(expectedDefectAndExploratory[['professional3']]);
-            expect(defectAndExploratory['professional4']).toEqual(expectedDefectAndExploratory[['professional4']]);
-            expect(defectAndExploratory['master1']).toEqual(expectedDefectAndExploratory[['master1']]);
-            expect(defectAndExploratory['master2']).toEqual(expectedDefectAndExploratory[['master2']]);
-            expect(defectAndExploratory['master3']).toEqual(expectedDefectAndExploratory[['master3']]);
-            expect(defectAndExploratory['master4']).toEqual(expectedDefectAndExploratory[['master4']]);
+            expect(testCriteria['traveller1']).toEqual(expectedTestCriteria[['traveller1']]);
+            expect(testCriteria['traveller2']).toEqual(expectedTestCriteria[['traveller2']]);
+            expect(testCriteria['traveller3']).toEqual(expectedTestCriteria[['traveller3']]);
+            expect(testCriteria['artisan1']).toEqual(expectedTestCriteria[['artisan1']]);
+            expect(testCriteria['artisan2']).toEqual(expectedTestCriteria[['artisan2']]);
+            expect(testCriteria['artisan3']).toEqual(expectedTestCriteria[['artisan3']]);
+            expect(testCriteria['artisan4']).toEqual(expectedTestCriteria[['artisan4']]);
+            expect(testCriteria['artisan5']).toEqual(expectedTestCriteria[['artisan5']]);
+            expect(testCriteria['expert1']).toEqual(expectedTestCriteria[['expert1']]);
+            expect(testCriteria['expert2']).toEqual(expectedTestCriteria[['expert2']]);
+            expect(testCriteria['expert3']).toEqual(expectedTestCriteria[['expert3']]);
+            expect(testCriteria['expert4']).toEqual(expectedTestCriteria[['expert4']]);
+            expect(testCriteria['expert5']).toEqual(expectedTestCriteria[['expert5']]);
+            expect(testCriteria['expert6']).toEqual(expectedTestCriteria[['expert6']]);
+            expect(testCriteria['professional1']).toEqual(expectedTestCriteria[['professional1']]);
+            expect(testCriteria['professional2']).toEqual(expectedTestCriteria[['professional2']]);
+            expect(testCriteria['professional3']).toEqual(expectedTestCriteria[['professional3']]);
+            expect(testCriteria['professional4']).toEqual(expectedTestCriteria[['professional4']]);
+            expect(testCriteria['professional5']).toEqual(expectedTestCriteria[['professional5']]);
+            expect(testCriteria['professional6']).toEqual(expectedTestCriteria[['professional6']]);
+            expect(testCriteria['master1']).toEqual(expectedTestCriteria[['master1']]);
+            expect(testCriteria['master2']).toEqual(expectedTestCriteria[['master2']]);
 
         });
 
-        it('should save the values for the assessment results for defect and exploratory when rootScope empty', function(){
+        it('should save the values for the assessment results for test criteria when rootScope empty', function(){
             scope.traveller1 = true;
             scope.traveller2 = true;
             scope.traveller3 = true;
             scope.artisan1 = true;
             scope.artisan2 = false;
             scope.artisan3 = false;
+            scope.artisan4 = false;
+            scope.artisan5 = false;
             scope.expert1 = true;
             scope.expert2 = true;
             scope.expert3 = false;
+            scope.expert4 = false;
+            scope.expert5 = false;
+            scope.expert6 = false;
             scope.professional1 = false;
             scope.professional2 = false;
             scope.professional3 = false;
@@ -234,42 +257,41 @@ describe('continuumAssessmentPlatform.defect-and-exploratory module', function()
             scope.professional6 = false;
             scope.master1 = false;
             scope.master2 = false;
-            scope.master3 = false;
-            scope.master4 = false;
-            scope.master5 = false;
 
-            var expectedDefectAndExploratory = {
+            var expectedTestCriteria = {
                 'traveller1': true, 'traveller2': true, 'traveller3': true,
-                'artisan1': true, 'artisan2': false, 'artisan3': false,
-                'expert1': true, 'expert2': true, 'expert3': false,
+                'artisan1': true, 'artisan2': false, 'artisan3': false, 'artisan4': false, 'artisan5': false,
+                'expert1': true, 'expert2': true, 'expert3': false, 'expert4': false, 'expert5': false, 'expert6': false,
                 'professional1': false, 'professional2': false, 'professional3': false, 'professional4': false, 'professional5': false, 'professional6': false,
-                'master1': false, 'master2': false, 'master3': false, 'master4': false,  'master5': false};
+                'master1': false, 'master2': false};
 
             rootScope.assessmentsQaMaM = {};
 
             scope.saveAssessments();
-            var defectAndExploratory = rootScope.assessmentsQaMaM['defect-and-exploratory'];
+            var testCriteria = rootScope.assessmentsQaMaM['test-criteria'];
 
-            expect(defectAndExploratory['traveller1']).toEqual(expectedDefectAndExploratory[['traveller1']]);
-            expect(defectAndExploratory['traveller2']).toEqual(expectedDefectAndExploratory[['traveller2']]);
-            expect(defectAndExploratory['traveller3']).toEqual(expectedDefectAndExploratory[['traveller3']]);
-            expect(defectAndExploratory['artisan1']).toEqual(expectedDefectAndExploratory[['artisan1']]);
-            expect(defectAndExploratory['artisan2']).toEqual(expectedDefectAndExploratory[['artisan2']]);
-            expect(defectAndExploratory['artisan3']).toEqual(expectedDefectAndExploratory[['artisan3']]);
-            expect(defectAndExploratory['expert1']).toEqual(expectedDefectAndExploratory[['expert1']]);
-            expect(defectAndExploratory['expert2']).toEqual(expectedDefectAndExploratory[['expert2']]);
-            expect(defectAndExploratory['expert3']).toEqual(expectedDefectAndExploratory[['expert3']]);
-            expect(defectAndExploratory['professional1']).toEqual(expectedDefectAndExploratory[['professional1']]);
-            expect(defectAndExploratory['professional2']).toEqual(expectedDefectAndExploratory[['professional2']]);
-            expect(defectAndExploratory['professional3']).toEqual(expectedDefectAndExploratory[['professional3']]);
-            expect(defectAndExploratory['professional4']).toEqual(expectedDefectAndExploratory[['professional4']]);
-            expect(defectAndExploratory['professional5']).toEqual(expectedDefectAndExploratory[['professional5']]);
-            expect(defectAndExploratory['professional6']).toEqual(expectedDefectAndExploratory[['professional6']]);
-            expect(defectAndExploratory['master1']).toEqual(expectedDefectAndExploratory[['master1']]);
-            expect(defectAndExploratory['master2']).toEqual(expectedDefectAndExploratory[['master2']]);
-            expect(defectAndExploratory['master3']).toEqual(expectedDefectAndExploratory[['master3']]);
-            expect(defectAndExploratory['master4']).toEqual(expectedDefectAndExploratory[['master4']]);
-            expect(defectAndExploratory['master5']).toEqual(expectedDefectAndExploratory[['master5']]);
+            expect(testCriteria['traveller1']).toEqual(expectedTestCriteria[['traveller1']]);
+            expect(testCriteria['traveller2']).toEqual(expectedTestCriteria[['traveller2']]);
+            expect(testCriteria['traveller3']).toEqual(expectedTestCriteria[['traveller3']]);
+            expect(testCriteria['artisan1']).toEqual(expectedTestCriteria[['artisan1']]);
+            expect(testCriteria['artisan2']).toEqual(expectedTestCriteria[['artisan2']]);
+            expect(testCriteria['artisan3']).toEqual(expectedTestCriteria[['artisan3']]);
+            expect(testCriteria['artisan4']).toEqual(expectedTestCriteria[['artisan4']]);
+            expect(testCriteria['artisan5']).toEqual(expectedTestCriteria[['artisan5']]);
+            expect(testCriteria['expert1']).toEqual(expectedTestCriteria[['expert1']]);
+            expect(testCriteria['expert2']).toEqual(expectedTestCriteria[['expert2']]);
+            expect(testCriteria['expert3']).toEqual(expectedTestCriteria[['expert3']]);
+            expect(testCriteria['expert4']).toEqual(expectedTestCriteria[['expert4']]);
+            expect(testCriteria['expert5']).toEqual(expectedTestCriteria[['expert5']]);
+            expect(testCriteria['expert6']).toEqual(expectedTestCriteria[['expert6']]);
+            expect(testCriteria['professional1']).toEqual(expectedTestCriteria[['professional1']]);
+            expect(testCriteria['professional2']).toEqual(expectedTestCriteria[['professional2']]);
+            expect(testCriteria['professional3']).toEqual(expectedTestCriteria[['professional3']]);
+            expect(testCriteria['professional4']).toEqual(expectedTestCriteria[['professional4']]);
+            expect(testCriteria['professional5']).toEqual(expectedTestCriteria[['professional5']]);
+            expect(testCriteria['professional6']).toEqual(expectedTestCriteria[['professional6']]);
+            expect(testCriteria['master1']).toEqual(expectedTestCriteria[['master1']]);
+            expect(testCriteria['master2']).toEqual(expectedTestCriteria[['master2']]);
 
         });
 
