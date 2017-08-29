@@ -90,8 +90,11 @@ module.exports = function(config) {
         'survey-results/survey-results.js',
         'configure-survey/configure-survey.js',
         'components/version/version.js',
+        'components/version/version_test.js',
         'components/version/version-directive.js',
-        'components/version/interpolate-filter.js'
+        'components/version/version-directive_test.js',
+        'components/version/interpolate-filter.js',
+        'components/version/interpolate-filter_test.js'
     ],
 
     preprocessors: {
