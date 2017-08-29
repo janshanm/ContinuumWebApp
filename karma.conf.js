@@ -52,6 +52,7 @@ module.exports = function(config) {
         'integration/integration.js',
         'integration/integration_test.js',
         'stakeholder-management/stakeholder-management.js',
+        'stakeholder-management/stakeholder-management_test.js',
         'team-management/team-management.js',
         'documentation/documentation.js',
         'documentation/documentation_test.js',
