@@ -9,7 +9,6 @@ module.exports = function(config) {
       '../bower_components/angular-route/angular-route.js',
       '../bower_components/angular-mocks/angular-mocks.js',
         'vendor/jquery-3.2.1.min.js',
-        'vendor/bootstrap/js/bootstrap.js',
         'vendor/Chart.js',
         'vendor/excellentexport/excellentexport.min.js',
         'vendor/jsencrypt/bin/jsencrypt.min.js',
