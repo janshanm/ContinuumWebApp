@@ -94,7 +94,7 @@ angular.module('continuumAssessmentPlatform.research', ['ngRoute'])
             else if(isArtisan()){
                 return 2;
             }
-            else if(isExpert()){
+            else if(isExpert() && !isProfessional() && !isMaster()){
                 return 3;
             }
             else if(isProfessional() && !isMaster()){

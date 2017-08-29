@@ -58,6 +58,7 @@ module.exports = function(config) {
         'assessment-process/assessment-process.js',
         'assessment-process/assessment-process_test.js',
         'research/research.js',
+        'research/research_test.js',
         'involvement/involvement.js',
         'involvement/involvement_test.js',
         'repository/repository.js',
