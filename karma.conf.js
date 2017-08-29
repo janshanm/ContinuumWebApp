@@ -61,6 +61,7 @@ module.exports = function(config) {
         'involvement/involvement.js',
         'involvement/involvement_test.js',
         'repository/repository.js',
+        'repository/repository_test.js',
         'execution/execution.js',
         'execution/execution_test.js',
         'process/process.js',
