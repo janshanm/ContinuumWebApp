@@ -92,15 +92,15 @@ angular.module('continuumAssessmentPlatform.integration', ['ngRoute'])
         };
 
         var isArtisan = function () {
-            return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
+            return !$scope.traveller1 && !$scope.traveller2 && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
         };
 
         var isExpert = function() {
-            return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.expert1 && $scope.expert2;
+            return !$scope.traveller1 && !$scope.traveller2 && $scope.artisan1 && $scope.artisan2 && $scope.expert1 && $scope.expert2;
         };
 
         var isProfessional = function () {
-            return !isTraveller() && $scope.artisan1 && !$scope.artisan2 && $scope.expert1 && $scope.expert2
+            return !$scope.traveller1 && !$scope.traveller2 && $scope.artisan1 && !$scope.artisan2 && $scope.expert1 && $scope.expert2
                 && $scope.professional1 && $scope.professional2 && $scope.professional3;
         };
 
