@@ -47,6 +47,7 @@ module.exports = function(config) {
         'teamselectionqa/teamselectionqa.js',
         'teamselectionqamam/teamselection-qamam.js',
         'standards/standards.js',
+        'standards/standards_test.js',
         'metrics/metrics.js',
         'metrics/metrics_test.js',
         'integration/integration.js',
