@@ -73,6 +73,7 @@ module.exports = function(config) {
         'test-metrics/test-metrics.js',
         'quality-alignment/quality-alignment.js',
         'practice-innovation/practice-innovation.js',
+        'practice-innovation/practice-innovation_test.js',
         'tools-artefacts/tools-artefacts.js',
         'qamam-results/qamam-results.js',
         'previous-assessments/previous-assessments.js',
