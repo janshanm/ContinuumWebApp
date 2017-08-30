@@ -44,6 +44,7 @@ module.exports = function(config) {
         'results/results_test.js',
         // 'resultsqa/resultsqa.js',
         'welcome/welcome.js',
+        'welcome/welcome_test.js',
         // 'teamselection/teamselection.js',
         // 'teamselectionqa/teamselectionqa.js',
         // 'teamselectionqamam/teamselection-qamam.js',
