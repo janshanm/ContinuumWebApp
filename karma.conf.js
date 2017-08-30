@@ -81,6 +81,7 @@ module.exports = function(config) {
         'practice-innovation/practice-innovation.js',
         'practice-innovation/practice-innovation_test.js',
         'tools-artefacts/tools-artefacts.js',
+        'tools-artefacts/tools-artefacts_test.js',
         // 'qamam-results/qamam-results.js',
         // 'previous-assessments/previous-assessments.js',
         // 'previous-assessments-qa/previous-assessments-qa.js',
