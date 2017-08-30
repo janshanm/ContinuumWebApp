@@ -46,6 +46,8 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             PracticeService.getSurveyees().then(function(response){
                 $scope.allSurveyees = response.data;
                 $scope.teamNames = getSurveyTeams($scope.allSurveyees);
+                $scope.portfolioNames = getPortfolioTeams($scope.allSurveyees);
+
                 $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
                     {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
                     {'scale': 'highest', 'value': 5}];
@@ -66,6 +68,17 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             for(var id in surveyees){
                 var portfolio = surveyees[id].portfolio;
                 if (surveyTeams.indexOf(portfolio) === -1) {
+                    surveyTeams.push(portfolio);
+                }
+            }
+            return surveyTeams;
+        };
+
+        var getPortfolioTeams = function(surveyees){
+            var surveyTeams = [];
+            for(var id in surveyees){
+                var portfolio = surveyees[id].portfolio;
+                if (surveyTeams.indexOf(portfolio) === -1 && portfolio !== 'CTO') {
                     surveyTeams.push(portfolio);
                 }
             }

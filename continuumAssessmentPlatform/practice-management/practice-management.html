@@ -17,7 +17,7 @@
         <label for="teamNameSelect" style="padding-left: 25px" class='required' ng-show="selectedTeam === 'CTO'"> Select Practice Portfolio: </label>
         <select style="width: 400px" name="teamNameSelect" id="teamNameSelect" ng-model="selectedPracticeTeam" ng-show="selectedTeam === 'CTO'">
             <option value="">Select Portfolio You Are Practice Lead/Head For</option>
-            <option ng-repeat="teamName in teamNames" value="{{teamName}}">{{teamName}}</option>
+            <option ng-repeat="portfolioName in portfolioNames" value="{{portfolioName}}">{{portfolioName}}</option>
         </select>
     </div>
 
