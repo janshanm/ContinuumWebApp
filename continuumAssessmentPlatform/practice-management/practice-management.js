@@ -218,17 +218,23 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         };
 
         $scope.continueToReview = function(){
+            $("#myModal").removeClass("in");
+            $(".modal-backdrop").remove();
             $('#myModal').modal('hide');
             $location.path('/complete-survey');
         };
 
         $scope.cancel = function(){
+            $("#myModal").removeClass("in");
+            $(".modal-backdrop").remove();
             $('#myModal').modal('hide');
         };
 
         $scope.loadPreviousSurveyToReview = function () {
             $rootScope.surveyData =$scope.surveyResponse['rawData'] !== undefined ? JSON.parse($scope.surveyResponse['rawData']) : {};
             $scope.setData();
+            $("#myModal").removeClass("in");
+            $(".modal-backdrop").remove();
             $('#myModal').modal('hide');
         }
     }])
