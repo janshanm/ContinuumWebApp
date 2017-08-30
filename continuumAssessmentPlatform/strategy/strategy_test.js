@@ -218,7 +218,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;
-          scope.expert2 = true;
+          scope.expert2 = false;
           scope.professional1 = false;
           scope.professional2 = false;
           scope.professional3 = false;
@@ -238,7 +238,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
       it('should save the score for strategy as 3 if the traveller question is answered as no and the artisan question ' +
           'one is answered as no and other artisan questions as yes with all the expert questions as yes', function(){
           scope.traveller1 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = true;
@@ -263,7 +263,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
           'one is answered as no and other artisan questions as yes and the first expert question answered as no and all' +
           ' the other expert questions as yes with all the professional questions as yes ', function(){
           scope.traveller1 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = false;
@@ -288,7 +288,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
           'one is answered as no and other artisan questions as yes and the first expert question answered as no and all' +
           ' the other expert questions as yes with all the professional questions as yes as well as the master questions ', function(){
           scope.traveller1 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = false;
@@ -313,7 +313,7 @@ describe('continuumAssessmentPlatform.strategy module', function() {
           'one is answered as no and other artisan questions as yes and the first expert question answered as no and all' +
           ' the other expert questions as yes with all the professional questions as yes as well as the master questions with assessments ', function(){
           scope.traveller1 = false;
-          scope.artisan1 = false;
+          scope.artisan1 = true;
           scope.artisan2 = true;
           scope.artisan3 = true;
           scope.expert1 = false;

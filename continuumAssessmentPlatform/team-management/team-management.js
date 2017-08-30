@@ -93,10 +93,10 @@ angular.module('continuumAssessmentPlatform.team-management', ['ngRoute'])
         };
 
         $scope.computeTeamManagementAssessmentScore = function(){
-            if(isTraveller()){
+            if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
                 return 1;
             }
-            else if(isArtisan()){
+            else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
                 return 2;
             }
             else if(isExpert() && !isProfessional() && !isMaster()){

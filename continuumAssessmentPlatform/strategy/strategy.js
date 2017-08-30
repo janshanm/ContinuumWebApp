@@ -74,13 +74,13 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
   };
 
   $scope.computeStrategyAssessmentScore = function(){
-    if(isTraveller()){
+    if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
       return 1;
     }
-    else if(isArtisan()){
+    else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
       return 2;
     }
-    else if(isExpert()){
+    else if(isExpert() && !isProfessional() && !isMaster()){
       return 3;
     }
     else if(isProfessional() && !isMaster()){
