@@ -199,7 +199,9 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
             else{
                 $scope.hasError = false;
 
-                var teamName = $scope.selectedTeam === 'CTO' ? $scope.selectedTeam : $scope.selectedPracticeTeam;
+                var teamName = $scope.selectedTeam !== 'CTO' ? $scope.selectedTeam : $scope.selectedPracticeTeam;
+
+                $scope.portfolioSurveyed = teamName;
 
                 PracticeService.surveyTaken($scope.selectedBIO, teamName).then(function(response){
                    $scope.surveyResponse = response.data;
