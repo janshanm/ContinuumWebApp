@@ -75,6 +75,7 @@ module.exports = function(config) {
         'automation-testing/automation-testing.js',
         'automation-testing/automation-testing_test.js',
         'test-metrics/test-metrics.js',
+        'test-metrics/test-metrics_test.js',
         'quality-alignment/quality-alignment.js',
         'quality-alignment/quality-alignment_test.js',
         'practice-innovation/practice-innovation.js',
