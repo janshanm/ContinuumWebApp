@@ -96,10 +96,6 @@ angular.module('continuumAssessmentPlatform.automation-testing', ['ngRoute'])
     };
 
     $scope.saveAssessments = function(){
-        if($rootScope.assessmentsQaMaM === undefined){
-            $rootScope.assessmentsQaMaM = {};
-        }
-
         $scope.testCriteria = $rootScope.assessmentsQaMaM['test-criteria'];
         $scope.defectExploratory = $rootScope.assessmentsQaMaM['defect-and-exploratory'];
 

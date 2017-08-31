@@ -61,7 +61,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
 
         it('should set the default values based on the rootScope if they are present', inject(function($controller){
             rootScope = {'assessmentsQa': {'assessment-process': {
-                'traveller1': true, 'traveller2': true, 'traveller3': true,
+                'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true,
                 'artisan1': true, 'artisan2': false,
                 'expert1': true, 'expert2': false, 'expert3': false,
                 'professional1': false, 'professional2': true, 'professional3': false}}};
@@ -71,6 +71,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             expect(scope.traveller1).toBeTruthy();
             expect(scope.traveller2).toBeTruthy();
             expect(scope.traveller3).toBeTruthy();
+            expect(scope.traveller4).toBeTruthy();
             expect(scope.artisan1).toBeTruthy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.expert1).toBeTruthy();
@@ -89,6 +90,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             expect(scope.traveller1).toBeFalsy();
             expect(scope.traveller2).toBeFalsy();
             expect(scope.traveller3).toBeFalsy();
+            expect(scope.traveller4).toBeFalsy();
             expect(scope.artisan1).toBeFalsy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.expert1).toBeFalsy();
@@ -107,6 +109,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             expect(scope.traveller1).toBeFalsy();
             expect(scope.traveller2).toBeFalsy();
             expect(scope.traveller3).toBeFalsy();
+            expect(scope.traveller4).toBeFalsy();
             expect(scope.artisan1).toBeFalsy();
             expect(scope.artisan2).toBeFalsy();
             expect(scope.expert1).toBeFalsy();
@@ -121,6 +124,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = true;
             scope.traveller2 = true;
             scope.traveller3 = true;
+            scope.traveller4 = true;
             scope.artisan1 = true;
             scope.artisan2 = false;
             scope.expert1 = true;
@@ -131,7 +135,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.professional3 = false;
 
             var expectedAssessmentProcess = {
-                'traveller1': true, 'traveller2': true, 'traveller3': true,
+                'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true,
                 'artisan1': true, 'artisan2': false,
                 'expert1': true, 'expert2': true, 'expert3': false,
                 'professional1': false, 'professional2': false, 'professional3': false};
@@ -142,6 +146,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             expect(assessmentProcess['traveller1']).toEqual(expectedAssessmentProcess[['traveller1']]);
             expect(assessmentProcess['traveller2']).toEqual(expectedAssessmentProcess[['traveller2']]);
             expect(assessmentProcess['traveller3']).toEqual(expectedAssessmentProcess[['traveller3']]);
+            expect(assessmentProcess['traveller4']).toEqual(expectedAssessmentProcess[['traveller4']]);
             expect(assessmentProcess['artisan1']).toEqual(expectedAssessmentProcess[['artisan1']]);
             expect(assessmentProcess['artisan2']).toEqual(expectedAssessmentProcess[['artisan2']]);
             expect(assessmentProcess['expert1']).toEqual(expectedAssessmentProcess[['expert1']]);
@@ -156,6 +161,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = false;
             scope.traveller2 = false;
             scope.traveller3 = false;
+            scope.traveller4 = false;
             scope.artisan1 = false;
             scope.artisan2 = false;
             scope.expert1 = false;
@@ -178,6 +184,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = true;
             scope.traveller2 = true;
             scope.traveller3 = true;
+            scope.traveller4 = true;
             scope.artisan1 = false;
             scope.artisan2 = false;
             scope.expert1 = false;
@@ -200,6 +207,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = false;
             scope.traveller2 = true;
             scope.traveller3 = false;
+            scope.traveller4 = false;
             scope.artisan1 = true;
             scope.artisan2 = true;
             scope.expert1 = true;
@@ -223,6 +231,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = false;
             scope.traveller2 = false;
             scope.traveller3 = false;
+            scope.traveller4 = false;
             scope.artisan1 = true;
             scope.artisan2 = true;
             scope.expert1 = true;
@@ -246,6 +255,7 @@ describe('continuumAssessmentPlatform.assessment-process module', function() {
             scope.traveller1 = false;
             scope.traveller2 = false;
             scope.traveller3 = false;
+            scope.traveller4 = false;
             scope.artisan1 = true;
             scope.artisan2 = true;
             scope.expert1 = true;
