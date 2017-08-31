@@ -6,9 +6,9 @@ describe('continuumAssessmentPlatform.results module', function() {
 
     describe('results controller', function(){
 
-        var controller, q, deferred;
+        var controller, q, deferred, deferredRetrieveAssessment, location;
         var scope, rootScope;
-        var saveResultsSpy;
+        var saveResultsSpy, retrieveAssessmentSpy;
 
         var strategyTasks = {'traveller1': 'Any alignment to Strategy is coincidental or opportunistic',
             'artisan1': 'Upfront engagement with stakeholders to ensure Business and Technical Alignment',
@@ -292,10 +292,17 @@ describe('continuumAssessmentPlatform.results module', function() {
         beforeEach(inject(function($controller, $rootScope, $q, SaveResults){
             q = $q;
             deferred = $q.defer();
+            deferredRetrieveAssessment = $q.defer();
             saveResultsSpy = jasmine.createSpyObj("SaveResults", ['drawChart', 'saveAssessments']);
+            retrieveAssessmentSpy = jasmine.createSpyObj("RetrieveAssessment", ['getAssessment']);
+            location = jasmine.createSpyObj('location', ['search']);
+
+            location.search.and.returnValue({});
             rootScope = $rootScope;
             scope = rootScope.$new();
-            controller = $controller('ResultsCtrl', {'$scope': scope, '$rootScope': rootScope, 'SaveResults': saveResultsSpy});
+            controller = $controller('ResultsCtrl', {'$scope': scope, '$rootScope': rootScope,
+                'SaveResults': saveResultsSpy, 'RetrieveAssessment': retrieveAssessmentSpy,
+            '$location': location});
         }));
 
         it('should be defined', function() {
@@ -618,6 +625,54 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.QAScore).toEqual(4);
                     expect(scope.environmentsScore).toEqual(3);
                     expect(scope.featureTeamsScore).toEqual(2);
+                });
+
+
+                describe('#withAssessmentsAndTeamNameSpecified', function(){
+                    it('should have the team name from raw data', function(){
+                        var expectedResultData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
+                            'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
+                            'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': "{}"};
+
+                        deferredRetrieveAssessment.resolve({'status': 200, 'data': expectedResultData});
+                        location.search.and.returnValue({'teamName': 'Example Team'});
+                        retrieveAssessmentSpy.getAssessment.and.returnValue(deferredRetrieveAssessment.promise);
+
+                        scope.init();
+                        scope.$apply();
+
+                        expect(rootScope.teamName).toEqual('Example Team');
+                    });
+
+                    it('should have the team data from the raw data', function(){
+                        var expectedResultData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
+                            'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
+                            'featureTeams': 2, 'portfolioName': 'Example Portfolio', 'rawData': "{}"};
+
+                        deferredRetrieveAssessment.resolve({'status': 200, 'data': expectedResultData});
+                        location.search.and.returnValue({'teamName': 'Example Team'});
+                        retrieveAssessmentSpy.getAssessment.and.returnValue(deferredRetrieveAssessment.promise);
+
+                        scope.init();
+                        scope.$apply();
+
+                        expect(saveResultsSpy.drawChart).toHaveBeenCalledWith('Example Team',1,1,1,1,1,1,1,1,1,1,1,1,undefined);
+                    });
+
+                    it('should have the team data when no raw data', function(){
+                        var expectedResultData = {'teamName': 'Example Team', 'strategy': 2, 'planning': 1, 'coding': 3, 'ci': 3,
+                            'incident': 4, 'risk': 1, 'design': 2, 'teaming': 3, 'release': 2, 'qa': 4, 'environments': 3,
+                            'featureTeams': 2, 'portfolioName': 'Example Portfolio'};
+
+                        deferredRetrieveAssessment.resolve({'status': 200, 'data': expectedResultData});
+                        location.search.and.returnValue({'teamName': 'Example Team'});
+                        retrieveAssessmentSpy.getAssessment.and.returnValue(deferredRetrieveAssessment.promise);
+
+                        scope.init();
+                        scope.$apply();
+
+                        expect(saveResultsSpy.drawChart).toHaveBeenCalledWith('Example Team',1,1,1,1,1,1,1,1,1,1,1,1,undefined);
+                    });
                 });
 
 
@@ -2223,13 +2278,15 @@ describe('continuumAssessmentPlatform.results module', function() {
     });
 
     describe('results services', function(){
-        var saveResultsService, $httpBackend;
+        var saveResultsService, retrieveAssessmentService, $httpBackend;
 
         beforeEach(inject(function($injector) {
             saveResultsService = $injector.get('SaveResults');
+            retrieveAssessmentService = $injector.get('RetrieveAssessment');
             $httpBackend = $injector.get('$httpBackend');
 
             $httpBackend.when('POST', "http://localhost:8080/saveTeamData").respond("Successfully Saved");
+            $httpBackend.when('GET', "http://localhost:8080/assessment?teamName=Test").respond("Successfully Retrieved");
         }));
 
         afterEach(function() {
@@ -2241,6 +2298,15 @@ describe('continuumAssessmentPlatform.results module', function() {
             var expectedResponse = "Successfully Saved";
 
             saveResultsService.saveAssessments().then(function(response){
+                expect(response.data).toEqual(expectedResponse);
+            });
+            $httpBackend.flush();
+        });
+
+        it('should respond successfully when the retrieve assessment service is called', function(){
+            var expectedResponse = "Successfully Retrieved";
+
+            retrieveAssessmentService.getAssessment('Test').then(function(response){
                 expect(response.data).toEqual(expectedResponse);
             });
             $httpBackend.flush();
