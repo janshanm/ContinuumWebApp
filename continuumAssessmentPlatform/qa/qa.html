@@ -1,0 +1,112 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Quality Assurance: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Automated infrastructure security testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Automated infrastructure Testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Automated penetration/vulnerability testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Automated application security testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <select style="width: 300px" name="ciQuestion5" id="ciQuestion5" ng-model="question5">
+                    <option value="30">30%</option>
+                    <option value="50">50%</option>
+                    <option value="70">50%</option>
+                    <option value="80">50%</option>
+                    <option value="90">90%</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClassUnit(question5)">Automated unit testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion6" type="checkbox" ng-model="question6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question6)">Automated Integration and/or Functional Testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion7" type="checkbox" ng-model="question7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question7)">Automated Smoke Testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion8" type="checkbox" ng-model="question8">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question8)">Automated performance testing.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion9" type="checkbox" ng-model="question9">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question9)">Automated test data preparation.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion10" type="checkbox" ng-model="question10">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question10)">Automated resilience testing (chaos monkey etc).</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonQA" class="btn btn-primary btn-lg" href="#!/pipeline-environments">Last Discipline</a>
+        <a id="nextButtonQA" class="btn btn-primary btn-lg" href="#!/pipeline-code" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

@@ -1,0 +1,37 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">General Pipeline: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Application changes flows through the pipeline.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Infrastructure changes flows through the pipeline.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Feature Toggling.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonGeneral" class="btn btn-primary btn-lg" href="#!/pipeline-results" ng-click="saveAssessments()">Results</a>
+    </p>

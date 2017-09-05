@@ -91,11 +91,11 @@ angular.module('continuumAssessmentPlatform.featureteams', ['ngRoute'])
             'master2': $scope.master2,
             'master3': $scope.master3,
             'master4': $scope.master4,
-            'score': $scope.computeStrategyAssessmentScore()
+            'score': $scope.computeCodeAssessmentScore()
         };
     };
 
-    $scope.computeStrategyAssessmentScore = function(){
+    $scope.computeCodeAssessmentScore = function(){
         if(isTraveller() && !isArtisan()){
             return 1;
         }

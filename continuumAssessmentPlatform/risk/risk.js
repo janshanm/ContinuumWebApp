@@ -79,11 +79,11 @@ angular.module('continuumAssessmentPlatform.risk', ['ngRoute'])
             'master3': $scope.master3,
             'master4': $scope.master4,
             'master5': $scope.master5,
-            'score': $scope.computeStrategyAssessmentScore()
+            'score': $scope.computeCodeAssessmentScore()
         };
     };
 
-    $scope.computeStrategyAssessmentScore = function(){
+    $scope.computeCodeAssessmentScore = function(){
         if(isTraveller()){
             return 1;
         }

@@ -1,0 +1,38 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Resilience: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">High availability deployment automation across different physical hardware.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Blue/Green deployment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Successfully tested DR deployment automation.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonResilience" class="btn btn-primary btn-lg" href="#!/pipeline-monitoring">Last Discipline</a>
+        <a id="nextButtonResilience" class="btn btn-primary btn-lg" href="#!/pipeline-general" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

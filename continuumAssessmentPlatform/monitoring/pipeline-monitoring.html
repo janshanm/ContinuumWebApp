@@ -1,0 +1,58 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Monitoring and Analytics: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Automatic deployment and configuration of infrastructure monitoring software.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Automatic deployment and configuration application monitoring software.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">All monitoring capabilities linked to a command centre with relevant callout groups.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Business analytics implemented and deployed automatically.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion5" type="checkbox" ng-model="question5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question5)">End user experience monitoring deployed for service (if required).</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-code">Last Discipline</a>
+        <a id="nextButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-resilience" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

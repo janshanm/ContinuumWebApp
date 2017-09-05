@@ -49,6 +49,14 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.complete-survey',
   'continuumAssessmentPlatform.survey-results',
   'continuumAssessmentPlatform.configure-survey',
+  'continuumAssessmentPlatform.pipeline-ci',
+  'continuumAssessmentPlatform.pipeline-infrastructure',
+  'continuumAssessmentPlatform.pipeline-environments',
+  'continuumAssessmentPlatform.pipeline-qa',
+  'continuumAssessmentPlatform.pipeline-code',
+  'continuumAssessmentPlatform.pipeline-monitoring',
+  'continuumAssessmentPlatform.pipeline-resilience',
+  'continuumAssessmentPlatform.pipeline-general',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

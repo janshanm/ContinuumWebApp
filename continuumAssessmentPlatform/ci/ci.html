@@ -1,0 +1,77 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Continuous Integration: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Trunk based development.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Build automated and tests run part of the build.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">All scripts and code under source control.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Visual dashboard for build status and team reacts to failed builds.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion5" type="checkbox" ng-model="question5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question5)">Release and version tagging.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion6" type="checkbox" ng-model="question6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question6)">Build metrics are gathered and acted on.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion7" type="checkbox" ng-model="question7">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question7)">Build is always in a releasable state.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="nextButtonCi" class="btn btn-primary btn-lg" href="#!/infrastructure" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

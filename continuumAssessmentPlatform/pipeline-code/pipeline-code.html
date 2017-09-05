@@ -1,0 +1,58 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Coding Practices / Code Quality: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Automated code complexity analysis.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Static code analysis.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Technical debt % (per SonarQube for now).</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Automated syntax checking.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion5" type="checkbox" ng-model="question5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question5)">Code coverage analysis.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-qa">Last Discipline</a>
+        <a id="nextButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-monitoring" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

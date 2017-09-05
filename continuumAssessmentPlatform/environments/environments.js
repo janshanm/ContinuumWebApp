@@ -139,11 +139,11 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
             'master7': $scope.master7,
             'master8': $scope.master8,
             'master9': $scope.master9,
-            'score': $scope.computeStrategyAssessmentScore()
+            'score': $scope.computeCodeAssessmentScore()
         };
     };
 
-    $scope.computeStrategyAssessmentScore = function(){
+    $scope.computeCodeAssessmentScore = function(){
         if(isTraveller()){
             return 1;
         }

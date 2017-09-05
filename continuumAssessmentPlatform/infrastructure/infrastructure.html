@@ -1,0 +1,58 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Infrastructure Automation: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Automated server provisioning.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Automated middleware Provisioning.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Infrastructure code, scripts and config under source control.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Automated DNS and IP provisioning.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion5" type="checkbox" ng-model="question5">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question5)">Automated firewall rule provisioning.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonInfra" class="btn btn-primary btn-lg" href="#!/pipeline-ci">Last Discipline</a>
+        <a id="nextButtonInfra" class="btn btn-primary btn-lg" href="#!/pipeline-environments" ng-click="saveAssessments()">Next Discipline</a>
+    </p>

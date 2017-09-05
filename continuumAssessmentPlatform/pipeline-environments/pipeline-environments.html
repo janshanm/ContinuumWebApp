@@ -1,0 +1,48 @@
+
+    <p class="lead" ng-init="init()" style="margin-left: 50px">Environments: Please select all the check boxes applicable to your team.</p>
+    <hr>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion1" type="checkbox" ng-model="question1">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question1)">Automated  full stack deployment to Integration Environment .</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion2" type="checkbox" ng-model="question2">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question2)">Automated full stack deployment to Acceptance Environment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question3)">Automated full stack deployment to Production Environment.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion4" type="checkbox" ng-model="question4">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question4)">Environment deployment dashboard.</p></div>
+    </div>
+    <hr>
+    <p align="right">
+        <a id="previousButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-infrastructure">Last Discipline</a>
+        <a id="nextButtonEnvs" class="btn btn-primary btn-lg" href="#!/pipeline-qa" ng-click="saveAssessments()">Next Discipline</a>
+    </p>
