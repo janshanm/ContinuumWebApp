@@ -45,16 +45,10 @@ angular.module('continuumAssessmentPlatform.pipeline-general', ['ngRoute'])
         };
 
         $scope.computeCodeAssessmentScore = function(){
-            if(isTraveller() && !isArtisan()){
+            if(isTraveller() && !isMaster()){
                 return 3;
             }
-            else if(isArtisan() && !isExpert() && !isProfessional()){
-                return 4;
-            }
-            else if(isExpert() && !isProfessional()){
-                return 5;
-            }
-            else if(isProfessional()){
+            else if(isMaster()){
                 return 5;
             }
             else{
@@ -67,16 +61,7 @@ angular.module('continuumAssessmentPlatform.pipeline-general', ['ngRoute'])
             return $scope.question1;
         };
 
-        var isArtisan = function () {
+        var isMaster = function () {
             return isTraveller() && $scope.question2 && $scope.question3;
         };
-
-        var isExpert = function () {
-            return isArtisan();
-        };
-
-        var isProfessional = function () {
-            return isArtisan();
-        };
-
     }]);

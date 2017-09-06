@@ -51,16 +51,13 @@ angular.module('continuumAssessmentPlatform.pipeline-monitoring', ['ngRoute'])
     };
 
     $scope.computeCodeAssessmentScore = function(){
-        if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional()){
+        if(isTraveller() && !isArtisan() && !isMaster()){
             return 2;
         }
-        else if(isArtisan() && !isExpert() && !isProfessional()){
+        else if(isArtisan() && !isMaster()){
             return 3;
         }
-        else if(isExpert() && !isProfessional()){
-            return 4;
-        }
-        else if(isProfessional()){
+        else if(isMaster()){
             return 5;
         }
         else{
@@ -77,12 +74,8 @@ angular.module('continuumAssessmentPlatform.pipeline-monitoring', ['ngRoute'])
         return $scope.question1 && $scope.question2 && $scope.question3;
     };
 
-    var isExpert = function() {
+    var isMaster = function() {
         return isArtisan() && $scope.question4 && $scope.question5;
-    };
-
-    var isProfessional = function () {
-        return isExpert();
     };
 
 }]);
