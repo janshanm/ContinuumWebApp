@@ -4,7 +4,7 @@ angular.module('continuumAssessmentPlatform.pipeline-qa', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/pipeline-qa', {
-    templateUrl: 'ci/ci.html',
+    templateUrl: 'qa/qa.html',
     controller: 'PipelineQACtrl'
   });
 }])

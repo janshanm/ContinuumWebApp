@@ -4,7 +4,7 @@ angular.module('continuumAssessmentPlatform.pipeline-monitoring', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/pipeline-monitoring', {
-    templateUrl: 'pipeline-monitoring/pipeline-monitoring.html',
+    templateUrl: 'monitoring/pipeline-monitoring.html',
     controller: 'PipelineMonitoringCtrl'
   });
 }])

@@ -36,6 +36,7 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.process',
   'continuumAssessmentPlatform.resultsqa',
   'continuumAssessmentPlatform.teamselection-qamam',
+  'continuumAssessmentPlatform.teamselection-pipeline',
   'continuumAssessmentPlatform.test-criteria',
   'continuumAssessmentPlatform.defect-and-exploratory',
   'continuumAssessmentPlatform.automation-testing',
@@ -57,6 +58,7 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.pipeline-monitoring',
   'continuumAssessmentPlatform.pipeline-resilience',
   'continuumAssessmentPlatform.pipeline-general',
+  'continuumAssessmentPlatform.pipeline-results',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

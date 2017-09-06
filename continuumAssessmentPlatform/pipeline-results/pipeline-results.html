@@ -1,0 +1,25 @@
+
+    <p class="lead" ng-init="init()" style="text-align: center">Please find results for team {{selectedTeam}}.</p>
+
+    <div id="exTab3" class="container">
+        <ul  class="nav nav-pills">
+            <li ng-class="{active: selectedTab == 1}">
+                <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">Survey Results</a>
+            </li>
+        </ul>
+
+        <div class="tab-content clearfix">
+            <div class="alert alert-success" style="max-width: 300px;margin-left: 50px" role="alert" ng-show="isSaved">
+                <p>Assessment results successfully saved</p>
+            </div>
+            <div class="alert alert-danger" style="max-width: 400px;margin-left: 50px" role="alert" ng-show="isNotSaved">
+                <p>Something went wrong. Assessment results not saved.</p>
+            </div>
+            <div class="tab-pane active" id="pipelineResults" ng-show="selectedTab == 1">
+                <canvas id="radar-chart-pipeline" width="800" height="600"></canvas>
+            </div>
+            <p align="right" ng-show="selectedTab == 1">
+                <a class="btn btn-primary btn-lg" href="" ng-click="saveAssessmentResult()">Save Assessment Results</a>
+            </p>
+        </div>
+    </div>
