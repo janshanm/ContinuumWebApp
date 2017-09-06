@@ -32,7 +32,7 @@ angular.module('continuumAssessmentPlatform.pipeline-results', ['ngRoute'])
             if(teamName !== undefined){
                 RetrievePipelineResults.getPipelineResultsForTeam(teamName).then(function(response){
                     var data = response.data;
-                    $rootScope.teamName = data['teamName'];
+                    $rootScope.teamName = teamName;
                     var assessments = data['rawData'] !== undefined ? JSON.parse(data['rawData']) : {};
                     $scope.generateResultsChart(assessments);
                 });
