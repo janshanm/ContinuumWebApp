@@ -91,21 +91,25 @@ angular.module('continuumAssessmentPlatform.pipeline-qa', ['ngRoute'])
 
     };
 
+    var artisanValues = ['50', '70', '80', '90'];
+    var expertValues = ['70', '80', '90'];
+    var professionalValues = ['80', '90'];
+
     var isTraveller = function(){
         return $scope.question5 === '30';
     };
 
     var isArtisan = function () {
-        return ($scope.question5 === '50') && $scope.question2 && $scope.question7;
+        return (artisanValues.indexOf($scope.question5) !== -1) && $scope.question2 && $scope.question7;
     };
 
     var isExpert = function() {
-        return ($scope.question5 === '70') && $scope.question1 && $scope.question2 && $scope.question4 && $scope.question6
+        return (expertValues.indexOf($scope.question5) !== -1) && $scope.question1 && $scope.question2 && $scope.question4 && $scope.question6
             && $scope.question7;
     };
 
     var isProfessional = function () {
-        return ($scope.question5 === '80') && $scope.question1 && $scope.question2 && $scope.question4
+        return (professionalValues.indexOf($scope.question5) !== -1) && $scope.question1 && $scope.question2 && $scope.question4
             && $scope.question6 && $scope.question7 && $scope.question8;
     };
 
