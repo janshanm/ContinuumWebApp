@@ -50,6 +50,7 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.complete-survey',
   'continuumAssessmentPlatform.survey-results',
   'continuumAssessmentPlatform.configure-survey',
+  'continuumAssessmentPlatform.survey-dashboard',
   'continuumAssessmentPlatform.pipeline-ci',
   'continuumAssessmentPlatform.pipeline-infrastructure',
   'continuumAssessmentPlatform.pipeline-environments',
