@@ -21,6 +21,7 @@ angular.module('continuumAssessmentPlatform.teamselection-qamam', ['ngRoute'])
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
                 {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
+                {'id': 'Infra', 'name': 'Infrastructure Services'},
                 {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}, {'id': 'CIB', 'name': 'CIB Operations'}];
 
             $scope.allTeams = {
@@ -63,6 +64,7 @@ angular.module('continuumAssessmentPlatform.teamselection-qamam', ['ngRoute'])
                     {'name': 'Application Performance Monitoring'}, {'name': 'Aris'}, {'name': 'Business Applications'},
                     {'name': 'Mainframe Tools'}, {'name': 'Sharepoint'}, {'name': 'Source Code Management'},
                     {'name': 'Teamtrack'}, {'name': 'Technical Enablement'}, {'name': 'Tools and Support'}],
+                'Infra': [{'name': 'Sybase'}, {'name': 'DB2'}],
                 'PBB': [{'name': 'CDI/RSS'}, {'name': 'Natural and .NET Applications'}, {'name': 'Credit - Account Maintenance'},
                     {'name': 'Credit: Collections'}, {'name': 'Credit: Origination'}, {'name': 'E3'},
                     {'name': 'Customer Insights and Analytics'}, {'name': 'EIM Data Change'}, {'name': 'EIM Data Remediation'},
