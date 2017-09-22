@@ -157,6 +157,64 @@ describe('continuumAssessmentPlatform.complete-survey module', function() {
             expect(scope.dataServicesScore).toEqual(8);
         }));
 
+        it('should set the default values based on the rootScope if there are not applicable values', inject(function($controller){
+            rootScope.surveyData = {'BIO': 'BIO Name', 'selectedPracticeTeam': 'Practice Name',
+                'softwareEngineering1': 'N/A', 'softwareEngineering2': 'N/A', 'softwareEngineering3': '1', 'softwareEngineering4': '3',
+                'agileCoaching1': '1', 'agileCoaching2': '3', 'agileCoaching3': 'N/A', 'agileCoaching4': 'N/A',
+                'changeAndRelease1': '1', 'changeAndRelease2': '3', 'changeAndRelease3': '1', 'changeAndRelease4': '3',
+                'qualityEngineering1': 'N/A', 'qualityEngineering2': 'N/A', 'qualityEngineering3': 'N/A', 'qualityEngineering4': '3',
+                'enterpriseArchitecture1': '1', 'enterpriseArchitecture2': '3', 'enterpriseArchitecture3': '1', 'enterpriseArchitecture4': '3',
+                'solutionsArchitecture1': 'N/A', 'solutionsArchitecture2': '3', 'solutionsArchitecture3': '1', 'solutionsArchitecture4': '3',
+                'dataServices1': 'N/A', 'dataServices2': 'N/A', 'dataServices3': 'N/A', 'dataServices4': 'N/A'};
+
+            controller = $controller('CompleteSurveyCtrl', {'$scope': scope, '$rootScope': rootScope});
+            scope.init();
+            expect(scope.softwareEngineering1).toEqual('N/A');
+            expect(scope.softwareEngineering2).toEqual('N/A');
+            expect(scope.softwareEngineering3).toEqual('1');
+            expect(scope.softwareEngineering4).toEqual('3');
+            expect(scope.softwareDenominator).toEqual(2);
+            expect(scope.agileCoaching1).toEqual('1');
+            expect(scope.agileCoaching2).toEqual('3');
+            expect(scope.agileCoaching3).toEqual('N/A');
+            expect(scope.agileCoaching4).toEqual('N/A');
+            expect(scope.agileCoachingDenominator).toEqual(2);
+            expect(scope.changeAndRelease1).toEqual('1');
+            expect(scope.changeAndRelease2).toEqual('3');
+            expect(scope.changeAndRelease3).toEqual('1');
+            expect(scope.changeAndRelease4).toEqual('3');
+            expect(scope.changeAndReleaseDenominator).toEqual(4);
+            expect(scope.qualityEngineering1).toEqual('N/A');
+            expect(scope.qualityEngineering2).toEqual('N/A');
+            expect(scope.qualityEngineering3).toEqual('N/A');
+            expect(scope.qualityEngineering4).toEqual('3');
+            expect(scope.qualityEngineeringDenominator).toEqual(1);
+            expect(scope.enterpriseArchitecture1).toEqual('1');
+            expect(scope.enterpriseArchitecture2).toEqual('3');
+            expect(scope.enterpriseArchitecture3).toEqual('1');
+            expect(scope.enterpriseArchitecture4).toEqual('3');
+            expect(scope.enterpriseArchitectureDenominator).toEqual(4);
+            expect(scope.solutionsArchitecture1).toEqual('N/A');
+            expect(scope.solutionsArchitecture2).toEqual('3');
+            expect(scope.solutionsArchitecture3).toEqual('1');
+            expect(scope.solutionsArchitecture4).toEqual('3');
+            expect(scope.solutionsArchitectureDenominator).toEqual(3);
+            expect(scope.dataServices1).toEqual('N/A');
+            expect(scope.dataServices2).toEqual('N/A');
+            expect(scope.dataServices3).toEqual('N/A');
+            expect(scope.dataServices4).toEqual('N/A');
+            expect(scope.dataServicesDenominator).toEqual(0);
+            expect(scope.selectedPracticeTeam).toEqual('Practice Name');
+            expect(scope.selectedBIO).toEqual('BIO Name');
+            expect(scope.softwareScore).toEqual(4);
+            expect(scope.agileCoachingScore).toEqual(4);
+            expect(scope.changeAndReleaseScore).toEqual(8);
+            expect(scope.qualityEngineeringScore).toEqual(3);
+            expect(scope.enterpriseArchitectureScore).toEqual(8);
+            expect(scope.solutionsArchitectureScore).toEqual(7);
+            expect(scope.dataServicesScore).toEqual(0);
+        }));
+
         describe('#saveSurveyResults', function () {
             it('should call the save survey results with the formatted data when practice selected', function(){
                 scope.selectedBIO = 'BIO Name';
@@ -168,6 +226,15 @@ describe('continuumAssessmentPlatform.complete-survey module', function() {
                 scope.enterpriseArchitectureScore = 8;
                 scope.solutionsArchitectureScore = 4;
                 scope.dataServicesScore = 8;
+
+                scope.softwareDenominator = 4;
+                scope.agileCoachingDenominator = 4;
+                scope.changeAndReleaseDenominator = 4;
+                scope.qualityEngineeringDenominator = 4;
+                scope.enterpriseArchitectureDenominator = 4;
+                scope.solutionsArchitectureDenominator = 4;
+                scope.dataServicesDenominator = 4;
+
                 scope.selectedPracticeTeam = 'Practice Name';
 
                 var formattedData = {'BIO': 'BIO Name', 'rawData': {}, 'softwareScore': 1, 'agileCoachingScore': 2,
@@ -218,11 +285,55 @@ describe('continuumAssessmentPlatform.complete-survey module', function() {
                 scope.enterpriseArchitectureScore = 8;
                 scope.solutionsArchitectureScore = 4;
                 scope.dataServicesScore = 8;
+
+                scope.softwareDenominator = 4;
+                scope.agileCoachingDenominator = 4;
+                scope.changeAndReleaseDenominator = 4;
+                scope.qualityEngineeringDenominator = 4;
+                scope.enterpriseArchitectureDenominator = 4;
+                scope.solutionsArchitectureDenominator = 4;
+                scope.dataServicesDenominator = 4;
+
                 scope.selectedPracticeTeam = '';
 
                 var formattedData = {'BIO': 'BIO Name', 'rawData': {}, 'softwareScore': 1, 'agileCoachingScore': 2,
                     'changeAndReleaseScore': 3, 'qualityEngineeringScore': 1, 'enterpriseArchitectureScore': 2,
                     'solutionsArchitectureScore': 1, 'dataServicesScore': 2};
+
+                deferred.resolve({'status': 200, 'data': 'Saved Successfully'});
+                saveSurveySpy.saveSurvey.and.returnValue(deferred.promise);
+
+                scope.saveSurveyResults();
+                scope.$apply();
+
+                expect(saveSurveySpy.saveSurvey).toHaveBeenCalledWith(formattedData);
+            });
+
+
+            it('should call the save survey results with the formatted data when practice not selected and the denominators are zero', function(){
+                scope.selectedBIO = 'BIO Name';
+                rootScope.surveyData = {};
+                scope.softwareScore = 4;
+                scope.agileCoachingScore = 8;
+                scope.changeAndReleaseScore = 12;
+                scope.qualityEngineeringScore = 4;
+                scope.enterpriseArchitectureScore = 8;
+                scope.solutionsArchitectureScore = 4;
+                scope.dataServicesScore = 8;
+
+                scope.softwareDenominator = 0;
+                scope.agileCoachingDenominator = 0;
+                scope.changeAndReleaseDenominator = 0;
+                scope.qualityEngineeringDenominator = 0;
+                scope.enterpriseArchitectureDenominator = 0;
+                scope.solutionsArchitectureDenominator = 0;
+                scope.dataServicesDenominator = 0;
+
+                scope.selectedPracticeTeam = '';
+
+                var formattedData = {'BIO': 'BIO Name', 'rawData': {}, 'softwareScore': 0, 'agileCoachingScore': 0,
+                    'changeAndReleaseScore': 0, 'qualityEngineeringScore': 0, 'enterpriseArchitectureScore': 0,
+                    'solutionsArchitectureScore': 0, 'dataServicesScore': 0};
 
                 deferred.resolve({'status': 200, 'data': 'Saved Successfully'});
                 saveSurveySpy.saveSurvey.and.returnValue(deferred.promise);

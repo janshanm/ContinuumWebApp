@@ -8,34 +8,34 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
     }])
 
     .controller('PracticeManagementCtrl', ['$window','$location', '$scope', '$rootScope', 'PracticeService', function($window, $location, $scope, $rootScope, PracticeService) {
-        $scope.softwareEngineering1 = '3';
-        $scope.softwareEngineering2 = '3';
-        $scope.softwareEngineering3 = '3';
-        $scope.softwareEngineering4 = '3';
-        $scope.agileCoaching1 = '3';
-        $scope.agileCoaching2 = '3';
-        $scope.agileCoaching3 = '3';
-        $scope.agileCoaching4 = '3';
-        $scope.changeAndRelease1 = '3';
-        $scope.changeAndRelease2 = '3';
-        $scope.changeAndRelease3 = '3';
-        $scope.changeAndRelease4 = '3';
-        $scope.qualityEngineering1 = '3';
-        $scope.qualityEngineering2 = '3';
-        $scope.qualityEngineering3 = '3';
-        $scope.qualityEngineering4 = '3';
-        $scope.enterpriseArchitecture1 = '3';
-        $scope.enterpriseArchitecture2 = '3';
-        $scope.enterpriseArchitecture3 = '3';
-        $scope.enterpriseArchitecture4 = '3';
-        $scope.solutionsArchitecture1 = '3';
-        $scope.solutionsArchitecture2 = '3';
-        $scope.solutionsArchitecture3 = '3';
-        $scope.solutionsArchitecture4 = '3';
-        $scope.dataServices1 = '3';
-        $scope.dataServices2 = '3';
-        $scope.dataServices3 = '3';
-        $scope.dataServices4 = '3';
+        $scope.softwareEngineering1 = 'N/A';
+        $scope.softwareEngineering2 = 'N/A';
+        $scope.softwareEngineering3 = 'N/A';
+        $scope.softwareEngineering4 = 'N/A';
+        $scope.agileCoaching1 = 'N/A';
+        $scope.agileCoaching2 = 'N/A';
+        $scope.agileCoaching3 = 'N/A';
+        $scope.agileCoaching4 = 'N/A';
+        $scope.changeAndRelease1 = 'N/A';
+        $scope.changeAndRelease2 = 'N/A';
+        $scope.changeAndRelease3 = 'N/A';
+        $scope.changeAndRelease4 = 'N/A';
+        $scope.qualityEngineering1 = 'N/A';
+        $scope.qualityEngineering2 = 'N/A';
+        $scope.qualityEngineering3 = 'N/A';
+        $scope.qualityEngineering4 = 'N/A';
+        $scope.enterpriseArchitecture1 = 'N/A';
+        $scope.enterpriseArchitecture2 = 'N/A';
+        $scope.enterpriseArchitecture3 = 'N/A';
+        $scope.enterpriseArchitecture4 = 'N/A';
+        $scope.solutionsArchitecture1 = 'N/A';
+        $scope.solutionsArchitecture2 = 'N/A';
+        $scope.solutionsArchitecture3 = 'N/A';
+        $scope.solutionsArchitecture4 = 'N/A';
+        $scope.dataServices1 = 'N/A';
+        $scope.dataServices2 = 'N/A';
+        $scope.dataServices3 = 'N/A';
+        $scope.dataServices4 = 'N/A';
         $scope.bodyData = {};
         $scope.selectedBIO = '';
         $scope.selectedTeam = '';
@@ -48,7 +48,7 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
                 $scope.teamNames = getSurveyTeams($scope.allSurveyees);
                 $scope.portfolioNames = getPortfolioTeams($scope.allSurveyees);
 
-                $scope.scales = [{'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
+                $scope.scales = [{'scale': 'not-applicable', 'value': 'N/A'}, {'scale': 'lowest', 'value': 1}, {'scale': 'low', 'value': 2},
                     {'scale': 'middle', 'value': 3}, {'scale': 'high', 'value': 4},
                     {'scale': 'highest', 'value': 5}];
 
@@ -104,34 +104,34 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
 
         $scope.initializeData = function () {
             $scope.hasCompletedSurveyAlready = false;
-            $scope.softwareEngineering1 = '3';
-            $scope.softwareEngineering2 = '3';
-            $scope.softwareEngineering3 = '3';
-            $scope.softwareEngineering4 = '3';
-            $scope.agileCoaching1 = '3';
-            $scope.agileCoaching2 = '3';
-            $scope.agileCoaching3 = '3';
-            $scope.agileCoaching4 = '3';
-            $scope.changeAndRelease1 = '3';
-            $scope.changeAndRelease2 = '3';
-            $scope.changeAndRelease3 = '3';
-            $scope.changeAndRelease4 = '3';
-            $scope.qualityEngineering1 = '3';
-            $scope.qualityEngineering2 = '3';
-            $scope.qualityEngineering3 = '3';
-            $scope.qualityEngineering4 = '3';
-            $scope.enterpriseArchitecture1 = '3';
-            $scope.enterpriseArchitecture2 = '3';
-            $scope.enterpriseArchitecture3 = '3';
-            $scope.enterpriseArchitecture4 = '3';
-            $scope.solutionsArchitecture1 = '3';
-            $scope.solutionsArchitecture2 = '3';
-            $scope.solutionsArchitecture3 = '3';
-            $scope.solutionsArchitecture4 = '3';
-            $scope.dataServices1 = '3';
-            $scope.dataServices2 = '3';
-            $scope.dataServices3 = '3';
-            $scope.dataServices4 = '3';
+            $scope.softwareEngineering1 = 'N/A';
+            $scope.softwareEngineering2 = 'N/A';
+            $scope.softwareEngineering3 = 'N/A';
+            $scope.softwareEngineering4 = 'N/A';
+            $scope.agileCoaching1 = 'N/A';
+            $scope.agileCoaching2 = 'N/A';
+            $scope.agileCoaching3 = 'N/A';
+            $scope.agileCoaching4 = 'N/A';
+            $scope.changeAndRelease1 = 'N/A';
+            $scope.changeAndRelease2 = 'N/A';
+            $scope.changeAndRelease3 = 'N/A';
+            $scope.changeAndRelease4 = 'N/A';
+            $scope.qualityEngineering1 = 'N/A';
+            $scope.qualityEngineering2 = 'N/A';
+            $scope.qualityEngineering3 = 'N/A';
+            $scope.qualityEngineering4 = 'N/A';
+            $scope.enterpriseArchitecture1 = 'N/A';
+            $scope.enterpriseArchitecture2 = 'N/A';
+            $scope.enterpriseArchitecture3 = 'N/A';
+            $scope.enterpriseArchitecture4 = 'N/A';
+            $scope.solutionsArchitecture1 = 'N/A';
+            $scope.solutionsArchitecture2 = 'N/A';
+            $scope.solutionsArchitecture3 = 'N/A';
+            $scope.solutionsArchitecture4 = 'N/A';
+            $scope.dataServices1 = 'N/A';
+            $scope.dataServices2 = 'N/A';
+            $scope.dataServices3 = 'N/A';
+            $scope.dataServices4 = 'N/A';
         };
 
         $scope.setData = function () {

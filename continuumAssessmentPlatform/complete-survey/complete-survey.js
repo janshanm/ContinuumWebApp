@@ -74,26 +74,76 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
                 $scope.selectedPracticeTeam = $rootScope.surveyData['selectedPracticeTeam'];
             }
 
-            $scope.softwareScore = parseInt($scope.softwareEngineering1) + parseInt($scope.softwareEngineering2) +
-                parseInt($scope.softwareEngineering3) + parseInt($scope.softwareEngineering4);
+            $scope.softwareScore = toInt($scope.softwareEngineering1) + toInt($scope.softwareEngineering2) +
+                toInt($scope.softwareEngineering3) + toInt($scope.softwareEngineering4);
 
-            $scope.agileCoachingScore = parseInt($scope.agileCoaching1) + parseInt($scope.agileCoaching2) +
-                parseInt($scope.agileCoaching3) + parseInt($scope.agileCoaching4);
+            $scope.softwareDenominator = denominator($scope.softwareEngineering1, $scope.softwareEngineering2,
+                $scope.softwareEngineering3, $scope.softwareEngineering4);
 
-            $scope.changeAndReleaseScore = parseInt($scope.changeAndRelease1) + parseInt($scope.changeAndRelease2) +
-                parseInt($scope.changeAndRelease3) + parseInt($scope.changeAndRelease4);
+            $scope.agileCoachingScore = toInt($scope.agileCoaching1) + toInt($scope.agileCoaching2) +
+                toInt($scope.agileCoaching3) + toInt($scope.agileCoaching4);
 
-            $scope.qualityEngineeringScore = parseInt($scope.qualityEngineering1) + parseInt($scope.qualityEngineering2) +
-                parseInt($scope.qualityEngineering3) + parseInt($scope.qualityEngineering4);
+            $scope.agileCoachingDenominator = denominator($scope.agileCoaching1, $scope.agileCoaching2,
+                $scope.agileCoaching3, $scope.agileCoaching4);
 
-            $scope.enterpriseArchitectureScore = parseInt($scope.enterpriseArchitecture1) + parseInt($scope.enterpriseArchitecture2) +
-                parseInt($scope.enterpriseArchitecture3) + parseInt($scope.enterpriseArchitecture4);
+            $scope.changeAndReleaseScore = toInt($scope.changeAndRelease1) + toInt($scope.changeAndRelease2) +
+                toInt($scope.changeAndRelease3) + toInt($scope.changeAndRelease4);
 
-            $scope.solutionsArchitectureScore = parseInt($scope.solutionsArchitecture1) + parseInt($scope.solutionsArchitecture2) +
-                parseInt($scope.solutionsArchitecture3) + parseInt($scope.solutionsArchitecture4);
+            $scope.changeAndReleaseDenominator = denominator($scope.changeAndRelease1, $scope.changeAndRelease2,
+                $scope.changeAndRelease3, $scope.changeAndRelease4);
 
-            $scope.dataServicesScore = parseInt($scope.dataServices1) + parseInt($scope.dataServices2) +
-                parseInt($scope.dataServices3) + parseInt($scope.dataServices4);
+            $scope.qualityEngineeringScore = toInt($scope.qualityEngineering1) + toInt($scope.qualityEngineering2) +
+                toInt($scope.qualityEngineering3) + toInt($scope.qualityEngineering4);
+
+            $scope.qualityEngineeringDenominator = denominator($scope.qualityEngineering1, $scope.qualityEngineering2,
+                $scope.qualityEngineering3, $scope.qualityEngineering4);
+
+            $scope.enterpriseArchitectureScore = toInt($scope.enterpriseArchitecture1) + toInt($scope.enterpriseArchitecture2) +
+                toInt($scope.enterpriseArchitecture3) + toInt($scope.enterpriseArchitecture4);
+
+            $scope.enterpriseArchitectureDenominator = denominator($scope.enterpriseArchitecture1, $scope.enterpriseArchitecture2,
+                $scope.enterpriseArchitecture3, $scope.enterpriseArchitecture4);
+
+            $scope.solutionsArchitectureScore = toInt($scope.solutionsArchitecture1) + toInt($scope.solutionsArchitecture2) +
+                toInt($scope.solutionsArchitecture3) + toInt($scope.solutionsArchitecture4);
+
+            $scope.solutionsArchitectureDenominator = denominator($scope.solutionsArchitecture1, $scope.solutionsArchitecture2,
+                $scope.solutionsArchitecture3, $scope.solutionsArchitecture4);
+
+            $scope.dataServicesScore = toInt($scope.dataServices1) + toInt($scope.dataServices2) +
+                toInt($scope.dataServices3) + toInt($scope.dataServices4);
+
+            $scope.dataServicesDenominator = denominator($scope.dataServices1, $scope.dataServices2, $scope.dataServices3,
+                $scope.dataServices4);
+        };
+
+        var toInt = function(value){
+            if(value !== 'N/A'){
+                return parseInt(value);
+            }
+            return 0;
+        };
+
+        var denominator = function(value1, value2, value3, value4){
+          var denominatorNumber = 0;
+
+          if(value1 !== 'N/A'){
+              denominatorNumber++;
+          }
+
+          if(value2 !== 'N/A'){
+              denominatorNumber++;
+          }
+
+          if(value3 !== 'N/A'){
+              denominatorNumber++;
+          }
+
+          if(value4 !== 'N/A'){
+              denominatorNumber++;
+          }
+
+          return denominatorNumber;
         };
 
         $scope.saveSurveyResults = function(){
@@ -101,13 +151,13 @@ angular.module('continuumAssessmentPlatform.complete-survey', ['ngRoute'])
 
             formattedData['BIO'] = $scope.selectedBIO;
             formattedData['rawData'] = $rootScope.surveyData;
-            formattedData['softwareScore'] = $scope.softwareScore / 4;
-            formattedData['agileCoachingScore'] = $scope.agileCoachingScore / 4;
-            formattedData['changeAndReleaseScore'] = $scope.changeAndReleaseScore / 4;
-            formattedData['qualityEngineeringScore'] = $scope.qualityEngineeringScore / 4;
-            formattedData['enterpriseArchitectureScore'] = $scope.enterpriseArchitectureScore / 4;
-            formattedData['solutionsArchitectureScore'] = $scope.solutionsArchitectureScore / 4;
-            formattedData['dataServicesScore'] = $scope.dataServicesScore / 4;
+            formattedData['softwareScore'] = $scope.softwareDenominator !== 0 ? $scope.softwareScore / $scope.softwareDenominator : 0;
+            formattedData['agileCoachingScore'] = $scope.agileCoachingDenominator !== 0 ? $scope.agileCoachingScore / $scope.agileCoachingDenominator : 0;
+            formattedData['changeAndReleaseScore'] = $scope.changeAndReleaseDenominator !== 0 ? $scope.changeAndReleaseScore / $scope.changeAndReleaseDenominator : 0;
+            formattedData['qualityEngineeringScore'] = $scope.qualityEngineeringDenominator !== 0 ? $scope.qualityEngineeringScore / $scope.qualityEngineeringDenominator : 0;
+            formattedData['enterpriseArchitectureScore'] = $scope.enterpriseArchitectureDenominator !== 0 ? $scope.enterpriseArchitectureScore / $scope.enterpriseArchitectureDenominator : 0;
+            formattedData['solutionsArchitectureScore'] = $scope.solutionsArchitectureDenominator !== 0 ? $scope.solutionsArchitectureScore / $scope.solutionsArchitectureDenominator : 0;
+            formattedData['dataServicesScore'] = $scope.dataServicesDenominator !== 0 ? $scope.dataServicesScore / $scope.dataServicesDenominator : 0;
 
             if($scope.selectedPracticeTeam !== ''){
                 formattedData['selectedPracticeTeam'] = $scope.selectedPracticeTeam;
