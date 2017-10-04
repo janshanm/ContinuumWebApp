@@ -77,7 +77,9 @@ angular.module('continuumAssessmentPlatform.teamselection-qamam', ['ngRoute'])
                     {'name': 'Branch Accounting'}, {'name': 'Homeloans - Squad 1'}, {'name': 'Homeloans - Squad 2'},
                     {'name': 'Instant Money - Digital Messaging'}, {'name': 'Instant Money - Transit'}, {'name': 'Instant Money - VAS'},
                     {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}],
-                'W': [{'name': 'Insurance - Coverage Squad 1'}, {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary'}]
+                'W': [{'name': 'Insurance - Coverage Squad 1'}, {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary: Web'},
+                    {'name': 'Wealth and Investments and Fiduciary: iOS'}, {'name': 'Wealth and Investments and Fiduciary: Android'},
+                    {'name': 'Wealth and Investments and Fiduciary: Undefined'}]
             };
 
             $scope.getTeams();

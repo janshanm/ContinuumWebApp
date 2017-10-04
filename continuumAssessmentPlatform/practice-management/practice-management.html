@@ -4,17 +4,17 @@
         <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasError">
             <p>Please select a your name from the second dropdown before proceeding.</p>
         </div>
-        <label for="portfolioNameSelect" style="padding-left: 25px" class='required'> Select Portfolio: </label>
-        <select style="width: 300px" name="teamNameSelect" id="portfolioNameSelect" ng-model="selectedTeam" ng-change="updateTeams()">
+        <label for="portfolioNameSelect" style="padding-left: 20px" class='required'> Select Portfolio: </label>
+        <select style="width: 250px" name="teamNameSelect" id="portfolioNameSelect" ng-model="selectedTeam" ng-change="updateTeams()">
             <option ng-repeat="teamName in teamNames" value="{{teamName}}">{{teamName}}</option>
         </select>
-        <label for="bioNameSelect" style="padding-left: 25px" class='required'> Select Name: </label>
+        <label for="bioNameSelect" style="padding-left: 10px" class='required'> Select Name: </label>
         <select style="width: 300px" name="bioNameSelect" id="bioNameSelect" ng-model="selectedBIO">
             <option value="">Please Select Your Name From The List</option>
             <option ng-repeat="bio in BIOLists" value="{{bio.id}}">{{bio.name}}</option>
         </select>
 
-        <label for="teamNameSelect" style="padding-left: 25px" class='required' ng-show="selectedTeam === 'CTO'"> Select Practice Portfolio: </label>
+        <label for="teamNameSelect" style="padding-left: 10px" class='required' ng-show="selectedTeam === 'CTO'"> Select Practice Portfolio: </label>
         <select style="width: 400px" name="teamNameSelect" id="teamNameSelect" ng-model="selectedPracticeTeam" ng-show="selectedTeam === 'CTO'">
             <option value="">Select Portfolio You Are Practice Lead/Head For</option>
             <option ng-repeat="portfolioName in portfolioNames" value="{{portfolioName}}">{{portfolioName}}</option>

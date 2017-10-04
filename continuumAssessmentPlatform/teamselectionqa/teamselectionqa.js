@@ -19,10 +19,10 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
             $scope.selectedPortfolio = "AR";
 
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-                {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
+                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
-                {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}, {'id': 'CIB', 'name': 'CIB Operations'}];
+                {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}];
 
             $scope.allTeams = {
                 'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
@@ -47,7 +47,7 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
                     {'name': 'Procurement'}, {'name': 'Move Management'}, {'name': 'Physical Security'}, {'name': 'Real Estate Projects'},
                     {'name': 'HC Enablement'}, {'name': 'HC SAP'}, {'name': 'Marketing and Communications'},
                     {'name': 'GFCC'}, {'name': 'IOR'}],
-                'CIB': [{'name': 'Financial Messaging (AMH)'}],
+                'CIB': [{'name': 'Financial Messaging (AMH)'}, {'name': 'Risk Technology: Cybernetics'}],
                 'DS': [{'name': 'AML DevOps'}, {'name': 'Analytics and Third Party'}, {'name': 'Big Data'},
                     {'name': 'CIB'}, {'name': 'Data Management and Governance'}, {'name': 'Data Science'},
                     {'name': 'Data Warehousing - Squad 1'}, {'name': 'Data Warehousing - Squad 2'}, {'name': 'Enterprise BI'},
@@ -77,7 +77,9 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
                     {'name': 'Branch Accounting'}, {'name': 'Homeloans - Squad 1'}, {'name': 'Homeloans - Squad 2'},
                     {'name': 'Instant Money - Digital Messaging'}, {'name': 'Instant Money - Transit'}, {'name': 'Instant Money - VAS'},
                     {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}],
-                'W': [{'name': 'Insurance - Coverage Squad 1'}, {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary'}]
+                'W': [{'name': 'Insurance - Coverage Squad 1'}, {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary: Web'},
+                    {'name': 'Wealth and Investments and Fiduciary: iOS'}, {'name': 'Wealth and Investments and Fiduciary: Android'},
+                    {'name': 'Wealth and Investments and Fiduciary: Undefined'}]
             };
 
             $scope.getTeams();
