@@ -19,7 +19,7 @@
                     <label for="teamSelect" style="padding-left: 50px"> Select Team Name: </label>
                     <select style="width: 425px" name="teamSelect" id="teamSelect" ng-model="selectedTeam">
                         <option value="">---Please select---</option>
-                        <option ng-repeat="team in teams" value="{{team.name}}">{{team.name}}</option>
+                        <option ng-repeat="team in teams" value="{{team.id}}">{{team.name}}</option>
                     </select>
                 </div>
                 <div>
