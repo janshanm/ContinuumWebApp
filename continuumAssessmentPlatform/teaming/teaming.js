@@ -78,7 +78,7 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
     };
 
     $scope.computeCodeAssessmentScore = function(){
-        if(isTraveller()){
+        if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
             return 1;
         }
         else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
