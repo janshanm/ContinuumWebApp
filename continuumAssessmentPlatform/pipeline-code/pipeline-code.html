@@ -24,12 +24,16 @@
     <div class="row well well-sm">
         <div class="col-xs-1">
             <p align="center">
-                <label>
-                    <input id="ciQuestion3" type="checkbox" ng-model="question3">
-                </label>
+                <select style="width: 60px" name="ciQuestion3" id="ciQuestion3" ng-model="question3">
+                    <option value=">20">>20%</option>
+                    <option value="15">15%</option>
+                    <option value="10">10%</option>
+                    <option value="5">5%</option>
+                    <option value="2">2%</option>
+                </select>
             </p>
         </div>
-        <div class="col-xs-11"><p ng-class="getClass(question3)">Technical debt % (per SonarQube for now).</p></div>
+        <div class="col-xs-11"><p ng-class="getClassTechDebt(question3)">Technical debt % (per SonarQube for now).</p></div>
     </div>
     <div class="row well well-sm">
         <div class="col-xs-1">
@@ -50,6 +54,16 @@
             </p>
         </div>
         <div class="col-xs-11"><p ng-class="getClass(question5)">Code coverage analysis.</p></div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-1">
+            <p align="center">
+                <label>
+                    <input id="ciQuestion6" type="checkbox" ng-model="question6">
+                </label>
+            </p>
+        </div>
+        <div class="col-xs-11"><p ng-class="getClass(question6)">Test Report Generated as Standard Artefact.</p></div>
     </div>
     <hr>
     <p align="right">

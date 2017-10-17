@@ -13,9 +13,10 @@ angular.module('continuumAssessmentPlatform.pipeline-code', ['ngRoute'])
 
     $scope.question1 = false;
     $scope.question2 = false;
-    $scope.question3 = false;
+    $scope.question3 = '';
     $scope.question4 = false;
     $scope.question5 = false;
+    $scope.question6 = false;
 
     $scope.init = function () {
         if(typeof $rootScope.assessmentsPipeline !== "undefined"){
@@ -27,12 +28,17 @@ angular.module('continuumAssessmentPlatform.pipeline-code', ['ngRoute'])
                 $scope.question3 = pipelineCode['question3'];
                 $scope.question4 = pipelineCode['question4'];
                 $scope.question5 = pipelineCode['question5'];
+                $scope.question6 = pipelineCode['question5'];
             }
         }
     };
 
     $scope.getClass = function(value){
         return value ? 'bg-info': 'bg-warning';
+    };
+
+    $scope.getClassTechDebt = function(value){
+        return (value === '>20' || value === '15' || value === '10' || value === '5' || value === '2') ? 'bg-info': 'bg-warning';
     };
 
     $scope.saveAssessments = function(){
@@ -46,21 +52,29 @@ angular.module('continuumAssessmentPlatform.pipeline-code', ['ngRoute'])
             'question3': $scope.question3,
             'question4': $scope.question4,
             'question5': $scope.question5,
+            'question6': $scope.question6,
             'score': $scope.computeCodeAssessmentScore()
         };
     };
 
+    var artisanValues = ['15', '10', '5', '2'];
+    var expertValues = ['10', '5', '2'];
+    var professionalValues = ['5', '2'];
+
     $scope.computeCodeAssessmentScore = function(){
-        if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional()){
+        if(isTraveller() && !isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
+            return 1;
+        }
+        else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
             return 2;
         }
-        else if(isArtisan() && !isExpert() && !isProfessional()){
+        else if(isExpert() && !isProfessional() && !isMaster()){
             return 3;
         }
-        else if(isExpert() && !isProfessional()){
+        else if(isProfessional() && !isMaster()){
             return 4;
         }
-        else if(isProfessional()){
+        else if(isMaster()){
             return 5;
         }
         else{
@@ -70,19 +84,23 @@ angular.module('continuumAssessmentPlatform.pipeline-code', ['ngRoute'])
     };
 
     var isTraveller = function(){
-        return $scope.question1;
+        return $scope.question3 === '>20';
     };
 
     var isArtisan = function () {
-        return $scope.question1 && $scope.question2;
+        return (artisanValues.indexOf($scope.question3) !== -1 && $scope.question5);
     };
 
     var isExpert = function() {
-        return isArtisan() && $scope.question3;
+        return (expertValues.indexOf($scope.question3) !== -1 && $scope.question2 && $scope.question4 && $scope.question5);
     };
 
     var isProfessional = function () {
-        return isExpert() && $scope.question4 && $scope.question5;
+        return (professionalValues.indexOf($scope.question3) !== -1 && $scope.question2 && $scope.question4 && $scope.question5);
     };
+
+    var isMaster = function () {
+        return $scope.question3 === '2' && $scope.question1 && $scope.question2 && $scope.question4 && $scope.question5 && $scope.question6;
+    }
 
 }]);
