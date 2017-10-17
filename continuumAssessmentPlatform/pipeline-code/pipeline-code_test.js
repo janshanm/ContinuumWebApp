@@ -100,6 +100,23 @@ describe('continuumAssessmentPlatform.pipeline-code module', function() {
         it('should save the score for pipeline-code as 1 if no question is answered', function(){
             scope.question1 = false;
             scope.question2 = false;
+            scope.question3 = '';
+            scope.question4 = false;
+            scope.question5 = false;
+            scope.question6 = false;
+
+            var expectedPipelineCodeScore = 1;
+
+            scope.saveAssessments();
+            var pipelineCode = rootScope.assessmentsPipeline['pipeline-code'];
+
+            expect(pipelineCode['score']).toEqual(expectedPipelineCodeScore);
+
+        });
+
+        it('should save the score for pipeline-code as 1 if the tech debt is greater than 20%', function(){
+            scope.question1 = false;
+            scope.question2 = false;
             scope.question3 = '>20';
             scope.question4 = false;
             scope.question5 = false;
