@@ -58,7 +58,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Corporate and Commercial Banking and International Payments'}, {'name': 'Data and Analytics'},
                     {'name': 'Digital ID and Entitlements'}, {'name': 'Insurance, Homeloans, VAF, Kids'}, {'name': 'Order Management'},
                     {'name': 'Personal and SE - Account Management'}, {'name': 'Personal and SE - Transactional and VAS'},
-                    {'name': 'Staff Foundation'}, {'name': 'Virtual Banking - Squad 1'}, {'name': 'Virtual Banking - Squad 2'},
+                    {'name': 'Staff Foundation'}, {'name': 'Virtual Banking - Front End'}, {'name': 'Virtual Banking - Squad 2'},
                     {'name': 'Web Online'}, {'name': 'Web Presence and Community'}],
                 'EWT': [{'name': 'Domain Architecture'}, {'name': 'BPM'}, {'name': 'ECM'}, {'name': 'ESB'}, {'name': 'Agile Tools'},
                     {'name': 'Application Performance Monitoring'}, {'name': 'Aris'}, {'name': 'Business Applications'},
