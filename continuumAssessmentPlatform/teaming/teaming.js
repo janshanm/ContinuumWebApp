@@ -104,7 +104,7 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return $scope.traveller1 && !$scope.traveller2 && !$scope.traveller3 && $scope.artisan1 && $scope.artisan2;
+        return !$scope.traveller2 && !$scope.traveller3 && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
     };
 
     var isExpert = function() {
@@ -116,8 +116,7 @@ angular.module('continuumAssessmentPlatform.teaming', ['ngRoute'])
     };
 
     var isMaster = function () {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.expert1 && $scope.expert2
-            && $scope.expert3 && $scope.professional1 && $scope.professional2 && $scope.master1 && $scope.master2;
+        return isProfessional() && !$scope.traveller1 && $scope.master1 && $scope.master2;
     };
 
 }]);
