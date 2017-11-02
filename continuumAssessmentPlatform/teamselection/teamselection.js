@@ -19,7 +19,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
             $scope.selectedPortfolio = "AR";
 
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIB0', 'name': 'CIB Operations Technology'},
+                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIBO', 'name': 'CIB Operations Technology'},
                 {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
