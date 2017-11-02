@@ -110,7 +110,7 @@ angular.module('continuumAssessmentPlatform.risk', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
+        return !$scope.traveller1 && !$scope.traveller2 && $scope.artisan1 && $scope.artisan2 && $scope.artisan3;
     };
 
     var isExpert = function() {
