@@ -110,11 +110,11 @@ angular.module('continuumAssessmentPlatform.design', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2;
+        return isNotTraveller() && $scope.artisan1 && $scope.artisan2;
     };
 
     var isExpert = function() {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.expert1 && $scope.expert2
+        return isNotTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.expert1 && $scope.expert2
             && $scope.expert3 && $scope.expert4;
     };
 
@@ -126,6 +126,10 @@ angular.module('continuumAssessmentPlatform.design', ['ngRoute'])
     var isMaster = function () {
         return isExpert() && !$scope.professional1 && $scope.professional2 && $scope.professional3
             && $scope.professional4 && $scope.professional5 && $scope.master1 && $scope.master2;
+    };
+
+    var isNotTraveller = function(){
+        return !$scope.traveller1 && !$scope.traveller2;
     };
 
 }]);
