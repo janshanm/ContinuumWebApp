@@ -375,7 +375,7 @@ describe('continuumAssessmentPlatform.quality module', function() {
           scope.traveller2 = true;
           scope.traveller3 = true;
           scope.traveller4 = false;
-          scope.traveller5 = true;
+          scope.traveller5 = false;
           scope.traveller6 = true;
           scope.artisan1 = true;
           scope.artisan2 = true;
