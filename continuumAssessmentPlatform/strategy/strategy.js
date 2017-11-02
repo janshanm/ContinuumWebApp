@@ -104,7 +104,7 @@ angular.module('continuumAssessmentPlatform.strategy', ['ngRoute'])
   };
 
   var isExpert = function() {
-    return !isTraveller() && $scope.artisan2 && $scope.artisan3 && $scope.expert1 && $scope.expert2;
+    return !isTraveller() && $scope.artisan2 && $scope.artisan3 && $scope.expert2;
   };
 
   var isProfessional = function () {
