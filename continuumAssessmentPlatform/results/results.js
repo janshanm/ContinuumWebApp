@@ -462,10 +462,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             }
 
             if(score === 2){
-                if(strategyAssessments['artisan1']){
-                    strategyResults['undoTasks'].push(strategyTasks['artisan1']);
-                }
-
                 if(!strategyAssessments['expert1']){
                     strategyResults['tasks'].push(strategyTasks['expert1']);
                 }

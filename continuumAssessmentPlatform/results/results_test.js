@@ -715,8 +715,8 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.strategy['next_score']).toEqual(three);
                             expect(scope.strategy['tasks']).toContain(strategyTasks['expert1']);
                             expect(scope.strategy['tasks']).toContain(strategyTasks['expert2']);
-                            expect(scope.strategy['undoTasks']).toContain(strategyTasks['artisan1']);
-                            expect(scope.strategy['undoTasks'].length).toEqual(1);
+                            expect(scope.strategy['undoTasks']).toEqual([]);
+                            expect(scope.strategy['undoTasks'].length).toEqual(0);
                         });
 
                         it('should set the strategy undo tasks based on the selected true questions for level 3', function(){
