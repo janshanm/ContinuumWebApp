@@ -175,7 +175,7 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
     };
 
     var isExpert = function() {
-        return isNotTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
+        return isNotTraveller() && !$scope.artisan1 && $scope.artisan2
             && !$scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8 && $scope.expert1 && $scope.expert2
             && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
