@@ -409,9 +409,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                     expect(scope.ci['tasks']).toContain(ciTasks['artisan1']);
                     expect(scope.ci['tasks']).toContain(ciTasks['artisan2']);
                     expect(scope.ci['tasks']).toContain(ciTasks['artisan3']);
-                    expect(scope.ci['tasks']).toContain(ciTasks['traveller2']);
-                    expect(scope.ci['tasks']).toContain(ciTasks['traveller4']);
-                    expect(scope.ci['tasks']).toContain(ciTasks['traveller6']);
                     expect(scope.ci['undoTasks'].length).toEqual(zero);
                 });
 
@@ -1053,7 +1050,6 @@ describe('continuumAssessmentPlatform.results module', function() {
                             scope.init();
                             expect(scope.ci['current_score']).toEqual(two);
                             expect(scope.ci['next_score']).toEqual(three);
-                            expect(scope.ci['tasks']).toContain(ciTasks['traveller2']);
                             expect(scope.ci['tasks']).toContain(ciTasks['expert1']);
                             expect(scope.ci['tasks']).toContain(ciTasks['expert2']);
                             expect(scope.ci['tasks']).toContain(ciTasks['expert3']);

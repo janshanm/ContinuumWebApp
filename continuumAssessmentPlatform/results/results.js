@@ -742,18 +742,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             ciResults['next_score'] = score === 0 ? 2 : score + 1;
 
             if(score === 0 || score === 1){
-                if(!ciAssessments['traveller2']){
-                    ciResults['tasks'].push(ciTasks['traveller2']);
-                }
-
-                if(!ciAssessments['traveller4']){
-                    ciResults['tasks'].push(ciTasks['traveller4']);
-                }
-
-                if(!ciAssessments['traveller6']){
-                    ciResults['tasks'].push(ciTasks['traveller6']);
-                }
-
                 if(!ciAssessments['artisan1']){
                     ciResults['tasks'].push(ciTasks['artisan1']);
                 }
@@ -780,10 +768,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
             }
 
             if(score === 2){
-                if(!ciAssessments['traveller2']){
-                    ciResults['tasks'].push(ciTasks['traveller2']);
-                }
-
                 if(!ciAssessments['expert1']){
                     ciResults['tasks'].push(ciTasks['expert1']);
                 }
