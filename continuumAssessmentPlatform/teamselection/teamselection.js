@@ -42,7 +42,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Payment Data'}, {'name': 'Postilion/Base 24 - Squad 1'}, {'name': 'Postilion/Base 24 - Squad 2'},
                     {'name': 'Postilion/Base 24 - Squad 3'}, {'name': 'Remittances (Instant Money)'}, {'name': 'Fleet'},
                     {'name': 'VAF - Squad 1'}, {'name': 'VAF - Squad 2 with Genesis'}],
-                'CIB': [{'name': 'Financial Messaging (AMH)'}, {'name': 'Risk Technology: Cybernetics'}],
+                'CIB': [{'name': 'Financial Messaging (AMH)'}, {'name': 'Risk Technology: Cybernetics'}, {'name': 'Finance IT'}, {'name': 'MSDS'}],
                 'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
                     {'name': 'Econ and Reg Capital - Squad 1'}, {'name': 'Econ and Reg Capital - Squad 2'},
                     {'name': 'Finance Central - Squad 1'}, {'name': 'Finance Central - Squad 2'}, {'name': 'Finance Re-engineering'},
