@@ -137,12 +137,12 @@ angular.module('continuumAssessmentPlatform.planning', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan5;
+        return isNotTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan5;
     };
 
     var isExpert = function() {
-        return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan4
-            && $scope.expert1 && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
+        return isNotTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan4
+            && $scope.artisan5 && $scope.expert1 && $scope.expert2 && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
 
     var isProfessional = function () {
@@ -152,6 +152,10 @@ angular.module('continuumAssessmentPlatform.planning', ['ngRoute'])
 
     var isMaster = function () {
         return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3;
-    }
+    };
+
+    var isNotTraveller = function(){
+        return !$scope.traveller1 && !$scope.traveller2 && !$scope.traveller3 && !$scope.traveller4 && !$scope.traveller5;
+    };
 
 }]);
