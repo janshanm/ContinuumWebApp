@@ -171,12 +171,11 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return !isTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
-            && $scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8;
+        return !$scope.traveller2 && !$scope.traveller5 && $scope.artisan1 && $scope.artisan2 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8;
     };
 
     var isExpert = function() {
-        return !isTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
+        return isNotTraveller() && !$scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4
             && !$scope.artisan5 && $scope.artisan6 && $scope.artisan7 && $scope.artisan8 && $scope.expert1 && $scope.expert2
             && $scope.expert3 && $scope.expert4 && $scope.expert5 && $scope.expert6;
     };
@@ -189,6 +188,11 @@ angular.module('continuumAssessmentPlatform.environments', ['ngRoute'])
     var isMaster = function () {
         return isProfessional() && $scope.master1 && $scope.master2 && $scope.master3 && $scope.master4
             && $scope.master5 && $scope.master6 && $scope.master7 && $scope.master8 && $scope.master9;
+    };
+
+    var isNotTraveller = function(){
+        return !$scope.traveller1 && !$scope.traveller2 && !$scope.traveller3 && !$scope.traveller4
+            && !$scope.traveller5 && !$scope.traveller6 && !$scope.traveller7;
     };
 
 }]);
