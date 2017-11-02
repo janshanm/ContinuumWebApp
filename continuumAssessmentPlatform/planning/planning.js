@@ -114,7 +114,7 @@ angular.module('continuumAssessmentPlatform.planning', ['ngRoute'])
         if(isTraveller()){
             return 1;
         }
-        else if(isArtisan()){
+        else if(isArtisan() && !isExpert() && !isProfessional() && !isMaster()){
             return 2;
         }
         else if(isExpert() && !isProfessional() && !isMaster()){
@@ -137,7 +137,7 @@ angular.module('continuumAssessmentPlatform.planning', ['ngRoute'])
     };
 
     var isArtisan = function () {
-        return isNotTraveller() && $scope.artisan1 && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan5;
+        return isNotTraveller() && $scope.artisan2 && $scope.artisan3 && $scope.artisan4 && $scope.artisan5;
     };
 
     var isExpert = function() {
