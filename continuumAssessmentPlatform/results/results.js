@@ -1732,6 +1732,10 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                 if(!featureTeamsAssessments['artisan3']){
                     featureTeamsResults['tasks'].push(featureTeamsTasks['artisan3']);
                 }
+
+                if(featureTeamsAssessments['traveller1']){
+                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller1']);
+                }
             }
 
             if(score === 2){

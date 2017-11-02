@@ -2045,7 +2045,7 @@ describe('continuumAssessmentPlatform.results module', function() {
                                 'release': {'score': 1, 'traveller1': true, 'traveller3': true, 'traveller4': true},
                                 'QA': {'score': 1, 'traveller1': true, 'traveller4': true},
                                 'environments': {'score': 1, 'traveller1': true, 'traveller2': true, 'traveller3': true, 'traveller4': true, 'traveller5': true, 'traveller6': true, 'traveller7': true},
-                                'featureTeams': {'score': 1}};
+                                'featureTeams': {'score': 1, 'traveller1': true}};
 
                             var one = 1;
                             var two = 2;
@@ -2056,7 +2056,8 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan1']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
-                            expect(scope.featureTeams['undoTasks'].length).toEqual(0);
+                            expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['traveller1']);
+                            expect(scope.featureTeams['undoTasks'].length).toEqual(1);
                         });
 
                         it('should set the featureTeams undo tasks based on the selected true questions for level 2', function(){
