@@ -62,7 +62,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Human Capital'}, {'name': 'RDM, MDM and MRI'},
                     {'name': 'Reporting Services'}, {'name': 'Rest of Africa'}, {'name': 'SAP HANA Services (Hybris)'},
                     {'name': 'Wealth'}],
-                'DC': [{'name': 'Business Banking (Forex and BOL)'},{'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'}, {'name': 'Customer Foundation'},
+                'DC': [{'name': 'Forex'}, {'name': 'Corporate Banking'},{'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'}, {'name': 'Customer Foundation'},
                     {'name': 'Corporate and Commercial Banking and International Payments'}, {'name': 'Data and Analytics'},
                     {'name': 'Digital ID and Entitlements'}, {'name': 'Insurance, Homeloans, VAF, Kids'}, {'name': 'Order Management'},
                     {'name': 'Personal and SE - Account Management'}, {'name': 'Personal and SE - Transactional and VAS'},
