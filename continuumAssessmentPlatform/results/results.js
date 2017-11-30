@@ -1755,10 +1755,6 @@ angular.module('continuumAssessmentPlatform.results', ['ngRoute'])
                     featureTeamsResults['undoTasks'].push(featureTeamsTasks['traveller4']);
                 }
 
-                if(featureTeamsAssessments['artisan1']){
-                    featureTeamsResults['undoTasks'].push(featureTeamsTasks['artisan1']);
-                }
-
                 if(!featureTeamsAssessments['artisan2']){
                     featureTeamsResults['tasks'].push(featureTeamsTasks['artisan2']);
                 }

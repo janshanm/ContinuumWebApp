@@ -2091,12 +2091,11 @@ describe('continuumAssessmentPlatform.results module', function() {
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['expert6']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan2']);
                             expect(scope.featureTeams['tasks']).toContain(featureTeamsTasks['artisan3']);
-                            expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['artisan1']);
                             expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['traveller1']);
                             expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['traveller2']);
                             expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['traveller3']);
                             expect(scope.featureTeams['undoTasks']).toContain(featureTeamsTasks['traveller4']);
-                            expect(scope.featureTeams['undoTasks'].length).toEqual(5);
+                            expect(scope.featureTeams['undoTasks'].length).toEqual(4);
                         });
 
                         it('should set the featureTeams undo tasks based on the selected true questions for level 3', function(){
