@@ -60,6 +60,8 @@ angular.module('continuumAssessmentPlatform', [
   'continuumAssessmentPlatform.pipeline-resilience',
   'continuumAssessmentPlatform.pipeline-general',
   'continuumAssessmentPlatform.pipeline-results',
+  'continuumAssessmentPlatform.cib-survey-completion',
+  'continuumAssessmentPlatform.cib-integration',
   'continuumAssessmentPlatform.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

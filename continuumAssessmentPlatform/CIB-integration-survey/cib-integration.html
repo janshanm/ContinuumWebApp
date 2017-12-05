@@ -1,10 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+<p class="lead" ng-init="init()" style="margin-left: 50px">Please complete the survey below</p>
+<div style="margin-bottom: 25px;">
+    <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasPracticeError">
+        <p>Please select a your practice from the drop down to proceed.</p>
+    </div>
+    <div id="perspectiveError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasPerspectiveError">
+        <p>Please select the perspectice from the drop down to proceed.</p>
+    </div>
+    <div class="row">
+        <label for="practiceSelect" style="padding-left: 20px" class='required col-xs-2'> Select Practice: </label>
+        <select style="width: 250px" name="practiceSelect" id="practiceSelect" ng-model="selectedPractice">
+            <option value="">---Select CIB Practice---</option>
+            <option ng-repeat="practiceName in practiceNames" value="{{practiceName.id}}">{{practiceName.text}}</option>
+        </select>
+    </div>
+    <div class="row">
+        <label for="roleSelect" style="padding-left: 20px" class='required col-xs-2'> Select Perspective: </label>
+        <select style="width: 250px" name="roleSelect" id="roleSelect" ng-model="selectedRole">
+            <option value="">---Select Perspective---</option>
+            <option ng-repeat="roleName in roleNames" value="{{roleName.id}}">{{roleName.text}}</option>
+        </select>
+    </div>
+</div>
+
+<div ng-show="selectedRole == 'PracticeConsumer'">
+    <div class="row">
+        <p align="center">
+            <label class="alert-danger col-xs-12" style="color: darkred">
+                Rating Scale: 1 - 5 (1 = Poor, 5 = Great)
+            </label>
+        </p>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion1" style="padding-left: 20px"> The practice provides me capable engineers: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion1" id="executiveQuestion1" ng-model="executiveQuestion1">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion2" style="padding-left: 20px"> The practice provides thought leadership w.r.t how things should be done: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion2" id="executiveQuestion2" ng-model="executiveQuestion2">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion3" style="padding-left: 20px"> Practice initiatives are prioritised on my portfolio/program/team backlog: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion3" id="executiveQuestion3" ng-model="executiveQuestion3">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion4" style="padding-left: 20px"> Practice initiatives are delivering value: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion4" id="executiveQuestion4" ng-model="executiveQuestion4">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion5" style="padding-left: 20px"> The service I receive from the Practice has improved: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion5" id="executiveQuestion5" ng-model="executiveQuestion5">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion6" style="padding-left: 20px"> The quality delivered by the Practice member has increased: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion6" id="executiveQuestion6" ng-model="executiveQuestion6">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="executiveQuestion7" style="padding-left: 20px"> The practice integration has resulted in speed of delivery: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="executiveQuestion7" id="executiveQuestion7" ng-model="executiveQuestion7">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div ng-show="selectedRole == 'PracticeLead'">
+    <div class="row">
+        <p align="center">
+            <label class="alert-danger col-xs-12" style="color: darkred">
+                Rating Scale: 1 - 5 (1 = Poor, 5 = Great)
+            </label>
+        </p>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion1" style="padding-left: 20px"> I have a clear understanding of my accountability as Practice Lead / Anchor Lead: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion1" id="practiceQuestion1" ng-model="practiceQuestion1">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion2" style="padding-left: 20px"> I have adequate autonomy and authority to implement changes in the team: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion2" id="practiceQuestion2" ng-model="practiceQuestion2">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion3" style="padding-left: 20px"> I have adequate autonomy and authority to demand capacity from the team for Practice development: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion3" id="practiceQuestion3" ng-model="practiceQuestion3">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion4" style="padding-left: 20px"> I have adequate Executive support: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion4" id="practiceQuestion4" ng-model="practiceQuestion4">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion5" style="padding-left: 20px"> I have enough resources (time, commitment, budget) to create opportunities for the Practice to develop technical competencies: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion5" id="practiceQuestion5" ng-model="practiceQuestion5">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion6" style="padding-left: 20px"> I have enough assistance and support on Tools and Research: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion6" id="practiceQuestion6" ng-model="practiceQuestion6">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion7" style="padding-left: 20px"> I am comfortable to conduct a Performance Review on all my practice members as I have adequate sight of their work behaviour: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion7" id="practiceQuestion7" ng-model="practiceQuestion7">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion8" style="padding-left: 20px"> Leave application through the Practice Lead makes sense and doesn't impact on my time: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion8" id="practiceQuestion8" ng-model="practiceQuestion8">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="practiceQuestion9" style="padding-left: 20px"> I have adequate support from Agile Coaches to Coach and Develop my Practice Members: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="practiceQuestion9" id="practiceQuestion9" ng-model="practiceQuestion9">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div ng-show="selectedRole == 'PracticeTeam'">
+    <div class="row">
+        <p align="center">
+            <label class="alert-danger col-xs-12" style="color: darkred">
+                Rating Scale: 1 - 5 (1 = Poor, 5 = Great)
+            </label>
+        </p>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion1" style="padding-left: 20px"> I have a clear understanding of my role in the Practice vs my role in the Delivery Team: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion1" id="teamQuestion1" ng-model="teamQuestion1">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion2" style="padding-left: 20px"> I am able to manage my workload between the Practice and the Delivery Team: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion2" id="teamQuestion2" ng-model="teamQuestion2">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion3" style="padding-left: 20px"> I am clear on how to set my goals i.t.o the split between Practice and Delivery and I know how my performance will be reviewed: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion3" id="teamQuestion3" ng-model="teamQuestion3">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion4" style="padding-left: 20px"> The Practice has provided me with opportunities to develop my technical competencies: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion4" id="teamQuestion4" ng-model="teamQuestion4">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion5" style="padding-left: 20px"> The Practice has broadened my knowledge on the latest Tools and Research in the industry: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion5" id="teamQuestion5" ng-model="teamQuestion5">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion6" style="padding-left: 20px"> I am confident that my Practice Lead has adequate insight into my work behaviour to do a Performance Review on me: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion6" id="teamQuestion6" ng-model="teamQuestion6">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion7" style="padding-left: 20px"> Leave application through the Practice Lead makes sense and does not impact on my delivery team: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion7" id="teamQuestion7" ng-model="teamQuestion7">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion8" style="padding-left: 20px"> I have received adequate Coaching and Development from my Practice Lead or Agile Coaches: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion8" id="teamQuestion8" ng-model="teamQuestion8">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion9" style="padding-left: 20px"> The Practice has given me an opportunity to improve my technical expertise: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion9" id="teamQuestion9" ng-model="teamQuestion9">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion10" style="padding-left: 20px"> The Practice has given me more industry exposure: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion10" id="teamQuestion10" ng-model="teamQuestion10">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion11" style="padding-left: 20px"> I have experienced personal growth in my mastery and capability since the forming of the Practice: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion11" id="teamQuestion11" ng-model="teamQuestion11">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion12" style="padding-left: 20px"> The Practice is collaborating on a regular basis: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion12" id="teamQuestion12" ng-model="teamQuestion12">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-xs-6">
+            <label for="teamQuestion13" style="padding-left: 20px"> I have added value in delivering quality outputs to the client: </label>
+        </div>
+        <div class="col-xs-6">
+            <select name="teamQuestion13" id="teamQuestion13" ng-model="teamQuestion13">
+                <option ng-repeat="scale in scales" value="{{scale.value}}">{{scale.value}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<p/>
+<p align="center">
+    <a id="saveSurvey" class="btn btn-primary btn-lg" href="" ng-click="saveSurveyResults()">Review Survey</a>
+</p>

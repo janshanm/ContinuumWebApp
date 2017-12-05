@@ -1,0 +1,110 @@
+<div class="alert alert-success" style="max-width: 700px;margin-left: 50px" role="alert" ng-show="hasSaved">
+    <p>Survey results successfully saved - {{successMessage}}. You can now close this page.</p>
+</div>
+<p class="lead" ng-init="init()" style="margin-left: 50px">Please review the completed survey below</p>
+<div style="margin-bottom: 25px;">
+    <label style="padding-left: 20px" class='required'> Practice Selected: {{selectedPracticeDisplay}}</label>
+</div>
+<div style="margin-bottom: 25px;">
+    <label style="padding-left: 20px" class='required'> Role Selected: {{selectedRoleDisplay}}</label>
+</div>
+
+<div ng-show="selectedRole == 'PracticeConsumer'">
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The practice provides me capable engineers: {{executiveQuestion1}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The practice provides thought leadership w.r.t how things should be done: {{executiveQuestion2}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">Practice initiatives are prioritised on my portfolio/program/team backlog: {{executiveQuestion3}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">Practice initiatives are delivering value: {{executiveQuestion4}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The service I receive from the Practice has improved: {{executiveQuestion5}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The quality delivered by the Practice member has increased: {{executiveQuestion6}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The practice integration has resulted in speed of delivery: {{executiveQuestion7}}</label>
+    </div>
+</div>
+<div ng-show="selectedRole == 'PracticeLead'">
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have a clear understanding of my accountability as Practice Lead / Anchor Lead: {{practiceQuestion1}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have adequate autonomy and authority to implement changes in the team: {{practiceQuestion2}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have adequate autonomy and authority to demand capacity from the team for Practice development: {{practiceQuestion3}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have adequate Executive support: {{practiceQuestion4}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have enough resources (time, commitment, budget) to create opportunities for the Practice to develop technical competencies: {{practiceQuestion5}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have enough assistance and support on Tools and Research: {{practiceQuestion6}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I am comfortable to conduct a Performance Review on all my practice members as I have adequate sight of their work behaviour: {{practiceQuestion7}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">Leave application through the Practice Lead makes sense and doesn't impact on my time: {{practiceQuestion8}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have adequate support from Agile Coaches to Coach and Develop my Practice Members: {{practiceQuestion9}}</label>
+    </div>
+</div>
+<div ng-show="selectedRole == 'PracticeTeam'">
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have a clear understanding of my role in the Practice vs my role in the Delivery Team: {{teamQuestion1}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I am able to manage my workload between the Practice and the Delivery Team: {{teamQuestion2}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I am clear on how to set my goals i.t.o the split between Practice and Delivery and I know how my performance will be reviewed: {{teamQuestion3}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The Practice has provided me with opportunities to develop my technical competencies: {{teamQuestion4}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The Practice has broadened my knowledge on the latest Tools and Research in the industry: {{teamQuestion5}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I am confident that my Practice Lead has adequate insight into my work behaviour to do a Performance Review on me: {{teamQuestion6}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">Leave application through the Practice Lead makes sense and does not impact on my delivery team: {{teamQuestion7}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have received adequate Coaching and Development from my Practice Lead or Agile Coaches: {{teamQuestion8}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The Practice has given me an opportunity to improve my technical expertise: {{teamQuestion9}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The Practice has given me more industry exposure: {{teamQuestion10}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have experienced personal growth in my mastery and capability since the forming of the Practice: {{teamQuestion11}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">The Practice is collaborating on a regular basis: {{teamQuestion12}}</label>
+    </div>
+    <div class="row well well-sm">
+        <label style="padding-left: 20px">I have added value in delivering quality outputs to the client: {{teamQuestion13}}</label>
+    </div>
+</div>
+
+<p/>
+<p align="center">
+    <a id="backButtonSurvey" class="btn btn-primary btn-lg" href="#!/cib-survey">Edit Survey</a>
+    <a id="saveSurvey" class="btn btn-primary btn-lg" href="" ng-click="saveSurveyResults()">Submit Survey</a>
+</p>
