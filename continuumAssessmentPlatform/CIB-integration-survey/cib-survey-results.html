@@ -1,0 +1,32 @@
+<p class="lead" ng-init="init()" style="text-align: center">View Survey Results for the different perspectives.</p>
+
+<div id="exTab3" class="container">
+    <ul  class="nav nav-pills">
+        <li ng-class="{active: selectedTab == 1}">
+            <a href="" ng-click="selectedTab = 1;" data-toggle="tab" style="color: white">CIB Survey Results</a>
+        </li>
+        <!--<li ng-class="{active: selectedTab == 2}">-->
+        <!--<a href="" ng-click="selectedTab = 2;" data-toggle="tab" style="color: white">Survey History</a>-->
+        <!--</li>-->
+    </ul>
+
+    <div class="tab-content clearfix">
+        <div class="tab-pane active" id="assessmentResults" ng-show="selectedTab == 1">
+            <label for="selectedPerspective" style="padding-left: 50px"> Select Different Perspective: </label>
+            <select name="selectedPerspective" id="selectedPerspective" ng-model="selectedPerspective" ng-change="updatePerspective()">
+                <option ng-repeat="roleName in roleNames" value="{{roleName.id}}">{{roleName.text}}</option>
+            </select>
+            <canvas id="radar-perspective-chart" width="800" height="600"></canvas>
+        </div>
+        <div class="tab-pane active" id="recommendedActions" ng-show="selectedTab == 2">
+            <!--<label for="selectedTeamName" style="padding-left: 50px"> Select Different Team: </label>-->
+            <!--<select name="selectedTeamName" id="selectedTeamName" ng-model="selectedTeamName" ng-change="updateTeamInformation()">-->
+            <!--<option ng-repeat="teamName in allTeams" value="{{teamName}}">{{teamName}}</option>-->
+            <!--</select>-->
+            <!--<canvas id="history-chart-previous" width="800" height="600"></canvas>-->
+        </div>
+
+    </div>
+</div>
+
+

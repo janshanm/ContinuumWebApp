@@ -7,7 +7,7 @@ angular.module('continuumAssessmentPlatform.cib-integration', ['ngRoute'])
         });
     }])
 
-    .controller('CIBIntegrationSurveyCtrl', ['$window','$location', '$scope', '$rootScope', 'CIBService', function($window, $location, $scope, $rootScope, CIBService) {
+    .controller('CIBIntegrationSurveyCtrl', ['$location', '$scope', '$rootScope', function($location, $scope, $rootScope) {
         $scope.executiveQuestion1 = 'N/A';
         $scope.executiveQuestion2 = 'N/A';
         $scope.executiveQuestion3 = 'N/A';
@@ -48,7 +48,7 @@ angular.module('continuumAssessmentPlatform.cib-integration', ['ngRoute'])
             // });
 
             $scope.practiceNames = [{id: 'SoftwareEng', text: 'Software Engineering Practice'},
-                {id: 'OpsAndInfra', text: 'Operations & Infrastructure'},
+                {id: 'OpsAndInfra', text: 'Operations and Infrastructure'},
                 {id: 'LeanAgile', text: 'Lean Agile Coaching'},
                 {id: 'APO', text: 'APO'},
                 {id: 'DataServices', text: 'Data Services'}];

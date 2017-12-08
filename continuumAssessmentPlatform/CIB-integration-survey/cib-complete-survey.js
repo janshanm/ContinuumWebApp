@@ -16,7 +16,7 @@ angular.module('continuumAssessmentPlatform.cib-survey-completion', ['ngRoute'])
                     'PracticeTeam': 'I am part of a Practice Team'};
 
                 $scope.practiceNames = {'SoftwareEng': 'Software Engineering Practice',
-                    'OpsAndInfra': 'Operations & Infrastructure', 'LeanAgile': 'Lean Agile Coaching',
+                    'OpsAndInfra': 'Operations and Infrastructure', 'LeanAgile': 'Lean Agile Coaching',
                     'APO': 'APO', 'DataServices': 'Data Services'};
 
                 $scope.executiveQuestion1 = $rootScope.surveyData['executiveQuestion1'];
