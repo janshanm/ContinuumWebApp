@@ -84,7 +84,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Storage'}, {'name': 'Sybase and DB2'}, {'name': 'SQL'}, {'name': 'Unified Communications'},
                     {'name': 'Windows'}],
                 'PBB': [{'name': 'CDI/RSS'}, {'name': 'Natural and .NET Applications'}, {'name': 'Credit - Account Maintenance'},
-                    {'name': 'Credit: Collections'}, {'name': 'Credit: Origination'}, {'name': 'E3'},
+                    {'name': 'Credit Collections Feature Team'}, {'name': 'Credit Account Origination Feature Team'}, {'name': 'E3'},
                     {'name': 'Customer Insights and Analytics'}, {'name': 'EIM Data Change'}, {'name': 'EIM Data Remediation'},
                     {'name': 'Banking Statements'}, {'name': 'Registration and Login'}, {'name': 'SEO Payments'},
                     {'name': 'SEO Profile Management'}, {'name': 'SEO Registration'}, {'name': 'USSD'},
