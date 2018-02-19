@@ -42,7 +42,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Fraud IA'}, {'name': 'EIM IA'}, {'name': 'Liberty IA'},
                     {'name': 'ROA IA'}, {'name': 'Central Finance IA'}, {'name': 'CIB Finance IA'},
                     {'name': 'Payments, Regulatory and Maintenance IA'},
-                    {'name': 'Robotic Process Automation'}, {'name': 'Workflow - GOSS'},
+                    {'name': 'Workflow - GOSS'},
                     {'name': 'Auto-Recons Legacy'}, {'name': 'Bulk Payments'}, {'name': 'Emerging Payments'}, {'name': 'Card and Payments DevOps'},
                     {'name': 'IntelliMatch'}, {'name': 'Merchant Solutions Service'}, {'name': 'Money Transfers and ACB'},
                     {'name': 'Online Payments - Squad 1'}, {'name': 'Online Payments - Squad 2'}, {'name': 'Online Payments - Squad 3'},
