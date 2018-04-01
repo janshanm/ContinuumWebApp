@@ -130,7 +130,7 @@ angular.module('continuumAssessmentPlatform.pipeline-results', ['ngRoute'])
             },
             saveAssessments: function (body) {
                 return $http({
-                    url: "http://localhost:8081/savePipelineData",
+                    url: "http://178.62.75.15:8081/savePipelineData",
                     method: "POST",
                     data: body
                 });
@@ -142,7 +142,7 @@ angular.module('continuumAssessmentPlatform.pipeline-results', ['ngRoute'])
         return {
             getPipelineResultsForTeam: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/pipeline?teamName=" + teamName,
+                    url: "http://178.62.75.15:8081/pipeline?teamName=" + teamName,
                     method: "GET"
                 });
             }

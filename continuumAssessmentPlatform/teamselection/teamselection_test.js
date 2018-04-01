@@ -287,7 +287,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             retrieveAssessmentService = $injector.get('RetrieveAssessment');
             $httpBackend = $injector.get('$httpBackend');
 
-            $httpBackend.when('GET', "http://localhost:8080/assessment?teamName="+teamName).respond("Successfully Retrieved");
+            $httpBackend.when('GET', "http://178.62.75.15:8080/assessment?teamName="+teamName).respond("Successfully Retrieved");
         }));
 
         afterEach(function() {

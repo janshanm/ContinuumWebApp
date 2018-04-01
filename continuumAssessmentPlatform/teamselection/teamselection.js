@@ -159,7 +159,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8080/assessment?teamName="+teamName,
+                    url: "http://178.62.75.15:8080/assessment?teamName="+teamName,
                     method: "GET"
                 });
             }

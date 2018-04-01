@@ -10,7 +10,7 @@
                     <div id="teamError" class="alert alert-danger" style="max-width: 550px;margin-left: 50px" role="alert" ng-show="hasError">
                         <p>Please select a team before proceeding.</p>
                     </div>
-                    <label for="portfolioSelect" style="padding-left: 50px"> Select Portfolio: </label>
+                    <label for="portfolioSelect" style="padding-left: 50px"> Select Portfolio Name: </label>
                     <select style="width: 425px" name="portfolioSelect" id="portfolioSelect" ng-model="selectedPortfolio" ng-change="updateTeams()">
                         <option ng-repeat="portfolio in portfolios" value="{{portfolio.id}}">{{portfolio.name}}</option>
                     </select>

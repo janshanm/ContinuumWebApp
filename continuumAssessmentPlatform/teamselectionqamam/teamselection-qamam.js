@@ -128,7 +128,7 @@ angular.module('continuumAssessmentPlatform.teamselection-qamam', ['ngRoute'])
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/assessment-qamam?teamName="+teamName,
+                    url: "http://178.62.75.15:8081/assessment-qamam?teamName="+teamName,
                     method: "GET"
                 });
             }

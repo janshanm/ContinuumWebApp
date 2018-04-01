@@ -256,14 +256,14 @@ angular.module('continuumAssessmentPlatform.practice-management', ['ngRoute'])
         return {
             surveyTaken: function (surveyeeName, teamName) {
                 return $http({
-                    url: "http://localhost:8081/surveyTaken",
-                    method: "GET",
+                    url: "http://178.62.75.15:8081/surveyTaken",
+		    method: "GET",
                     params: {'surveyee': surveyeeName, 'teamName': teamName}
                 });
             },
             getSurveyees: function(){
                 return $http({
-                    url: "http://localhost:8081/surveyees",
+                    url: "http://178.62.75.15:8081/surveyees",
                     method: "GET"
                 });
             }

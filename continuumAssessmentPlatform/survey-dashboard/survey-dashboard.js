@@ -115,7 +115,7 @@ angular.module('continuumAssessmentPlatform.survey-dashboard', ['ngRoute'])
         return {
             getSurveySurveyDashboard: function () {
                 return $http({
-                    url: "http://localhost:8081/dashboard",
+                    url: "http://178.62.75.15:8081/dashboard",
                     method: "GET"
                 });
             }

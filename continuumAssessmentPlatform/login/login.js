@@ -58,7 +58,7 @@ angular.module('continuumAssessmentPlatform.login', ['ngRoute'])
             },
             loginUser: function(username, password){
                 return $http({
-                    url: "http://localhost:8080/login",
+                    url: "http://178.62.75.15:8080/login",
                     method: "POST",
                     data: {'userName': username, 'password': password}
                 });

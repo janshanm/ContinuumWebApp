@@ -1777,7 +1777,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
         return {
             saveAssessments: function (data, body) {
                 return $http({
-                    url: "http://localhost:8081/saveTeamData",
+                    url: "http://178.62.75.15:8081/saveTeamData",
                     method: "POST",
                     params: data,
                     data: body
@@ -1832,7 +1832,7 @@ angular.module('continuumAssessmentPlatform.resultsqa', ['ngRoute'])
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/assessment?teamName="+teamName,
+                    url: "http://178.62.75.15:8081/assessment?teamName="+teamName,
                     method: "GET"
                 });
             }

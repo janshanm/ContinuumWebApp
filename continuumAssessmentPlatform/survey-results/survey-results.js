@@ -462,7 +462,7 @@ angular.module('continuumAssessmentPlatform.survey-results', ['ngRoute'])
         return {
             getSurveyResultsForTeam: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/surveys?teamName=" + teamName,
+                    url: "http://178.62.75.15:8081/surveys?teamName=" + teamName,
                     method: "GET"
                 });
             }
