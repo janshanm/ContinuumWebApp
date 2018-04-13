@@ -131,7 +131,7 @@ angular.module('continuumAssessmentPlatform.teamselection-pipeline', ['ngRoute']
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://178.62.75.15:8081/pipeline?teamName=" + teamName,
+                    url: "http://178.62.75.15:8080/pipeline?teamName=" + teamName,
                     method: "GET"
                 });
             }
