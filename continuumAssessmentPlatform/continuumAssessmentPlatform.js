@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('continuumAssessmentPlatform', [
   'ngRoute',
-  'continuumAssessmentPlatform.login',
+  // 'continuumAssessmentPlatform.login',
   'continuumAssessmentPlatform.teamselection',
   'continuumAssessmentPlatform.teamselectionqa',
   'continuumAssessmentPlatform.strategy',
