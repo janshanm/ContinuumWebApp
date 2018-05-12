@@ -6,62 +6,99 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
     var allTeams = {
         'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
             {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-            {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}],
-        'Card': [{'name': 'Acquiring - Rest of Africa'},
-            {'name': 'Diners Auths and Release Compliance'}, {'name': 'Diners Digitalization'}, {'name': 'Diners Transactional'},
-            {'name': 'EMV - Squad 1'}, {'name': 'EMV - Squad 2'}, {'name': 'Issuing - Customer Experience (Genesis)'},
-            {'name': 'Issuing - Innovation'}, {'name': 'Issuing - Product Squad 1'}, {'name': 'Issuing - Product Squad 2'},
-            {'name': 'Issuing - Rest of Africa'}, {'name': 'RoA Switch(Sparrow)'}, {'name': 'Cash - Acquiring'},
-            {'name': 'Cash - Production'}, {'name': 'Cash - Regulatory'}, {'name': 'FASS/GC/COSS'},
-            {'name': 'GOSS and Outsourced Production'}, {'name': 'Robotic Process Automation'}, {'name': 'Workflow - GOSS'},
-            {'name': 'Auto-Recons Legacy'}, {'name': 'Bulk Payments'}, {'name': 'Emerging Payments'},
-            {'name': 'IntelliMatch'}, {'name': 'Merchant Solutions Service'}, {'name': 'Money Transfers and ACB'}, {'name': 'Online Payments - Squad 1'},
-            {'name': 'Online Payments - Squad 2'}, {'name': 'Online Payments - Squad 3'}, {'name': 'Payment Data'},
-            {'name': 'Postilion/Base 24 - Squad 1'}, {'name': 'Postilion/Base 24 - Squad 2'},
-            {'name': 'Postilion/Base 24 - Squad 3'}, {'name': 'Fleet'}, {'name': 'VAF - Squad 1'},
-            {'name': 'VAF - Squad 2 with Genesis'}],
-        'CIB': [{'name': 'Financial Messaging (AMH)'}],
+            {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
+            {'name': 'Operations and Statements'}, {'name': 'Payments and Cheque Voucher Processing'},
+            {'name': 'Payments - Squad 1'}, {'name': 'Payments - Squad 2'}, {'name': 'Pricing'},
+            {'name': 'Service Digitisation'}, {'name': 'Statements'}, {'name': 'Transactional'}, {'name': 'Value Exchange'}],
+        'Card': [{'name': 'Acquiring - Feature Team'}, {'name': 'Acquiring - Rest of Africa'}, {'name': 'Acquiring - Product'}, {'name': 'Acquiring - Flex'},
+            {'name': 'Chip Centre'}, {'name': 'Diners Auths and Release Compliance'}, {'name': 'Diners Digitalization'}, {'name': 'Diners Transactional'},
+            {'name': 'EMV - Squad 1'}, {'name': 'EMV - Squad 2'}, {'name': 'Issuing - Customer Experience'},
+            {'name': 'Issuing - Transactional Feature Team'}, {'name': 'Issuing - Product Squad 1'}, {'name': 'Issuing - Product Squad 2'},
+            {'name': 'Africa Region Card Issuing'}, {'name': 'Sparrow Component Team'}, {'name': 'Cash Feature Team'}, {'name': 'FASS/GC/COSS'},
+            {'name': 'GOSS and Outsourced Production'},
+            {'name': 'IA - Channel Enablement IA'}, {'name': 'IA - Service and Chatbot IA'}, {'name': 'Cash Services IA'},
+            {'name': 'Card IA'}, {'name': 'Credit IA'}, {'name': 'CRR IA'},
+            {'name': 'Fraud IA'}, {'name': 'EIM IA'}, {'name': 'Liberty IA'},
+            {'name': 'ROA IA'}, {'name': 'Central Finance IA'}, {'name': 'CIB Finance IA'},
+            {'name': 'Payments, Regulatory and Maintenance IA'},
+            {'name': 'Workflow - GOSS'},
+            {'name': 'Auto-Recons Legacy'}, {'name': 'Bulk Payments'}, {'name': 'Emerging Payments'}, {'name': 'Card and Payments DevOps'},
+            {'name': 'IntelliMatch'}, {'name': 'Merchant Solutions Service'}, {'name': 'Money Transfers and ACB'},
+            {'name': 'Online Payments - Squad 1'}, {'name': 'Online Payments - Squad 2'}, {'name': 'Online Payments - Squad 3'},
+            {'name': 'Payment Data'}, {'name': 'Postilion/Base 24 - Squad 1'}, {'name': 'Postilion/Base 24 - Squad 2'},
+            {'name': 'Postilion/Base 24 - Squad 3'}, {'name': 'Remittances (Instant Money)'}, {'name': 'Fleet'},
+            {'name': 'VAF - Squad 1'}, {'name': 'VAF - Squad 2 with Genesis'}, {'name': 'VAF Africa Regions'},
+            {'name': 'VAF Digitisation'}, {'name': 'VAF Modernisation'}, {'name': 'VAF Wholesale Finance'}],
+        'CIB': [{'name': 'Finance IT'}, {'name': 'MSDS'}],
+        'CIBO': [{'name': 'Africa Regions'}, {'name': 'BaNCS & Sec Lending'}, {'name': 'Client & Data Services'},
+            {'name': 'Engineering Transformation'}, {'name': 'Financial Messaging'}, {'name': 'GMO Confirmations'},
+            {'name': 'GMO Settlements'}, {'name': 'Intelligent Automation (CIB)'}, {'name': 'IPSS Liquidity'},
+            {'name': 'IPSS Settlements'}, {'name': 'JAS'}, {'name': 'Legacy Payments'}, {'name': 'Libra BOP'},
+            {'name': 'Payments'}, {'name': 'Platforms (Payments)'}, {'name': 'Recons'}, {'name': 'SWIFT Industry'},
+            {'name': 'Techie Town'}, {'name': 'Trade'}, {'name': 'Trustees and Clearing'}],
+        'CIBRT': [{'name': 'Risk Technology: Cybernetics'}, {'name': 'Risk Technology: Risk Reporting & Analytics'},
+            {'name': 'Risk Technology: Core Credit Services'}, {'name': 'Risk Technology: Operations'}],
+        'CIBTPS': [{'name': 'Collections 1'}, {'name': 'Collections 2'}, {'name': 'Foreign Payments'},
+            {'name': 'Local Payments 1'}, {'name': 'Local Payments 2'}, {'name': 'Account Services'},
+            {'name': 'Enhanced Collections'}, {'name': 'Thin Client'}, {'name': 'Platform'},
+            {'name': 'BOL Legacy'}, {'name': 'Host to Host'}, {'name': 'Integration'}, {'name': 'PES'},
+            {'name': 'SSA'}, {'name': 'DevOps'}],
         'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
-            {'name': 'Econ and Reg Capital - Squad 1'}, {'name': 'Econ and Reg Capital - Squad 2'},
-            {'name': 'Finance Central - Squad 1'}, {'name': 'Finance Central - Squad 2'}, {'name': 'Finance Re-engineering'},
-            {'name': 'Procurement'}, {'name': 'Move Management'}, {'name': 'Physical Security'}, {'name': 'Real Estate Projects'},
-            {'name': 'HC Enablement'}, {'name': 'HC SAP'}, {'name': 'Marketing and Communications'},
-            {'name': 'GFCC'}, {'name': 'IOR'}],
-        'DS': [{'name': 'AML DevOps'}, {'name': 'Analytics and Third Party'}, {'name': 'Big Data'},
-            {'name': 'CIB'}, {'name': 'Data Management and Governance'}, {'name': 'Data Science'},
-            {'name': 'Data Warehousing - Squad 1'}, {'name': 'Data Warehousing - Squad 2'}, {'name': 'Enterprise BI'},
-            {'name': 'Human Capital'}, {'name': 'RDM, MDM and MRI'},
-            {'name': 'Reporting Services'}, {'name': 'Rest of Africa'}, {'name': 'SAP HANA Services (Hybris)'},
-            {'name': 'Wealth'}],
-        'DC': [{'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'}, {'name': 'Customer Foundation'},
-            {'name': 'Corporate and Commercial Banking and International Payments'}, {'name': 'Data and Analytics'}, {'name': 'Investments'},
-            {'name': 'Digital ID and Entitlements'}, {'name': 'Insurance, Homeloans, VAF, Kids'}, {'name': 'Order Management'},
+            {'name': 'FLS Team'}, {'name': 'HC SAP'}, {'name': 'IOR'}],
+        'DS': [{'name': 'AML DevOps'}, {'name': 'Africa Regions Transformation'}, {'name': 'Big Data Ingestion'},
+            {'name': 'Core Banking'}, {'name': 'Data Warehouse Products'}, {'name': 'Human Capital'},
+            {'name': 'Loyalty and Rewards'}, {'name': 'RDM, MDM and MRI'},
+            {'name': 'SAS'}, {'name': 'Wealth'}],
+        'DC': [{'name': 'AIMS'}, {'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'},
+            {'name': 'Corporate Banking'}, {'name': 'Customer Foundation'}, {'name': 'Data and Analytics'},
+            {'name': 'Digital ID and Entitlements'}, {'name': 'Forex'}, {'name': 'Insurance, Homeloans, VAF, Kids'},
+            {'name': 'Order Management'}, {'name': 'Investments'},
             {'name': 'Personal and SE - Account Management'}, {'name': 'Personal and SE - Transactional and VAS'},
-            {'name': 'Staff Foundation'}, {'name': 'Virtual Banking - Squad 1'}, {'name': 'Virtual Banking - Squad 2'},
-            {'name': 'Web for Customer'}, {'name': 'Web for Staff'}, {'name': 'Web Presence and Community'}],
-        'EWT': [{'name': 'Domain Architecture'}, {'name': 'BPM'}, {'name': 'ECM'}, {'name': 'ESB'}, {'name': 'Agile Tools'},
-            {'name': 'Application Performance Monitoring'}, {'name': 'Aris'}, {'name': 'Business Applications'},
-            {'name': 'Mainframe Tools'}, {'name': 'Sharepoint'}, {'name': 'Source Code Management'},
-            {'name': 'Teamtrack'}, {'name': 'Technical Enablement'}, {'name': 'Tools and Support'}],
-        'PBB': [{'name': 'CDI/RSS'}, {'name': 'Natural and .NET Applications'}, {'name': 'Credit - Account Maintenance'},
-            {'name': 'Credit: Collections'}, {'name': 'Credit: Origination'}, {'name': 'E3'},
+            {'name': 'Staff Foundation'}, {'name': 'Staff Web'}, {'name': 'Vikings'},
+            {'name': 'Virtual Banking - Front End'}, {'name': 'Virtual Banking - Squad 2'}, {'name': 'Public Web'}],
+        'EWT': [{'name': 'BPM'}, {'name': 'ECM'}, {'name': 'ESB'}, {'name': 'TechLab'}, {'name': 'Tools and Support'}],
+        'Infra': [{'name': 'Capacity Management'}, {'name': 'CICS'}, {'name': 'Data Centre – Africa Region'}, {'name': 'Data Centre – DCAT2'},
+            {'name': 'Data Centre – DCIRM'}, {'name': 'DB2/Adabas'}, {'name': 'J2E'},
+            {'name': 'End User Computing'}, {'name': 'Enterprise Systems Management'}, {'name': 'Facility Management'},
+            {'name': 'Mainframe – Integration'}, {'name': 'Mainframe – Storage'},
+            {'name': 'Mainframe – zOS'}, {'name': 'Middleware – Control Direct and MQ'},
+            {'name': 'Middleware – TWS'}, {'name': 'Middleware – Control M / GCE / RMS and report viewer'},
+            {'name': 'Linux'}, {'name': 'Network – Support'}, {'name': 'Network – Deployment'}, {'name': 'Open Systems Storage and Backup'},
+            {'name': 'Oracle'}, {'name': 'Platform – Solaris'}, {'name': 'Platform – AIX'}, {'name': 'Platform Engineering – Cloud'},
+            {'name': 'Platform Engineering – Automation'}, {'name': 'SAP Front Office'}, {'name': 'SAP Back Office'},
+            {'name': 'Storage'}, {'name': 'Sybase and DB2'}, {'name': 'SQL'}, {'name': 'Unified Communications'},
+            {'name': 'Windows'}],
+        'PBB': [{'name': 'Account Origination'}, {'name': 'AMS 1'}, {'name': 'AMS 2'}, {'name': 'AMS 3 - Unsecured Lending'},
+            {'name': 'AO - Unsecured Lending'}, {'name': 'ATM - Squad 1'}, {'name': 'ATM - Squad 2'},
+            {'name': 'ATM - Squad 3'}, {'name': 'ATM - Squad 4'}, {'name': 'BPM Non-federated'}, {'name': 'Branch Accounting'},
+            {'name': 'CDI/RSS'}, {'name': 'Natural and .NET Applications'}, {'name': 'Credit Account Maintenance Feature Team'},
+            {'name': 'Credit Collections Feature Team'}, {'name': 'Credit Account Origination Feature Team'},
+            {'name': 'Credit Collateral Feature Team'}, {'name': 'E3 Systems Feature Team'},
             {'name': 'Customer Insights and Analytics'}, {'name': 'EIM Data Change'}, {'name': 'EIM Data Remediation'},
             {'name': 'Banking Statements'}, {'name': 'Registration and Login'}, {'name': 'SEO Payments'},
             {'name': 'SEO Profile Management'}, {'name': 'SEO Registration'}, {'name': 'USSD'},
             {'name': 'Application Performance Monitoring'}, {'name': 'Aris'}, {'name': 'Business Applications'},
-            {'name': 'ATM - Squad 1'}, {'name': 'ATM - Squad 2'}, {'name': 'CCC'},
-            {'name': 'Customer 1st and Ciboodle - Squad 1'}, {'name': 'Customer 1st and Ciboodle - Squad 2'}, {'name': 'eSignature / OFV'},
+            {'name': 'CCC'}, {'name': 'Customer Integration and Maintenance'}, {'name': 'e-Commerce'},
+            {'name': 'Customer 1st and Ciboodle - Squad 1'}, {'name': 'Customer 1st and Ciboodle - Squad 2'},
+            {'name': 'eSignature / OFV'}, {'name': 'IBR'}, {'name': 'Payments'}, {'name': 'Payments - Unsecured Lending'},
             {'name': 'NDS - Squad 1'}, {'name': 'NDS - Squad 2'}, {'name': 'NDS - Squad 3'},
-            {'name': 'Branch Accounting'}, {'name': 'Homeloans - Squad 1'}, {'name': 'Homeloans - Squad 2'},
+            {'name': 'Homeloans - Squad 1'}, {'name': 'Homeloans - Squad 2'}, {'name': 'Platform Team (OBB 2)'},
+            {'name': 'Product and Pricing'}, {'name': 'SAP User Prov, Org, Auth'}, {'name': 'System Engineering Team'},
             {'name': 'Instant Money - Digital Messaging'}, {'name': 'Instant Money - Transit'}, {'name': 'Instant Money - VAS'},
-            {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}],
-        'W': [{'name': 'Insurance - Coverage Squad 1'}, {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary'}]
+            {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}, {'name': 'Value / Payments Team (OBB 1)'}],
+        'Security': [{'name': 'Test Security Squad'}],
+        'W': [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
+            {'name': 'Wealth International'}]
     };
 
     var portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
+        {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
+        {'id': 'CIBTPS', 'name': 'CIB TPS'},
         {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
         {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
-        {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}, {'id': 'CIB', 'name': 'CIB Operations'}];
+        {'id': 'Infra', 'name': 'Infrastructure Services'},
+        {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
+        {'id': 'W', 'name': 'Wealth'}];
 
     describe('team selection controller', function () {
 
@@ -110,7 +147,10 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             it('should have all the feature teams in the bank', function(){
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-                    {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}];
+                    {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
+                    {'name': 'Operations and Statements'}, {'name': 'Payments and Cheque Voucher Processing'},
+                    {'name': 'Payments - Squad 1'}, {'name': 'Payments - Squad 2'}, {'name': 'Pricing'},
+                    {'name': 'Service Digitisation'}, {'name': 'Statements'}, {'name': 'Transactional'}, {'name': 'Value Exchange'}];
 
                 expect(scope.teams).toEqual(expectedTeams);
             });
@@ -120,7 +160,10 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             it('should get teams based on the selected portfolio key for AR', function(){
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-                    {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}];
+                    {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
+                    {'name': 'Operations and Statements'}, {'name': 'Payments and Cheque Voucher Processing'},
+                    {'name': 'Payments - Squad 1'}, {'name': 'Payments - Squad 2'}, {'name': 'Pricing'},
+                    {'name': 'Service Digitisation'}, {'name': 'Statements'}, {'name': 'Transactional'}, {'name': 'Value Exchange'}];
                 scope.selectedPortfolio = "AR";
                 scope.allTeams = allTeams;
                 scope.getTeams();
@@ -129,8 +172,8 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
 
             it('should get teams based on the selected portfolio key for W', function(){
-                var expectedTeams = [{'name': 'Insurance - Coverage Squad 1'},
-                    {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary'}];
+                var expectedTeams = [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
+                    {'name': 'Wealth International'}];
                 scope.selectedPortfolio = "W";
                 scope.allTeams = allTeams;
                 scope.getTeams();
@@ -163,7 +206,10 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             it('should get teams based on the selected portfolio key for AR', function(){
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-                    {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}];
+                    {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
+                    {'name': 'Operations and Statements'}, {'name': 'Payments and Cheque Voucher Processing'},
+                    {'name': 'Payments - Squad 1'}, {'name': 'Payments - Squad 2'}, {'name': 'Pricing'},
+                    {'name': 'Service Digitisation'}, {'name': 'Statements'}, {'name': 'Transactional'}, {'name': 'Value Exchange'}];
                 scope.selectedPortfolio = "AR";
                 scope.allTeams = allTeams;
                 scope.updateTeams();
@@ -172,8 +218,8 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
 
             it('should get teams based on the selected portfolio key for W', function(){
-                var expectedTeams = [{'name': 'Insurance - Coverage Squad 1'},
-                    {'name': 'Insurance - Coverage Squad 2'}, {'name': 'Wealth and Investments and Fiduciary'}];
+                var expectedTeams = [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
+                    {'name': 'Wealth International'}];
                 scope.selectedPortfolio = "W";
                 scope.allTeams = allTeams;
                 scope.updateTeams();

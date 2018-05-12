@@ -184,6 +184,12 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
                     return true;
                 });
 
+                window.myPreviousChart = {
+                    destroy: function () {
+                        return true;
+                    }
+                };
+
                 var expectedPortfolio = 'Portfolio 1';
                 var expectedDate = '20-01-2017';
                 var expectedDataSets = ['test data'];
@@ -314,6 +320,12 @@ describe('continuumAssessmentPlatform.previous-assessments module', function() {
                 spyOn(window, 'Chart').and.callFake(function(){
                     return true;
                 });
+
+                window.myHistoryChart = {
+                    destroy: function () {
+                        return true;
+                    }
+                };
 
                 var expectedPortfolio = 'Portfolio 1';
                 var expectedDate = '20-01-2017';
