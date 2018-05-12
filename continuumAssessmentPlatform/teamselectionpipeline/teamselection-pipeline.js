@@ -19,15 +19,20 @@ angular.module('continuumAssessmentPlatform.teamselection-pipeline', ['ngRoute']
             $scope.selectedPortfolio = "AR";
 
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
+                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
+                {'id': 'CIBTPS', 'name': 'CIB TPS'},
                 {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
                 {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}, {'id': 'CIB', 'name': 'CIB Operations'}];
 
             $scope.allTeams = {
-                'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
-                    {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-                    {'name': 'Digital Security'}, {'name': 'GoldenEye'}, {'name': 'Service Digitisation'}, {'name': 'Value Exchange'}],
+                'AR': [{'name': 'Account Origination', 'id': 'ar-account-origination'}, {'name': 'ATM', 'id': 'ar-atm'},
+                    {'name': 'Bancassurance', 'id': 'ar-bancassurance'}, {'name': 'Credit Collections', 'id': 'ar-credit-collections'},
+                    {'name': 'Credit Scoring and Account Management', 'id': 'ar-credit-scoring'}, {'name': 'Digital New Features', 'id': 'ar-digital-new-feature'},
+                    {'name': 'Digital Rollout', 'id': 'ar-digital-rollout'}, {'name': 'Digital Security', 'id': 'ar-digital-security'},
+                    {'name': 'GoldenEye', 'id': 'ar-goldeney'}, {'name': 'Service Digitisation', 'id': 'ar-service-digitisation'},
+                    {'name': 'Value Exchange', 'id': 'ar-value-exchange'}],
                 'Card': [{'name': 'Acquiring - Rest of Africa'}, {'name': 'Acquiring - Product'}, {'name': 'Acquiring - Flex'},
                     {'name': 'Diners Auths and Release Compliance'}, {'name': 'Diners Digitalization'}, {'name': 'Diners Transactional'},
                     {'name': 'EMV - Squad 1'}, {'name': 'EMV - Squad 2'}, {'name': 'Issuing - Customer Experience'},
@@ -41,13 +46,36 @@ angular.module('continuumAssessmentPlatform.teamselection-pipeline', ['ngRoute']
                     {'name': 'Postilion/Base 24 - Squad 1'}, {'name': 'Postilion/Base 24 - Squad 2'},
                     {'name': 'Postilion/Base 24 - Squad 3'}, {'name': 'Remittances (Instant Money)'}, {'name': 'Fleet'}, {'name': 'VAF - Squad 1'},
                     {'name': 'VAF - Squad 2 with Genesis'}],
+                'CIB': [{'name': 'Finance IT', 'id': 'finance-IT'}, {'name': 'MSDS', 'id': 'msds'}],
+                'CIBO': [{'name': 'Africa Regions', 'id': 'africa-regions'}, {'name': 'BaNCS & Sec Lending', 'id': 'bancs-sec-lending'},
+                    {'name': 'Client & Data Services', 'id': 'client-data-services'}, {'name': 'Engineering Transformation', 'id': 'engineering-transformation'},
+                    {'name': 'Financial Messaging', 'id': 'financial-messaging'}, {'name': 'GMO Confirmations', 'id': 'gmo-confirmations'},
+                    {'name': 'GMO Settlements', 'id': 'gmo-settlements'}, {'name': 'Intelligent Automation (CIB)', 'id': 'intelligent-automation'},
+                    {'name': 'IPSS Liquidity', 'id': 'ipss-liquidity'}, {'name': 'IPSS Settlements', 'id': 'ipss-settlements'},
+                    {'name': 'JAS', 'id': 'jas'}, {'name': 'Legacy Payments', 'id': 'legacy-payments'},
+                    {'name': 'Libra BOP', 'id': 'libra-bop'}, {'name': 'Payments', 'id': 'cibo-payments'},
+                    {'name': 'Platforms (Payments)', 'id': 'platforms-payments'}, {'name': 'Recons', 'id': 'recons'},
+                    {'name': 'SWIFT Industry', 'id': 'swift-industry'}, {'name': 'Techie Town', 'id': 'techie-town'},
+                    {'name': 'Trade', 'id': 'trade'}, {'name': 'Trustees and Clearing', 'id': 'trustees-clearing'}],
+                'CIBRT': [{'name': 'Risk Technology: Cybernetics', 'id': 'risk-technology-cybernetics'},
+                    {'name': 'Risk Technology: Risk Reporting & Analytics', 'id': 'risk-technology-risk-reporting-analytics'},
+                    {'name': 'Risk Technology: Core Credit Services', 'id': 'risk-technology-core-credit-services'},
+                    {'name': 'Risk Technology: Operations', 'id': 'risk-technology-operations'}],
+                'CIBTPS': [{'name': 'Collections 1', 'id': 'tps-collections-1'}, {'name': 'Collections 2', 'id': 'tps-collections-1'},
+                    {'name': 'Foreign Payments', 'id': 'tps-foreign-payments'}, {'name': 'Local Payments 1', 'id': 'tps-local-payments-1'},
+                    {'name': 'Local Payments 2', 'id': 'tps-local-payments-2'}, {'name': 'Account Services', 'id': 'tps-account-services'},
+                    {'name': 'Enhanced Collections', 'id': 'tps-enhanced-collections'}, {'name': 'Thin Client', 'id': 'tps-thin-client'},
+                    {'name': 'Platform', 'id': 'tps-platform'}, {'name': 'BOL Legacy', 'id': 'tps-bol-legacy'},
+                    {'name': 'Host to Host', 'id': 'tps-host-to-host'}, {'name': 'Integration', 'id': 'tps-integration'},
+                    {'name': 'PES', 'id': 'tps-pes'}, {'name': 'MIS', 'id': 'tps-mis'}, {'name': 'Pricing and Billing', 'id': 'tps-pricing-and-billing'},
+                    {'name': 'SSA', 'id': 'tps-ssa'}, {'name': 'DevOps', 'id': 'tps-devops'},
+                    {'name': 'Specialised Account Services', 'id': 'tps-specialised-account-services'}],
                 'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
                     {'name': 'Econ and Reg Capital - Squad 1'}, {'name': 'Econ and Reg Capital - Squad 2'},
                     {'name': 'Finance Central - Squad 1'}, {'name': 'Finance Central - Squad 2'}, {'name': 'Finance Re-engineering'},
                     {'name': 'Procurement'}, {'name': 'Move Management'}, {'name': 'Physical Security'}, {'name': 'Real Estate Projects'},
                     {'name': 'HC Enablement'}, {'name': 'HC SAP'}, {'name': 'Marketing and Communications'},
                     {'name': 'GFCC'}, {'name': 'IOR'}],
-                'CIB': [{'name': 'Financial Messaging (AMH)'}],
                 'DS': [{'name': 'AML DevOps'}, {'name': 'Analytics and Third Party'}, {'name': 'Big Data'},
                     {'name': 'CIB'}, {'name': 'Data Management and Governance'}, {'name': 'Data Science'},
                     {'name': 'Data Warehousing - Squad 1'}, {'name': 'Data Warehousing - Squad 2'}, {'name': 'Enterprise BI'},
@@ -131,7 +159,7 @@ angular.module('continuumAssessmentPlatform.teamselection-pipeline', ['ngRoute']
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/pipeline?teamName=" + teamName,
+                    url: "http://178.62.75.15:8080/pipeline?teamName=" + teamName,
                     method: "GET"
                 });
             }

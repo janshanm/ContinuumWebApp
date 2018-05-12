@@ -79,7 +79,7 @@ angular.module('continuumAssessmentPlatform.cib-survey-completion', ['ngRoute'])
         return {
             saveSurvey: function (body) {
                 return $http({
-                    url: "http://localhost:8081/saveCIBSurvey",
+                    url: "http://178.62.75.15:8081/saveCIBSurvey",
                     method: "POST",
                     data: body
                 });

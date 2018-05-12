@@ -119,20 +119,20 @@ angular.module('continuumAssessmentPlatform.configure-survey', ['ngRoute'])
         return {
             saveDetails: function (surveyeeName, teamName, portfolio) {
                 return $http({
-                    url: "http://localhost:8081/update",
+                    url: "http://178.62.75.15:8081/update",
                     method: "POST",
                     params: {'surveyee': surveyeeName, 'teamName': teamName, 'portfolio': portfolio}
                 });
             },
             getSurveyees: function(){
                 return $http({
-                    url: "http://localhost:8081/surveyees",
+                    url: "http://178.62.75.15:8081/surveyees",
                     method: "GET"
                 });
             },
             deleteDetails: function (surveyeeName, teamName, portfolio) {
                 return $http({
-                    url: "http://localhost:8081/delete",
+                    url: "http://178.62.75.15:8081/delete",
                     method: "DELETE",
                     params: {'surveyee': surveyeeName, 'teamName': teamName, 'portfolio': portfolio}
                 });

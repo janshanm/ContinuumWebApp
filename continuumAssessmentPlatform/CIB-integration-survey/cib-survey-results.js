@@ -267,7 +267,7 @@ angular.module('continuumAssessmentPlatform.cib-survey-results', ['ngRoute'])
         return {
             getSurveyResults: function () {
                 return $http({
-                    url: "http://localhost:8081/CIBSurveys",
+                    url: "http://178.62.75.15:8081/CIBSurveys",
                     method: "GET"
                 });
             }

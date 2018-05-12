@@ -399,7 +399,7 @@ angular.module('continuumAssessmentPlatform.previous-assessments', ['ngRoute'])
         return {
             getAssessments: function () {
                 return $http({
-                    url: "http://localhost:8080/assessments",
+                    url: "http://178.62.75.15:8080/assessments",
                     method: "GET"
                 });
             }

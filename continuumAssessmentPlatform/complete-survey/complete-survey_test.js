@@ -353,7 +353,7 @@ describe('continuumAssessmentPlatform.complete-survey module', function() {
                 surveyService = $injector.get('SurveyService');
                 $httpBackend = $injector.get('$httpBackend');
 
-                $httpBackend.when('POST', "http://localhost:8081/saveSurvey").respond("Successfully Retrieved");
+                $httpBackend.when('POST', "http://178.62.75.15:8081/saveSurvey").respond("Successfully Retrieved");
             }));
 
             afterEach(function() {

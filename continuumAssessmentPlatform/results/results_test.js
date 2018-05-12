@@ -2281,8 +2281,8 @@ describe('continuumAssessmentPlatform.results module', function() {
             retrieveAssessmentService = $injector.get('RetrieveAssessment');
             $httpBackend = $injector.get('$httpBackend');
 
-            $httpBackend.when('POST', "http://localhost:8080/saveTeamData").respond("Successfully Saved");
-            $httpBackend.when('GET', "http://localhost:8080/assessment?teamName=Test").respond("Successfully Retrieved");
+            $httpBackend.when('GET', "http://178.62.75.15:8080/assessment?teamName=Test").respond("Successfully Retrieved");
+            $httpBackend.when('POST', "http://178.62.75.15:8080/saveTeamData").respond("Successfully Saved");
         }));
 
         afterEach(function() {

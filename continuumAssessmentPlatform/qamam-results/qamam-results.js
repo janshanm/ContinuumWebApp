@@ -1549,7 +1549,7 @@ angular.module('continuumAssessmentPlatform.qamam-results', ['ngRoute'])
         return {
             saveAssessments: function (data, body) {
                 return $http({
-                    url: "http://localhost:8081/saveTeamData-qamam",
+                    url: "http://178.62.75.15:8081/saveTeamData-qamam",
                     method: "POST",
                     params: data,
                     data: body
@@ -1600,7 +1600,7 @@ angular.module('continuumAssessmentPlatform.qamam-results', ['ngRoute'])
         return {
             getAssessment: function (teamName) {
                 return $http({
-                    url: "http://localhost:8081/assessment-qamam?teamName="+teamName,
+                    url: "http://178.62.75.15:8081/assessment-qamam?teamName="+teamName,
                     method: "GET"
                 });
             }
