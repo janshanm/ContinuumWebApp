@@ -19,10 +19,13 @@ angular.module('continuumAssessmentPlatform.teamselectionqa', ['ngRoute'])
             $scope.selectedPortfolio = "AR";
 
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
+                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
+                {'id': 'CIBTPS', 'name': 'CIB TPS'},
+                {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
-                {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'W', 'name': 'Wealth'}];
+                {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
+                {'id': 'W', 'name': 'Wealth'}];
 
             $scope.allTeams = {
                 'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
