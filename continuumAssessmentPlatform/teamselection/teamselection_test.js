@@ -67,7 +67,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             {'name': 'Linux'}, {'name': 'Network – Support'}, {'name': 'Network – Deployment'}, {'name': 'Open Systems Storage and Backup'},
             {'name': 'Oracle'}, {'name': 'Platform – Solaris'}, {'name': 'Platform – AIX'}, {'name': 'Platform Engineering – Cloud'},
             {'name': 'Platform Engineering – Automation'}, {'name': 'SAP Front Office'}, {'name': 'SAP Back Office'},
-            {'name': 'Storage'}, {'name': 'Sybase and DB2'}, {'name': 'SQL'}, {'name': 'Unified Communications'},
+            {'name': 'Storage'}, {'name': 'Sybase and DB2'}, {'name': 'SQL'}, {'name': 'TWS'}, {'name': 'Unified Communications'},
             {'name': 'Windows'}],
         'PBB': [{'name': 'Account Origination'}, {'name': 'AMS 1'}, {'name': 'AMS 2'}, {'name': 'AMS 3 - Unsecured Lending'},
             {'name': 'AO - Unsecured Lending'}, {'name': 'ATM - Squad 1'}, {'name': 'ATM - Squad 2'},
