@@ -1,7 +1,7 @@
 {
   "name": "continuum-assessment-platform",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A user interface for the continuum assessment platform",
   "repository": "https://github.com/brianleke/continuum-assessment-platform",
   "license": "MIT",
