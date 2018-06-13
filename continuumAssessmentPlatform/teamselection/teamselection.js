@@ -133,7 +133,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {name:'Murex VaR'},
                     {name:'Calypso South Africa'},
                     {name:'Calypso Africa Regions'},
-                    {name:'Calypso ICBC'}]
+                    {name:'Calypso ICBC'},
+                    {name:'TestGM'}]
             };
 
             $scope.getTeams();
