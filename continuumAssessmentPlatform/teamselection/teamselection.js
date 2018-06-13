@@ -25,7 +25,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
                 {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
-                {'id': 'W', 'name': 'Wealth'}];
+                {'id': 'W', 'name': 'Wealth'},
+                {'id': 'CIBGMT', 'name': "CIB Global Markets Technology"}];
 
             $scope.allTeams = {
                 'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
@@ -114,6 +115,25 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                 'Security': [{'name': 'Test Security Squad'}],
                 'W': [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
                     {'name': 'Wealth International'}]
+                ,
+                'CIBGMT': [{name:'Alchemy CIB'},
+                    {name:'Alchemy Liberty'},
+                    {name:'Equities Support'},
+                    {name:'FEDS'},
+                    {name:'Front S A'},
+                    {name:'FX Support'},
+                    {name:'GMT Analytics'},
+                    {name:'Hoops'},
+                    {name:'Market Data'},
+                    {name:'Online Share Trading'},
+                    {name:'Murex EQD'},
+                    {name:'Murex GTS S A'},
+                    {name:'Murex Core'},
+                    {name:'Murex Collateral'},
+                    {name:'Murex VaR'},
+                    {name:'Calypso South Africa'},
+                    {name:'Calypso Africa Regions'},
+                    {name:'Calypso ICBC'}]
             };
 
             $scope.getTeams();
