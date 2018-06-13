@@ -19,14 +19,15 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
             $scope.selectedPortfolio = "AR";
 
             $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-                {'id': 'CIB', 'name': 'CIB'}, {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
+                {'id': 'CIB', 'name': 'CIB'},
+                {'id': 'CIBGMT', 'name': "CIB Global Markets Technology"},
+                {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
                 {'id': 'CIBTPS', 'name': 'CIB TPS'},
                 {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
                 {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
                 {'id': 'Infra', 'name': 'Infrastructure Services'},
                 {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
-                {'id': 'W', 'name': 'Wealth'},
-                {'id': 'CIBGMT', 'name': "CIB Global Markets Technology"}];
+                {'id': 'W', 'name': 'Wealth'}];
 
             $scope.allTeams = {
                 'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
@@ -133,8 +134,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {name:'Murex VaR'},
                     {name:'Calypso South Africa'},
                     {name:'Calypso Africa Regions'},
-                    {name:'Calypso ICBC'},
-                    {name:'TestGM'}]
+                    {name:'Calypso ICBC'}]
             };
 
             $scope.getTeams();
