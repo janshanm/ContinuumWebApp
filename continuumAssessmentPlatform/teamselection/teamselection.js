@@ -72,10 +72,10 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'SSA'}, {'name': 'DevOps'}, {'name': 'Specialised Account Services'}],
                 'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
                     {'name': 'FLS Team'}, {'name': 'HC SAP'}, {'name': 'IOR'}],
-                'DS': [{'name': 'AML DevOps'}, {'name': 'Africa Regions Transformation'}, {'name': 'Big Data Ingestion'},
-                    {'name': 'Core Banking'}, {'name': 'Data Warehouse Products'}, {'name': 'Human Capital'},
-                    {'name': 'Loyalty and Rewards'}, {'name': 'RDM, MDM and MRI'},
-                    {'name': 'SAS'}, {'name': 'Wealth'}],
+                'DS': [{"name":"AML DevOps"},{"name":"Africa Regions Transformation"},{"name":"Big Data Ingestion"},
+                    {"name":"Core Banking"},{"name":"Data Management"},{"name":"Data Science"},{"name":"Data Warehouse Products"}
+                    ,{"name":"Enterprise BI"},{"name":"Human Capital"},{"name":"Loyalty and Rewards"},{"name":"RDM, MDM and MRI"},
+                    {"name":"Regulatory Data"},{"name":"SAS"},{"name":"Wealth"}],
                 'DC': [{'name': 'AIMS'}, {'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'},
                     {'name': 'Corporate Banking'}, {'name': 'Customer Foundation'}, {'name': 'Data and Analytics'},
                     {'name': 'Digital ID and Entitlements'}, {'name': 'Forex'}, {'name': 'Insurance, Homeloans, VAF, Kids'},
@@ -117,24 +117,10 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                 'W': [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
                     {'name': 'Wealth International'}]
                 ,
-                'CIBGMT': [{name:'Alchemy CIB'},
-                    {name:'Alchemy Liberty'},
-                    {name:'Equities Support'},
-                    {name:'FEDS'},
-                    {name:'Front S A'},
-                    {name:'FX Support'},
-                    {name:'GMT Analytics'},
-                    {name:'Hoops'},
-                    {name:'Market Data'},
-                    {name:'Online Share Trading'},
-                    {name:'Murex EQD'},
-                    {name:'Murex GTS S A'},
-                    {name:'Murex Core'},
-                    {name:'Murex Collateral'},
-                    {name:'Murex VaR'},
-                    {name:'Calypso South Africa'},
-                    {name:'Calypso Africa Regions'},
-                    {name:'Calypso ICBC'}]
+                'CIBGMT': [{"name":"Alchemy CIB"},{"name":"Alchemy Liberty"},{"name":"Equities Support"},{"name":"FEDS"},
+                    {"name":"Front S A"},{"name":"FX Support"},{"name":"GMT Analytics"},{"name":"Hoops"},{"name":"Market Data"},
+                    {"name":"Online Share Trading"},{"name":"Murex EQD"},{"name":"Murex GTS S A"},{"name":"Murex Core"},{"name":"Murex Collateral"},
+                    {"name":"Murex VaR"},{"name":"Calypso South Africa"},{"name":"Calypso Africa Regions"},{"name":"Calypso ICBC"}]
             };
 
             $scope.getTeams();
