@@ -73,8 +73,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                 'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
                     {'name': 'FLS Team'}, {'name': 'HC SAP'}, {'name': 'IOR'}],
                 'DS': [{"name":"AML DevOps"},{"name":"Africa Regions Transformation"},{"name":"Big Data Ingestion"},
-                    {"name":"Core Banking"},{"name":"Data Management"},{"name":"Data Science"},{"name":"Data Warehouse Products"}
-                    ,{"name":"Enterprise BI"},{"name":"Human Capital"},{"name":"Loyalty and Rewards"},{"name":"RDM, MDM and MRI"},
+                    {"name":"Data Management"},{"name":"Data Science"},{"name":"Data Warehouse Products"},
+                    {"name":"Enterprise BI"},{"name":"Human Capital"},{"name":"Loyalty and Rewards"},
                     {"name":"Regulatory Data"},{"name":"SAS"},{"name":"Wealth"}],
                 'DC': [{'name': 'AIMS'}, {'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'},
                     {'name': 'Corporate Banking'}, {'name': 'Customer Foundation'}, {'name': 'Data and Analytics'},
