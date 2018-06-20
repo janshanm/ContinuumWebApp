@@ -70,8 +70,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Enhanced Collections'}, {'name': 'Thin Client'}, {'name': 'Platform'},
                     {'name': 'BOL Legacy'}, {'name': 'Host to Host'}, {'name': 'Integration'}, {'name': 'PES'}, {'name': 'Pricing and Billing'},
                     {'name': 'SSA'}, {'name': 'DevOps'}, {'name': 'Specialised Account Services'}],
-                'CF': [{'name': 'ML/TF and Sanctions'}, {'name': 'Surveillance and Reporting'}, {'name': 'Deal Pricing and ALM'},
-                    {'name': 'FLS Team'}, {'name': 'HC SAP'}, {'name': 'IOR'}],
+                'CF': [{"name":"Deal Pricing and ALM"},{"name":"Employee Portal"},{"name":"FLS Team"},{"name":"HC Enablement"},
+                    {"name":"HC SAP"},{"name":"IOR"},{"name":"ML/TF and Sanctions"},{"name":"Surveillance and Reporting"}],
                 'DS': [{"name":"AML DevOps"},{"name":"Africa Regions Transformation"},{"name":"Big Data Ingestion"},
                     {"name":"Data Management"},{"name":"Data Science"},{"name":"Data Warehouse Products"},
                     {"name":"Enterprise BI"},{"name":"Human Capital"},{"name":"Loyalty and Rewards"},
@@ -114,8 +114,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Instant Money - Digital Messaging'}, {'name': 'Instant Money - Transit'}, {'name': 'Instant Money - VAS'},
                     {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}, {'name': 'Value / Payments Team (OBB 1)'}],
                 'Security': [{'name': 'Test Security Squad'}],
-                'W': [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
-                    {'name': 'Wealth International'}]
+                'W': [{"name":"SBFC Feature Team"},{"name":"Standard Bank Insurance Brokers"},{"name":"Standard Insurance Limited"},{"name":"WIN SAP FT"},
+                    {"name":"Wealth International"},{"name":"Wealth and Investments and Fiduciary"}]
                 ,
                 'CIBGMT': [{"name":"Alchemy CIB"},{"name":"Alchemy Liberty"},{"name":"Equities Support"},{"name":"FEDS"},
                     {"name":"Front S A"},{"name":"FX Support"},{"name":"GMT Analytics"},{"name":"Hoops"},{"name":"Market Data"},
