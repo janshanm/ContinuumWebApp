@@ -1,126 +1,53 @@
 'use strict';
 
-describe('continuumAssessmentPlatform.teamselection module', function() {
+describe('continuumAssessmentPlatform.teamselection module', function () {
 
     beforeEach(module('continuumAssessmentPlatform.teamselection'));
     var allTeams = {
-        'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
-            {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
-            {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
-            {'name': 'Operations and Statements'}, {'name': 'Payments and Cheque Voucher Processing'},
-            {'name': 'Payments - Squad 1'}, {'name': 'Payments - Squad 2'}, {'name': 'Pricing'},
-            {'name': 'Service Digitisation'}, {'name': 'Statements'}, {'name': 'Transactional'}, {'name': 'Value Exchange'}],
-        'Card': [{'name': 'Acquiring - Feature Team'}, {'name': 'Acquiring - Rest of Africa'}, {'name': 'Acquiring - Product'}, {'name': 'Acquiring - Flex'},
-            {'name': 'Chip Centre'}, {'name': 'Diners Auths and Release Compliance'}, {'name': 'Diners Digitalization'}, {'name': 'Diners Transactional'},
-            {'name': 'EMV - Squad 1'}, {'name': 'EMV - Squad 2'}, {'name': 'Issuing - Customer Experience'},
-            {'name': 'Issuing - Transactional Feature Team'}, {'name': 'Issuing - Product Squad 1'}, {'name': 'Issuing - Product Squad 2'},
-            {'name': 'Africa Region Card Issuing'}, {'name': 'Sparrow Component Team'}, {'name': 'Cash Feature Team'}, {'name': 'FASS/GC/COSS'},
-            {'name': 'Generic Switch'}, {'name': 'GOSS and Outsourced Production'},
-            {'name': 'IA - Channel Enablement IA'}, {'name': 'IA - Service and Chatbot IA'}, {'name': 'Cash Services IA'},
-            {'name': 'Card IA'}, {'name': 'Credit IA'}, {'name': 'CRR IA'},
-            {'name': 'Fraud IA'}, {'name': 'EIM IA'}, {'name': 'Liberty IA'},
-            {'name': 'ROA IA'}, {'name': 'Central Finance IA'}, {'name': 'CIB Finance IA'},
-            {'name': 'Payments, Regulatory and Maintenance IA'},
-            {'name': 'Workflow - GOSS'},
-            {'name': 'Auto-Recons Legacy'}, {'name': 'Bulk Payments'}, {'name': 'Emerging Payments'}, {'name': 'Card and Payments DevOps - Easy Trace'},
-            {'name': 'Card and Payments DevOps - MUCC'}, {'name': 'Card and Payments DevOps - Automatic Everything'},
-            {'name': 'IntelliMatch'}, {'name': 'Merchant Solutions Service'}, {'name': 'Money Transfers and ACB'},
-            {'name': 'Online Payments - Squad 1'}, {'name': 'Online Payments - Squad 2'}, {'name': 'Online Payments - Squad 3'},
-            {'name': 'Payment Data'}, {'name': 'Postilion/Base 24 - Squad 1'}, {'name': 'Postilion/Base 24 - Squad 2'},
-            {'name': 'Postilion/Base 24 - Squad 3'}, {'name': 'Remittances (Instant Money)'}, {'name': 'Fleet'},
-            {'name': 'VAF - Squad 1'}, {'name': 'VAF - Squad 2 with Genesis'}, {'name': 'VAF Africa Regions'},
-            {'name': 'VAF Digitisation'}, {'name': 'VAF Modernisation'}, {'name': 'VAF Wholesale Finance'}],
-        'CIB': [{'name': 'Finance IT'}, {'name': 'MSDS'}],
-        'CIBO': [{'name': 'Africa Regions'}, {'name': 'BaNCS & Sec Lending'}, {'name': 'Client & Data Services'},
-            {'name': 'Engineering Transformation'}, {'name': 'Financial Messaging'}, {'name': 'GMO Confirmations'},
-            {'name': 'GMO Settlements'}, {'name': 'Intelligent Automation (CIB)'}, {'name': 'IPSS Liquidity'},
-            {'name': 'IPSS Settlements'}, {'name': 'JAS'}, {'name': 'Legacy Payments'}, {'name': 'Libra BOP'},
-            {'name': 'Payments'}, {'name': 'Platforms (Payments)'}, {'name': 'Recons'}, {'name': 'SWIFT Industry'},
-            {'name': 'Techie Town'}, {'name': 'Trade'}, {'name': 'Trustees and Clearing'}],
-        'CIBRT': [{'name': 'Risk Technology: Cybernetics'}, {'name': 'Risk Technology: Risk Reporting & Analytics'},
-            {'name': 'Risk Technology: Core Credit Services'}, {'name': 'Risk Technology: Operations'}],
-        'CIBTPS': [{'name': 'Collections 1'}, {'name': 'Collections 2'}, {'name': 'Foreign Payments'},
-            {'name': 'Local Payments 1'}, {'name': 'Local Payments 2'}, {'name': 'MIS'}, {'name': 'Account Services'},
-            {'name': 'Enhanced Collections'}, {'name': 'Thin Client'}, {'name': 'Platform'},
-            {'name': 'BOL Legacy'}, {'name': 'Host to Host'}, {'name': 'Integration'}, {'name': 'PES'}, {'name': 'Pricing and Billing'},
-            {'name': 'SSA'}, {'name': 'DevOps'}, {'name': 'Specialised Account Services'}],
-        'CF': [{"name":"Deal Pricing and ALM"},{"name":"Employee Portal"},{"name":"FLS Team"},{"name":"HC Enablement"},
-            {"name":"HC SAP"},{"name":"IOR"},{"name":"ML/TF and Sanctions"},{"name":"Surveillance and Reporting"}],
-        'DS': [{"name":"AML DevOps"},{"name":"Africa Regions Transformation"},{"name":"Big Data Ingestion"},
-            {"name":"DAM – Platforms"},{"name":"DAM – Engineering"},{"name":"DAM – PBB EIM"},{"name":"DAM –  MDM & RDM"},
-            {"name":"Data Science"},{"name":"Data Warehouse Products"},
-            {"name":"Enterprise BI"},{"name":"Human Capital"},{"name":"Loyalty and Rewards"},
-            {"name":"Regulatory Data"},{"name":"SAS"},{"name":"Wealth"}],
-        'DC': [{'name': 'AIMS'}, {'name': 'Card and Emerging Payments'}, {'name': 'Client Side Framework'},
-            {'name': 'Corporate Banking'}, {'name': 'Customer Foundation'}, {'name': 'Data and Analytics'},
-            {'name': 'Digital ID and Entitlements'}, {'name': 'Forex'}, {'name': 'Insurance, Homeloans, VAF, Kids'},
-            {'name': 'Order Management'}, {'name': 'Investments'},
-            {'name': 'Personal and SE - Account Management'}, {'name': 'Personal and SE - Transactional and VAS'},
-            {'name': 'Staff Foundation'}, {'name': 'Staff Web'}, {'name': 'Vikings'},
-            {'name': 'Virtual Banking - Front End'}, {'name': 'Virtual Banking - Squad 2'}, {'name': 'Public Web'}],
-        'EWT': [{'name': 'BPM'}, {'name': 'ECM'}, {'name': 'ESB'}, {'name': 'TechLab'}, {'name': 'Tools and Support'}],
-        'GRPFIN': [{'name': 'CF Group Finance Central - FBS'}, {'name': 'CF Group Finance - Sub Ledger (PSBL)'}, {'name': 'CF Group Finance - Accounting Rules Engine'},
-            {'name': 'CF Group Finance - TCM (RegCap, ECAP, ICBCS (RCC- application))'},
-            {'name': 'CF Group Finance - ALM'}, {'name': 'CF Group Finance PBB - Bank Analyser'}, {'name': 'CF Group Finance PBB - PMT'},
-            {'name': 'CF Group Finance PBB - PBT'}, {'name': 'CF Group Finance PBB - Measurements'}, {'name': 'CF Group Finance CIB - Fusion'},
-            {'name': 'CF Group Finance CIB - Entry Warehouse'}, {'name': 'CF Group Finance CIB - Plato'},
-            {'name': 'CF Group Finance CIB - PMREC'}, {'name': 'CF Group Finance Africa Regions (GBM, TAX, Planning, Reporting, SAP ECC (GL))'},
-            {'name': 'CF Group Finance - Procurement'}],
-        'GRPIOR': [{'name': 'GR Data FT'}, {'name': 'GR Workflow FT'}, {'name': 'GR Systems FT'},
-            {'name': 'GR FLS FT'}],
-        'Infra': [{'name': 'Capacity Management'}, {'name': 'CICS'}, {'name': 'Data Centre – Africa Region'}, {'name': 'Data Centre – DCAT2'},
-            {'name': 'Data Centre – DCIRM'}, {'name': 'DB2/Adabas'}, {'name': 'J2E'},
-            {'name': 'End User Computing'}, {'name': 'Enterprise Systems Management'}, {'name': 'Facility Management'},
-            {'name': 'Mainframe – Integration'}, {'name': 'Mainframe – Storage'},
-            {'name': 'Mainframe – zOS'}, {'name': 'Middleware – Control Direct and MQ'},
-            {'name': 'Middleware – TWS'}, {'name': 'Middleware – Control M / GCE / RMS and report viewer'},
-            {'name': 'Linux'}, {'name': 'Network – Support'}, {'name': 'Network – Deployment'}, {'name': 'Open Systems Storage and Backup'},
-            {'name': 'Oracle'}, {'name': 'Platform – Solaris'}, {'name': 'Platform – AIX'}, {'name': 'Platform Engineering – Cloud'},
-            {'name': 'Platform Engineering – Automation'}, {'name': 'SAP Front Office'}, {'name': 'SAP Back Office'},
-            {'name': 'Storage'}, {'name': 'Sybase and DB2'}, {'name': 'SQL'}, {'name': 'TWS'}, {'name': 'Unified Communications'},
-            {'name': 'Windows'}],
-        'MKT': [{'name': 'Employee Portal'}],
-        'PBB': [{'name': 'Account Origination'}, {'name': 'AMS 1'}, {'name': 'AMS 2'}, {'name': 'AMS 3 - Unsecured Lending'},
-            {'name': 'AO - Unsecured Lending'}, {'name': 'ATM - Squad 1'}, {'name': 'ATM - Squad 2'},
-            {'name': 'ATM - Squad 3'}, {'name': 'ATM - Squad 4'}, {'name': 'BPM Non-federated'}, {'name': 'Branch Accounting'},
-            {'name': 'CDI/RSS'}, {'name': 'Natural and .NET Applications'}, {'name': 'Credit Account Maintenance Feature Team'},
-            {'name': 'Credit Collections Feature Team'}, {'name': 'Credit Account Origination Feature Team'},
-            {'name': 'Credit Collateral Feature Team'}, {'name': 'E3 Systems Feature Team'},
-            {'name': 'Customer Insights and Analytics'}, {'name': 'EIM Data Change'}, {'name': 'EIM Data Remediation'},
-            {'name': 'Banking Statements'}, {'name': 'Registration and Login'}, {'name': 'SEO Payments'},
-            {'name': 'SEO Profile Management'}, {'name': 'SEO Registration'}, {'name': 'USSD'},
-            {'name': 'Application Performance Monitoring'}, {'name': 'Aris'}, {'name': 'Business Applications'},
-            {'name': 'CCC'}, {'name': 'Customer Integration and Maintenance'}, {'name': 'e-Commerce'}, {'name': 'JSOM'},
-            {'name': 'Customer 1st and Ciboodle - Squad 1'}, {'name': 'Customer 1st and Ciboodle - Squad 2'},
-            {'name': 'eSignature / OFV'}, {'name': 'IBR'}, {'name': 'Payments'}, {'name': 'Payments - Unsecured Lending'},
-            {'name': 'NDS - Squad 1'}, {'name': 'NDS - Squad 2'}, {'name': 'NDS - Squad 3'},
-            {'name': 'Homeloans - Squad 1'}, {'name': 'Homeloans - Squad 2'}, {'name': 'Platform Team (OBB 2)'},
-            {'name': 'Product and Pricing'}, {'name': 'SAP User Prov, Org, Auth'}, {'name': 'System Engineering Team'},
-            {'name': 'Instant Money - Digital Messaging'}, {'name': 'Instant Money - Transit'}, {'name': 'Instant Money - VAS'},
-            {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}, {'name': 'Value / Payments Team (OBB 1)'}],
-        'Security': [{'name': 'Test Security Squad'}],
-        'W': [{"name":"SBFC Feature Team"},{"name":"Standard Bank Insurance Brokers"},{"name":"Standard Insurance Limited"},{"name":"WIN SAP FT"},
-            {"name":"Wealth International"},{"name":"Wealth and Investments and Fiduciary"}]
-        ,
-        'CIBGMT': [{"name":"Alchemy CIB"},{"name":"Alchemy Liberty"},{"name":"Equities Support"},{"name":"FEDS"},
-            {"name":"Front S A"},{"name":"FX Support"},{"name":"GMT Analytics"},{"name":"Hoops"},{"name":"Market Data"},
-            {"name":"Online Share Trading"},{"name":"Murex EQD"},{"name":"Murex GTS S A"},{"name":"Murex Core"},{"name":"Murex Collateral"},
-            {"name":"Murex VaR"},{"name":"Calypso South Africa"},{"name":"Calypso Africa Regions"},{"name":"Calypso ICBC"}]
+        "AR": [{"name": "Account Origination"}, {"name": "ATM"}, {"name": "Bancassurance"}, {"name": "Credit Collections"}, {"name": "Credit Scoring and Account Management"}, {"name": "Digital New Features"}, {"name": "Digital Rollout"}, {"name": "Digital Security"}, {"name": "Finance"}, {"name": "GoldenEye"}, {"name": "Loans and Leasing"}, {"name": "Operations and Statements"}, {"name": "Payments and Cheque Voucher Processing"}, {"name": "Payments - Squad 1"}, {"name": "Payments - Squad 2"}, {"name": "Pricing"}, {"name": "Service Digitisation"}, {"name": "Statements"}, {"name": "Transactional"}, {"name": "Value Exchange"}],
+        "CF": [{"name": "Deal Pricing and ALM"}, {"name": "Employee Portal"}, {"name": "FLS Team"}, {"name": "HC Enablement"}, {"name": "HC SAP"}, {"name": "IOR"}],
+        "CIB": [{"name": "Finance IT"}, {"name": "MSDS"}],
+        "CIBGMT": [{"name": "Alchemy CIB"}, {"name": "Alchemy Liberty"}, {"name": "Equities Support"}, {"name": "FEDS"}, {"name": "Front S A"}, {"name": "FX Support"}, {"name": "GMT Analytics"}, {"name": "Hoops"}, {"name": "Market Data"}, {"name": "Online Share Trading"}, {"name": "Murex EQD"}, {"name": "Murex GTS S A"}, {"name": "Murex Core"}, {"name": "Murex Collateral"}, {"name": "Murex VaR"}, {"name": "Calypso South Africa"}, {"name": "Calypso Africa Regions"}, {"name": "Calypso ICBC"}],
+        "CIBO": [{"name": "Africa Regions"}, {"name": "BaNCS & Sec Lending"}, {"name": "Client & Data Services"}, {"name": "Engineering Transformation"}, {"name": "Financial Messaging"}, {"name": "GMO Confirmations"}, {"name": "GMO Settlements"}, {"name": "Intelligent Automation (CIB)"}, {"name": "IPSS Liquidity"}, {"name": "IPSS Settlements"}, {"name": "JAS"}, {"name": "Legacy Payments"}, {"name": "Libra BOP"}, {"name": "Payments"}, {"name": "Platforms (Payments)"}, {"name": "Recons"}, {"name": "SWIFT Industry"}, {"name": "Techie Town"}, {"name": "Trade"}, {"name": "Trustees and Clearing"}],
+        "CIBRT": [{"name": "Risk Technology: Cybernetics"}, {"name": "Risk Technology: Risk Reporting & Analytics"}, {"name": "Risk Technology: Core Credit Services"}, {"name": "Risk Technology: Operations"}],
+        "CIBTPS": [{"name": "Collections 1"}, {"name": "Collections 2"}, {"name": "Foreign Payments"}, {"name": "Local Payments 1"}, {"name": "Local Payments 2"}, {"name": "MIS"}, {"name": "Account Services"}, {"name": "Enhanced Collections"}, {"name": "Thin Client"}, {"name": "Platform"}, {"name": "BOL Legacy"}, {"name": "Host to Host"}, {"name": "Integration"}, {"name": "PES"}, {"name": "Pricing and Billing"}, {"name": "SSA"}, {"name": "DevOps"}, {"name": "Specialised Account Services"}],
+        "CMPLNCE": [{"name": "Deal Pricing and ALM"}, {"name": "Employee Portal"}, {"name": "FLS Team"}, {"name": "HC Enablement"}, {"name": "HC SAP"}, {"name": "IOR"}, {"name": "ML/TF and Sanctions"}, {"name": "Surveillance and Reporting"}],
+        "Card": [{"name": "Acquiring - Feature Team"}, {"name": "Acquiring - Rest of Africa"}, {"name": "Acquiring - Product"}, {"name": "Acquiring - Flex"}, {"name": "Chip Centre"}, {"name": "Diners Auths and Release Compliance"}, {"name": "Diners Digitalization"}, {"name": "Diners Transactional"}, {"name": "EMV - Squad 1"}, {"name": "EMV - Squad 2"}, {"name": "Issuing - Customer Experience"}, {"name": "Issuing - Transactional Feature Team"}, {"name": "Issuing - Product Squad 1"}, {"name": "Issuing - Product Squad 2"}, {"name": "Africa Region Card Issuing"}, {"name": "Sparrow Component Team"}, {"name": "Cash Feature Team"}, {"name": "FASS/GC/COSS"}, {"name": "Generic Switch"}, {"name": "GOSS and Outsourced Production"}, {"name": "IA - Channel Enablement IA"}, {"name": "IA - Service and Chatbot IA"}, {"name": "Cash Services IA"}, {"name": "Card IA"}, {"name": "Credit IA"}, {"name": "CRR IA"}, {"name": "Fraud IA"}, {"name": "EIM IA"}, {"name": "Liberty IA"}, {"name": "ROA IA"}, {"name": "Central Finance IA"}, {"name": "CIB Finance IA"}, {"name": "Payments, Regulatory and Maintenance IA"}, {"name": "Workflow - GOSS"}, {"name": "Auto-Recons Legacy"}, {"name": "Bulk Payments"}, {"name": "Emerging Payments"}, {"name": "Card and Payments DevOps - Easy Trace"}, {"name": "Card and Payments DevOps - MUCC"}, {"name": "Card and Payments DevOps - Automatic Everything"}, {"name": "IntelliMatch"}, {"name": "Merchant Solutions Service"}, {"name": "Money Transfers and ACB"}, {"name": "Online Payments - Squad 1"}, {"name": "Online Payments - Squad 2"}, {"name": "Online Payments - Squad 3"}, {"name": "Payment Data"}, {"name": "Postilion/Base 24 - Squad 1"}, {"name": "Postilion/Base 24 - Squad 2"}, {"name": "Postilion/Base 24 - Squad 3"}, {"name": "Remittances (Instant Money)"}, {"name": "Fleet"}, {"name": "VAF - Squad 1"}, {"name": "VAF - Squad 2 with Genesis"}, {"name": "VAF Africa Regions"}, {"name": "VAF Digitisation"}, {"name": "VAF Modernisation"}, {"name": "VAF Wholesale Finance"}],
+        "DC": [{"name": "AIMS"}, {"name": "Card and Emerging Payments"}, {"name": "Client Side Framework"}, {"name": "Corporate Banking"}, {"name": "Customer Foundation"}, {"name": "Data and Analytics"}, {"name": "Digital ID and Entitlements"}, {"name": "Forex"}, {"name": "Insurance, Homeloans, VAF, Kids"}, {"name": "Order Management"}, {"name": "Investments"}, {"name": "Personal and SE - Account Management"}, {"name": "Personal and SE - Transactional and VAS"}, {"name": "Staff Foundation"}, {"name": "Staff Web"}, {"name": "Vikings"}, {"name": "Virtual Banking - Front End"}, {"name": "Virtual Banking - Squad 2"}, {"name": "Public Web"}],
+        "DS": [{"name": "AML DevOps"}, {"name": "Africa Regions Transformation"}, {"name": "Big Data Ingestion"}, {"name": "DAM – Platforms"}, {"name": "DAM – Engineering"}, {"name": "DAM – PBB EIM"}, {"name": "DAM –  MDM & RDM"}, {"name": "Data Science"}, {"name": "Data Warehouse Products"}, {"name": "Enterprise BI"}, {"name": "Human Capital"}, {"name": "Loyalty and Rewards"}, {"name": "Regulatory Data"}, {"name": "SAS"}, {"name": "Wealth"}],
+        "EWT": [{"name": "BPM"}, {"name": "ECM"}, {"name": "ESB"}, {"name": "TechLab"}, {"name": "Tools and Support"}],
+        "GRPFIN": [{"name": "CF Group Finance Central - FBS"}, {"name": "CF Group Finance - Sub Ledger (PSBL)"}, {"name": "CF Group Finance - Accounting Rules Engine"}, {"name": "CF Group Finance - TCM (RegCap, ECAP, ICBCS (RCC- application))"}, {"name": "CF Group Finance - ALM"}, {"name": "CF Group Finance PBB - Bank Analyser"}, {"name": "CF Group Finance PBB - PMT"}, {"name": "CF Group Finance PBB - PBT"}, {"name": "CF Group Finance PBB - Measurements"}, {"name": "CF Group Finance CIB - Fusion"}, {"name": "CF Group Finance CIB - Entry Warehouse"}, {"name": "CF Group Finance CIB - Plato"}, {"name": "CF Group Finance CIB - PMREC"}, {"name": "CF Group Finance Africa Regions (GBM, TAX, Planning, Reporting, SAP ECC (GL))"}, {"name": "CF Group Finance - Procurement"}],
+        "GRPIOR": [{"name": "GR Data FT"}, {"name": "GR Workflow FT"}, {"name": "GR Systems FT"}, {"name": "GR FLS FT"}],
+        "HCap": [{"name": "CF HC ENABLEMENT FT IT - Cloud Solutions Support"}, {"name": "CF HC ENABLEMENT FT IT - People Fluent"}, {"name": "CF HC SAP FT IT - SAP HC"}, {"name": "CF HC SAP FT IT - SAP HC ESS/MSS"}, {"name": "CF HC SAP FT IT - SAP HC Interfaces"}, {"name": "CF HC SAP FT IT - SAP HC Mobile Apps"}],
+        "Infra": [{"name": "Capacity Management"}, {"name": "CICS"}, {"name": "Data Centre – Africa Region"}, {"name": "Data Centre – DCAT2"}, {"name": "Data Centre – DCIRM"}, {"name": "DB2/Adabas"}, {"name": "J2E"}, {"name": "End User Computing"}, {"name": "Enterprise Systems Management"}, {"name": "Facility Management"}, {"name": "Mainframe – Integration"}, {"name": "Mainframe – Storage"}, {"name": "Mainframe – zOS"}, {"name": "Middleware – Control Direct and MQ"}, {"name": "Middleware – TWS"}, {"name": "Middleware – Control M / GCE / RMS and report viewer"}, {"name": "Linux"}, {"name": "Network – Support"}, {"name": "Network – Deployment"}, {"name": "Open Systems Storage and Backup"}, {"name": "Oracle"}, {"name": "Platform – Solaris"}, {"name": "Platform – AIX"}, {"name": "Platform Engineering – Cloud"}, {"name": "Platform Engineering – Automation"}, {"name": "SAP Front Office"}, {"name": "SAP Back Office"}, {"name": "Storage"}, {"name": "Sybase and DB2"}, {"name": "SQL"}, {"name": "TWS"}, {"name": "Unified Communications"}, {"name": "Windows"}],
+        "MKT": [{"name": "Employee Portal"}],
+        "PBB": [{"name": "Account Origination"}, {"name": "AMS 1"}, {"name": "AMS 2"}, {"name": "AMS 3 - Unsecured Lending"}, {"name": "AO - Unsecured Lending"}, {"name": "ATM - Squad 1"}, {"name": "ATM - Squad 2"}, {"name": "ATM - Squad 3"}, {"name": "ATM - Squad 4"}, {"name": "BPM Non-federated"}, {"name": "Branch Accounting"}, {"name": "CDI/RSS"}, {"name": "Natural and .NET Applications"}, {"name": "Credit Account Maintenance Feature Team"}, {"name": "Credit Collections Feature Team"}, {"name": "Credit Account Origination Feature Team"}, {"name": "Credit Collateral Feature Team"}, {"name": "E3 Systems Feature Team"}, {"name": "Customer Insights and Analytics"}, {"name": "EIM Data Change"}, {"name": "EIM Data Remediation"}, {"name": "Banking Statements"}, {"name": "Registration and Login"}, {"name": "SEO Payments"}, {"name": "SEO Profile Management"}, {"name": "SEO Registration"}, {"name": "USSD"}, {"name": "Application Performance Monitoring"}, {"name": "Aris"}, {"name": "Business Applications"}, {"name": "CCC"}, {"name": "Customer Integration and Maintenance"}, {"name": "e-Commerce"}, {"name": "JSOM"}, {"name": "Customer 1st and Ciboodle - Squad 1"}, {"name": "Customer 1st and Ciboodle - Squad 2"}, {"name": "eSignature / OFV"}, {"name": "IBR"}, {"name": "Payments"}, {"name": "Payments - Unsecured Lending"}, {"name": "NDS - Squad 1"}, {"name": "NDS - Squad 2"}, {"name": "NDS - Squad 3"}, {"name": "Homeloans - Squad 1"}, {"name": "Homeloans - Squad 2"}, {"name": "Platform Team (OBB 2)"}, {"name": "Product and Pricing"}, {"name": "SAP User Prov, Org, Auth"}, {"name": "System Engineering Team"}, {"name": "Instant Money - Digital Messaging"}, {"name": "Instant Money - Transit"}, {"name": "Instant Money - VAS"}, {"name": "Instant Money - Wallets"}, {"name": "Statements"}, {"name": "Unsecured Lending"}, {"name": "Value / Payments Team (OBB 1)"}],
+        "Security": [{"name": "Test Security Squad"}],
+        "W": [{"name": "SBFC Feature Team"}, {"name": "Standard Bank Insurance Brokers"}, {"name": "Standard Insurance Limited"}, {"name": "WIN SAP FT"}, {"name": "Wealth International"}, {"name": "Wealth and Investments and Fiduciary"}]
     };
 
-    var portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-        {'id': 'CIB', 'name': 'CIB'},
-        {'id': 'CIBGMT', 'name': "CIB Global Markets Technology"},
-        {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
-        {'id': 'CIBTPS', 'name': 'CIB TPS'},
-        {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
-        {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
-        {'id': 'GRPFIN', 'name': 'Group Finance'},
-        {'id': 'GRPIOR', 'name': 'Group IOR'},
-        {'id': 'Infra', 'name': 'Infrastructure Services'},
-        {'id': 'MKT', 'name': 'Marketing'},
-        {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
-        {'id': 'W', 'name': 'Wealth'}];
+    var portfolios = [{"id": "AR", "name": "Africa Regions"}, {"id": "CIB", "name": "CIB"}, {
+        "id": "CIBGMT",
+        "name": "CIB Global Markets Technology"
+    }, {"id": "CIBO", "name": "CIB Operations Technology"}, {
+        "id": "CIBRT",
+        "name": "CIB Risk Technology"
+    }, {"id": "CIBTPS", "name": "CIB TPS"}, {"id": "Card", "name": "Card, Payments, GSS, VAF"}, {
+        "id": "CMPLNCE",
+        "name": "Compliance"
+    }, {"id": "CF", "name": "Corporate Functions"}, {"id": "DS", "name": "Data Services"}, {
+        "id": "DC",
+        "name": "Digital Channels"
+    }, {"id": "EWT", "name": "Enterprise-wide Tech Functions"}, {
+        "id": "GRPFIN",
+        "name": "Group Finance"
+    }, {"id": "GRPIOR", "name": "Group IOR"}, {"id": "HCap", "name": "Human Capital"}, {
+        "id": "Security",
+        "name": "IT Security"
+    }, {"id": "Infra", "name": "Infrastructure Services"}, {"id": "MKT", "name": "Marketing"}, {
+        "id": "PBB",
+        "name": "Personal and Business Banking"
+    }, {"id": "W", "name": "Wealth"}];
 
     describe('team selection controller', function () {
 
@@ -134,14 +61,18 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             rootScope = $rootScope;
             scope = rootScope.$new();
             location = $location;
-            controller = $controller('TeamSelectionCtrl', {'$scope': scope, '$rootScope': rootScope, 'RetrieveAssessment': retrieveAssessmentSpy});
+            controller = $controller('TeamSelectionCtrl', {
+                '$scope': scope,
+                '$rootScope': rootScope,
+                'RetrieveAssessment': retrieveAssessmentSpy
+            });
         }));
 
         it('should be defined', function () {
             expect(controller).toBeDefined();
         });
 
-        it('should have the default parameters at scope level', function(){
+        it('should have the default parameters at scope level', function () {
             expect(scope.teams).toEqual([{}]);
             expect(scope.selectedTeam).toEqual("");
             expect(scope.selectedPortfolio).toEqual("AR");
@@ -150,7 +81,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
 
         describe('#init', function () {
 
-            beforeEach(function(){
+            beforeEach(function () {
                 scope.init();
             });
 
@@ -158,15 +89,15 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(scope.selectedPortfolio).toEqual("AR");
             });
 
-            it('should have all the feature teams in the bank', function(){
+            it('should have all the feature teams in the bank', function () {
                 expect(scope.allTeams).toEqual(allTeams);
             });
 
-            it('should have all the portfolios in the bank', function(){
+            it('should have all the portfolios in the bank', function () {
                 expect(scope.portfolios).toEqual(portfolios);
             });
 
-            it('should have all the feature teams in the bank', function(){
+            it('should have all the feature teams in the bank', function () {
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
                     {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
@@ -178,8 +109,8 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
         });
 
-        describe('#getTeams', function(){
-            it('should get teams based on the selected portfolio key for AR', function(){
+        describe('#getTeams', function () {
+            it('should get teams based on the selected portfolio key for AR', function () {
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
                     {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
@@ -193,7 +124,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(scope.teams).toEqual(expectedTeams);
             });
 
-            it('should get teams based on the selected portfolio key for W', function(){
+            it('should get teams based on the selected portfolio key for W', function () {
                 var expectedTeams = [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
                     {'name': 'Wealth International'}];
                 scope.selectedPortfolio = "W";
@@ -204,28 +135,28 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
         });
 
-        describe('#getPortfolioName', function(){
-            it('should get the portfolio name for Africa Regions given AR key', function(){
+        describe('#getPortfolioName', function () {
+            it('should get the portfolio name for Africa Regions given AR key', function () {
                 var expectedPortfolioName = 'Africa Regions';
                 scope.portfolios = portfolios;
                 expect(scope.getPortfolioName('AR')).toEqual(expectedPortfolioName);
             });
 
-            it('should get the portfolio name for Corporate Functions given CP key', function(){
+            it('should get the portfolio name for Corporate Functions given CP key', function () {
                 var expectedPortfolioName = 'Corporate Functions';
                 scope.portfolios = portfolios;
                 expect(scope.getPortfolioName('CF')).toEqual(expectedPortfolioName);
             });
 
-            it('should get the empty portfolio name for key that is not defined', function(){
+            it('should get the empty portfolio name for key that is not defined', function () {
                 var expectedPortfolioName = '';
                 scope.portfolios = portfolios;
                 expect(scope.getPortfolioName('Not_Defined')).toEqual(expectedPortfolioName);
             });
         });
 
-        describe('#updateTeams', function(){
-            it('should get teams based on the selected portfolio key for AR', function(){
+        describe('#updateTeams', function () {
+            it('should get teams based on the selected portfolio key for AR', function () {
                 var expectedTeams = [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
                     {'name': 'Credit Scoring and Account Management'}, {'name': 'Digital New Features'}, {'name': 'Digital Rollout'},
                     {'name': 'Digital Security'}, {'name': 'Finance'}, {'name': 'GoldenEye'}, {'name': 'Loans and Leasing'},
@@ -239,7 +170,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(scope.teams).toEqual(expectedTeams);
             });
 
-            it('should get teams based on the selected portfolio key for W', function(){
+            it('should get teams based on the selected portfolio key for W', function () {
                 var expectedTeams = [{'name': 'Standard Insurance Limited'}, {'name': 'Standard Bank Insurance Brokers'}, {'name': 'Wealth and Investments and Fiduciary'},
                     {'name': 'Wealth International'}];
                 scope.selectedPortfolio = "W";
@@ -249,7 +180,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(scope.teams).toEqual(expectedTeams);
             });
 
-            it('should set the selected team as an empty string', function(){
+            it('should set the selected team as an empty string', function () {
                 scope.selectedPortfolio = "W";
                 scope.allTeams = allTeams;
                 scope.updateTeams();
@@ -258,21 +189,21 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
             });
         });
 
-        describe('#saveTeamName', function(){
-            it('should set error flag on rootscope to true if the selected team is an empty string', function(){
+        describe('#saveTeamName', function () {
+            it('should set error flag on rootscope to true if the selected team is an empty string', function () {
                 scope.selectedTeam = '';
                 scope.saveTeamName();
 
                 expect(rootScope.hasError).toBeTruthy();
             });
 
-            it('should return to the select team page if the selected team is an empty string', function(){
+            it('should return to the select team page if the selected team is an empty string', function () {
                 scope.selectedTeam = '';
                 scope.saveTeamName();
 
                 expect(location.path()).toEqual('/select-team');
             });
-            it('should set error flag on rootscope to false if there is a selected team', function(){
+            it('should set error flag on rootscope to false if there is a selected team', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 deferred.resolve({'status': 200, 'data': '{}'});
                 retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
@@ -282,7 +213,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(rootScope.hasError).toBeFalsy();
             });
 
-            it('should proceed to the strategy page if there is a selected team', function(){
+            it('should proceed to the strategy page if there is a selected team', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 deferred.resolve({'status': 200, 'data': '{}'});
                 retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
@@ -293,7 +224,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(location.path()).toEqual('/strategy');
             });
 
-            it('should set the selected team on the root scope based of selected scope team name', function(){
+            it('should set the selected team on the root scope based of selected scope team name', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 deferred.resolve({'status': 200, 'data': '{}'});
                 retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
@@ -303,7 +234,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(rootScope.teamName).toEqual('Insurance - Coverage Squad 1');
             });
 
-            it('should set the portfolio name on the root scope based of selected scope portfolio key', function(){
+            it('should set the portfolio name on the root scope based of selected scope portfolio key', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 scope.selectedPortfolio = 'W';
                 scope.portfolios = portfolios;
@@ -315,13 +246,13 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(rootScope.selectedPortfolioName).toEqual('Wealth');
             });
 
-            it('should set the previous data in the rootScope assessment as an object', function(){
+            it('should set the previous data in the rootScope assessment as an object', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 scope.selectedPortfolio = 'W';
                 scope.portfolios = portfolios;
                 var expectedAssessments = {'test': 'value'};
 
-                deferred.resolve({'status': 200, 'data': { 'rawData': "{\"test\": \"value\" }"}});
+                deferred.resolve({'status': 200, 'data': {'rawData': "{\"test\": \"value\" }"}});
                 retrieveAssessmentSpy.getAssessment.and.returnValue(deferred.promise);
                 scope.saveTeamName();
                 scope.$apply();
@@ -330,7 +261,7 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
                 expect(actualAssessments).toEqual(expectedAssessments);
             });
 
-            it('should set the previous data in the rootScope assessment as an empty object if no data', function(){
+            it('should set the previous data in the rootScope assessment as an empty object if no data', function () {
                 scope.selectedTeam = 'Insurance - Coverage Squad 1';
                 scope.selectedPortfolio = 'W';
                 scope.portfolios = portfolios;
@@ -347,26 +278,26 @@ describe('continuumAssessmentPlatform.teamselection module', function() {
         });
     });
 
-    describe('team selection services', function(){
+    describe('team selection services', function () {
         var retrieveAssessmentService, $httpBackend;
         var teamName = 'Team 1';
 
-        beforeEach(inject(function($injector) {
+        beforeEach(inject(function ($injector) {
             retrieveAssessmentService = $injector.get('RetrieveAssessment');
             $httpBackend = $injector.get('$httpBackend');
 
-            $httpBackend.when('GET', "http://178.62.75.15:8080/assessment?teamName="+teamName).respond("Successfully Retrieved");
+            $httpBackend.when('GET', "http://178.62.75.15:8080/assessment?teamName=" + teamName).respond("Successfully Retrieved");
         }));
 
-        afterEach(function() {
+        afterEach(function () {
             $httpBackend.verifyNoOutstandingExpectation();
             $httpBackend.verifyNoOutstandingRequest();
         });
 
-        it('should respond successfully when the service is called', function(){
+        it('should respond successfully when the service is called', function () {
             var expectedResponse = "Successfully Retrieved";
 
-            retrieveAssessmentService.getAssessment(teamName).then(function(response){
+            retrieveAssessmentService.getAssessment(teamName).then(function (response) {
                 expect(response.data).toEqual(expectedResponse);
             });
             $httpBackend.flush();

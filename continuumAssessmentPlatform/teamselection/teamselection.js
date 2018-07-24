@@ -18,19 +18,88 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
         $scope.init = function () {
             $scope.selectedPortfolio = "AR";
 
-            $scope.portfolios = [{'id': 'AR', 'name': 'Africa Regions'}, {'id': 'Card', 'name': 'Card, Payments, GSS, VAF'},
-                {'id': 'CIB', 'name': 'CIB'},
-                {'id': 'CIBGMT', 'name': "CIB Global Markets Technology"},
-                {'id': 'CIBO', 'name': 'CIB Operations Technology'}, {'id': 'CIBRT', 'name': 'CIB Risk Technology'},
-                {'id': 'CIBTPS', 'name': 'CIB TPS'},
-                {'id': 'CF', 'name': 'Corporate Functions'}, {'id': 'DS', 'name': 'Data Services'},
-                {'id': 'DC', 'name': 'Digital Channels'}, {'id': 'EWT', 'name': 'Enterprise-wide Tech Functions'},
-                {'id': 'GRPFIN', 'name': 'Group Finance'},
-                {'id': 'GRPIOR', 'name': 'Group IOR'},
-                {'id': 'Infra', 'name': 'Infrastructure Services'},
-                {'id': 'MKT', 'name': 'Marketing'},
-                {'id': 'PBB', 'name': 'Personal and Business Banking'}, {'id': 'Security', 'name': 'IT Security'},
-                {'id': 'W', 'name': 'Wealth'}];
+            $scope.portfolios = [
+                {
+                    "id": "AR",
+                    "name": "Africa Regions"
+                },
+                {
+                    "id": "CIB",
+                    "name": "CIB"
+                },
+                {
+                    "id": "CIBGMT",
+                    "name": "CIB Global Markets Technology"
+                },
+                {
+                    "id": "CIBO",
+                    "name": "CIB Operations Technology"
+                },
+                {
+                    "id": "CIBRT",
+                    "name": "CIB Risk Technology"
+                },
+                {
+                    "id": "CIBTPS",
+                    "name": "CIB TPS"
+                },
+                {
+                    "id": "Card",
+                    "name": "Card, Payments, GSS, VAF"
+                },
+                {
+                    "id": "CMPLNCE",
+                    "name": "Compliance"
+                },
+                {
+                    "id": "CF",
+                    "name": "Corporate Functions"
+                },
+                {
+                    "id": "DS",
+                    "name": "Data Services"
+                },
+                {
+                    "id": "DC",
+                    "name": "Digital Channels"
+                },
+                {
+                    "id": "EWT",
+                    "name": "Enterprise-wide Tech Functions"
+                },
+                {
+                    "id": "GRPFIN",
+                    "name": "Group Finance"
+                },
+                {
+                    "id": "GRPIOR",
+                    "name": "Group IOR"
+                },
+                {
+                    "id": "HCap",
+                    "name": "Human Capital"
+                },
+                {
+                    "id": "Security",
+                    "name": "IT Security"
+                },
+                {
+                    "id": "Infra",
+                    "name": "Infrastructure Services"
+                },
+                {
+                    "id": "MKT",
+                    "name": "Marketing"
+                },
+                {
+                    "id": "PBB",
+                    "name": "Personal and Business Banking"
+                },
+                {
+                    "id": "W",
+                    "name": "Wealth"
+                }
+            ];
 
             $scope.allTeams = {
                 'AR': [{'name': 'Account Origination'}, {'name': 'ATM'}, {'name': 'Bancassurance'}, {'name': 'Credit Collections'},
@@ -74,6 +143,8 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'BOL Legacy'}, {'name': 'Host to Host'}, {'name': 'Integration'}, {'name': 'PES'}, {'name': 'Pricing and Billing'},
                     {'name': 'SSA'}, {'name': 'DevOps'}, {'name': 'Specialised Account Services'}],
                 'CF': [{"name":"Deal Pricing and ALM"},{"name":"Employee Portal"},{"name":"FLS Team"},{"name":"HC Enablement"},
+                    {"name":"HC SAP"},{"name":"IOR"}],
+                'CMPLNCE': [{"name":"Deal Pricing and ALM"},{"name":"Employee Portal"},{"name":"FLS Team"},{"name":"HC Enablement"},
                     {"name":"HC SAP"},{"name":"IOR"},{"name":"ML/TF and Sanctions"},{"name":"Surveillance and Reporting"}],
                 'DS': [{"name":"AML DevOps"},{"name":"Africa Regions Transformation"},{"name":"Big Data Ingestion"},
                     {"name":"DAM – Platforms"},{"name":"DAM – Engineering"},{"name":"DAM – PBB EIM"},{"name":"DAM –  MDM & RDM"},
@@ -97,6 +168,10 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'CF Group Finance - Procurement'}],
                 'GRPIOR': [{'name': 'GR Data FT'}, {'name': 'GR Workflow FT'}, {'name': 'GR Systems FT'},
                     {'name': 'GR FLS FT'}],
+                'HCap': [{"name":"CF HC ENABLEMENT FT IT - Cloud Solutions Support"},
+                    {"name":"CF HC ENABLEMENT FT IT - People Fluent"},{"name":"CF HC SAP FT IT - SAP HC"},
+                    {"name":"CF HC SAP FT IT - SAP HC ESS/MSS"},{"name":"CF HC SAP FT IT - SAP HC Interfaces"},
+                    {"name":"CF HC SAP FT IT - SAP HC Mobile Apps"}],
                 'Infra': [{'name': 'Capacity Management'}, {'name': 'CICS'}, {'name': 'Data Centre – Africa Region'}, {'name': 'Data Centre – DCAT2'},
                     {'name': 'Data Centre – DCIRM'}, {'name': 'DB2/Adabas'}, {'name': 'J2E'},
                     {'name': 'End User Computing'}, {'name': 'Enterprise Systems Management'}, {'name': 'Facility Management'},
@@ -129,8 +204,7 @@ angular.module('continuumAssessmentPlatform.teamselection', ['ngRoute'])
                     {'name': 'Instant Money - Wallets'}, {'name': 'Statements'}, {'name': 'Unsecured Lending'}, {'name': 'Value / Payments Team (OBB 1)'}],
                 'Security': [{'name': 'Test Security Squad'}],
                 'W': [{"name":"SBFC Feature Team"},{"name":"Standard Bank Insurance Brokers"},{"name":"Standard Insurance Limited"},{"name":"WIN SAP FT"},
-                    {"name":"Wealth International"},{"name":"Wealth and Investments and Fiduciary"}]
-                ,
+                    {"name":"Wealth International"},{"name":"Wealth and Investments and Fiduciary"}],
                 'CIBGMT': [{"name":"Alchemy CIB"},{"name":"Alchemy Liberty"},{"name":"Equities Support"},{"name":"FEDS"},
                     {"name":"Front S A"},{"name":"FX Support"},{"name":"GMT Analytics"},{"name":"Hoops"},{"name":"Market Data"},
                     {"name":"Online Share Trading"},{"name":"Murex EQD"},{"name":"Murex GTS S A"},{"name":"Murex Core"},{"name":"Murex Collateral"},
